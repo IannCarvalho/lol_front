@@ -1,0 +1,105 @@
+
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link href="https://fonts.googleapis.com/css2?family=Rubik&family=Secular+One&display=swap" rel="stylesheet" />
+
+		<link rel="stylesheet" href="./src/css/reset.css" />
+		<link rel="stylesheet" href="./src/css/estilos.css" />
+		<link rel="stylesheet" href="./src/css/responsivo.css" />
+
+		<title>Runeterra</title>
+	</head>
+
+	<body>
+		<main class="personagens">
+			<div class="personagem selecionado">
+				<img class="imagem" src="./src/imagens/region_map/Runeterra.jpg" id="imagemSelecionada"/>
+				<div class="conteudo">
+					<i class="logo"></i>
+					<h2 class="nome-personagem" id="title_text">Runeterra</h2>
+					<p class="descricao" id="description_text">Runeterra é um mundo de fantasia onde heróis e vilões de diferentes lugares e culturas lutam pelo poder e pela sobrevivência. Com suas próprias facções e magias, eles enfrentam desafios épicos em um cenário diversificado, enquanto um mal antigo ameaça o mundo. É um lugar de aventuras e segredos, onde destinos se cruzam em batalhas emocionantes.</p>
+				</div>
+			</div>
+		</main>
+
+		<ul class="botoes-container">
+			<li>
+				<button class="botao" onclick="filtrar('Piltover')">
+					<img src="src/imagens/region_icon/Piltover.jpg"/>
+				</button>
+			</li>
+			<li>
+				<button class="botao" onclick="filtrar('Zaun')">
+					<img src="src/imagens/region_icon/Zaun.jpg"/>
+				</button>
+			</li>
+			<li>
+				<button class="botao" onclick="filtrar('Ionia')">
+					<img src="src/imagens/region_icon/Ionia.jpg"/>
+				</button>
+			</li>
+			<li>
+				<button class="botao" onclick="filtrar('Bilgewater')">
+					<img src="src/imagens/region_icon/Bilgewater.jpg"/>
+				</button>
+			</li>
+			<li>
+				<button class="botao" onclick="filtrar('Demacia')">
+					<img src="src/imagens/region_icon/Demacia.jpg"/>
+				</button>
+			</li>
+			<li>
+				<button class="botao" onclick="filtrar('Ixtal')">
+					<img src="src/imagens/region_icon/Ixtal.jpg"/>
+				</button>
+			</li>
+			<li>
+				<button class="botao" onclick="filtrar('Targon')">
+					<img src="src/imagens/region_icon/Targon.jpg"/>
+				</button>
+			</li>
+			<li>
+				<button class="botao" onclick="filtrar('Freljord')">
+					<img src="src/imagens/region_icon/Freljord.jpg"/>
+				</button>
+			</li>
+			<li>
+				<button class="botao" onclick="filtrar('Noxus')">
+					<img src="src/imagens/region_icon/Noxus.jpg"/>
+				</button>
+			</li>
+			<li>
+				<button class="botao" onclick="filtrar('Shadow Isles')">
+					<img src="src/imagens/region_icon/ShadowIsles.jpg"/>
+				</button>
+			</li>
+			<li>
+				<button class="botao" onclick="filtrar('Shuriman')">
+					<img src="src/imagens/region_icon/Shuriman.jpg"/>
+				</button>
+			</li>
+			<li>
+				<button class="botao" onclick="filtrar('Void')">
+					<img src="src/imagens/region_icon/Void.jpg"/>
+				</button>
+			</li>
+			<li>
+				<button class="botao" onclick="filtrar('Bandle City')">
+					<img src="src/imagens/region_icon/BandleCity.jpg"/>
+				</button>
+			</li>
+		</ul>
+
+		<ul class="botoes" id="botoes">
+		</ul>
+
+		<script src="./src/js/index.js"></script>
+	</body>
+</html>
