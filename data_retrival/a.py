@@ -278,7 +278,7 @@ def get_lore(champion):
 with open("./data.json", "r", encoding="utf-8") as file:
     data_json = json.load(file)["data"]
 
-client = pymongo.MongoClient("mongodb+srv://ianncarvalhob:5HnYIwMjQHAew8Ux@cluster0.olaoulx.mongodb.net/?retryWrites=true&w=majority")
+client = pymongo.MongoClient("***REMOVED_CONNECTION_STRING***")
 
 client.drop_database("lol")
 
@@ -303,8 +303,8 @@ for champion_name, champion_data in data_json.items():
         champion_dict['nationality'] = 'Completar'
         print(f"Completar: {champion_dict['name']}")
 
-    champion_dict['icon'] = f"./src/imagens/champion_icon/{champion_dict['id']}.png"
-    champion_dict['splash'] = f"./src/imagens/champion_splash_arts/{champion_dict['id']}_splash.jpg"
+    champion_dict['icon'] = f"https://ddragon.leagueoflegends.com/cdn/13.19.1/img/champion/{champion_dict['id']}.png"
+    champion_dict['splash'] = f"http://ddragon.leagueoflegends.com/cdn/img/champion/splash/{champion_dict['id']}_0.jpg"
     champion_dict['lore'] = get_lore(champion_name)
     del champion_dict['image']
     del champion_dict['blurb']
