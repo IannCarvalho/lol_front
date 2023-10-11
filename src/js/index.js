@@ -16,7 +16,7 @@ function populateChampionsList(champions, champions_html) {
         const img = document.createElement("img");
 
         button.className = "botao";
-        img.src = item.icon;
+        img.src = item.image;
         button.addEventListener("click", () => filtrar(item.name));
 
         button.appendChild(img);
@@ -28,7 +28,7 @@ function populateChampionsList(champions, champions_html) {
 async function filtrar(filtro) {
     try {
         const nationalityData = await fetchJSON(`${BASE_URL}/nationality/`);
-        const regions = nationalityData.map(item => item.name);
+        const regions = nationalityData.map(item => item.slug);
 
         if (regions.includes(filtro)) {
             const champions_html = document.querySelector(".botoes");
@@ -36,13 +36,13 @@ async function filtrar(filtro) {
             
             populateChampionsList(nationalityChampions, champions_html);
 
-            const selectedNationality = nationalityData.find(item => item.name === filtro);
-            document.getElementById("imagemSelecionada").src = selectedNationality.map;
+            const selectedNationality = nationalityData.find(item => item.slug === filtro);
+            document.getElementById("imagemSelecionada").src = selectedNationality.background;
             document.getElementById("title_text").textContent = filtro;
-            document.getElementById("description_text").textContent = selectedNationality.description;
+            document.getElementById("description_text").textContent = selectedNationality.overview.short;
         } else {
             const championData = await fetchJSON(`${BASE_URL}/champion/${filtro}`);
-            document.getElementById("imagemSelecionada").src = championData.splash;
+            document.getElementById("imagemSelecionada").src = championData.background;
             document.getElementById("title_text").textContent =  `${championData.name}: ${championData.title}`;
             document.getElementById("description_text").textContent = championData.lore;
         }

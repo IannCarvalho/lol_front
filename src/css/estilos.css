@@ -95,21 +95,14 @@ main .personagem .imagem {
 /* Estiliza os botões */
 .botao {
     border: none; /* Remove a borda dos botões */
-    background: #000000; /* Define a cor de fundo dos botões como preto (#000000) */
+    background: #00000000; /* Define a cor de fundo dos botões como preto (#000000) */
     cursor: pointer; /* Define o cursor do mouse como um ponteiro */
-    border-radius: 50%; /* Define um raio de borda para tornar os botões circulares */
 }
 
-/* Estiliza as imagens dentro dos botões */
 .botao img {
     border-radius: 50%; /* Define um raio de borda para as imagens, tornando-as circulares */
     max-width: 60px; /* Define a largura máxima das imagens como 60 pixels */
-}
-
-/* Estiliza o botão selecionado */
-.botoes .botao.selecionado {
-    transform: scale(1.2); /* Aumenta o tamanho do botão quando selecionado */
-    box-shadow: 0 0 10px #D9D9D9; /* Adiciona uma sombra ao botão quando selecionado */
+    position: relative;
 }
 
 /* Estiliza o contêiner de botões à direita da página */
