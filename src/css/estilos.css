@@ -46,7 +46,7 @@ main .personagem .imagem {
     flex-direction: column; /* Organiza os elementos internos em coluna */
     justify-content: center; /* Centraliza verticalmente o conteúdo */
     min-height: 100vh; /* Define a altura mínima como 100% da altura da janela */
-    max-width: 380px; /* Define a largura máxima do conteúdo como 380 pixels */
+    max-width: 450px; /* Define a largura máxima do conteúdo como 380 pixels */
     z-index: 1; /* Define a ordem de empilhamento do elemento */
 }
 

@@ -38,8 +38,8 @@ async function filtrar(filtro) {
 
             const selectedNationality = nationalityData.find(item => item.slug === filtro);
             document.getElementById("imagemSelecionada").src = selectedNationality.background;
-            document.getElementById("title_text").textContent = filtro;
-            document.getElementById("description_text").textContent = selectedNationality.overview.short;
+            document.getElementById("title_text").textContent = selectedNationality.name;
+            document.getElementById("description_text").textContent = selectedNationality.overview;
         } else {
             const championData = await fetchJSON(`${BASE_URL}/champion/${filtro}`);
             document.getElementById("imagemSelecionada").src = championData.background;

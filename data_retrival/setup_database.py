@@ -1,6 +1,11 @@
 import pymongo
 import requests
 from unidecode import unidecode
+import re
+
+def html_to_text(html):
+    clean_text = re.sub(r'<.*?>', '', html)
+    return clean_text
 
 def make_request(url):
     try:
@@ -53,6 +58,7 @@ def fetch_faction_data(faction, UNIVERSE_API_BASE, factions_imgs):
         data = data.get('faction', {})
         data['background'] = data['image']['uri']
         data['image'] = factions_imgs.get(slug, '')
+        data['overview'] = html_to_text(data['overview']['short'])
         keys_to_delete = ['video', 'headerImage']
         return delete_keys(data, keys_to_delete)
     return None
