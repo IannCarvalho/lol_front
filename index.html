@@ -16,86 +16,21 @@
 	</head>
 
 	<body>
-		<main class="personagens">
-			<div class="personagem selecionado">
-				<img class="imagem" src="./src/imagens/region_map/Runeterra.jpg" id="imagemSelecionada"/>
-				<div class="conteudo">
+		<main class="elements">
+			<div class="element selected">
+				<img class="image" src="https://support-leagueoflegends.riotgames.com/hc/article_attachments/1500019808682/Runeterra_Map.png" id="image"/>
+				<div class="content">
 					<i class="logo"></i>
-					<h2 class="nome-personagem" id="title_text">Runeterra</h2>
-					<p class="descricao" id="description_text">Runeterra é um mundo de fantasia onde heróis e vilões de diferentes lugares e culturas lutam pelo poder e pela sobrevivência. Com suas próprias facções e magias, eles enfrentam desafios épicos em um cenário diversificado, enquanto um mal antigo ameaça o mundo. É um lugar de aventuras e segredos, onde destinos se cruzam em batalhas emocionantes.</p>
+					<h2 class="element-name" id="title">Runeterra</h2>
+					<p class="description" id="description">Runeterra é um mundo de fantasia onde heróis e vilões de diferentes lugares e culturas lutam pelo poder e pela sobrevivência. Com suas próprias facções e magias, eles enfrentam desafios épicos em um cenário diversificado, enquanto um mal antigo ameaça o mundo. É um lugar de aventuras e segredos, onde destinos se cruzam em batalhas emocionantes.</p>
 				</div>
 			</div>
 		</main>
 
-		<ul class="botoes-container">
-			<li>
-				<button class="botao" onclick="filtrar('piltover')">
-					<img src="https://universe.leagueoflegends.com/images/piltover_emblem.png"/>
-				</button>
-			</li>
-			<li>
-				<button class="botao" onclick="filtrar('zaun')">
-					<img src="https://universe.leagueoflegends.com/images/zaun_emblem.png"/>
-				</button>
-			</li>
-			<li>
-				<button class="botao" onclick="filtrar('ionia')">
-					<img src="https://universe.leagueoflegends.com/images/iona_emblem.png"/>
-				</button>
-			</li>
-			<li>
-				<button class="botao" onclick="filtrar('bilgewater')">
-					<img src="https://universe.leagueoflegends.com/images/bilgewater_emblem.png"/>
-				</button>
-			</li>
-			<li>
-				<button class="botao" onclick="filtrar('demacia')">
-					<img src="https://universe.leagueoflegends.com/images/demacia_emblem.png"/>
-				</button>
-			</li>
-			<li>
-				<button class="botao" onclick="filtrar('ixtal')">
-					<img src="https://universe.leagueoflegends.com/images/ixtal_emblem.png"/>
-				</button>
-			</li>
-			<li>
-				<button class="botao" onclick="filtrar('mount-targon')">
-					<img src="https://universe.leagueoflegends.com/images/mt_targon_emblem.png"/>
-				</button>
-			</li>
-			<li>
-				<button class="botao" onclick="filtrar('freljord')">
-					<img src="https://universe.leagueoflegends.com/images/freljord_emblem.png"/>
-				</button>
-			</li>
-			<li>
-				<button class="botao" onclick="filtrar('noxus')">
-					<img src="https://universe.leagueoflegends.com/images/noxus_emblem.png"/>
-				</button>
-			</li>
-			<li>
-				<button class="botao" onclick="filtrar('shadow-isles')">
-					<img src="https://universe.leagueoflegends.com/images/shadow_isles_emblem.png"/>
-				</button>
-			</li>
-			<li>
-				<button class="botao" onclick="filtrar('shurima')">
-					<img src="https://universe.leagueoflegends.com/images/shurima_emblem.png"/>
-				</button>
-			</li>
-			<li>
-				<button class="botao" onclick="filtrar('void')">
-					<img src="https://universe.leagueoflegends.com/images/void_emblem.png"/>
-				</button>
-			</li>
-			<li>
-				<button class="botao" onclick="filtrar('bandle-city')">
-					<img src="https://universe.leagueoflegends.com/images/bandle_city_emblem.png"/>
-				</button>
-			</li>
+		<ul class="nationalities">
 		</ul>
 
-		<ul class="botoes" id="botoes">
+		<ul class="champions" id="champions">
 		</ul>
 
 		<script src="./src/js/index.js"></script>

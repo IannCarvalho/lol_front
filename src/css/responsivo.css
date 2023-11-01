@@ -6,13 +6,13 @@
         width: 100vw; /* Largura máxima igual à largura da janela */
     }
 
-    /* Ajusta a altura da imagem do personagem para 85% do contêiner */
-    main .personagem .imagem {
+    /* Ajusta a altura da imagem do element para 85% do contêiner */
+    main .element .image {
         height: 85%;
     }
 
     /* Ajusta o conteúdo principal para alinhamento na parte inferior */
-    .conteudo {
+    .content {
         justify-content: flex-end; /* Alinha o conteúdo no final verticalmente */
         left: 0; /* Alinha o conteúdo à esquerda da tela */
         top: -20%; /* Move o conteúdo para cima em relação à sua posição padrão */
@@ -20,18 +20,18 @@
         padding: 30px; /* Adiciona preenchimento interno ao conteúdo */
     }
 
-    /* Ajusta o tamanho da fonte do nome do personagem para 36px */
-    .conteudo .nome-personagem {
+    /* Ajusta o tamanho da fonte do nome do element para 36px */
+    .content .element-name {
         font-size: 36px;
     }
 
-    /* Limita a largura máxima da descrição do personagem a 500px */
-    .conteudo .descricao {
+    /* Limita a largura máxima da descrição do element a 500px */
+    .content .description {
         max-width: 500px;
     }
 
     /* Ajusta o contêiner de botões para um layout horizontal */
-    .botoes-container {
+    .nationalities {
         left: 0;
         top: -8%;
         flex-direction: row; /* Organiza os botões horizontalmente */
@@ -42,7 +42,7 @@
     }
 
     /* Ajusta o contêiner de botões para um layout horizontal */
-    .botoes {
+    .champions {
         flex-direction: row; /* Organiza os botões horizontalmente */
         align-items: flex-end; /* Alinha os botões na parte inferior verticalmente */
         width: 100%; /* Largura máxima igual à largura da janela */
@@ -50,37 +50,37 @@
     }
 
     /* Define o tamanho máximo das imagens dentro dos botões para 60px */
-    .botao img {
+    .button img {
         max-width: 60px;
     }
 }
 
 /* Define estilos para telas com largura máxima de 425px */
 @media (max-width: 425px) {
-    /* Ajusta a altura da imagem do personagem para automática (altura flexível) */
-    main .personagem .imagem {
+    /* Ajusta a altura da imagem do element para automática (altura flexível) */
+    main .element .image {
         height: auto;
     }
 
     /* Ajusta o tamanho do logotipo para largura de 170px e altura de 75px */
-    .conteudo .logo {
+    .content .logo {
         width: 170px;
         height: 75px;
     }
 
     /* Move o conteúdo principal para cima em relação à sua posição padrão */
-    .conteudo {
+    .content {
         top: -30%;
     }
 
-    /* Reduz o tamanho da fonte do nome do personagem para 24px */
-    .conteudo .nome-personagem {
+    /* Reduz o tamanho da fonte do nome do element para 24px */
+    .content .element-name {
         font-size: 24px;
     }
 
     
     /* Adiciona preenchimento interno e move o contêiner de botões para cima em relação à sua posição padrão */
-    .botoes {
+    .champions {
         overflow-y: unset;
         overflow-x: auto;
         top: -5%; /* Mantém o .botoes-container no topo */
@@ -88,7 +88,7 @@
     }
 
     /* Adiciona preenchimento interno e move o contêiner de botões para cima em relação à sua posição padrão */
-    .botoes-container {
+    .nationalities {
         overflow-y: unset;
         overflow-x: auto;
         align-items: flex-end; /* Alinha os botões na parte inferior verticalmente */
@@ -98,7 +98,7 @@
     }
 
     /* Define o tamanho máximo das imagens dentro dos botões para 50px */
-    .botao img {
+    .button img {
         max-width: 50px;
     }
 }

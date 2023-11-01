@@ -20,25 +20,25 @@ main::after {
 }
 
 /* Estiliza as seções de personagens */
-main .personagem {
+main .element {
     display: none; /* Oculta as seções de personagens por padrão */
     height: 100vh; /* Define a altura das seções de personagens como 100% da altura da janela */
 }
 
-/* Define estilos para a seção de personagem selecionado */
-main .personagem.selecionado {
-    display: block; /* Exibe a seção de personagem selecionado quando aplicada */
+/* Define estilos para a seção de element selected */
+main .element.selected {
+    display: block; /* Exibe a seção de element selected quando aplicada */
 }
 
-/* Estiliza a imagem do personagem */
-main .personagem .imagem {
+/* Estiliza a imagem do element */
+main .element .image {
     width: 100%; /* Define a largura da imagem como 100% do seu contêiner */
     height: 100%; /* Define a altura da imagem como 100% do seu contêiner */
     object-fit: cover; /* Faz a imagem preencher o contêiner, cortando partes que não cabem */
 }
 
-/* Define estilos para o conteúdo do personagem */
-.conteudo {
+/* Define estilos para o conteúdo do element */
+.content {
     position: absolute; /* Define a posição como absoluta para posicionamento personalizado */
     top: 0; /* Alinha o topo do conteúdo com o topo do seu contêiner pai */
     left: 120px; /* Define um afastamento da esquerda de 120 pixels */
@@ -50,8 +50,8 @@ main .personagem .imagem {
     z-index: 1; /* Define a ordem de empilhamento do elemento */
 }
 
-/* Estiliza o nome do personagem */
-.conteudo .nome-personagem {
+/* Estiliza o nome do element */
+.content .element-name {
     color: #ffffff; /* Define a cor do texto como branco (#ffffff) */
     font-size: 48px; /* Define o tamanho da fonte como 48 pixels */
     font-family: "Secular One"; /* Define a fonte da família Secular One */
@@ -59,15 +59,15 @@ main .personagem .imagem {
     margin-bottom: 20px; /* Adiciona uma margem inferior de 20 pixels */
 }
 
-/* Estiliza a descrição do personagem */
-.conteudo .descricao {
+/* Estiliza a descrição do element */
+.content .description {
     color: #ffffff; /* Define a cor do texto como branco (#ffffff) */
     font-family: "Rubik"; /* Define a fonte da família Rubik */
     line-height: 24px; /* Define a altura da linha como 24 pixels */
 }
 
 /* Estiliza o logotipo */
-.conteudo .logo {
+.content .logo {
     background-image: url("../imagens/logo.png"); /* Define uma imagem de fundo para o logotipo */
     background-size: cover; /* Faz a imagem preencher o contêiner, cortando partes que não cabem */
     height: 150px; /* Define a altura do logotipo como 150 pixels */
@@ -76,7 +76,7 @@ main .personagem .imagem {
 }
 
 /* Estiliza a lista de botões */
-.botoes {
+.champions {
     overflow-y: scroll; /* Adiciona uma barra de rolagem vertical quando necessário */
     max-height: 100%; /* Define a altura máxima da lista como 100% da altura da janela */
     position: fixed; /* Define a posição como fixa para que a lista permaneça visível durante a rolagem */
@@ -93,20 +93,20 @@ main .personagem .imagem {
 }
 
 /* Estiliza os botões */
-.botao {
+.button {
     border: none; /* Remove a borda dos botões */
     background: #00000000; /* Define a cor de fundo dos botões como preto (#000000) */
     cursor: pointer; /* Define o cursor do mouse como um ponteiro */
 }
 
-.botao img {
+.button img {
     border-radius: 50%; /* Define um raio de borda para as imagens, tornando-as circulares */
     max-width: 60px; /* Define a largura máxima das imagens como 60 pixels */
     position: relative;
 }
 
 /* Estiliza o contêiner de botões à direita da página */
-.botoes-container {
+.nationalities {
     overflow-y: scroll; /* Adiciona uma barra de rolagem vertical quando necessário */
     max-height: 100%; /* Define a altura máxima da lista como 100% da altura da janela */
     position: fixed; /* Define a posição como fixa para que a lista permaneça visível durante a rolagem */
@@ -123,7 +123,7 @@ main .personagem .imagem {
 }
 
 /* Estiliza a barra de rolagem vertical para .botoes-container e .botoes */
-.botoes-container::-webkit-scrollbar,
-.botoes::-webkit-scrollbar {
+.nationalities::-webkit-scrollbar,
+.champions::-webkit-scrollbar {
     width: 0px; /* Largura da barra de rolagem */
 }

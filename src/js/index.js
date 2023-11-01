@@ -1,4 +1,5 @@
 const BASE_URL = "http://localhost:5000";
+var ACTUAL_ELEMENT = "runeterra";
 
 async function fetchJSON(url) {
     const response = await fetch(url);
@@ -8,45 +9,60 @@ async function fetchJSON(url) {
     return response.json();
 }
 
-function populateChampionsList(champions, champions_html) {
-    champions_html.innerHTML = "";
-    champions.forEach(item => {
-        const li = document.createElement("li");
-        const button = document.createElement("button");
-        const img = document.createElement("img");
+function createElementList(item, html) {
+    const li = document.createElement("li");
+    const button = document.createElement("button");
+    const img = document.createElement("img");
 
-        button.className = "botao";
-        img.src = item.image;
-        button.addEventListener("click", () => filtrar(item.name));
+    button.className = "button";
+    img.src = item.image;
+    button.addEventListener("click", () => find(item.slug));
 
-        button.appendChild(img);
-        li.appendChild(button);
-        champions_html.appendChild(li);
-    });
+    button.appendChild(img);
+    li.appendChild(button);
+    html.appendChild(li);
 }
 
-async function filtrar(filtro) {
-    try {
-        const nationalityData = await fetchJSON(`${BASE_URL}/nationality/`);
-        const regions = nationalityData.map(item => item.slug);
+async function populateNationalitiesList() {
+    nationalitiesHTML = document.querySelector(".nationalities");
+    const nationalities = await fetchJSON(`${BASE_URL}/nationality/`);
 
-        if (regions.includes(filtro)) {
-            const champions_html = document.querySelector(".botoes");
-            const nationalityChampions = await fetchJSON(`${BASE_URL}/nationality/champions/${filtro}`);
-            
-            populateChampionsList(nationalityChampions, champions_html);
+    nationalities.forEach(item => createElementList(item, nationalitiesHTML));
+}
 
-            const selectedNationality = nationalityData.find(item => item.slug === filtro);
-            document.getElementById("imagemSelecionada").src = selectedNationality.background;
-            document.getElementById("title_text").textContent = selectedNationality.name;
-            document.getElementById("description_text").textContent = selectedNationality.overview;
-        } else {
-            const championData = await fetchJSON(`${BASE_URL}/champion/${filtro}`);
-            document.getElementById("imagemSelecionada").src = championData.background;
-            document.getElementById("title_text").textContent =  `${championData.name}: ${championData.title}`;
-            document.getElementById("description_text").textContent = championData.lore;
+async function populateChampionsList(nationality) {
+    const championsHTML = document.querySelector(".champions");
+    const champions = await fetchJSON(`${BASE_URL}/nationality/champions/${nationality}`);
+    championsHTML.innerHTML = "";
+
+    champions.forEach(item => createElementList(item, championsHTML));
+}
+
+async function find(element) {
+    if (ACTUAL_ELEMENT != element) {
+        try {
+            const nationalityData = await fetchJSON(`${BASE_URL}/nationality/`);
+            const regions = nationalityData.map(item => item.slug);
+
+            if (regions.includes(element)) {
+                populateChampionsList(element);
+
+                const selectedNationality = nationalityData.find(item => item.slug === element);
+                document.getElementById("image").src = selectedNationality.background;
+                document.getElementById("title").textContent = selectedNationality.name;
+                document.getElementById("description").textContent = selectedNationality.overview;
+            } else {
+                const championData = await fetchJSON(`${BASE_URL}/champion/${element}`);
+                document.getElementById("image").src = championData.background;
+                document.getElementById("title").textContent = `${championData.name}: ${championData.title}`;
+                document.getElementById("description").textContent = championData.lore;
+            }
+            ACTUAL_ELEMENT = element;
+        } catch (error) {
+            console.error('Erro na requisição:', error);
         }
-    } catch (error) {
-        console.error('Erro na requisição:', error);
     }
 }
+
+populateNationalitiesList()
+populateChampionsList(ACTUAL_ELEMENT)
