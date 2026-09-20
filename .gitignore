@@ -7,7 +7,17 @@ __pycache__/
 *.py[cod]
 .venv/
 venv/
+.pytest_cache/
 
-# OS
+# Node / logs
+npm-debug.log*
+yarn-error.log*
+
+# Deploy (Vercel)
+.vercel
+
+# Editor / OS
+.vscode/
+.idea/
 .DS_Store
 Thumbs.db
