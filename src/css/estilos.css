@@ -55,6 +55,27 @@ main .element .image {
     /* Crossfade suave ao trocar de região/campeão */
     transition: opacity 0.4s ease;
     opacity: 1;
+    /* Efeito "Ken Burns": zoom lento e contínuo que dá vida ao fundo estático.
+       transform-origin no centro; a animação alterna (ida e volta) suavemente. */
+    animation: ken-burns 24s ease-in-out infinite alternate;
+    transform-origin: center center;
+    will-change: transform;
+}
+
+@keyframes ken-burns {
+    from {
+        transform: scale(1);
+    }
+    to {
+        transform: scale(1.12);
+    }
+}
+
+/* Respeita quem prefere menos movimento: sem zoom contínuo */
+@media (prefers-reduced-motion: reduce) {
+    main .element .image {
+        animation: none;
+    }
 }
 
 /* Estado de transição: imagem esmaece antes de trocar o src */
