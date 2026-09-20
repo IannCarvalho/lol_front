@@ -50,6 +50,14 @@ main .element .image {
     width: 100%; /* Define a largura da imagem como 100% do seu contêiner */
     height: 100%; /* Define a altura da imagem como 100% do seu contêiner */
     object-fit: cover; /* Faz a imagem preencher o contêiner, cortando partes que não cabem */
+    /* Crossfade suave ao trocar de região/campeão */
+    transition: opacity 0.4s ease;
+    opacity: 1;
+}
+
+/* Estado de transição: imagem esmaece antes de trocar o src */
+main .element .image.image--fading {
+    opacity: 0;
 }
 
 /* Quando a imagem falha ao carregar, escondemos o <img> quebrado

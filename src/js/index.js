@@ -9,16 +9,45 @@ async function fetchJSON(url) {
     return response.json();
 }
 
-// Define a imagem de fundo tratando falha de carregamento: se a URL quebrar,
-// marca a imagem como "failed" para o CSS mostrar o gradiente de fundo.
+// Define a imagem de fundo com crossfade suave e tratamento de falha:
+// esmaece a imagem atual, troca o src, e reexibe quando a nova carrega.
+// Se a URL quebrar, marca como "failed" para o CSS mostrar o gradiente.
+// Duração do fade-out (deve casar com a transição em estilos.css).
+const FADE_MS = 400;
+
 function setBackgroundImage(url) {
     const image = document.getElementById("image");
-    image.classList.remove("image--failed");
-    image.onerror = () => image.classList.add("image--failed");
-    image.src = url || "";
+
     if (!url) {
         image.classList.add("image--failed");
+        return;
     }
+
+    // inicia o fade-out imediatamente
+    image.classList.add("image--fading");
+
+    // pré-carrega a nova imagem em paralelo ao fade-out
+    const preload = new Image();
+    const loaded = new Promise((resolve) => {
+        preload.onload = () => resolve(true);
+        preload.onerror = () => resolve(false);
+    });
+    preload.src = url;
+
+    // garante um tempo mínimo de fade-out (mesmo que a imagem já esteja em
+    // cache e carregue instantaneamente), para o crossfade ser sempre visível
+    const faded = new Promise((resolve) => setTimeout(resolve, FADE_MS));
+
+    Promise.all([loaded, faded]).then(([ok]) => {
+        if (ok) {
+            image.src = url;
+            image.classList.remove("image--failed");
+            requestAnimationFrame(() => image.classList.remove("image--fading"));
+        } else {
+            image.classList.add("image--failed");
+            image.classList.remove("image--fading");
+        }
+    });
 }
 
 function createElementList(item, html) {
