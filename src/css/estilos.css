@@ -242,7 +242,13 @@ main .element .image--failed {
 
 .button img {
     border-radius: 50%; /* Define um raio de borda para as imagens, tornando-as circulares */
-    max-width: 60px; /* Define a largura máxima das imagens como 60 pixels */
+    width: 60px;
+    height: 60px;
+    object-fit: cover; /* preenche o círculo mantendo proporção */
+    /* Zoom base leve para "comer" a moldura escura que os ícones do DDragon
+       trazem nas bordas, evitando o aro preto ao redor do círculo. */
+    object-position: center;
+    transform: scale(1.1);
     position: relative;
     display: block;
     border: 2px solid transparent;
@@ -253,7 +259,7 @@ main .element .image--failed {
 /* Hover / foco de teclado: leve zoom + brilho dourado (tema LoL) */
 .button:hover img,
 .button:focus-visible img {
-    transform: scale(1.12);
+    transform: scale(1.22); /* base 1.1 + incremento do hover */
     border-color: #c8aa6e;
     box-shadow: 0 0 12px rgba(200, 170, 110, 0.75);
 }
@@ -324,7 +330,7 @@ main .element .image--failed {
     }
     to {
         opacity: 1;
-        transform: translateX(0) scale(1);
+        transform: translateX(0) scale(1.1); /* casa com o zoom base da imagem */
     }
 }
 
