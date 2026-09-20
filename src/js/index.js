@@ -51,6 +51,14 @@ function setBackgroundImage(url) {
     });
 }
 
+// Atualiza o título da aba do navegador conforme o conteúdo atual.
+// Ex.: "Zaun · Runeterra", "Garen · Runeterra"; na raiz, apenas "Runeterra".
+function setPageTitle(name) {
+    document.title = name && name !== "Runeterra"
+        ? `${name} · Runeterra`
+        : "Runeterra";
+}
+
 // Re-dispara a animação de entrada do título + descrição (fade/slide).
 function playContentEnter() {
     const content = document.querySelector(".content");
@@ -219,12 +227,14 @@ async function find(element) {
                 const selectedNationality = nationalityData.find(item => item.slug === element);
                 document.getElementById("title").textContent = selectedNationality.name;
                 setDescription(selectedNationality.overview);
+                setPageTitle(selectedNationality.name);
                 playContentEnter();
                 await setBackgroundImage(selectedNationality.background);
             } else {
                 const championData = await fetchJSON(`${BASE_URL}/champion/${element}`);
                 document.getElementById("title").textContent = `${championData.name}: ${championData.title}`;
                 setDescription(championData.lore);
+                setPageTitle(championData.name);
                 playContentEnter();
                 await setBackgroundImage(championData.background);
             }
