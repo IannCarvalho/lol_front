@@ -15,12 +15,13 @@ async function fetchJSON(url) {
 // Duração do fade-out (deve casar com a transição em estilos.css).
 const FADE_MS = 400;
 
+// Retorna uma Promise que resolve quando a imagem terminou a troca (com fade).
 function setBackgroundImage(url) {
     const image = document.getElementById("image");
 
     if (!url) {
         image.classList.add("image--failed");
-        return;
+        return Promise.resolve();
     }
 
     // inicia o fade-out imediatamente
@@ -38,7 +39,7 @@ function setBackgroundImage(url) {
     // cache e carregue instantaneamente), para o crossfade ser sempre visível
     const faded = new Promise((resolve) => setTimeout(resolve, FADE_MS));
 
-    Promise.all([loaded, faded]).then(([ok]) => {
+    return Promise.all([loaded, faded]).then(([ok]) => {
         if (ok) {
             image.src = url;
             image.classList.remove("image--failed");
@@ -48,6 +49,14 @@ function setBackgroundImage(url) {
             image.classList.remove("image--fading");
         }
     });
+}
+
+// Mostra/esconde o indicador de carregamento
+function showLoader(show) {
+    const loader = document.getElementById("loader");
+    if (loader) {
+        loader.hidden = !show;
+    }
 }
 
 function createElementList(item, html) {
@@ -108,6 +117,7 @@ async function populateChampionsList(nationality) {
 
 async function find(element) {
     if (ACTUAL_ELEMENT != element) {
+        showLoader(true);
         try {
             const nationalityData = await fetchJSON(`${BASE_URL}/nationality/`);
             const regions = nationalityData.map(item => item.slug);
@@ -116,18 +126,20 @@ async function find(element) {
                 populateChampionsList(element);
 
                 const selectedNationality = nationalityData.find(item => item.slug === element);
-                setBackgroundImage(selectedNationality.background);
                 document.getElementById("title").textContent = selectedNationality.name;
                 setDescription(selectedNationality.overview);
+                await setBackgroundImage(selectedNationality.background);
             } else {
                 const championData = await fetchJSON(`${BASE_URL}/champion/${element}`);
-                setBackgroundImage(championData.background);
                 document.getElementById("title").textContent = `${championData.name}: ${championData.title}`;
                 setDescription(championData.lore);
+                await setBackgroundImage(championData.background);
             }
             ACTUAL_ELEMENT = element;
         } catch (error) {
             console.error('Erro na requisição:', error);
+        } finally {
+            showLoader(false);
         }
     }
 }
