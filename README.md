@@ -4,6 +4,8 @@ Frontend estático (HTML/CSS/JS puro) para navegar por regiões (nacionalidades)
 
 **Live:** https://lolfront.vercel.app (frontend na Vercel) · backend em https://lol-back-6zld.onrender.com (Render) · banco no MongoDB Atlas.
 
+> Deploy contínuo: cada push na branch `main` publica automaticamente na Vercel.
+
 ## Estrutura
 
 O JavaScript é organizado em **ES Modules nativos** (sem framework nem bundler): cada arquivo tem uma responsabilidade e o `main.js` orquestra os demais.
