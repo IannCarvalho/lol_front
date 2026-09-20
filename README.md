@@ -2,6 +2,8 @@
 
 Frontend estático (HTML/CSS/JS puro) para navegar por regiões (nacionalidades) e campeões de League of Legends. Consome a API do [lol_back](https://github.com/IannCarvalho/lol_back).
 
+**Live:** https://lolfront.vercel.app (frontend na Vercel) · backend em https://lol-back-6zld.onrender.com (Render) · banco no MongoDB Atlas.
+
 ## Estrutura
 
 O JavaScript é organizado em **ES Modules nativos** (sem framework nem bundler): cada arquivo tem uma responsabilidade e o `main.js` orquestra os demais.
@@ -62,23 +64,28 @@ O estado da navegação fica na URL (dá para recarregar e compartilhar):
 
 ## Deploy
 
-O repositório já inclui as configs de *fallback* SPA:
-- **Netlify**: `_redirects` (`/* /index.html 200`)
+O frontend está publicado na **Vercel** em https://lolfront.vercel.app. Por ser estático (sem build step), o deploy é direto — o `vercel.json` cuida do *fallback* SPA.
+
+O repositório já inclui as configs de *fallback* SPA para os principais hosts:
 - **Vercel**: `vercel.json` (rewrites para `/index.html`)
+- **Netlify**: `_redirects` (`/* /index.html 200`)
 
 Em outros servidores (ex.: Nginx), configure o equivalente: `try_files $uri /index.html;`.
 
 ### Configurando o backend
 
-A URL do backend fica em `src/js/config.js`:
+A URL do backend fica em `src/js/config.js`. O arquivo detecta o ambiente
+automaticamente: em `localhost` usa o backend local; em produção usa a URL
+pública do Render.
 
 ```js
-window.APP_CONFIG = {
-    BASE_URL: "http://localhost:5000",
-};
+const PROD_BACKEND_URL = "https://lol-back-6zld.onrender.com";
+const LOCAL_BACKEND_URL = "http://localhost:5000";
 ```
 
-Ajuste `BASE_URL` para apontar para a instância do `lol_back` que você estiver rodando.
+Para apontar para outra instância do `lol_back`, ajuste `PROD_BACKEND_URL`.
+
+> Guia completo de deploy (Atlas + Render + Vercel) na raiz do monorepo: [`DEPLOY.md`](../DEPLOY.md).
 
 ## Populando o banco (data_retrival)
 
