@@ -14,9 +14,11 @@ lol_front/
 │       ├── config.js   # configuração de runtime (BASE_URL do backend)
 │       └── index.js    # lógica de fetch e renderização
 └── data_retrival/
-    ├── setup_database.py   # popula o MongoDB com dados da Riot/DDragon
+    ├── setup_database.py     # popula o MongoDB com dados da Riot/DDragon
     ├── requirements.txt
-    └── .env.example
+    ├── requirements-dev.txt  # dependências de teste (pytest)
+    ├── .env.example
+    └── tests/                # testes pytest do setup_database.py
 ```
 
 ## Rodando o frontend
@@ -55,3 +57,13 @@ python setup_database.py
 > A `MONGO_URL` é lida de variável de ambiente (via `.env`). Nunca faça commit do `.env` — ele está no `.gitignore`.
 
 ⚠️ O script executa `drop_database("lol")` antes de inserir, ou seja, recria a base do zero a cada execução.
+
+## Testes
+
+As funções puras do `setup_database.py` têm testes com [pytest](https://docs.pytest.org/) (sem rede nem MongoDB — as chamadas externas são mockadas).
+
+```bash
+cd data_retrival
+pip install -r requirements-dev.txt
+pytest
+```
