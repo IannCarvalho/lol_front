@@ -368,3 +368,33 @@ main .element .image--failed {
         animation: none;
     }
 }
+
+/* Breadcrumb: mostra a região de origem quando se está vendo um campeão.
+   É clicável (leva de volta à região), reforçando a navegação exploratória. */
+.content .breadcrumb {
+    align-self: flex-start;
+    flex-shrink: 0;
+    margin-bottom: 8px;
+    padding: 0;
+    border: none;
+    background: transparent;
+    color: #c8aa6e; /* dourado do tema LoL */
+    font-family: "Rubik", sans-serif;
+    font-size: 13px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    cursor: pointer;
+    opacity: 0.9;
+    transition: opacity 0.15s ease, color 0.15s ease;
+}
+
+.content .breadcrumb:hover,
+.content .breadcrumb:focus-visible {
+    opacity: 1;
+    color: #f0e6d2;
+    text-decoration: underline;
+}
+
+.content .breadcrumb[hidden] {
+    display: none;
+}

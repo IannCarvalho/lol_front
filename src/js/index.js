@@ -51,6 +51,21 @@ function setBackgroundImage(url) {
     });
 }
 
+// Mostra/esconde o breadcrumb da região de origem (quando se vê um campeão).
+// region = { slug, name } ou null para esconder.
+function setBreadcrumb(region) {
+    const el = document.getElementById("breadcrumb");
+    if (!el) return;
+    if (region && region.name) {
+        el.textContent = `${region.name} ›`;
+        el.hidden = false;
+        el.onclick = () => navigateTo(region.slug, "region");
+    } else {
+        el.hidden = true;
+        el.onclick = null;
+    }
+}
+
 // Atualiza o título da aba do navegador conforme o conteúdo atual.
 // Ex.: "Zaun · Runeterra", "Garen · Runeterra"; na raiz, apenas "Runeterra".
 function setPageTitle(name) {
@@ -228,6 +243,7 @@ async function find(element) {
                 document.getElementById("title").textContent = selectedNationality.name;
                 setDescription(selectedNationality.overview);
                 setPageTitle(selectedNationality.name);
+                setBreadcrumb(null); // região não tem "origem"
                 playContentEnter();
                 await setBackgroundImage(selectedNationality.background);
             } else {
@@ -235,6 +251,9 @@ async function find(element) {
                 document.getElementById("title").textContent = `${championData.name}: ${championData.title}`;
                 setDescription(championData.lore);
                 setPageTitle(championData.name);
+                // breadcrumb com a região de origem do campeão (clicável)
+                const region = nationalityData.find(item => item.slug === championData.nationality);
+                setBreadcrumb(region ? { slug: region.slug, name: region.name } : null);
                 playContentEnter();
                 await setBackgroundImage(championData.background);
             }
