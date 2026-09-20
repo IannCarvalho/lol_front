@@ -92,6 +92,21 @@ function showLoader(show) {
     }
 }
 
+// Mostra uma mensagem amigável na tela quando algo falha (backend fora do ar,
+// erro de rede). Substitui o conteúdo pelo aviso, em vez de só logar no console.
+function showError(message) {
+    const title = document.getElementById("title");
+    const breadcrumb = document.getElementById("breadcrumb");
+    if (breadcrumb) breadcrumb.hidden = true;
+    if (title) title.textContent = "Ops, algo deu errado";
+    setDescription(
+        message ||
+        "Não foi possível carregar os dados. Verifique sua conexão ou se o servidor está no ar e tente novamente."
+    );
+    setBackgroundImage(null); // cai no gradiente de fallback
+    playContentEnter();
+}
+
 // Tooltip único (posicionado à esquerda do emblema), fora das colunas para
 // não ser recortado pelo overflow.
 let tooltipEl = null;
@@ -261,6 +276,7 @@ async function find(element) {
             markSelectedBySlug(element);
         } catch (error) {
             console.error('Erro na requisição:', error);
+            showError();
         } finally {
             showLoader(false);
         }
@@ -348,8 +364,14 @@ window.addEventListener("keydown", handleKeyNav);
 
 // Inicialização: popula as listas e navega para o alvo do path (ou Runeterra).
 async function init() {
-    await populateNationalitiesList();
-    await populateChampionsList("runeterra");
+    try {
+        await populateNationalitiesList();
+        await populateChampionsList("runeterra");
+    } catch (error) {
+        console.error('Falha ao inicializar:', error);
+        showError();
+        return;
+    }
     // avalia a descrição inicial (Runeterra, vinda do HTML) para decidir o fade
     setDescription(document.getElementById("description").textContent);
     playContentEnter(); // anima o conteúdo inicial também
