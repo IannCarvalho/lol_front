@@ -70,6 +70,19 @@ function createElementList(item, html) {
     html.appendChild(li);
 }
 
+// Define o texto da descrição e aplica o fade no rodapé APENAS quando o
+// conteúdo transborda (precisa rolar). Se o texto cabe todo, sem fade.
+function setDescription(text) {
+    const description = document.getElementById("description");
+    description.textContent = text || "";
+    // aguarda o layout recalcular antes de medir o overflow
+    requestAnimationFrame(() => {
+        const overflowing = description.scrollHeight > description.clientHeight + 1;
+        description.classList.toggle("description--scrollable", overflowing);
+        description.scrollTop = 0;
+    });
+}
+
 // Marca o botão clicado como selecionado e limpa a seleção anterior
 // (em ambas as listas: regiões e campeões).
 function markSelected(button) {
@@ -105,12 +118,12 @@ async function find(element) {
                 const selectedNationality = nationalityData.find(item => item.slug === element);
                 setBackgroundImage(selectedNationality.background);
                 document.getElementById("title").textContent = selectedNationality.name;
-                document.getElementById("description").textContent = selectedNationality.overview;
+                setDescription(selectedNationality.overview);
             } else {
                 const championData = await fetchJSON(`${BASE_URL}/champion/${element}`);
                 setBackgroundImage(championData.background);
                 document.getElementById("title").textContent = `${championData.name}: ${championData.title}`;
-                document.getElementById("description").textContent = championData.lore;
+                setDescription(championData.lore);
             }
             ACTUAL_ELEMENT = element;
         } catch (error) {
@@ -121,3 +134,6 @@ async function find(element) {
 
 populateNationalitiesList()
 populateChampionsList(ACTUAL_ELEMENT)
+
+// Avalia a descrição inicial (Runeterra, vinda do HTML) para decidir o fade.
+setDescription(document.getElementById("description").textContent);

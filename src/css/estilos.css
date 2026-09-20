@@ -75,10 +75,20 @@ main .element .image--failed {
     left: 120px; /* Define um afastamento da esquerda de 120 pixels */
     display: flex; /* Usa um modelo flexível para organizar elementos internos */
     flex-direction: column; /* Organiza os elementos internos em coluna */
-    justify-content: center; /* Centraliza verticalmente o conteúdo */
-    min-height: 100vh; /* Define a altura mínima como 100% da altura da janela */
-    max-width: 450px; /* Define a largura máxima do conteúdo como 380 pixels */
+    justify-content: center; /* Centraliza verticalmente quando há espaço */
+    height: 100vh; /* Ocupa exatamente a altura da tela (padding conta dentro) */
+    max-width: 560px; /* Largura do bloco de conteúdo (mais respiro horizontal) */
+    padding: 48px 0; /* Respiro em cima e embaixo (dentro dos 100vh) */
+    box-sizing: border-box; /* Garante que o padding não estoure a altura */
+    overflow: hidden; /* Segurança extra: nunca deixa o bloco vazar da tela */
     z-index: 1; /* Define a ordem de empilhamento do elemento */
+}
+
+/* Logo e título têm tamanho fixo (não encolhem); a descrição absorve o
+   espaço restante. Assim o topo (logo) nunca é cortado, em qualquer tela. */
+.content .logo,
+.content .element-name {
+    flex-shrink: 0;
 }
 
 /* Estiliza o nome do element */
@@ -95,6 +105,29 @@ main .element .image--failed {
     color: #ffffff; /* Define a cor do texto como branco (#ffffff) */
     font-family: "Rubik"; /* Define a fonte da família Rubik */
     line-height: 24px; /* Define a altura da linha como 24 pixels */
+    /* A descrição ocupa só o espaço que sobra (flex: 1) e rola internamente
+       quando o texto é longo. min-height: 0 é necessário para o flex-item
+       poder encolher e ativar o overflow em vez de empurrar o logo. */
+    flex: 1 1 auto;
+    min-height: 0;
+    overflow-y: auto;
+    padding-right: 12px; /* espaço para a barra de rolagem não colar no texto */
+}
+
+/* Fade no rodapé SOMENTE quando o texto realmente transborda (há mais para
+   rolar). A classe é adicionada via JS medindo scrollHeight > clientHeight. */
+.content .description.description--scrollable {
+    -webkit-mask-image: linear-gradient(180deg, #000 88%, transparent 100%);
+    mask-image: linear-gradient(180deg, #000 88%, transparent 100%);
+}
+
+/* Barra de rolagem discreta na descrição */
+.content .description::-webkit-scrollbar {
+    width: 4px;
+}
+.content .description::-webkit-scrollbar-thumb {
+    background: rgba(200, 170, 110, 0.4);
+    border-radius: 2px;
 }
 
 /* Estiliza o logotipo */
