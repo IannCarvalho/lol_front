@@ -1,5 +1,12 @@
-/* Define estilos para telas com largura máxima de 769px */
+/* Define estilos para telas com largura máxima de 600px */
 @media (max-width: 600px) {
+    /* Libera o scroll em telas menores (no desktop o body é overflow:hidden)
+       para que nada seja cortado quando o conteúdo não cabe na viewport. */
+    body {
+        overflow-y: auto;
+        overflow-x: hidden;
+    }
+
     /* Ajusta o fundo semi-transparente com gradiente para telas menores */
     main::after {
         background: linear-gradient(0deg, #000 20%, rgba(0, 0, 0, 0.00) 65%) no-repeat;

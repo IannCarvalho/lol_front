@@ -2,8 +2,10 @@
 body {
     margin: 0; /* Remove a margem externa padrão do corpo da página */
     padding: 0; /* Remove o preenchimento interno padrão do corpo da página */
-    background-color: #000000; /* Define a cor de fundo do corpo da página como preto (#000000) */
-    overflow: hidden; /* Oculta barras de rolagem se o conteúdo exceder as dimensões da janela do navegador */
+    background-color: #050a14; /* Fundo escuro azulado (tema LoL) como fallback */
+    /* No desktop o layout ocupa a tela inteira e é fixo, então escondemos
+       o scroll. Em telas menores isso é liberado no responsivo.css. */
+    overflow: hidden;
 }
 
 /* Camada de legibilidade sobre a imagem de fundo.
