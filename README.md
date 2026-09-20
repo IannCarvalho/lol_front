@@ -4,15 +4,29 @@ Frontend estático (HTML/CSS/JS puro) para navegar por regiões (nacionalidades)
 
 ## Estrutura
 
+O JavaScript é organizado em **ES Modules nativos** (sem framework nem bundler): cada arquivo tem uma responsabilidade e o `main.js` orquestra os demais.
+
 ```
 lol_front/
 ├── index.html
+├── favicon.ico
+├── _redirects            # fallback SPA (Netlify)
+├── vercel.json           # fallback SPA (Vercel)
 ├── src/
-│   ├── css/            # reset, estilos e regras responsivas
-│   ├── imagens/        # logo e mapas de região
+│   ├── css/              # reset, estilos e regras responsivas
+│   ├── imagens/          # logo e mapas de região
 │   └── js/
-│       ├── config.js   # configuração de runtime (BASE_URL do backend)
-│       └── index.js    # lógica de fetch e renderização
+│       ├── config.js     # configuração de runtime (BASE_URL do backend)
+│       ├── main.js       # ponto de entrada: orquestra os módulos
+│       ├── api.js        # camada de dados (fetch ao backend, com cache)
+│       ├── router.js     # roteamento por History API (URLs limpas)
+│       ├── keyboard.js   # navegação por teclado (setas)
+│       └── ui/           # componentes de interface
+│           ├── background.js  # crossfade da imagem de fundo
+│           ├── content.js     # título, descrição, breadcrumb, erro
+│           ├── lists.js       # emblemas das colunas + seleção
+│           ├── tooltip.js     # tooltip com o nome do emblema
+│           └── loader.js      # indicador de carregamento
 └── data_retrival/
     ├── setup_database.py     # popula o MongoDB com dados da Riot/DDragon
     ├── requirements.txt
@@ -20,6 +34,8 @@ lol_front/
     ├── .env.example
     └── tests/                # testes pytest do setup_database.py
 ```
+
+> Como usa ESM (`<script type="module">`), o app precisa ser servido via HTTP (não abre por `file://`).
 
 ## Rodando o frontend
 
