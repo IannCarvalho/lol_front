@@ -51,6 +51,16 @@ function setBackgroundImage(url) {
     });
 }
 
+// Re-dispara a animação de entrada do título + descrição (fade/slide).
+function playContentEnter() {
+    const content = document.querySelector(".content");
+    if (!content) return;
+    content.classList.remove("content--enter");
+    // força reflow para reiniciar a animação mesmo em trocas consecutivas
+    void content.offsetWidth;
+    content.classList.add("content--enter");
+}
+
 // Mostra/esconde o indicador de carregamento
 function showLoader(show) {
     const loader = document.getElementById("loader");
@@ -209,11 +219,13 @@ async function find(element) {
                 const selectedNationality = nationalityData.find(item => item.slug === element);
                 document.getElementById("title").textContent = selectedNationality.name;
                 setDescription(selectedNationality.overview);
+                playContentEnter();
                 await setBackgroundImage(selectedNationality.background);
             } else {
                 const championData = await fetchJSON(`${BASE_URL}/champion/${element}`);
                 document.getElementById("title").textContent = `${championData.name}: ${championData.title}`;
                 setDescription(championData.lore);
+                playContentEnter();
                 await setBackgroundImage(championData.background);
             }
             ACTUAL_ELEMENT = element;
@@ -311,6 +323,7 @@ async function init() {
     await populateChampionsList("runeterra");
     // avalia a descrição inicial (Runeterra, vinda do HTML) para decidir o fade
     setDescription(document.getElementById("description").textContent);
+    playContentEnter(); // anima o conteúdo inicial também
 
     const initial = slugFromPath();
     if (initial !== "runeterra") {

@@ -339,3 +339,32 @@ main .element .image--failed {
         animation: none;
     }
 }
+
+/* Animação de entrada do título e da descrição ao trocar de conteúdo.
+   É re-disparada via JS (classe content--enter) para acompanhar o crossfade
+   do fundo, deixando a transição coesa. */
+@keyframes content-enter {
+    from {
+        opacity: 0;
+        transform: translateY(14px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.content--enter .element-name {
+    animation: content-enter 0.45s ease both;
+}
+
+.content--enter .description {
+    animation: content-enter 0.45s ease 0.08s both; /* leve atraso após o título */
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .content--enter .element-name,
+    .content--enter .description {
+        animation: none;
+    }
+}
