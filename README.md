@@ -23,13 +23,34 @@ lol_front/
 
 ## Rodando o frontend
 
-Não há build step. Sirva a pasta com qualquer servidor estático, por exemplo:
+Não há build step. Como o app usa roteamento por **History API** (URLs com path limpo, ver seção Rotas), o servidor precisa fazer *fallback* para o `index.html` em rotas desconhecidas. Use um servidor estático com suporte a SPA:
 
 ```bash
-python -m http.server 5500
+# recomendado (faz o fallback com a flag -s)
+npx serve -s -l 5500
 ```
 
 Depois acesse `http://localhost:5500`.
+
+> `python -m http.server` funciona para a raiz, mas **não** faz fallback: recarregar em `/region/zaun` daria 404. Prefira `serve -s` (ou outro servidor com fallback) durante o desenvolvimento.
+
+## Rotas
+
+O estado da navegação fica na URL (dá para recarregar e compartilhar):
+
+| URL                 | Conteúdo                        |
+|---------------------|---------------------------------|
+| `/`                 | Runeterra (tela inicial)        |
+| `/region/:slug`     | Uma região/facção (ex.: `/region/zaun`) |
+| `/champion/:slug`   | Um campeão (ex.: `/champion/garen`) |
+
+## Deploy
+
+O repositório já inclui as configs de *fallback* SPA:
+- **Netlify**: `_redirects` (`/* /index.html 200`)
+- **Vercel**: `vercel.json` (rewrites para `/index.html`)
+
+Em outros servidores (ex.: Nginx), configure o equivalente: `try_files $uri /index.html;`.
 
 ### Configurando o backend
 

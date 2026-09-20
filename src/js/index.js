@@ -88,7 +88,7 @@ function hideTooltip() {
     }
 }
 
-function createElementList(item, html) {
+function createElementList(item, html, kind) {
     const li = document.createElement("li");
     const button = document.createElement("button");
     const img = document.createElement("img");
@@ -101,8 +101,8 @@ function createElementList(item, html) {
     img.alt = name;
     img.onerror = () => { img.style.visibility = "hidden"; };
     button.addEventListener("click", () => {
-        markSelected(button);
-        find(item.slug);
+        // navega via History API (path limpo); find() renderiza o conteúdo
+        navigateTo(item.slug, kind);
     });
 
     // tooltip com o nome ao passar o mouse / focar por teclado
@@ -133,19 +133,53 @@ function setDescription(text) {
     });
 }
 
-// Marca o botão clicado como selecionado e limpa a seleção anterior
-// (em ambas as listas: regiões e campeões).
-function markSelected(button) {
+// Marca como selecionado o botão de um dado slug e limpa a seleção anterior
+// (em ambas as listas: regiões e campeões). Funciona tanto para clique quanto
+// para navegação via URL.
+function markSelectedBySlug(slug) {
     document.querySelectorAll(".button.selected")
         .forEach(el => el.classList.remove("selected"));
-    button.classList.add("selected");
+    const button = document.querySelector(`.button[data-slug="${slug}"]`);
+    if (button) {
+        button.classList.add("selected");
+    }
+}
+
+// Monta o path de uma rota a partir do slug. Regiões e campeões usam
+// prefixos distintos para URLs semânticas: /region/:slug e /champion/:slug.
+// A raiz "/" representa Runeterra.
+function pathFor(slug, kind) {
+    if (!slug || slug === "runeterra") return "/";
+    return `/${kind}/${slug}`;
+}
+
+// Navega para um slug usando a History API (URL com path limpo, sem reload).
+function navigateTo(slug, kind) {
+    const path = pathFor(slug, kind);
+    if (path !== window.location.pathname) {
+        window.history.pushState({ slug, kind }, "", path);
+    }
+    find(slug);
+}
+
+// Extrai o slug alvo a partir do path atual da URL.
+// "/" -> runeterra ; "/region/zaun" -> zaun ; "/champion/garen" -> garen
+function slugFromPath() {
+    const parts = window.location.pathname.split("/").filter(Boolean);
+    if (parts.length === 0) return "runeterra";
+    // aceita /region/<slug> e /champion/<slug>; ignora o prefixo
+    if ((parts[0] === "region" || parts[0] === "champion") && parts[1]) {
+        return decodeURIComponent(parts[1]);
+    }
+    // fallback tolerante: último segmento
+    return decodeURIComponent(parts[parts.length - 1]);
 }
 
 async function populateNationalitiesList() {
     nationalitiesHTML = document.querySelector(".nationalities");
     const nationalities = await fetchJSON(`${BASE_URL}/nationality/`);
 
-    nationalities.forEach(item => createElementList(item, nationalitiesHTML));
+    nationalities.forEach(item => createElementList(item, nationalitiesHTML, "region"));
 }
 
 async function populateChampionsList(nationality) {
@@ -153,7 +187,7 @@ async function populateChampionsList(nationality) {
     const champions = await fetchJSON(`${BASE_URL}/nationality/champions/${nationality}`);
     championsHTML.innerHTML = "";
 
-    champions.forEach(item => createElementList(item, championsHTML));
+    champions.forEach(item => createElementList(item, championsHTML, "champion"));
 }
 
 async function find(element) {
@@ -177,16 +211,37 @@ async function find(element) {
                 await setBackgroundImage(championData.background);
             }
             ACTUAL_ELEMENT = element;
+            markSelectedBySlug(element);
         } catch (error) {
             console.error('Erro na requisição:', error);
         } finally {
             showLoader(false);
         }
+    } else {
+        // mesmo elemento: apenas garante o destaque do botão
+        markSelectedBySlug(element);
     }
 }
 
-populateNationalitiesList()
-populateChampionsList(ACTUAL_ELEMENT)
+// Reage aos botões voltar/avançar do navegador (History API).
+window.addEventListener("popstate", () => {
+    find(slugFromPath());
+});
 
-// Avalia a descrição inicial (Runeterra, vinda do HTML) para decidir o fade.
-setDescription(document.getElementById("description").textContent);
+// Inicialização: popula as listas e navega para o alvo do path (ou Runeterra).
+async function init() {
+    await populateNationalitiesList();
+    await populateChampionsList("runeterra");
+    // avalia a descrição inicial (Runeterra, vinda do HTML) para decidir o fade
+    setDescription(document.getElementById("description").textContent);
+
+    const initial = slugFromPath();
+    if (initial !== "runeterra") {
+        // carrega o alvo do deep-link; find() cuida de imagem, texto e seleção
+        find(initial);
+    } else {
+        markSelectedBySlug("runeterra");
+    }
+}
+
+init();

@@ -1,0 +1,4 @@
+# Netlify SPA fallback: qualquer rota desconhecida serve o index.html (200),
+# permitindo que o roteamento por History API (/region/:slug, /champion/:slug)
+# funcione ao recarregar ou acessar direto uma URL profunda.
+/*    /index.html   200
