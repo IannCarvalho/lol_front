@@ -146,7 +146,10 @@ main .element .image--failed {
     justify-content: flex-start; /* Alinha os botões no início da lista verticalmente */
     align-items: center; /* Alinha os botões no centro horizontalmente */
     gap: 12px; /* Define o espaçamento entre os botões como 12 pixels */
-    background-color: rgba(0, 0, 0, 0.2); /* Define a cor de fundo da lista com transparência */
+    /* Fundo um pouco mais escuro que a coluna de regiões + divisória sutil
+       à esquerda, separando visualmente "campeões" de "regiões". */
+    background-color: rgba(0, 0, 0, 0.35);
+    border-left: 1px solid rgba(200, 170, 110, 0.18);
 }
 
 /* Estiliza os botões */
