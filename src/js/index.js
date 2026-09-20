@@ -1,4 +1,4 @@
-const BASE_URL = "http://localhost:5000";
+const BASE_URL = (window.APP_CONFIG && window.APP_CONFIG.BASE_URL) || "http://localhost:5000";
 var ACTUAL_ELEMENT = "runeterra";
 
 async function fetchJSON(url) {
