@@ -292,3 +292,29 @@ main .element .image--failed {
         transform: translate(-50%, -50%) rotate(360deg);
     }
 }
+
+/* Animação de entrada dos emblemas (stagger ao carregar a lista de campeões).
+   Cada item entra com um leve fade + deslize, escalonado pelo --enter-delay
+   definido no JS conforme o índice na lista. */
+@keyframes emblem-enter {
+    from {
+        opacity: 0;
+        transform: translateX(16px) scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0) scale(1);
+    }
+}
+
+.champions .button {
+    animation: emblem-enter 0.32s ease both;
+    animation-delay: var(--enter-delay, 0s);
+}
+
+/* Respeita usuários que preferem menos movimento */
+@media (prefers-reduced-motion: reduce) {
+    .champions .button {
+        animation: none;
+    }
+}

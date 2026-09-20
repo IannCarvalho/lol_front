@@ -88,7 +88,7 @@ function hideTooltip() {
     }
 }
 
-function createElementList(item, html, kind) {
+function createElementList(item, html, kind, index) {
     const li = document.createElement("li");
     const button = document.createElement("button");
     const img = document.createElement("img");
@@ -97,6 +97,12 @@ function createElementList(item, html, kind) {
     button.className = "button";
     button.dataset.slug = item.slug;
     button.dataset.name = name;
+    // stagger da animação de entrada (só campeões animam; ver CSS).
+    // Limita o atraso acumulado para listas grandes não demorarem demais.
+    if (kind === "champion" && typeof index === "number") {
+        const delay = Math.min(index * 0.04, 0.6);
+        button.style.setProperty("--enter-delay", `${delay}s`);
+    }
     img.src = item.image;
     img.alt = name;
     img.onerror = () => { img.style.visibility = "hidden"; };
@@ -187,7 +193,7 @@ async function populateChampionsList(nationality) {
     const champions = await fetchJSON(`${BASE_URL}/nationality/champions/${nationality}`);
     championsHTML.innerHTML = "";
 
-    champions.forEach(item => createElementList(item, championsHTML, "champion"));
+    champions.forEach((item, i) => createElementList(item, championsHTML, "champion", i));
 }
 
 async function find(element) {
