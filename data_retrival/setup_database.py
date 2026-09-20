@@ -35,11 +35,16 @@ def fetch_champion_data(champion, dd_champions, UNIVERSE_API_BASE, DDRAGON_API_B
     decoded_name = unidecode(champion["name"])
     url = f"{UNIVERSE_API_BASE}/champions/{slug}/index.json"
 
+    dd_id = None
     for dd_champion in dd_champions:
         dd_info = dd_champions[dd_champion]
         if unidecode(dd_info["name"]) == decoded_name:
             dd_id = dd_info["id"]
             break
+
+    if dd_id is None:
+        print(f"Skipping '{champion['name']}': no matching DDragon champion found")
+        return None
 
     data = make_request(url)
     dd_champion = make_request(f"{DDRAGON_API_BASE}/data/pt_BR/champion/{dd_id}.json")
