@@ -228,6 +228,77 @@ window.addEventListener("popstate", () => {
     find(slugFromPath());
 });
 
+// --- Navegação por teclado ---------------------------------------------
+// ↑/↓ movem o foco entre os emblemas da coluna atual; ←/→ alternam entre a
+// coluna de regiões e a de campeões; Enter/Espaço ativam (nativo do button).
+function buttonsIn(selector) {
+    return Array.from(document.querySelectorAll(`${selector} .button`));
+}
+
+// Foca um botão. O foco nativo do navegador já rola o mínimo necessário para
+// mantê-lo visível, sem reposicionar a lista de forma desorientadora.
+function focusButton(button) {
+    if (!button) return;
+    button.focus({ preventScroll: false });
+}
+
+function handleKeyNav(event) {
+    const active = document.activeElement;
+    if (!active || !active.classList || !active.classList.contains("button")) {
+        // se nada relevante está focado, uma seta foca o 1º emblema de região
+        if (["ArrowUp", "ArrowDown", "ArrowLeft", "ArrowRight"].includes(event.key)) {
+            const first = buttonsIn(".nationalities")[0];
+            if (first) {
+                focusButton(first);
+                event.preventDefault();
+            }
+        }
+        return;
+    }
+
+    const inChampions = !!active.closest(".champions");
+    const currentList = inChampions ? ".champions" : ".nationalities";
+    const buttons = buttonsIn(currentList);
+    const index = buttons.indexOf(active);
+
+    switch (event.key) {
+        case "ArrowDown": {
+            event.preventDefault();
+            // para no último item (sem voltar ao topo) para não desorientar
+            focusButton(buttons[index + 1]);
+            break;
+        }
+        case "ArrowUp": {
+            event.preventDefault();
+            // para no primeiro item (sem pular para o fim)
+            focusButton(buttons[index - 1]);
+            break;
+        }
+        case "ArrowLeft": {
+            // regiões ficam à esquerda dos campeões: vai de campeões -> regiões
+            if (inChampions) {
+                event.preventDefault();
+                const target = buttonsIn(".nationalities");
+                focusButton(target[index] || target[0]);
+            }
+            break;
+        }
+        case "ArrowRight": {
+            // campeões ficam à direita das regiões: vai de regiões -> campeões
+            if (!inChampions) {
+                event.preventDefault();
+                const target = buttonsIn(".champions");
+                focusButton(target[index] || target[0]);
+            }
+            break;
+        }
+        default:
+            break;
+    }
+}
+
+window.addEventListener("keydown", handleKeyNav);
+
 // Inicialização: popula as listas e navega para o alvo do path (ou Runeterra).
 async function init() {
     await populateNationalitiesList();
