@@ -7,7 +7,7 @@
 // (ex.: "https://lol-back.onrender.com")
 
 (function () {
-    const PROD_BACKEND_URL = "https://lol-back.onrender.com";
+    const PROD_BACKEND_URL = "https://lol-back-6zld.onrender.com";
     const LOCAL_BACKEND_URL = "http://localhost:5000";
 
     const host = window.location.hostname;
