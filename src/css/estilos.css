@@ -214,7 +214,26 @@ main .element .image--failed {
     padding: 0;
     border-radius: 50%;
     outline: none;
-    position: relative; /* âncora para o tooltip */
+    /* Máscara circular de tamanho FIXO: a imagem por dentro é maior e o
+       excedente (a moldura escura dos ícones do DDragon) é recortado aqui,
+       sem alterar o tamanho do botão. */
+    position: relative;
+    width: 60px;
+    height: 60px;
+    overflow: hidden;
+    flex-shrink: 0;
+    transition: box-shadow 0.18s ease;
+}
+
+/* Anel/brilho no hover e seleção ficam no BOTÃO (não na img), pois o
+   overflow:hidden recortaria o box-shadow se estivesse na imagem. */
+.button:hover,
+.button:focus-visible {
+    box-shadow: 0 0 0 2px #c8aa6e, 0 0 12px rgba(200, 170, 110, 0.75);
+}
+
+.button.selected {
+    box-shadow: 0 0 0 2px #f0e6d2, 0 0 14px rgba(240, 230, 210, 0.9);
 }
 
 /* Tooltip com o nome da região/campeão. É um elemento único posicionado via
@@ -241,33 +260,34 @@ main .element .image--failed {
 }
 
 .button img {
-    border-radius: 50%; /* Define um raio de borda para as imagens, tornando-as circulares */
+    /* Base (usada pelas REGIÕES): imagem encaixada no círculo de 60px, sem
+       estouro — os emblemas de região não têm a moldura escura dos campeões. */
+    position: absolute;
+    top: 50%;
+    left: 50%;
     width: 60px;
     height: 60px;
-    object-fit: cover; /* preenche o círculo mantendo proporção */
-    /* Zoom base leve para "comer" a moldura escura que os ícones do DDragon
-       trazem nas bordas, evitando o aro preto ao redor do círculo. */
+    transform: translate(-50%, -50%);
+    object-fit: cover;
     object-position: center;
-    transform: scale(1.1);
-    position: relative;
     display: block;
-    border: 2px solid transparent;
-    /* Transição suave para hover/seleção */
-    transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
+    transition: transform 0.18s ease;
 }
 
-/* Hover / foco de teclado: leve zoom + brilho dourado (tema LoL) */
+/* Apenas CAMPEÕES: a imagem é MAIOR que o botão (60px) e centralizada; o
+   excedente, onde fica a moldura escura dos ícones do DDragon, é recortado
+   pelo overflow:hidden do botão. Isso "come" a borda preta SEM aumentar o
+   tamanho do botão. Regiões ficam de fora. */
+.champions .button img {
+    width: 72px;   /* ~20% maior que os 60px do botão */
+    height: 72px;
+}
+
+/* Hover / foco: leve zoom na imagem (continua recortada pelo botão, então
+   a arte cresce por dentro sem inflar o botão). */
 .button:hover img,
 .button:focus-visible img {
-    transform: scale(1.22); /* base 1.1 + incremento do hover */
-    border-color: #c8aa6e;
-    box-shadow: 0 0 12px rgba(200, 170, 110, 0.75);
-}
-
-/* Item atualmente selecionado: anel dourado permanente */
-.button.selected img {
-    border-color: #f0e6d2;
-    box-shadow: 0 0 14px rgba(240, 230, 210, 0.9);
+    transform: translate(-50%, -50%) scale(1.1);
 }
 
 /* Estiliza o contêiner de botões à direita da página */
@@ -330,7 +350,7 @@ main .element .image--failed {
     }
     to {
         opacity: 1;
-        transform: translateX(0) scale(1.1); /* casa com o zoom base da imagem */
+        transform: translateX(0) scale(1);
     }
 }
 
