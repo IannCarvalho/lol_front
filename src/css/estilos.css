@@ -106,6 +106,31 @@ main .element .image--failed {
     margin-bottom: 35px; /* Adiciona uma margem inferior de 35 pixels */
 }
 
+/* Rótulos fixos no topo de cada coluna (Regiões / Campeões) */
+.column-label {
+    position: fixed;
+    top: 0;
+    width: 120px;
+    z-index: 2;
+    text-align: center;
+    padding: 10px 4px;
+    font-family: "Secular One", sans-serif;
+    font-size: 11px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: #f0e6d2; /* dourado claro do tema LoL */
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.75) 0%, rgba(0, 0, 0, 0) 100%);
+    pointer-events: none; /* apenas rótulo, não intercepta cliques */
+}
+
+.column-label--nationalities {
+    right: 120px;
+}
+
+.column-label--champions {
+    right: 0;
+}
+
 /* Estiliza a lista de botões */
 .champions {
     overflow-y: scroll; /* Adiciona uma barra de rolagem vertical quando necessário */
@@ -113,6 +138,7 @@ main .element .image--failed {
     position: fixed; /* Define a posição como fixa para que a lista permaneça visível durante a rolagem */
     top: 0; /* Alinha o topo da lista com o topo da tela */
     right: 0; /* Alinha a parte direita da lista com a borda direita da tela */
+    padding-top: 34px; /* espaço para o rótulo fixo não cobrir o primeiro ícone */
     display: flex; /* Usa um modelo flexível para organizar elementos internos */
     flex-direction: column; /* Organiza os elementos internos em coluna */
     min-height: 100vh; /* Define a altura mínima como 100% da altura da janela */
@@ -164,6 +190,7 @@ main .element .image--failed {
     position: fixed; /* Define a posição como fixa para que a lista permaneça visível durante a rolagem */
     top: 0; /* Alinha o topo da lista com o topo da tela */
     right: 120px; /* Alinha a parte direita da lista com a borda direita da tela */
+    padding-top: 34px; /* espaço para o rótulo fixo não cobrir o primeiro ícone */
     display: flex; /* Usa um modelo flexível para organizar elementos internos */
     flex-direction: column; /* Organiza os elementos internos em coluna */
     min-height: 100vh; /* Define a altura mínima como 100% da altura da janela */

@@ -7,6 +7,12 @@
         overflow-x: hidden;
     }
 
+    /* Em telas menores as listas viram horizontais e mudam de posição,
+       então os rótulos fixos das colunas não fazem sentido — escondemos. */
+    .column-label {
+        display: none;
+    }
+
     /* Ajusta o fundo semi-transparente com gradiente para telas menores */
     main::after {
         background: linear-gradient(0deg, #000 20%, rgba(0, 0, 0, 0.00) 65%) no-repeat;
