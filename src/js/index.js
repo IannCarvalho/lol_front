@@ -27,14 +27,26 @@ function createElementList(item, html) {
     const img = document.createElement("img");
 
     button.className = "button";
+    button.dataset.slug = item.slug;
     img.src = item.image;
     img.alt = item.name || item.slug || "";
     img.onerror = () => { img.style.visibility = "hidden"; };
-    button.addEventListener("click", () => find(item.slug));
+    button.addEventListener("click", () => {
+        markSelected(button);
+        find(item.slug);
+    });
 
     button.appendChild(img);
     li.appendChild(button);
     html.appendChild(li);
+}
+
+// Marca o botão clicado como selecionado e limpa a seleção anterior
+// (em ambas as listas: regiões e campeões).
+function markSelected(button) {
+    document.querySelectorAll(".button.selected")
+        .forEach(el => el.classList.remove("selected"));
+    button.classList.add("selected");
 }
 
 async function populateNationalitiesList() {

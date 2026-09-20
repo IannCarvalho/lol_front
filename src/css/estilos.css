@@ -6,17 +6,25 @@ body {
     overflow: hidden; /* Oculta barras de rolagem se o conteúdo exceder as dimensões da janela do navegador */
 }
 
-/* Cria uma camada semi-transparente sobre a imagem de fundo */
+/* Camada de legibilidade sobre a imagem de fundo.
+   Gradiente escuro da esquerda (onde ficam título e descrição) para a
+   direita, garantindo contraste do texto branco sobre qualquer imagem. */
 main::after {
     content: "";
-    position: fixed; /* Define a posição como fixa, para cobrir a tela independentemente da rolagem */
-    top: 0; /* Alinha a parte superior da camada com o topo da tela */
-    left: 0; /* Alinha a parte esquerda da camada com o lado esquerdo da tela */
-    min-height: 100vh; /* Define a altura mínima como 100% da altura da janela do navegador */
-    width: 100vw; /* Define a largura como 80% da largura da janela do navegador */
+    position: fixed;
+    top: 0;
+    left: 0;
+    min-height: 100vh;
+    width: 100vw;
+    pointer-events: none; /* não bloqueia cliques nos elementos abaixo */
 
-    background: linear-gradient(45deg, rgb(0, 0, 0)0%, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 100%);
-    /* Cria um fundo gradiente linear com ângulo e cores específicas */
+    background: linear-gradient(
+        90deg,
+        rgba(0, 0, 0, 0.85) 0%,
+        rgba(0, 0, 0, 0.6) 30%,
+        rgba(0, 0, 0, 0.15) 55%,
+        rgba(0, 0, 0, 0) 75%
+    );
 }
 
 /* Estiliza as seções de personagens */
@@ -108,14 +116,35 @@ main .element .image--failed {
 /* Estiliza os botões */
 .button {
     border: none; /* Remove a borda dos botões */
-    background: #00000000; /* Define a cor de fundo dos botões como preto (#000000) */
+    background: #00000000; /* Define a cor de fundo dos botões como transparente */
     cursor: pointer; /* Define o cursor do mouse como um ponteiro */
+    padding: 0;
+    border-radius: 50%;
+    outline: none;
 }
 
 .button img {
     border-radius: 50%; /* Define um raio de borda para as imagens, tornando-as circulares */
     max-width: 60px; /* Define a largura máxima das imagens como 60 pixels */
     position: relative;
+    display: block;
+    border: 2px solid transparent;
+    /* Transição suave para hover/seleção */
+    transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
+}
+
+/* Hover / foco de teclado: leve zoom + brilho dourado (tema LoL) */
+.button:hover img,
+.button:focus-visible img {
+    transform: scale(1.12);
+    border-color: #c8aa6e;
+    box-shadow: 0 0 12px rgba(200, 170, 110, 0.75);
+}
+
+/* Item atualmente selecionado: anel dourado permanente */
+.button.selected img {
+    border-color: #f0e6d2;
+    box-shadow: 0 0 14px rgba(240, 230, 210, 0.9);
 }
 
 /* Estiliza o contêiner de botões à direita da página */
