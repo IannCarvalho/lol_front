@@ -180,7 +180,7 @@ def main():
             {
                 "slug": "runeterra",
                 "image": factions_imgs["runeterra"],
-                "background": "https://support-leagueoflegends.riotgames.com/hc/article_attachments/1500019808682/Runeterra_Map.png",
+                "background": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Ryze_0.jpg",
                 "name": "Runeterra",
                 "overview": "Runeterra é um mundo de fantasia onde heróis e vilões de diferentes lugares e culturas lutam pelo poder e pela sobrevivência. Com suas próprias facções e magias, eles enfrentam desafios épicos em um cenário diversificado, enquanto um mal antigo ameaça o mundo. É um lugar de aventuras e segredos, onde destinos se cruzam em batalhas emocionantes.",
             }

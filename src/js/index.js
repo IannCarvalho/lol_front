@@ -9,6 +9,18 @@ async function fetchJSON(url) {
     return response.json();
 }
 
+// Define a imagem de fundo tratando falha de carregamento: se a URL quebrar,
+// marca a imagem como "failed" para o CSS mostrar o gradiente de fundo.
+function setBackgroundImage(url) {
+    const image = document.getElementById("image");
+    image.classList.remove("image--failed");
+    image.onerror = () => image.classList.add("image--failed");
+    image.src = url || "";
+    if (!url) {
+        image.classList.add("image--failed");
+    }
+}
+
 function createElementList(item, html) {
     const li = document.createElement("li");
     const button = document.createElement("button");
@@ -16,6 +28,8 @@ function createElementList(item, html) {
 
     button.className = "button";
     img.src = item.image;
+    img.alt = item.name || item.slug || "";
+    img.onerror = () => { img.style.visibility = "hidden"; };
     button.addEventListener("click", () => find(item.slug));
 
     button.appendChild(img);
@@ -48,12 +62,12 @@ async function find(element) {
                 populateChampionsList(element);
 
                 const selectedNationality = nationalityData.find(item => item.slug === element);
-                document.getElementById("image").src = selectedNationality.background;
+                setBackgroundImage(selectedNationality.background);
                 document.getElementById("title").textContent = selectedNationality.name;
                 document.getElementById("description").textContent = selectedNationality.overview;
             } else {
                 const championData = await fetchJSON(`${BASE_URL}/champion/${element}`);
-                document.getElementById("image").src = championData.background;
+                setBackgroundImage(championData.background);
                 document.getElementById("title").textContent = `${championData.name}: ${championData.title}`;
                 document.getElementById("description").textContent = championData.lore;
             }

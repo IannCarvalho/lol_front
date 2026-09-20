@@ -30,11 +30,24 @@ main .element.selected {
     display: block; /* Exibe a seção de element selected quando aplicada */
 }
 
+/* Fundo de segurança (tema LoL): fica ATRÁS da imagem. Se a imagem
+   demorar para carregar ou falhar, o fundo nunca fica preto puro —
+   mostra um gradiente escuro azulado/dourado no lugar. */
+main .element {
+    background: radial-gradient(circle at 30% 40%, #1e2b4a 0%, #0a1428 60%, #050a14 100%);
+}
+
 /* Estiliza a imagem do element */
 main .element .image {
     width: 100%; /* Define a largura da imagem como 100% do seu contêiner */
     height: 100%; /* Define a altura da imagem como 100% do seu contêiner */
     object-fit: cover; /* Faz a imagem preencher o contêiner, cortando partes que não cabem */
+}
+
+/* Quando a imagem falha ao carregar, escondemos o <img> quebrado
+   e deixamos o gradiente de fundo do .element aparecer. */
+main .element .image--failed {
+    visibility: hidden;
 }
 
 /* Define estilos para o conteúdo do element */
