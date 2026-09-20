@@ -59,20 +59,61 @@ function showLoader(show) {
     }
 }
 
+// Tooltip único (posicionado à esquerda do emblema), fora das colunas para
+// não ser recortado pelo overflow.
+let tooltipEl = null;
+function getTooltip() {
+    if (!tooltipEl) {
+        tooltipEl = document.createElement("div");
+        tooltipEl.className = "tooltip";
+        document.body.appendChild(tooltipEl);
+    }
+    return tooltipEl;
+}
+
+function showTooltip(button, name) {
+    const tip = getTooltip();
+    tip.textContent = name;
+    const rect = button.getBoundingClientRect();
+    // posiciona à esquerda do botão, centralizado verticalmente
+    tip.style.top = `${rect.top + rect.height / 2}px`;
+    tip.style.right = `${window.innerWidth - rect.left + 12}px`;
+    tip.style.left = "auto";
+    tip.classList.add("tooltip--visible");
+}
+
+function hideTooltip() {
+    if (tooltipEl) {
+        tooltipEl.classList.remove("tooltip--visible");
+    }
+}
+
 function createElementList(item, html) {
     const li = document.createElement("li");
     const button = document.createElement("button");
     const img = document.createElement("img");
 
+    const name = item.name || item.slug || "";
     button.className = "button";
     button.dataset.slug = item.slug;
+    button.dataset.name = name;
     img.src = item.image;
-    img.alt = item.name || item.slug || "";
+    img.alt = name;
     img.onerror = () => { img.style.visibility = "hidden"; };
     button.addEventListener("click", () => {
         markSelected(button);
         find(item.slug);
     });
+
+    // tooltip com o nome ao passar o mouse / focar por teclado
+    if (name) {
+        const show = () => showTooltip(button, name);
+        const hide = () => hideTooltip();
+        button.addEventListener("mouseenter", show);
+        button.addEventListener("mouseleave", hide);
+        button.addEventListener("focus", show);
+        button.addEventListener("blur", hide);
+    }
 
     button.appendChild(img);
     li.appendChild(button);
