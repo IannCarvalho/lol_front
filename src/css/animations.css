@@ -1,0 +1,81 @@
+/* ============================================================
+   Animações: keyframes e as classes/estados que as disparam.
+   Reúne o movimento num só lugar, incluindo o respeito a
+   prefers-reduced-motion. Importado por último (antes do
+   responsivo) para as regras de animação ficarem centralizadas.
+   ============================================================ */
+
+/* ---- Ken Burns: zoom lento e contínuo da imagem de fundo ---- */
+@keyframes ken-burns {
+    from {
+        transform: scale(1);
+    }
+    to {
+        transform: scale(1.12);
+    }
+}
+
+/* ---- Loader: rotação do spinner ---- */
+@keyframes loader-spin {
+    to {
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
+}
+
+/* ---- Entrada dos emblemas de campeão (stagger) ----
+   Cada item entra com fade + deslize, escalonado pelo --enter-delay
+   definido no JS conforme o índice na lista. */
+@keyframes emblem-enter {
+    from {
+        opacity: 0;
+        transform: translateX(16px) scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0) scale(1);
+    }
+}
+
+.champions .button {
+    animation: emblem-enter 0.32s ease both;
+    animation-delay: var(--enter-delay, 0s);
+}
+
+/* ---- Entrada do título e da descrição ao trocar de conteúdo ----
+   Re-disparada via JS (classe content--enter) para acompanhar o
+   crossfade do fundo, deixando a transição coesa. */
+@keyframes content-enter {
+    from {
+        opacity: 0;
+        transform: translateY(14px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.content--enter .element-name {
+    animation: content-enter 0.45s ease both;
+}
+
+.content--enter .description {
+    animation: content-enter 0.45s ease 0.08s both; /* leve atraso após o título */
+}
+
+/* ---- Respeita quem prefere menos movimento ----
+   Desliga o zoom contínuo e as animações de entrada. */
+@media (prefers-reduced-motion: reduce) {
+    main .element .image {
+        animation: none;
+    }
+
+    .champions .button {
+        animation: none;
+    }
+
+    .content--enter .element-name,
+    .content--enter .description {
+        animation: none;
+    }
+}

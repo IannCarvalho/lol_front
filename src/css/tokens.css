@@ -1,0 +1,15 @@
+/* ============================================================
+   Tokens do tema (paleta "League of Legends").
+   Centralizam as cores douradas, o fundo escuro e medidas
+   reutilizadas, evitando valores soltos repetidos pelos demais
+   arquivos. Deve ser importado logo após o reset e antes de
+   qualquer arquivo que use estas variáveis.
+   ============================================================ */
+
+:root {
+    --lol-gold: #c8aa6e;          /* dourado principal (hover, spinner) */
+    --lol-gold-light: #f0e6d2;    /* dourado claro (seleção, rótulos) */
+    --lol-gold-soft: rgba(200, 170, 110, 0.4); /* dourado translúcido */
+    --lol-navy-deep: #050a14;     /* fundo escuro azulado (fallback) */
+    --column-width: 120px;        /* largura das colunas laterais */
+}

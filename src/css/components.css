@@ -1,0 +1,107 @@
+/* ============================================================
+   Componentes reutilizáveis: botão de emblema (com a imagem
+   recortada), tooltip e o loader (spinner).
+   ============================================================ */
+
+/* Botão de emblema: círculo de tamanho FIXO. A imagem por dentro pode ser
+   maior e o excedente (moldura escura dos ícones do DDragon) é recortado
+   pelo overflow:hidden, sem alterar o tamanho do botão. */
+.button {
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    padding: 0;
+    border-radius: 50%;
+    outline: none;
+    position: relative;
+    width: 60px;
+    height: 60px;
+    overflow: hidden;
+    flex-shrink: 0;
+    transition: box-shadow 0.18s ease;
+}
+
+/* Anel/brilho no hover e seleção ficam no BOTÃO (não na img), pois o
+   overflow:hidden recortaria o box-shadow se estivesse na imagem. */
+.button:hover,
+.button:focus-visible {
+    box-shadow: 0 0 0 2px var(--lol-gold), 0 0 12px rgba(200, 170, 110, 0.75);
+}
+
+.button.selected {
+    box-shadow: 0 0 0 2px var(--lol-gold-light), 0 0 14px rgba(240, 230, 210, 0.9);
+}
+
+/* Imagem base (REGIÕES): encaixada no círculo de 60px, sem estouro — os
+   emblemas de região não têm a moldura escura dos campeões. */
+.button img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 60px;
+    height: 60px;
+    transform: translate(-50%, -50%);
+    object-fit: cover;
+    object-position: center;
+    display: block;
+    transition: transform 0.18s ease;
+}
+
+/* Apenas CAMPEÕES: a imagem é MAIOR que o botão (60px) e centralizada; o
+   excedente (moldura escura do DDragon) é recortado pelo overflow do botão.
+   Isso "come" a borda preta SEM aumentar o tamanho do botão. */
+.champions .button img {
+    width: 72px;   /* ~20% maior que os 60px do botão */
+    height: 72px;
+}
+
+/* Hover / foco: leve zoom na imagem (continua recortada pelo botão, então
+   a arte cresce por dentro sem inflar o botão). */
+.button:hover img,
+.button:focus-visible img {
+    transform: translate(-50%, -50%) scale(1.1);
+}
+
+/* Tooltip com o nome da região/campeão. É um elemento único posicionado via
+   JS (fixed no body) para não ser recortado pelo overflow das colunas. */
+.tooltip {
+    position: fixed;
+    white-space: nowrap;
+    padding: 4px 10px;
+    background: rgba(10, 20, 40, 0.92);
+    color: var(--lol-gold-light);
+    font-family: "Rubik", sans-serif;
+    font-size: 12px;
+    border: 1px solid var(--lol-gold-soft);
+    border-radius: 4px;
+    opacity: 0;
+    transition: opacity 0.15s ease;
+    pointer-events: none;
+    z-index: 10;
+    transform: translateY(-50%);
+}
+
+.tooltip.tooltip--visible {
+    opacity: 1;
+}
+
+/* Indicador de carregamento (aparece ao trocar de região/campeão).
+   O keyframe loader-spin está em animations.css. */
+.loader {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 54px;
+    height: 54px;
+    border: 4px solid rgba(200, 170, 110, 0.25); /* anel base translúcido */
+    border-top-color: var(--lol-gold); /* ponto que gira */
+    border-radius: 50%;
+    z-index: 5;
+    animation: loader-spin 0.8s linear infinite;
+    pointer-events: none;
+}
+
+.loader[hidden] {
+    display: none;
+}

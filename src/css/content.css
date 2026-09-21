@@ -1,0 +1,100 @@
+/* ============================================================
+   Conteúdo central: bloco com logo, breadcrumb, título e
+   descrição, posicionado à esquerda da tela.
+   ============================================================ */
+
+.content {
+    position: absolute;
+    top: 0;
+    left: var(--column-width); /* afastamento da esquerda */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100vh; /* padding conta dentro (box-sizing herdado do reset) */
+    max-width: 560px;
+    padding: 48px 0; /* respiro vertical dentro dos 100vh */
+    overflow: hidden; /* nunca deixa o bloco vazar da tela */
+    z-index: 1;
+}
+
+/* Logo e título têm tamanho fixo (não encolhem); a descrição absorve o
+   espaço restante. Assim o topo (logo) nunca é cortado, em qualquer tela. */
+.content .logo,
+.content .element-name {
+    flex-shrink: 0;
+}
+
+.content .logo {
+    background-image: url("../imagens/logo.png");
+    background-size: cover;
+    height: 150px;
+    width: 400px;
+    margin-bottom: 35px;
+}
+
+.content .element-name {
+    color: #ffffff;
+    font-size: 48px;
+    font-family: "Secular One";
+    font-weight: 400;
+    margin-bottom: 20px;
+}
+
+.content .description {
+    color: #ffffff;
+    font-family: "Rubik";
+    line-height: 24px;
+    /* A descrição ocupa só o espaço que sobra (flex: 1) e rola internamente
+       quando o texto é longo. min-height: 0 é necessário para o flex-item
+       poder encolher e ativar o overflow em vez de empurrar o logo. */
+    flex: 1 1 auto;
+    min-height: 0;
+    overflow-y: auto;
+    padding-right: 12px; /* espaço para a barra de rolagem não colar no texto */
+}
+
+/* Fade no rodapé SOMENTE quando o texto realmente transborda (há mais para
+   rolar). A classe é adicionada via JS medindo scrollHeight > clientHeight. */
+.content .description.description--scrollable {
+    -webkit-mask-image: linear-gradient(180deg, #000 88%, transparent 100%);
+    mask-image: linear-gradient(180deg, #000 88%, transparent 100%);
+}
+
+/* Barra de rolagem discreta na descrição */
+.content .description::-webkit-scrollbar {
+    width: 4px;
+}
+.content .description::-webkit-scrollbar-thumb {
+    background: var(--lol-gold-soft);
+    border-radius: 2px;
+}
+
+/* Breadcrumb: mostra a região de origem quando se está vendo um campeão.
+   É clicável (leva de volta à região), reforçando a navegação exploratória. */
+.content .breadcrumb {
+    align-self: flex-start;
+    flex-shrink: 0;
+    margin-bottom: 8px;
+    padding: 0;
+    border: none;
+    background: transparent;
+    color: var(--lol-gold);
+    font-family: "Rubik", sans-serif;
+    font-size: 13px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    cursor: pointer;
+    opacity: 0.9;
+    transition: opacity 0.15s ease, color 0.15s ease;
+}
+
+.content .breadcrumb:hover,
+.content .breadcrumb:focus-visible {
+    opacity: 1;
+    color: var(--lol-gold-light);
+    text-decoration: underline;
+}
+
+.content .breadcrumb[hidden] {
+    display: none;
+}

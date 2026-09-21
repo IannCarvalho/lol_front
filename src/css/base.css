@@ -1,0 +1,72 @@
+/* ============================================================
+   Base: corpo da página, container do slide e imagem de fundo.
+   O reset.css zera margens/box-sizing; o responsivo.css
+   reorganiza tudo em telas <= 600px.
+   ============================================================ */
+
+body {
+    background-color: var(--lol-navy-deep); /* fallback atrás da imagem */
+    /* No desktop o layout ocupa a tela inteira e é fixo, então escondemos
+       o scroll. Em telas menores isso é liberado no responsivo.css. */
+    overflow: hidden;
+}
+
+/* Camada de legibilidade sobre a imagem de fundo.
+   Gradiente escuro da esquerda (onde ficam título e descrição) para a
+   direita, garantindo contraste do texto branco sobre qualquer imagem. */
+main::after {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    min-height: 100vh;
+    width: 100vw;
+    pointer-events: none; /* não bloqueia cliques nos elementos abaixo */
+
+    background: linear-gradient(
+        90deg,
+        rgba(0, 0, 0, 0.85) 0%,
+        rgba(0, 0, 0, 0.6) 30%,
+        rgba(0, 0, 0, 0.15) 55%,
+        rgba(0, 0, 0, 0) 75%
+    );
+}
+
+/* Seções de conteúdo: escondidas por padrão, só a .selected aparece.
+   O gradiente radial é o fundo de segurança (tema LoL) que fica ATRÁS da
+   imagem — se ela demorar ou falhar, nunca vira preto puro. */
+main .element {
+    display: none;
+    height: 100vh;
+    background: radial-gradient(circle at 30% 40%, #1e2b4a 0%, #0a1428 60%, var(--lol-navy-deep) 100%);
+}
+
+main .element.selected {
+    display: block;
+}
+
+/* Imagem de fundo do element. */
+main .element .image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* preenche o contêiner, cortando o excedente */
+    /* Crossfade suave ao trocar de região/campeão */
+    transition: opacity 0.4s ease;
+    opacity: 1;
+    /* Efeito "Ken Burns": zoom lento e contínuo que dá vida ao fundo estático.
+       A animação alterna (ida e volta) suavemente. (keyframes em animations.css) */
+    animation: ken-burns 24s ease-in-out infinite alternate;
+    transform-origin: center center;
+    will-change: transform;
+}
+
+/* Estado de transição: imagem esmaece antes de trocar o src */
+main .element .image.image--fading {
+    opacity: 0;
+}
+
+/* Quando a imagem falha ao carregar, escondemos o <img> quebrado
+   e deixamos o gradiente de fundo do .element aparecer. */
+main .element .image--failed {
+    visibility: hidden;
+}
