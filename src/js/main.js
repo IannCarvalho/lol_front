@@ -1,7 +1,7 @@
 // Ponto de entrada: orquestra os módulos.
 // Carrega dados via api, renderiza via ui, e reage à rota via router.
 
-import { getNationalities, getChampion } from "./api.js";
+import { getNationalities, getChampion, getChampionsByRegion } from "./api.js";
 import { setBackgroundImage } from "./ui/background.js";
 import {
     setTitle,
@@ -16,6 +16,7 @@ import {
     populateChampionsList,
     markSelectedBySlug,
     showColumnsLoading,
+    renderChampionsList,
 } from "./ui/lists.js";
 import { showLoader } from "./ui/loader.js";
 import { navigateTo, onRoute, slugFromPath } from "./router.js";
@@ -109,8 +110,17 @@ async function init() {
     const stopWakeMessage = startWakeMessage();
 
     try {
+        // Dispara as duas chamadas iniciais EM PARALELO (em vez de uma após a
+        // outra), economizando um round-trip no cold start do backend. As
+        // nacionalidades ficam cacheadas em api.js, então populateNationalities
+        // abaixo reaproveita o resultado sem refetch; os campeões já vêm aqui e
+        // são renderizados a partir dos dados prontos.
+        const [, champions] = await Promise.all([
+            getNationalities(),
+            getChampionsByRegion("runeterra"),
+        ]);
         await populateNationalitiesList(onSelect);
-        await populateChampionsList("runeterra", onSelect);
+        renderChampionsList(champions, onSelect);
     } catch (error) {
         console.error("Falha ao inicializar:", error);
         stopWakeMessage();
