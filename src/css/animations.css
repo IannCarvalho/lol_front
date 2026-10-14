@@ -22,6 +22,16 @@
     }
 }
 
+/* ---- Skeleton: shimmer dos emblemas-fantasma na carga inicial ---- */
+@keyframes skeleton-shimmer {
+    from {
+        background-position: 200% 0;
+    }
+    to {
+        background-position: -200% 0;
+    }
+}
+
 /* ---- Entrada dos emblemas de campeão (stagger) ----
    Cada item entra com fade + deslize, escalonado pelo --enter-delay
    definido no JS conforme o índice na lista. */

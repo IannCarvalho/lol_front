@@ -48,6 +48,7 @@ function createElementList(item, container, kind, index, onSelect) {
 export async function populateNationalitiesList(onSelect) {
     const container = document.querySelector(".nationalities");
     const nationalities = await getNationalities();
+    container.innerHTML = ""; // remove skeletons da carga inicial
     nationalities.forEach((item) =>
         createElementList(item, container, "region", undefined, onSelect)
     );
@@ -60,6 +61,27 @@ export async function populateChampionsList(regionSlug, onSelect) {
     champions.forEach((item, i) =>
         createElementList(item, container, "champion", i, onSelect)
     );
+}
+
+// Preenche uma coluna com emblemas-fantasma (skeletons) enquanto os dados
+// reais não chegam — assim o usuário vê a coluna "viva" durante o cold start
+// do backend em vez de uma coluna vazia. `count` é só uma estimativa visual.
+function renderSkeletons(container, count) {
+    container.innerHTML = "";
+    for (let i = 0; i < count; i++) {
+        const li = document.createElement("li");
+        li.className = "skeleton-emblem";
+        li.setAttribute("aria-hidden", "true");
+        container.appendChild(li);
+    }
+}
+
+// Mostra skeletons nas colunas Regiões e Campeões durante a carga INICIAL.
+export function showColumnsLoading() {
+    const nationalities = document.querySelector(".nationalities");
+    const champions = document.querySelector(".champions");
+    if (nationalities) renderSkeletons(nationalities, 6);
+    if (champions) renderSkeletons(champions, 8);
 }
 
 // Marca como selecionado o botão de um dado slug e limpa a seleção anterior.
