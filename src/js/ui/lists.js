@@ -55,8 +55,15 @@ export async function populateNationalitiesList(onSelect) {
 }
 
 export async function populateChampionsList(regionSlug, onSelect) {
-    const container = document.querySelector(".champions");
     const champions = await getChampionsByRegion(regionSlug);
+    renderChampionsList(champions, onSelect);
+}
+
+// Renderiza os campeões a partir de dados JÁ carregados (sem fetch). Usado na
+// carga inicial, quando regiões e campeões são buscados em paralelo e só então
+// renderizados, mantendo a renderização correta.
+export function renderChampionsList(champions, onSelect) {
+    const container = document.querySelector(".champions");
     container.innerHTML = "";
     champions.forEach((item, i) =>
         createElementList(item, container, "champion", i, onSelect)
