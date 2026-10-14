@@ -15,6 +15,7 @@ import {
     populateNationalitiesList,
     populateChampionsList,
     markSelectedBySlug,
+    showColumnsLoading,
 } from "./ui/lists.js";
 import { showLoader } from "./ui/loader.js";
 import { navigateTo, onRoute, slugFromPath } from "./router.js";
@@ -71,18 +72,52 @@ async function loadElement(slug) {
     }
 }
 
+// Mostra uma mensagem discreta de "acordando o servidor" SÓ se a carga inicial
+// demorar (o backend no plano gratuito pode levar ~30s no cold start). Se os
+// dados chegam rápido, a mensagem nunca aparece (evita flash). Retorna uma
+// função que remove a mensagem e cancela o timer pendente.
+function startWakeMessage() {
+    const DELAY_MS = 1200; // só mostra se a carga passar deste tempo
+    let banner = null;
+
+    const timer = setTimeout(() => {
+        banner = document.createElement("div");
+        banner.className = "wake-message";
+        banner.setAttribute("role", "status");
+        banner.setAttribute("aria-live", "polite");
+        banner.textContent =
+            "Acordando o servidor (plano gratuito), isso pode levar ~30s…";
+        document.body.appendChild(banner);
+    }, DELAY_MS);
+
+    return function stop() {
+        clearTimeout(timer);
+        if (banner && banner.parentNode) {
+            banner.parentNode.removeChild(banner);
+        }
+    };
+}
+
 async function init() {
     onRoute(loadElement);
     initKeyboardNav();
+
+    // Carga inicial: mostra skeletons nas colunas e uma mensagem discreta de
+    // "acordando o servidor", para o usuário nunca ver colunas vazias enquanto
+    // o backend (plano gratuito) sai do cold start.
+    showColumnsLoading();
+    const stopWakeMessage = startWakeMessage();
 
     try {
         await populateNationalitiesList(onSelect);
         await populateChampionsList("runeterra", onSelect);
     } catch (error) {
         console.error("Falha ao inicializar:", error);
+        stopWakeMessage();
         showError();
         return;
     }
+    stopWakeMessage();
 
     // avalia a descrição inicial (Runeterra, vinda do HTML) para decidir o fade
     setDescription(document.getElementById("description").textContent);
