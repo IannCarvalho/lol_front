@@ -16,6 +16,11 @@ async function fetchJSON(url) {
 // com frequência (a cada navegação), então evitamos refetch desnecessário.
 let nationalitiesCache = null;
 
+// Cache dos campeões por região (um valor por regionSlug): mesmo princípio do
+// nationalitiesCache. Voltar a uma região já visitada passa a ser instantâneo
+// (sem round-trip ao backend), importante no plano gratuito do Render.
+const championsByRegionCache = new Map();
+
 export async function getNationalities() {
     if (!nationalitiesCache) {
         nationalitiesCache = await fetchJSON(`${BASE_URL}/nationality/`);
@@ -24,7 +29,14 @@ export async function getNationalities() {
 }
 
 export async function getChampionsByRegion(regionSlug) {
-    return fetchJSON(`${BASE_URL}/nationality/champions/${regionSlug}`);
+    if (championsByRegionCache.has(regionSlug)) {
+        return championsByRegionCache.get(regionSlug);
+    }
+    const champions = await fetchJSON(
+        `${BASE_URL}/nationality/champions/${regionSlug}`
+    );
+    championsByRegionCache.set(regionSlug, champions);
+    return champions;
 }
 
 export async function getChampion(slug) {
