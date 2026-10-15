@@ -1,0 +1,3698 @@
+{
+"nationalities":[
+{
+"slug":"runeterra",
+"image":"https://universe.leagueoflegends.com/images/default_emblem.png",
+"background":"https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Ryze_0.jpg",
+"name":"Runeterra",
+"overview":"Runeterra é um mundo de fantasia onde heróis e vilões de diferentes lugares e culturas lutam pelo poder e pela sobrevivência. Com suas próprias facções e magias, eles enfrentam desafios épicos em um cenário diversificado, enquanto um mal antigo ameaça o mundo. É um lugar de aventuras e segredos, onde destinos se cruzam em batalhas emocionantes."
+},
+{
+"slug":"zaun",
+"image":"https://universe.leagueoflegends.com/images/zaun_emblem.png",
+"name":"Zaun",
+"overview":"Zaun é um grande distrito subterrâneo, aos pés de cânions profundos e vales que cortam Piltover. A pouca luz que chega lá é filtrada pelas fumaças que saem dos emaranhados de canos corroídos e refletem do vidro manchado de sua arquitetura industrial. Zaun e Piltover já foram unidas, mas agora são sociedades simbióticas, mas separadas. Apesar de existir no crepúsculo perpétuo da poluição, Zaun prospera com seu povo vibrante e sua rica cultura. A riqueza de Piltover permitiu que Zaun se desenvolvesse em paralelo; um espelho escuro da cidade acima. Muitas das mercadorias que chegam a Piltover acabam entrando no mercado clandestino de Zaun, e os inventores hextec que consideram que as restrições impostas na cidade acima são muito rígidas descobrem que suas pesquisas perigosas são bem-vindas em Zaun. O desenvolvimento desenfreado de tecnologias voláteis e da indústria imprudente fez com que as extensões de Zaun ficassem poluídas e perigosas. Correntes de derramamento tóxico estagnaram nas partes mais baixas da cidade, mas mesmo aqui as pessoas encontram maneiras de existir e prosperar.",
+"background":"https://cmsassets.rgpub.io/sanity/images/dsfx7636/universe/56d6fa8581379d60cc17951edbe3d686e52bf51b-1730x1080.jpg?accountingTag=LoL"
+},
+{
+"slug":"void",
+"image":"https://universe.leagueoflegends.com/images/void_emblem.png",
+"name":"O Vazio",
+"overview":"Ruidosamente lançado à existência com o surgimento do universo, o Vazio é uma manifestação da vastidão inatingível daquilo que jaz além. É uma força de apetite insaciável, que espera uma eternidade até que seus mestres, os misteriosos Observadores, marquem o momento final da destruição.Quando um mortal é tocado por esse poder, ele vislumbra uma agonizante irrealidade eterna, que é o suficiente para estilhaçar até mesmo as mentes mais fortes. Os próprios habitantes do reino do Vazio são criaturas geradas, muitas vezes com pouquíssima consciência, mas incumbidas de um propósito peculiar: levar toda Runeterra ao oblívio.",
+"background":"https://cmsassets.rgpub.io/sanity/images/dsfx7636/universe/7107e5dbca7887931748e7ae0924e6eda17ef6f4-1920x1064.jpg?accountingTag=LoL"
+},
+{
+"slug":"ixtal",
+"image":"https://universe.leagueoflegends.com/images/ixtal_emblem.png",
+"name":"Ixtal",
+"overview":"Reconhecida por seu domínio da magia elemental, Ixtal foi uma das primeiras nações independentes que se uniram ao império shurimane. Na verdade, a cultura ixtalense é muito mais antiga, parte da grande diáspora ocidental que deu origem a civilizações como Buhru, a magnífica Helia e os ascetas de Targon. Além disso, é provável que tenham desempenhado um papel significativo na criação do primeiro Ascendente.Os magos de Ixtal sobreviveram ao Vazio, e mais tarde aos Darkin, distanciando-se dos reinos vizinhos, servindo-se da vida selvagem ao redor como se fosse um escudo. Apesar de muito ter sido perdido, eles se comprometeram em preservar o pouco que restou...Agora, isolada na selva há milhares de anos, a sofisticada cidade arcológica de Ixaocan permanece praticamente livre de influências externas. Tendo testemunhado de longe a ruína das Ilhas das Bênçãos e as Guerras Rúnicas logo depois, os ixtalenses veem todas as outras facções de Runeterra como novatas e impostoras, e usam sua poderosa magia para manter qualquer intruso bem longe.",
+"background":"https://cmsassets.rgpub.io/sanity/images/dsfx7636/universe/1a75d072fa01ec3d0cda3f87fc1bf18dce736424-5000x2811.jpg?accountingTag=LoL"
+},
+{
+"slug":"piltover",
+"image":"https://universe.leagueoflegends.com/images/piltover_emblem.png",
+"name":"Piltover",
+"overview":"Piltover é uma cidade próspera e progressiva cujo poder e influência estão em crescimento. Ela é o centro cultural de Valoran, onde a arte, o artesanato, o comércio e a inovação andam de mãos dadas. Seu poder não vem de soberania militar, mas através dos motores do comércio e do pensamento de vanguarda. Situada no despenhadeiro acima do distrito de Zaun e de frente para o oceano, frotas de navios passam por seus portões do mar gigantescos, trazendo iguarias do mundo todo. A riqueza que isso gera deu lugar a um aumento sem precedentes no crescimento da cidade. Piltover se reinventou - e continua se reinventando - como uma cidade onde fortunas podem ser feitas e sonhos podem ser realizados. Os crescentes clãs de mercadores investiram no desenvolvimento dos empreendimentos mais incríveis: grandes loucuras artísticas, pesquisa hextec esotérica e monumentos arquitetônicos em seu poder. Como cada vez mais inventores estão se envolvendo com a história de hextec, Piltover se tornou um ímã para os artesãos mais habilidosos do mundo.",
+"background":"https://cmsassets.rgpub.io/sanity/images/dsfx7636/universe/6c77423961def6e3a82d9a36545782f1a06386e0-4681x2114.jpg?accountingTag=LoL"
+},
+{
+"slug":"shadow-isles",
+"image":"https://universe.leagueoflegends.com/images/shadow_isles_emblem.png",
+"name":"Ilhas das Sombras",
+"overview":"Esta terra amaldiçoada já foi lar de uma civilização nobre e evoluída, sendo conhecida entre seus aliados como as Ilhas das Bênçãos. No entanto, mais de mil anos atrás, um cataclisma mágico sem precedentes estilhaçou a barreira entre os mundos material e espiritual, fundindo ambos... e aniquilando toda e qualquer forma de vida em um instante.Agora, uma Névoa Negra maligna cobre as Ilhas permanentemente, e a própria terra do lugar encontra-se corrompida por uma magia sombria. Qualquer mortal que se aventure por esses litorais nefastos terá sua força vital lentamente drenada, o que, por sua vez, atrai os espíritos insaciáveis e atormentados dos mortos.Perecer dentro da névoa é estar condenado a assombrar este lugar medonho por toda a eternidade. Para piorar, o poder das Ilhas das Sombras parece se fortalecer a cada ano, permitindo que os espectros mais poderosos vagueiem cada vez mais longe por Runeterra.",
+"background":"https://cmsassets.rgpub.io/sanity/images/dsfx7636/universe/94e4bf2e1b30ba553b4fc0f93e94983837082210-2503x1080.jpg?accountingTag=LoL"
+},
+{
+"slug":"bandle-city",
+"image":"https://universe.leagueoflegends.com/images/bandle_city_emblem.png",
+"name":"Bandópolis",
+"overview":"Há muita controvérsia sobre onde exatamente fica o lar dos yordles, embora vários mortais afirmem ter atravessado portais invisíveis para uma terra de estranho encantamento além do reino material. Falam de um lugar com magia ilimitada, onde os incautos, atraídos por uma infinidade de elementos fantásticos, podem acabar perdidos em um sonho sem volta.Em Bandópolis, dizem que todas as sensações são amplificadas para os não yordles. As cores são mais vívidas. A comida e a bebida embriagam os sentidos por anos e, uma vez provadas, jamais podem ser esquecidas. A luz do sol é eternamente dourada, as águas são completamente cristalinas e toda colheita é extremamente frutífera. Talvez alguns desses relatos sejam verdadeiros, mas talvez nenhum seja, pois não há duas pessoas neste mundo que concordem sobre o que realmente viram.Só uma coisa é certa: Bandópolis e seus habitantes carregam um poder atemporal. Isso deve explicar por que muitos mortais que encontram seu caminho de volta parecem ter envelhecido bruscamente, embora a maioria sequer retorne.",
+"background":"https://cmsassets.rgpub.io/sanity/images/dsfx7636/universe/109f1c35b08e87598eaa1e0755a992e17d9425c2-1920x1080.jpg?accountingTag=LoL"
+},
+{
+"slug":"shurima",
+"image":"https://universe.leagueoflegends.com/images/shurima_emblem.png",
+"name":"Shurima",
+"overview":"O império de Shurima já foi uma civilização próspera que ocupava um continente inteiro. Forjado pelos poderosos deuses-guerreiros do Batalhão de Ascendentes em uma era perdida, ele uniu todos os povos díspares do sul e consolidou uma paz duradoura entre eles.Poucos ousavam se rebelar – e aqueles que o faziam, como a nação amaldiçoada de Icathia, eram esmagados sem misericórdia.Entretanto, após milhares de anos de crescimento e prosperidade, a Ascensão fracassada do último imperador de Shurima deixou a capital em ruínas, e as histórias da antiga glória do império se tornaram pouco mais do que mitos. Agora, a maioria dos habitantes nômades dos desertos de Shurima lutam para conseguir se sustentar nesta terra impiedosa. Alguns grupos construíram pequenos postos para defender os raros oásis, enquanto outros mergulham em catacumbas há muito perdidas em busca das incontáveis fortunas que dizem estar aguardando lá embaixo. Também há quem leve uma vida de mercenário, trocando serviços por moedas antes de desaparecer de novo na vastidão sem lei.Mesmo assim, alguns ainda ousam sonhar com o retorno dos tempos antigos. Recentemente, as tribos andaram se agitando, fomentadas pelos sussurros vindos do coração do deserto sobre o retorno do imperador Azir, que os levará a uma nova era de maravilhas.",
+"background":"https://cmsassets.rgpub.io/sanity/images/dsfx7636/universe/3f24f923ba9871dd870c0d3565075ff8140f44b8-1920x1080.jpg?accountingTag=LoL"
+},
+{
+"slug":"mount-targon",
+"image":"https://universe.leagueoflegends.com/images/mt_targon_emblem.png",
+"name":"Targon",
+"overview":"O Monte Targon é a mais imponente montanha de Runeterra; uma torre gigantesca de rochas endurecidas pelo sol em meio a uma variedade de cumes. Nada igual em escala em qualquer lugar do mundo. Localizado longe da civilização, o Monte Targon é deveras remoto e impossível de alcançar, exceto pelos exploradores mais determinados. Muitas lendas estão ligadas ao Monte Targon e, assim como qualquer lugar que pertence a um mito, é um farol para sonhadores, loucos e exploradores em busca de aventura. Algumas almas corajosas tentam escalar a montanha impossível, talvez em busca de conhecimento ou iluminação, ou talvez atrás de glória ou para atender outro desejo da alma ao ver seu auge. A subida é quase impossível, e até mesmo para aqueles poucos que, de alguma forma, sobrevivem a chegada ao topo jamais falam sobre o que viram lá. Alguns voltam com uma assombração de olhares vazios em seus olhos, outros mudam completamente, imbuídos de um Aspecto de poder sobrenatural e que vai além da humanidade, com um destino que poucos mortais podem compreender.",
+"background":"https://cmsassets.rgpub.io/sanity/images/dsfx7636/universe/8ad3cfba4b5d7cb812562108a6e90d07e0865b3f-1920x1041.jpg?accountingTag=LoL"
+},
+{
+"slug":"demacia",
+"image":"https://universe.leagueoflegends.com/images/demacia_emblem.png",
+"name":"Demacia",
+"overview":"Em um reino imponente e legítimo com uma prestigiosa história militar, os habitantes de Demacia sempre colocaram os ideais de justiça, honra e dever acima de tudo, orgulhando-se intensamente de sua herança cultural. No entanto, apesar desses nobres princípios, essa grande nação autossuficiente foi se tornando cada vez mais fechada e isolacionista nos últimos séculos.Hoje, Demacia é uma nação em crise.Sua capital, a Grande Cidade de Demacia, nasceu como um refúgio contra a feitiçaria após as Guerras Rúnicas, construída sobre a enigmática petricita – uma pedra branca peculiar que anula qualquer energia mágica. É de lá que a família real, desde muito tempo atrás, defende as cidades e vilas mais afastadas, as fazendas, as florestas e as montanhas ricas em recursos minerais.No entanto, após a morte súbita do rei Jarvan III, as outras famílias nobres ainda não aprovaram a sucessão de seu único herdeiro ao trono, o jovem príncipe Jarvan.Aqueles que vivem para além das fronteiras fortemente protegidas são cada vez mais vistos com desconfiança e, em uma época de tantas incertezas, muitos antigos aliados começaram a procurar proteção em outros lugares. Dizem por aí que a era dourada de Demacia já passou e, a menos que seu povo esteja disposto a se adaptar a um mundo em constante mudança – o que muitos julgam impossível –, a queda do reino será inevitável.Nem toda a petricita da região será capaz de proteger Demacia de si mesma.",
+"background":"https://cmsassets.rgpub.io/sanity/images/dsfx7636/universe/5b80fe8ddd3d935c3f258f3e145b8aed4b7460bf-1920x887.jpg?accountingTag=LoL"
+},
+{
+"slug":"bilgewater",
+"image":"https://universe.leagueoflegends.com/images/bilgewater_emblem.png",
+"name":"Águas de Sentina",
+"overview":"Situada no arquipélago das Ilhas da Chama Azul, Águas de Sentina é uma cidade portuária sem igual, cheia de mercenários, gangues das docas e contrabandistas do mundo inteiro. Aqui, fortunas crescem e ambições desmoronam em um piscar de olhos. É uma cidade de recomeços para quem está fugindo da justiça, de dívidas ou de perseguições, já que nestas ruas tortuosas ninguém se importa com o seu passado. Mesmo assim, a cada manhã, corpos de viajantes descuidados são encontrados flutuando no mar perto das docas, com os bolsos vazios e suas gargantas cortadas...Embora seja perigosíssima, Águas de Sentina fervilha com novas oportunidades, já que não é limitada pelas amarras de um governo formal e regulações de mercado. Quem tem dinheiro pode comprar quase tudo aqui, desde itens hextec proibidos até a lealdade de um senhor do crime.Com a destituição do último \"rei dos ladrões\", Águas de Sentina entrou em um período de transição enquanto os capitães mais proeminentes tentam chegar a um acordo sobre o futuro da cidade. Mas, havendo navios em condições de navegar e homens dispostos a tripulá-los, Águas de Sentina continuará sendo um dos lugares mais peculiares e bem relacionados de Runeterra.",
+"background":"https://cmsassets.rgpub.io/sanity/images/dsfx7636/universe/9700d7bf76ec15c8c526f7fea2a960e3846e44a6-2825x1080.jpg?accountingTag=LoL"
+},
+{
+"slug":"noxus",
+"image":"https://universe.leagueoflegends.com/images/noxus_emblem.png",
+"name":"Noxus",
+"overview":"Noxus é um império poderoso com uma reputação temível. É visto como uma ameaça brutal e expansionista pelos estrangeiros, mas, por trás do exterior bélico, há uma sociedade surpreendentemente inclusiva que respeita e encoraja os talentos e as aptidões de cada indivíduo.Os Noxii já foram uma tribo bárbara e violenta, até o momento em que invadiram a cidade antiga que, hoje em dia, fica no coração de seu domínio. Mesmo sob ameaças vindas de todos os lados, eles avançaram contra seus inimigos sem temor, expandindo o território ano a ano. A luta pela sobrevivência definiu o caráter dos noxianos modernos, um povo orgulhoso que valoriza a força acima de tudo — mas que sabe reconhecer que ela se manifesta de diversas formas.Qualquer um pode conquistar uma posição de poder e respeito dentro de Noxus se demonstrar a aptidão necessária, independentemente de classe social, antecedentes ou riquezas. Os indivíduos que sabem usar magia são muito respeitados, e costumam ser recrutados para que seus talentos especiais sejam aprimorados e postos a serviço do império.Entretanto, apesar dos ideais meritocráticos, as antigas famílias nobres ainda detêm grande poder... e há quem diga que a maior ameaça a Noxus não vem de fora, mas de dentro.",
+"background":"https://cmsassets.rgpub.io/sanity/images/dsfx7636/universe/6310fe5db818f80b84ee784a746cc28ee1273e6b-1920x1080.jpg?accountingTag=LoL"
+},
+{
+"slug":"freljord",
+"image":"https://universe.leagueoflegends.com/images/freljord_emblem.png",
+"name":"Freljord",
+"overview":"Freljord é uma terra hostil e impiedosa, onde todos já nascem guerreiros para não perecer diante das adversidades.Orgulhosas e muito independentes, as tribos locais são, muitas vezes, consideradas selvagens, rústicas e \"nada civilizadas\" por seus vizinhos de Valoran, que não conhecem as tradições milenares que as moldam. Há muitos milhares de anos, a aliança formada pelas irmãs Avarosa, Serylda e Lissandra foi rompida em uma guerra que ameaçou toda a região de Runeterra, lançando as terras nortenhas ao caos de um inverno quase constante. Agora, os únicos destinados (ou capacitados) a liderar são os mortais realmente excepcionais, resistentes aos estragos do fogo e do gelo.Apesar dos esforços dos Praeglacius, mitos e lendas sobre deuses antigos, yetis enigmáticos e irrequietos andarilhos espirituais ainda persistem. Os saqueadores dos Garra do Inverno avançam mais e mais a cada ano que passa, causando problemas ao sul de Demacia e às fronteiras de Noxus ao leste. Por fim, em busca de um futuro mais pacífico, tribos e clãs independentes começaram a oferecer vassalagem a Ashe, a jovem rainha dos avarosianos.Mesmo assim, há maus presságios à espreita. A guerra está voltando a Freljord, e ninguém tem esperança de escapar.",
+"background":"https://cmsassets.rgpub.io/sanity/images/dsfx7636/universe/ee60551d26850cfbff088f571bc5e1688b1a143b-2034x1080.jpg?accountingTag=LoL"
+},
+{
+"slug":"ionia",
+"image":"https://universe.leagueoflegends.com/images/iona_emblem.png",
+"name":"Ionia",
+"overview":"Rodeada por águas traiçoeiras, Ionia é composta por várias províncias aliadas dispersas ao longo do arquipélago gigantesco conhecido por muitos como as Primeiras Terras. Como a cultura ioniana vem sendo moldada há muito tempo com base na busca pelo equilíbrio em todas as coisas, a fronteira entre os reinos material e espiritual tende a ser mais flexível por aqui, principalmente nas florestas e montanhas selvagens.Embora os encantamentos deste lugar sejam instáveis e suas criaturas sejam mágicas e perigosas, a maioria dos ionianos conseguiu levar uma vida próspera aqui durante séculos. Os monastérios cheios de guerreiros, as milícias provinciais e até mesmo o próprio continente foram o suficiente para mantê-los protegidos.Mas essa calmaria terminou há doze anos, quando Noxus atacou as Primeiras Terras. As tropas do império, as quais pareciam não ter fim, invadiram Ionia e só foram derrotadas muitos anos depois, e com grandes custos.Agora, uma paz frágil paira sobre Ionia. Reações distintas à guerra acabaram dividindo a região – alguns grupos, como os monges Shojin e os Kinkou, procuram retornar ao isolamento pacífico e às tradições antigas. Já outras facções mais radicais, como a Irmandade Navori e a Ordem das Sombras, exigem a militarização da magia destas terras, a fim de criar uma nação unificada capaz de se vingar de Noxus.O destino de Ionia se sustenta sobre um equilíbrio delicado que alguns estão dispostos a desfazer, mas todos, sem exceção, estão irrequietos, sentindo a energia da mudança sob seus pés.",
+"background":"https://cmsassets.rgpub.io/sanity/images/dsfx7636/universe/1691574092da433ea3a4c896c96f8c87d5f7e45a-1920x888.jpg?accountingTag=LoL"
+}
+],
+"championsByRegion":{
+"runeterra":[
+{
+"release-date":"2025-11-19T18:00:00.000Z",
+"name":"Zaahen",
+"title":"O Indissociável ",
+"section-title":"Zaahen",
+"slug":"zaahen",
+"image":"https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Zaahen.png",
+"background":"https://cmsassets.rgpub.io/sanity/images/dsfx7636/universe_live/df2839a9368239f91af5f94190c806654301e2a7-1920x1080.jpg?accountingTag=LoL",
+"url":"/pt_br/champion/zaahen",
+"role":[
+{
+"name":"Lutador",
+"slug":"fighter"
+}
+],
+"nationality":"runeterra",
+"lore":"Um deus caído com poder divino e profano, Zaahen caça os outros Darkin em constante desafio à corrupção que ameaça consumi-lo. Outrora selado por livre vontade em sua glaive para evitar o jugo da loucura, ele agora se vê liberto, de coração nobre e propósito brutal. Zaahen trava uma luta eterna em seu âmago, mas, enquanto a suportar, ele há de superar todos os que buscam arruinar Runeterra."
+},
+{
+"release-date":"2013-08-22T00:00:00.000Z",
+"name":"Lucian",
+"title":"o Purificador",
+"section-title":"Lucian",
+"slug":"lucian",
+"image":"https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Lucian.png",
+"background":"https://cmsassets.rgpub.io/sanity/images/dsfx7636/universe_live/5a752c276c2b99c1a0bee1c1f81ea0bc156fd589-1215x717.jpg?accountingTag=LoL",
+"url":"/pt_br/champion/lucian",
+"role":[
+{
+"name":"Atirador",
+"slug":"marksman"
+}
+],
+"nationality":"runeterra",
+"lore":"Lucian, um Sentinela da Luz, é um caçador de aparições e espectros que usa suas pistolas relicárias para persegui-los implacavelmente e, por fim, aniquilá-los. Após a captura de sua esposa pelas mãos do espectro Thresh, Lucian embarcou em uma jornada de vingança. Mas, mesmo com a volta de sua amada ao reino dos vivos, a ira dele permanece inalterada. Impiedoso e obstinado, Lucian não hesitará em proteger os vivos contra os horrores da Névoa Negra."
+},
+{
+"release-date":"2015-03-12T00:00:00.000Z",
+"name":"Bardo",
+"title":"o Protetor Andarilho",
+"section-title":"Bardo",
+"slug":"bard",
+"image":"https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Bard.png",
+"background":"https://cmsassets.rgpub.io/sanity/images/dsfx7636/universe/2a460d21993eb31e98d6b3ec7f389b545ff27d7e-1215x717.jpg?accountingTag=LoL",
+"url":"/pt_br/champion/bard",
+"role":[
+{
+"name":"Suporte",
+"slug":"support"
+},
+{
+"name":"Mago",
+"slug":"mage"
+}
+],
+"nationality":"runeterra",
+"lore":"Viajante de galáxias distantes, Bardo é um agente do acaso que luta para manter um equilíbrio em que a vida possa suportar a indiferença do caos. Muitos habitantes de Runeterra entoam canções que louvam sua extraordinária índole, mas todos concordam que o andarilho cósmico é chegado a artefatos de grande poder mágico. Cercado por um jubiloso coral de prestativos mipes espirituais, é impossível enxergar suas ações como malevolentes, pois Bardo sempre serve ao bem maior... de sua própria maneira estranha."
+},
+{
+"release-date":"2009-02-21T00:00:00.000Z",
+"name":"Fiddlesticks",
+"title":"o Terror Ancestral",
+"section-title":"Fiddlesticks",
+"slug":"fiddlesticks",
+"image":"https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Fiddlesticks.png",
+"background":"https://cmsassets.rgpub.io/sanity/images/dsfx7636/universe/5c2c7802b029fbf7cf8cd3eb1c65aabf10e17e42-1920x1129.jpg?accountingTag=LoL",
+"url":"/pt_br/champion/fiddlesticks",
+"role":[
+{
+"name":"Mago",
+"slug":"mage"
+},
+{
+"name":"Suporte",
+"slug":"support"
+}
+],
+"nationality":"runeterra",
+"lore":"Algo despertou em Runeterra. Algo ancestral. Algo terrível. O eterno terror conhecido como Fiddlesticks vaga pelos confins do mundo mortal, atraído por áreas dominadas por uma paranoia palpável, onde se alimenta de vítimas apavoradas. Com sua foice afiada, essa criatura malformada e desgastada colhe a própria essência do medo, deixando a mente dos desafortunados que sobrevivem ao seu ataque totalmente fragmentada. Muito cuidado com o som dos corvos, ou com os sussurros de uma figura que parece quase humana... pois Fiddlesticks está de volta."
+},
+{
+"release-date":"2011-11-15T00:00:00.000Z",
+"name":"Fizz",
+"title":"o Trapaceiro das Marés",
+"section-title":"Fizz",
+"slug":"fizz",
+"image":"https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Fizz.png",
+"background":"https://cmsassets.rgpub.io/sanity/images/dsfx7636/universe/8ed5d60b5f205046b4df4a6310e7338fe4c023f0-1215x717.jpg?accountingTag=LoL",
+"url":"/pt_br/champion/fizz",
+"role":[
+{
+"name":"Assassino",
+"slug":"assassin"
+},
+{
+"name":"Lutador",
+"slug":"fighter"
+}
+],
+"nationality":"runeterra",
+"lore":"Fizz é um yordle anfíbio que vive entre os recifes que rodeiam Águas de Sentina. É comum que ele busque e devolva os dízimos jogados no mar por capitães supersticiosos, mas mesmo o mais velho dos marinheiros sabe que não é uma boa ideia irritá-lo. São muitas as histórias daqueles que subestimaram seu caráter escorregadio. Frequentemente confundido com algum tipo de espírito marinho imprevisível, ele comanda enormes bestas carnívoras das profundezas e se diverte confundindo tanto seus inimigos quanto seus aliados."
+},
+{
+"release-date":"2009-04-18T00:00:00.000Z",
+"name":"Zilean",
+"title":"o Guardião do Tempo",
+"section-title":"Zilean",
+"slug":"zilean",
+"image":"https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Zilean.png",
+"background":"https://cmsassets.rgpub.io/sanity/images/dsfx7636/universe/ed34d635dda272fbcfcba29ce3cea255c22fa8f1-1215x717.jpg?accountingTag=LoL",
+"url":"/pt_br/champion/zilean",
+"role":[
+{
+"name":"Suporte",
+"slug":"support"
+},
+{
+"name":"Mago",
+"slug":"mage"
+}
+],
+"nationality":"runeterra",
+"lore":"Outrora um poderoso mago icathiano, Zilean se obcecou com a passagem do tempo depois de testemunhar a destruição de sua terra natal pelo Vazio. Sem conseguir gastar um minuto que fosse para lamentar a perda catastrófica, ele invocou uma antiga magia temporal para adivinhar todos os finais possíveis. Tendo se tornado essencialmente imortal com isso, Zilean agora caminha entre passado, presente e futuro, curvando e distorcendo o fluxo do tempo a sua volta, sempre procurando por aquele momento fugaz que vai fazer o relógio voltar e desfazer a destruição de Icathia."
+},
+{
+"release-date":"2015-10-14T00:00:00.000Z",
+"name":"Kindred",
+"title":"os Caçadores Eternos",
+"section-title":"Kindred",
+"slug":"kindred",
+"image":"https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Kindred.png",
+"background":"https://cmsassets.rgpub.io/sanity/images/dsfx7636/universe/2ac0d07605a4cb49058640a3477274f90003265f-1215x717.jpg?accountingTag=LoL",
+"url":"/pt_br/champion/kindred",
+"role":[
+{
+"name":"Atirador",
+"slug":"marksman"
+}
+],
+"nationality":"runeterra",
+"lore":"Distintos, mas nunca separados, os Kindred representam as essências gêmeas da morte. O arco da Ovelha propicia uma rápida transição do mundo mortal para aqueles que aceitam seu destino. O Lobo caça aqueles que fogem de seu fim, entregando-lhes a violência derradeira de suas presas esmagadoras. Embora diferentes interpretações sobre a natureza dos Kindred circulem por toda Runeterra, todo mortal deve escolher a verdadeira face de sua morte."
+},
+{
+"release-date":"2016-03-24T00:00:00.000Z",
+"name":"Aurelion Sol",
+"title":"o Forjador de Estrelas",
+"section-title":"Aurelion Sol",
+"slug":"aurelionsol",
+"image":"https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/AurelionSol.png",
+"background":"https://cmsassets.rgpub.io/sanity/images/dsfx7636/universe/216b65d9b80814d4ca010d3068cfb84c785e4ad4-1215x717.jpg?accountingTag=LoL",
+"url":"/pt_br/champion/aurelionsol",
+"role":[
+{
+"name":"Mago",
+"slug":"mage"
+},
+{
+"name":"Lutador",
+"slug":"fighter"
+}
+],
+"nationality":"runeterra",
+"lore":"Aurelion Sol costumava agraciar a vasta imensidão vazia dos cosmos com maravilhas celestiais concebidas por ele mesmo. Agora, ele é forçado a usar seu incrível poder a mando de um império espacial remoto que o enganou e o mantém sob servidão. Desejando voltar a forjar estrelas, Aurelion Sol arrastará as próprias estrelas dos céus se for preciso para recuperar sua liberdade."
+},
+{
+"release-date":"2024-01-31T18:00:00.000Z",
+"name":"Smolder",
+"title":"o Filhote Flamejante",
+"section-title":"Smolder",
+"slug":"smolder",
+"image":"https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Smolder.png",
+"background":"https://cmsassets.rgpub.io/sanity/images/dsfx7636/universe/8da8f09d7aa765b162684c9970850af4fb8e3b95-1920x1080.jpg?accountingTag=LoL",
+"url":"/pt_br/champion/smolder",
+"role":[
+{
+"name":"Atirador",
+"slug":"marksman"
+}
+],
+"nationality":"runeterra",
+"lore":"Escondido entre os penhascos escarpados da fronteira noxiana e sob o olhar atento da mãe, um jovem dragão está aprendendo o que significa ser herdeiro da linhagem dos dragões imperiais de Camavor. Brincalhão e ansioso por ser grande, Smolder busca qualquer desculpa para colocar em prática suas habilidades em desenvolvimento. Embora ainda seja um filhote, suas habilidades não são nada desprezíveis, e ele põe fogo facilmente em tudo que possa ser queimado."
+},
+{
+"release-date":"2011-04-12T00:00:00.000Z",
+"name":"Brand",
+"title":"a Vingança Flamejante",
+"section-title":"Brand",
+"slug":"brand",
+"image":"https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Brand.png",
+"background":"https://cmsassets.rgpub.io/sanity/images/dsfx7636/universe/16a4f24c55fc3559a62622038b66997f0f7c4092-1215x717.jpg?accountingTag=LoL",
+"url":"/pt_br/champion/brand",
+"role":[
+{
+"name":"Mago",
+"slug":"mage"
+}
+],
+"nationality":"runeterra",
+"lore":"A criatura conhecida como Brand já se chamou Kegan Rodhe, um membro da gélida Freljord, e é hoje uma lição do que a tentação por poderes maiores pode fazer. Enquanto buscava uma das lendárias Runas Globais, Kegan traiu seus companheiros e a pegou para si e, em um instante, o homem já não existia mais. Com sua alma consumida pelo fogo e seu corpo um invólucro de uma chama viva, Brand agora vaga por Valoran em busca de outras runas, jurando vingança por erros que ele nunca poderia ter sofrido em uma dúzia de vidas mortais."
+},
+{
+"release-date":"2015-07-09T00:00:00.000Z",
+"name":"Tahm Kench",
+"title":"o Rei do Rio",
+"section-title":"Tahm Kench",
+"slug":"tahmkench",
+"image":"https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/TahmKench.png",
+"background":"https://cmsassets.rgpub.io/sanity/images/dsfx7636/universe/d91032cb4c9d79b936a5de191e3e4465986c6994-1215x717.jpg?accountingTag=LoL",
+"url":"/pt_br/champion/tahmkench",
+"role":[
+{
+"name":"Suporte",
+"slug":"support"
+},
+{
+"name":"Tanque",
+"slug":"tank"
+}
+],
+"nationality":"runeterra",
+"lore":"Conhecido por muitos nomes ao longo da história, Tahm Kench viaja pelas águas de Runeterra alimentando seu insaciável apetite com o sofrimento alheio. Apesar de parecer particularmente encantador e orgulhoso, ele vaga pelo reino físico como um andarilho em busca de presas desavisadas. Sua língua pode atordoar até o guerreiro mais blindado a uma grande distância, e cair em sua barriga retumbante é como cair em um abismo do qual não há esperança de sair."
+},
+{
+"release-date":"2009-02-21T00:00:00.000Z",
+"name":"Jax",
+"title":"o Grão-Mestre das Armas",
+"section-title":"Jax",
+"slug":"jax",
+"image":"https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Jax.png",
+"background":"https://cmsassets.rgpub.io/sanity/images/dsfx7636/universe/a8d3b960b33b5850f5c3b8e65a0afb54fde80e11-1920x1080.jpg?accountingTag=LoL",
+"url":"/pt_br/champion/jax",
+"role":[
+{
+"name":"Lutador",
+"slug":"fighter"
+},
+{
+"name":"Assassino",
+"slug":"assassin"
+}
+],
+"nationality":"runeterra",
+"lore":"Incomparável tanto por suas habilidades com armamentos incomuns quanto pelo seu sarcasmo mordaz, Jax é o último mestre de armas de Icathia conhecido. Depois de sua terra natal ter sido derrotada por sua própria arrogância ao libertar o Vazio, Jax e seu povo juraram proteger o pouco que restou. Com a magia se espalhando pelo mundo, essa ameaça dormente acordou novamente e agora Jax vaga por Valoran carregando a última chama de Icathia e testando todo guerreiro encontrar para descobrir se algum deles é forte o suficiente para lutar ao seu lado..."
+},
+{
+"release-date":"2009-02-21T00:00:00.000Z",
+"name":"Annie",
+"title":"a Criança Sombria",
+"section-title":"Annie",
+"slug":"annie",
+"image":"https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Annie.png",
+"background":"https://cmsassets.rgpub.io/sanity/images/dsfx7636/universe/1ef1763d5ea8eea5c5661a362571cbf655c4b716-1215x717.jpg?accountingTag=LoL",
+"url":"/pt_br/champion/annie",
+"role":[
+{
+"name":"Mago",
+"slug":"mage"
+}
+],
+"nationality":"runeterra",
+"lore":"Perigosa, mas adoravelmente precoce, Annie é uma pequena maga com imenso poder piromaníaco. Mesmo isolada nas sombras das montanhas ao norte de Noxus, ela causa estranhamento com sua magia. Sua afinidade natural com o fogo já era evidente desde a primeira infância, quando ela tinha explosões emocionais imprevisíveis. Apesar disso, ela aprendeu a controlar esses “truques divertidos”. Seu truque favorito inclui invocar seu amado ursinho de pelúcia, Tibbers, como protetor incendiário. Perdida na eterna inocência da infância, Annie vaga pelas florestas sombrias em busca de alguém para brincar."
+},
+{
+"release-date":"2009-10-10T00:00:00.000Z",
+"name":"Shaco",
+"title":"o Bufão Demoníaco",
+"section-title":"Shaco",
+"slug":"shaco",
+"image":"https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Shaco.png",
+"background":"https://cmsassets.rgpub.io/sanity/images/dsfx7636/universe/499c2b9a55b61f4fe9f400ec6b5f456eabe57983-1215x717.jpg?accountingTag=LoL",
+"url":"/pt_br/champion/shaco",
+"role":[
+{
+"name":"Assassino",
+"slug":"assassin"
+}
+],
+"nationality":"runeterra",
+"lore":"Criado anos atrás como um brinquedo para um príncipe solitário, Shaco, a marionete encantada, agora se deleita com assassinatos e desordem. Corrompido por magia das trevas e pela perda de seu dono querido, o boneco que já fora gentil agora encontra prazer somente na miséria das próprias almas que ele atormenta. Ele usa brinquedos e truques simples para conseguir efeitos mortais, achando os resultados de seus “jogos” sangrentos hilários. E para aqueles que escutam uma risada sombria na calada da noite, o Bufão Demoníaco pode tê-los marcado como seu próximo brinquedo."
+},
+{
+"release-date":"2009-02-21T00:00:00.000Z",
+"name":"Alistar",
+"title":"o Minotauro",
+"section-title":"Alistar",
+"slug":"alistar",
+"image":"https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Alistar.png",
+"background":"https://cmsassets.rgpub.io/sanity/images/dsfx7636/universe/c80ba28d8903e2279bca02b0d3b0192b11dc0f96-1215x717.jpg?accountingTag=LoL",
+"url":"/pt_br/champion/alistar",
+"role":[
+{
+"name":"Tanque",
+"slug":"tank"
+},
+{
+"name":"Suporte",
+"slug":"support"
+}
+],
+"nationality":"runeterra",
+"lore":"Um poderoso guerreiro com uma temível reputação, Alistar busca vingança por seu clã, morto pelas mãos do império de Noxus. Apesar de ter sido escravizado e forçado a uma vida de gladiador, sua vontade indestrutível o impediu de se tornar uma fera de verdade. Agora, liberto das correntes dos seus antigos mestres, ele luta pelos oprimidos e desfavorecidos, sua fúria uma arma tão poderosa quanto seus chifres, cascos e punhos."
+},
+{
+"release-date":"2012-12-07T00:00:00.000Z",
+"name":"Nami",
+"title":"a Conjuradora das Marés",
+"section-title":"Nami",
+"slug":"nami",
+"image":"https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Nami.png",
+"background":"https://cmsassets.rgpub.io/sanity/images/dsfx7636/universe/e42e42fb196ed82d51fb13b9d01f985bc28bb16c-1215x717.jpg?accountingTag=LoL",
+"url":"/pt_br/champion/nami",
+"role":[
+{
+"name":"Suporte",
+"slug":"support"
+},
+{
+"name":"Mago",
+"slug":"mage"
+}
+],
+"nationality":"runeterra",
+"lore":"Uma jovem e obstinada vastaya dos mares, Nami é uma das primeiras integrantes da tribo Marai a sair das ondas e se aventurar na terra seca, onde seus antigos acordos com os targonianos foram quebrados. Com nenhuma outra opção, ela decidiu que seria ela mesma quem completaria o ritual sagrado que garantiria a segurança de seu povo. Dentro do caos dessa nova era, Nami enfrenta um futuro incerto com coragem e determinação, usando seu Conjurador das Marés para invocar a própria força dos oceanos."
+},
+{
+"release-date":"2019-10-20T00:00:00.000Z",
+"name":"Senna",
+"title":"a Redentora",
+"section-title":"Senna",
+"slug":"senna",
+"image":"https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Senna.png",
+"background":"https://cmsassets.rgpub.io/sanity/images/dsfx7636/universe/7b4fb4db8e95126fb6c5a6a8ba6d181523992b4a-1900x1121.jpg?accountingTag=LoL",
+"url":"/pt_br/champion/senna",
+"role":[
+{
+"name":"Suporte",
+"slug":"support"
+},
+{
+"name":"Atirador",
+"slug":"marksman"
+}
+],
+"nationality":"runeterra",
+"lore":"Amaldiçoada desde a infância a ser perseguida pelo fenômeno sobrenatural da Névoa Negra, Senna entrou para a ordem dos Sentinelas da Luz e lutou bravamente contra seu destino, mas isso resultou em sua morte, e a alma dela acabou aprisionada em uma lanterna pelas mãos do cruel espectro Thresh. No entanto, por se recusar a perder as esperanças, ela aproveitou seu tempo dentro da lanterna para aprender a usar a Névoa, ressurgindo com uma nova vida, sabendo que jamais voltaria a ser a mesma. Agora, armada com as forças da luz e da escuridão, Senna busca exterminar a Névoa Negra ao atrair o fenômeno para si a cada disparo de sua arma relicária, salvando as almas perdidas que ali residem."
+},
+{
+"release-date":"2011-03-15T00:00:00.000Z",
+"name":"Nocturne",
+"title":"o Eterno Pesadelo",
+"section-title":"Nocturne",
+"slug":"nocturne",
+"image":"https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Nocturne.png",
+"background":"https://cmsassets.rgpub.io/sanity/images/dsfx7636/universe/5e51c3cdd1e26e920b981369c207a8bbc27b9579-1215x717.jpg?accountingTag=LoL",
+"url":"/pt_br/champion/nocturne",
+"role":[
+{
+"name":"Assassino",
+"slug":"assassin"
+},
+{
+"name":"Lutador",
+"slug":"fighter"
+}
+],
+"nationality":"runeterra",
+"lore":"Uma fusão demoníaca provinda dos pesadelos que assombram todas as mentes sencientes, a coisa conhecida como Nocturne se tornou uma força primordial de puro terror. De aspecto caótico e líquido, ele é uma sombra sem rosto com olhos frios e armada com lâminas enfurecidas. Depois de se libertar do mundo dos espíritos, Nocturne desceu para o mundo dos vivos para se alimentar de um terror que só pode ser cultivado na verdadeira escuridão."
+},
+{
+"release-date":"2009-05-01T00:00:00.000Z",
+"name":"Evelynn",
+"title":"o Abraço da Agonia",
+"section-title":"Evelynn",
+"slug":"evelynn",
+"image":"https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Evelynn.png",
+"background":"https://cmsassets.rgpub.io/sanity/images/dsfx7636/universe/2f8ee3f69973dd73de75eb3367d5d8efadf4a5d7-1920x1133.jpg?accountingTag=LoL",
+"url":"/pt_br/champion/evelynn",
+"role":[
+{
+"name":"Assassino",
+"slug":"assassin"
+},
+{
+"name":"Mago",
+"slug":"mage"
+}
+],
+"nationality":"runeterra",
+"lore":"Nas ruelas sombrias de Runeterra, a criatura demoníaca Evelynn busca sua próxima vítima. Ela atrai presas com sua voluptuosa aparência de fêmea humana, mas assim que a vítima sucumbe ao seu charme, a verdadeira forma de Evelynn é revelada. A criatura então sujeita suas vítimas a um tormento inenarrável, gratificando-se com a dor alheia. Para ela, esses contatos são casinhos inocentes; Para o resto de Runeterra, são histórias macabras de encontros lascivos que deram errado e lembretes terríveis sobre o custo do desejo desenfreado."
+},
+{
+"release-date":"2009-02-21T00:00:00.000Z",
+"name":"Ryze",
+"title":"o Mago Rúnico",
+"section-title":"Ryze",
+"slug":"ryze",
+"image":"https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Ryze.png",
+"background":"https://cmsassets.rgpub.io/sanity/images/dsfx7636/universe/c6112f9c04cd531982b94e51b719d359e8755365-1215x717.jpg?accountingTag=LoL",
+"url":"/pt_br/champion/ryze",
+"role":[
+{
+"name":"Mago",
+"slug":"mage"
+},
+{
+"name":"Lutador",
+"slug":"fighter"
+}
+],
+"nationality":"runeterra",
+"lore":"Considerado pela grande maioria como o mago mais habilidoso de Runeterra, Ryze é um arquimago ancião e amargo que carrega um enorme peso. Dotado de um enorme poder arcano e de uma notável estrutura física, ele busca incansavelmente pelas Runas Globais, que são fragmentos de magia pura que um dia criaram o mundo a partir do nada. Ele deve recuperar esses artefatos antes que eles caiam em mãos erradas, pois Ryze conhece bem os horrores que eles podem infligir em Runeterra."
+},
+{
+"release-date":"2013-06-13T19:43:26.000Z",
+"name":"Aatrox",
+"title":"a Espada Darkin",
+"section-title":"Aatrox",
+"slug":"aatrox",
+"image":"https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Aatrox.png",
+"background":"https://cmsassets.rgpub.io/sanity/images/dsfx7636/universe/da41f44e7ab5b24f336e8c6198e04fdb13ee5554-1920x1080.jpg?accountingTag=LoL",
+"url":"/pt_br/champion/aatrox",
+"role":[
+{
+"name":"Lutador",
+"slug":"fighter"
+},
+{
+"name":"Tanque",
+"slug":"tank"
+}
+],
+"nationality":"runeterra",
+"lore":"Antes defensores honrados de Shurima contra o temido Vazio, Aatrox e seus irmãos acabaram se tornando uma ameaça ainda maior para Runeterra, e a única coisa capaz de derrotá-los foi um tipo de feitiçaria mortal e traiçoeira. Mas após séculos de encarceramento, Aatrox foi o primeiro a encontrar a liberdade novamente, e ele saiu corrompendo e transformando quem fosse tolo o suficiente de tentar tocar na arma mágica que continha sua essência. Agora, com um corpo roubado, ele vaga por Runeterra transfigurado, em uma versão bizarra da sua forma anterior, buscando uma vingança apocalíptica."
+}
+],
+"zaun":[
+{
+"release-date":"2009-09-02T00:00:00.000Z",
+"name":"Blitzcrank",
+"title":"o Grande Golem a Vapor",
+"section-title":"Blitzcrank",
+"slug":"blitzcrank",
+"image":"https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Blitzcrank.png",
+"background":"https://cmsassets.rgpub.io/sanity/images/dsfx7636/universe/e165a4174e70d52733061f4aa784d9f489e4fc58-1215x717.jpg?accountingTag=LoL",
+"url":"/pt_br/champion/blitzcrank",
+"role":[
+{
+"name":"Tanque",
+"slug":"tank"
+},
+{
+"name":"Lutador",
+"slug":"fighter"
+}
+],
+"nationality":"zaun",
+"lore":"Blitzcrank é um autômato enorme e praticamente indestrutível de Zaun, construído originalmente para lidar com lixo tóxico. No entanto, ele achou seu propósito principal muito restritivo e modificou sua própria forma para ajudar as pessoas menos favorecidas do Sumidouro. Blitzcrank usa sua força e robustez para proteger os outros sem pedir nada em troca, estendendo seu punho de metal ou surto de energia para derrotar qualquer encrenqueiro."
+},
+{
+"release-date":"2022-01-05T18:00:00.000Z",
+"name":"Zeri",
+"title":"A Faísca de Zaun",
+"section-title":"Zeri",
+"slug":"zeri",
+"image":"https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Zeri.png",
+"background":"https://cmsassets.rgpub.io/sanity/images/dsfx7636/universe/316a7a9cb13ca9f24238b10722bcdf0e134dabab-1920x1080.jpg?accountingTag=LoL",
+"url":"/pt_br/champion/zeri",
+"role":[
+{
+"name":"Atirador",
+"slug":"marksman"
+}
+],
+"nationality":"zaun",
+"lore":"Uma jovem obstinada e vivaz da classe operária de Zaun, Zeri canaliza magia elétrica para carregar a si mesma e a uma arma personalizada. O poder volátil espelha o que ela sente, as centelhas refletindo o estilo de vida ultrarrápido dela. Profundamente compassiva para com os outros, Zeri leva o amor da família e do lar dela consigo a todas as lutas. Embora as tentativas de ajudar saiam pela culatra às vezes, Zeri acredita piamente em uma verdade: lute pela sua comunidade, e ela lutará com você."
+},
+{
+"release-date":"2013-03-29T00:00:00.000Z",
+"name":"Zac",
+"title":"a Arma Secreta",
+"section-title":"Zac",
+"slug":"zac",
+"image":"https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Zac.png",
+"background":"https://cmsassets.rgpub.io/sanity/images/dsfx7636/universe/fac08eb25622a7289c44e175ccbed817c32db718-1215x717.jpg?accountingTag=LoL",
+"url":"/pt_br/champion/zac",
+"role":[
+{
+"name":"Tanque",
+"slug":"tank"
+},
+{
+"name":"Lutador",
+"slug":"fighter"
+}
+],
+"nationality":"zaun",
+"lore":"Zac é produto de um derramamento tóxico que percorreu um tubo quimtec e se armazenou em uma caverna isolada no Sumidouro de Zaun. Apesar de suas origens humildes, Zac deixou de ser uma lama qualquer e se tornou um ser pensante que mora nos encanamentos da cidade e emerge ocasionalmente para ajudar aqueles que não podem se ajudar ou para reconstruir a infraestrutura danificada de Zaun."
+},
+{
+"release-date":"2009-04-18T00:00:00.000Z",
+"name":"Singed",
+"title":"o Químico Louco",
+"section-title":"Singed",
+"slug":"singed",
+"image":"https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Singed.png",
+"background":"https://cmsassets.rgpub.io/sanity/images/dsfx7636/universe/fb56a344c527f0f3321ca3896082607cca49a672-1215x717.jpg?accountingTag=LoL",
+"url":"/pt_br/champion/singed",
+"role":[
+{
+"name":"Tanque",
+"slug":"tank"
+},
+{
+"name":"Lutador",
+"slug":"fighter"
+}
+],
+"nationality":"zaun",
+"lore":"Singed é um alquimista brilhante com moral duvidosa cujos experimentos embrulhariam o estômago até do mais brutal criminoso. Vendendo suas habilidades para quem pagar mais, ele pouco se importa com o uso que fazem de suas misturas nocivas, vendo o caos subsequente como mais um experimento. Sua criação mais infame é a ''cintila'', que deu aos Barões da Química o poder sobre Zaun. Impulsionado pela loucura, Singed sempre está trabalhando em algo novo, e cada nova empreitada é mais perversa que a anterior…"
+},
+{
+"release-date":"2009-02-21T00:00:00.000Z",
+"name":"Warwick",
+"title":"a Ira Desimpedida de Zaun",
+"section-title":"Warwick",
+"slug":"warwick",
+"image":"https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Warwick.png",
+"background":"https://cmsassets.rgpub.io/sanity/images/dsfx7636/universe/ac704d3cfcb7feca54486db45add3e1f96cb0eab-1280x783.jpg?accountingTag=LoL",
+"url":"/pt_br/champion/warwick",
+"role":[
+{
+"name":"Lutador",
+"slug":"fighter"
+},
+{
+"name":"Tanque",
+"slug":"tank"
+}
+],
+"nationality":"zaun",
+"lore":"Warwick é um monstro que caça pelas ruas cinzentas de Zaun. Transformado por experimentos agonizantes, seu corpo agora é fundido a um sistema complexo de câmaras e bombas, um maquinário que enche suas veias com fúria química. Ele surge das sombras para caçar os criminosos que aterrorizam o submundo da cidade. Warwick fica enfurecido quando sente o cheiro de sangue… e ninguém que o derrama consegue escapar."
+},
+{
+"release-date":"2009-09-02T00:00:00.000Z",
+"name":"Janna",
+"title":"a Fúria da Tormenta",
+"section-title":"Janna",
+"slug":"janna",
+"image":"https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Janna.png",
+"background":"https://cmsassets.rgpub.io/sanity/images/dsfx7636/universe/d1cd8492b5f8ddebe92117ca3923126a3e588c3d-1215x717.jpg?accountingTag=LoL",
+"url":"/pt_br/champion/janna",
+"role":[
+{
+"name":"Suporte",
+"slug":"support"
+},
+{
+"name":"Mago",
+"slug":"mage"
+}
+],
+"nationality":"zaun",
+"lore":"Armada com o poder das ventanias de Runeterra, Janna é um misterioso e elemental espírito de vento que protege os desfavorecidos de Zaun. Alguns acreditam que Janna surgiu a partir dos clamores dos marinheiros de Runeterra, que rezavam por ventos mais amistosos enquanto navegavam por águas turbulentas e severas tempestades. Desde então, suas graças e sua proteção têm sido imploradas nas profundezas de Zaun, onde Janna se tornou um símbolo de esperança para os necessitados. Ninguém sabe onde nem quando ela pode aparecer, mas diversas vezes ela chega para ajudar."
+},
+{
+"release-date":"2010-08-24T00:00:00.000Z",
+"name":"Urgot",
+"title":"o Encouraçado",
+"section-title":"Urgot",
+"slug":"urgot",
+"image":"https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Urgot.png",
+"background":"https://cmsassets.rgpub.io/sanity/images/dsfx7636/universe/a9154da6f79debea531974e95820661e3431ea80-1215x717.jpg?accountingTag=LoL",
+"url":"/pt_br/champion/urgot",
+"role":[
+{
+"name":"Lutador",
+"slug":"fighter"
+},
+{
+"name":"juggernaut",
+"slug":"juggernaut"
+}
+],
+"nationality":"zaun",
+"lore":"Na época em que era um poderoso carrasco noxiano, Urgot foi traído pelo império para o qual havia tirado tantas vidas. Aprisionado em correntes de ferro, ele foi forçado a aprender o verdadeiro significado da força na Draga — uma mina carcerária nas profundezas de Zaun. Após emergir de um desastre que espalhou o caos por toda a cidade, ele se tornou uma figura imponente no submundo criminoso da cidade. Hoje ele usa as mesmas correntes que o aprisionaram para erguer suas vítimas e seu objetivo é expurgar todos os seres indignos do seu novo lar, tornando-o um crisol de dor."
+},
+{
+"release-date":"2009-09-02T00:00:00.000Z",
+"name":"Dr. Mundo",
+"title":"o Louco de Zaun",
+"section-title":"Dr. Mundo",
+"slug":"drmundo",
+"image":"https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/DrMundo.png",
+"background":"https://cmsassets.rgpub.io/sanity/images/dsfx7636/universe/326545c5cf571981bff487ab158bca6b08c9d28d-1215x717.jpg?accountingTag=LoL",
+"url":"/pt_br/champion/drmundo",
+"role":[
+{
+"name":"Lutador",
+"slug":"fighter"
+},
+{
+"name":"Tanque",
+"slug":"tank"
+}
+],
+"nationality":"zaun",
+"lore":"Completamente maluco, tragicamente perigoso e terrivelmente roxo, Dr. Mundo é o que mantém muitos zaunitas dentro de casa nas noites mais escuras. Hoje se diz médico, mas ele já foi um paciente do manicômio mais infame de Zaun. Após ''curar'' toda a equipe do local, Dr. Mundo começou a atuar em sua nova profissão nos corredores vazios do lugar em que um dia fora tratado, repetindo os procedimentos extremamente antiéticos pelos quais ele mesmo havia passado. Munido de um armário cheio de remédios e nenhum conhecimento médico, ele fica mais monstruoso a cada nova injeção e continua instilando medo nos infelizes ''pacientes'' que passam perto de sua ''clínica''."
+},
+{
+"release-date":"2009-05-01T00:00:00.000Z",
+"name":"Twitch",
+"title":"o Semeador da Peste",
+"section-title":"Twitch",
+"slug":"twitch",
+"image":"https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Twitch.png",
+"background":"https://cmsassets.rgpub.io/sanity/images/dsfx7636/universe/643dd74ace9a448d80783d98d584e77ce2fa9625-1215x717.jpg?accountingTag=LoL",
+"url":"/pt_br/champion/twitch",
+"role":[
+{
+"name":"Atirador",
+"slug":"marksman"
+},
+{
+"name":"Assassino",
+"slug":"assassin"
+}
+],
+"nationality":"zaun",
+"lore":"Um rato zaunita empesteado de nascença e um apreciador da imundície por paixão, Twitch não tem medo de sujar as patas. Mirando com uma balestra embebida em químicos no centro do coração dourado de Piltover, ele jurou mostrar àqueles na cidade de cima quão imundos eles realmente são. Sempre à espreita, quando ele não está se esgueirando no Sumidouro, ele está cavando fundo no lixo dos outros por tesouros descartados… e talvez um sanduíche bolorento."
+},
+{
+"release-date":"2022-02-01T09:00:00.000Z",
+"name":"Renata Glasc",
+"title":"a Baronesa da Química",
+"section-title":"Renata Glasc",
+"slug":"renataglasc",
+"image":"https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Renata.png",
+"background":"https://cmsassets.rgpub.io/sanity/images/dsfx7636/universe/74f48d016cce3f38f35d3c165ac2847c22a643ef-1920x1080.jpg?accountingTag=LoL",
+"url":"/pt_br/champion/renataglasc",
+"role":[
+{
+"name":"Suporte",
+"slug":"support"
+}
+],
+"nationality":"zaun",
+"lore":"Renata Glasc emergiu das cinzas de seu antigo lar com nada além da pesquisa alquímica de seus pais e seu próprio nome. Décadas se passaram, e ela se tornou a Baronesa da Química mais rica de Zaun, uma magnata que consolidou seu poder ligando os interesses dos outros aos seus próprios. Trabalhe com ela e receberá uma recompensa imensurável. Trabalhe contra ela e viva para se arrepender. Mas, uma hora ou outra, todos acabam ao lado dela."
+},
+{
+"release-date":"2011-12-29T00:00:00.000Z",
+"name":"Viktor",
+"title":"O Arauto do Arcano",
+"section-title":"Viktor",
+"slug":"viktor",
+"image":"https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Viktor.png",
+"background":"https://cmsassets.rgpub.io/sanity/images/dsfx7636/universe/6df31c309fbf2a122c25821cac1ce61fa66469e6-1920x1080.jpg?accountingTag=LoL",
+"url":"/pt_br/champion/viktor",
+"role":[
+{
+"name":"Mago",
+"slug":"mage"
+}
+],
+"nationality":"zaun",
+"lore":"A evolução biomecânica de seu antigo eu, Viktor abraçou a Gloriosa Evolução e tornou-se uma espécie de messias para seus seguidores. Ele sacrificou sua própria humanidade partindo da lógica de que eliminar as emoções acabaria com o sofrimento. Agora, busca compartilhar a revelação do Núcleo Hex com o resto do mundo, mesmo que os outros não consigam entender os benefícios. Afinal, para esse mestre do Arcano, a violência não passa de uma variável necessária para equilibrar a equação final."
+},
+{
+"release-date":"2012-02-01T00:00:00.000Z",
+"name":"Ziggs",
+"title":"o Especialista em Hexplosivos",
+"section-title":"Ziggs",
+"slug":"ziggs",
+"image":"https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Ziggs.png",
+"background":"https://cmsassets.rgpub.io/sanity/images/dsfx7636/universe/9bb7865270e3193e631619fb53d6287d2d341b35-1215x717.jpg?accountingTag=LoL",
+"url":"/pt_br/champion/ziggs",
+"role":[
+{
+"name":"Mago",
+"slug":"mage"
+}
+],
+"nationality":"zaun",
+"lore":"O yordle Ziggs, amante de grandes bombas e pavios curtos, é uma força explosiva da natureza. Já entediado com sua vida previsível como assistente de um inventor de Piltover, ele fez amizade com uma bombardeira louca de cabelo azul chamada Jinx. Depois de uma noite louca na cidade com sua nova amiga, Ziggs aceitou seu conselho e se mudou para Zaun, onde ele agora explora suas fascinações com mais liberdade, aterrorizando tanto os barões químicos quanto os cidadãos comuns na sua aventura sem fim por explodir coisas."
+},
+{
+"release-date":"2015-05-28T00:00:00.000Z",
+"name":"Ekko",
+"title":"o Rapaz que Estilhaçou o Tempo",
+"section-title":"Ekko",
+"slug":"ekko",
+"image":"https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Ekko.png",
+"background":"https://cmsassets.rgpub.io/sanity/images/dsfx7636/universe/582abd081125c2ef8f47609bc42a9f1bb71782fb-1215x717.jpg?accountingTag=LoL",
+"url":"/pt_br/champion/ekko",
+"role":[
+{
+"name":"Assassino",
+"slug":"assassin"
+},
+{
+"name":"Lutador",
+"slug":"fighter"
+}
+],
+"nationality":"zaun",
+"lore":"Prodígio das ruas violentas de Zaun, Ekko é capaz de manipular o tempo e reverter qualquer situação a seu favor. Ele usa sua própria invenção, o Revo-Z, para explorar as possíveis ramificações da realidade, criando o momento perfeito para realizar o que parecia impossível na primeira vez todas as vezes. Embora Ekko valorize muito sua liberdade, quando algo ameaça as pessoas de quem gosta, ele e seus Fogolumes não medem esforços para defendê-las."
+},
+{
+"release-date":"2013-10-10T00:00:00.000Z",
+"name":"Jinx",
+"title":"o Gatilho Desenfreado",
+"section-title":"Jinx",
+"slug":"jinx",
+"image":"https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Jinx.png",
+"background":"https://cmsassets.rgpub.io/sanity/images/dsfx7636/universe/d0550188a6e83cb2e5def4a4a0bf8025baf57a0c-1215x717.jpg?accountingTag=LoL",
+"url":"/pt_br/champion/jinx",
+"role":[
+{
+"name":"Atirador",
+"slug":"marksman"
+}
+],
+"nationality":"zaun",
+"lore":"Jinx, uma criminosa desequilibrada e impulsiva da Subferia, é atormentada pelas consequências de seu passado, mas isso não a impede de deixar sua marca caótica de pandemônio em Piltover e Zaun. Ela usa um arsenal de armas autorais para provocar efeitos devastadores, desencadeando torrentes de explosões coloridas e disparos, inspirando a resistência e a rebelião dos marginalizados com o caos que deixa pela caminho."
+}
+],
+"void":[
+{
+"release-date":"2014-02-27T00:00:00.000Z",
+"name":"Vel'Koz",
+"title":"o Olho do Vazio",
+"section-title":"Vel'Koz",
+"slug":"velkoz",
+"image":"https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Velkoz.png",
+"background":"https://cmsassets.rgpub.io/sanity/images/dsfx7636/universe/bd055ac14b71d4bb5f3b083183b995d8d2dca9ad-1215x717.jpg?accountingTag=LoL",
+"url":"/pt_br/champion/velkoz",
+"role":[
+{
+"name":"Mago",
+"slug":"mage"
+}
+],
+"nationality":"void",
+"lore":"Não é claro se Vel'Koz foi a primeira criatura do Vazio a aparecer em Runeterra, mas certamente nunca houve outra que se igualasse ao seu nível de compreensão cruel e calculista. Enquanto sua raça devora ou perverte tudo ao seu redor, ele busca, em vez disso, examinar e estudar o domínio físico, assim como os estranhos seres guerreiros que habitam nele, por quaisquer fraquezas que o Vazio possa explorar. Mas Vel'Koz está longe de ser um observador passivo e é capaz de atacar ameaças com plasma mortal ou desfazer o próprio tecido do mundo."
+},
+{
+"release-date":"2009-06-26T00:00:00.000Z",
+"name":"Cho'Gath",
+"title":"o Terror do Vazio",
+"section-title":"Cho'Gath",
+"slug":"chogath",
+"image":"https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Chogath.png",
+"background":"https://cmsassets.rgpub.io/sanity/images/dsfx7636/universe/b5b1910f31e78d7b71c828da516b417146b62d4a-1215x717.jpg?accountingTag=LoL",
+"url":"/pt_br/champion/chogath",
+"role":[
+{
+"name":"Tanque",
+"slug":"tank"
+},
+{
+"name":"Mago",
+"slug":"mage"
+}
+],
+"nationality":"void",
+"lore":"A partir do momento em que Cho'Gath emergiu da terra para a luz do sol ofuscante de Runeterra, a besta foi motivada por pura fome insaciável. A mais perfeita expressão do desejo do Vazio de consumir toda a vida, a biologia complexa de Cho'Gath rapidamente converte matéria em crescimento corporal novo, aumentando sua massa e densidade muscular ou endurecendo sua carapaça externa como um diamante orgânico. Quando crescer não supre as necessidades dessa criatura do Vazio, ele vomita o material em excesso como espinhos afiados, deixando sua presa espetada e pronta para ser devorada mais tarde."
+},
+{
+"release-date":"2010-06-01T00:00:00.000Z",
+"name":"Malzahar",
+"title":"o Profeta do Vazio",
+"section-title":"Malzahar",
+"slug":"malzahar",
+"image":"https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Malzahar.png",
+"background":"https://cmsassets.rgpub.io/sanity/images/dsfx7636/universe/4d00c991cdb0d9f22cf71a0c5536173df37abafa-1215x717.jpg?accountingTag=LoL",
+"url":"/pt_br/champion/malzahar",
+"role":[
+{
+"name":"Mago",
+"slug":"mage"
+},
+{
+"name":"Assassino",
+"slug":"assassin"
+}
+],
+"nationality":"void",
+"lore":"Um vidente fanático dedicado à unificação de toda a vida, Malzahar realmente acredita que o Vazio que recém surgiu é o caminho para a salvação de Runeterra. Na desolação do deserto de Shurima, ele seguiu as vozes que sussurravam em sua mente por todo o caminho até a antiga Icathia. Entre as ruínas daquela terra, ele olhou no coração sombrio do próprio Vazio e recebeu novos poderes e propósito. Agora Malzahar vê a si mesmo como um pastor encarregado de trazer os outros para o rebanho… ou de libertar as criaturas do Vazio que vivem nas profundezas."
+},
+{
+"release-date":"2010-06-24T00:00:00.000Z",
+"name":"Kog'Maw",
+"title":"a Boca do Abismo",
+"section-title":"Kog'Maw",
+"slug":"kogmaw",
+"image":"https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/KogMaw.png",
+"background":"https://cmsassets.rgpub.io/sanity/images/dsfx7636/universe/a1c2d280e545046c1587ec1a9bddc7561af55c55-1215x717.jpg?accountingTag=LoL",
+"url":"/pt_br/champion/kogmaw",
+"role":[
+{
+"name":"Atirador",
+"slug":"marksman"
+},
+{
+"name":"Mago",
+"slug":"mage"
+}
+],
+"nationality":"void",
+"lore":"Vomitado para fora de uma aparição podre do Vazio nas profundezas das terras desertas de Icathia, Kog'Maw é uma criatura inquisitiva e pútrida com uma boca cáustica gigantesca. Essa criatura do Vazio em particular precisa morder e babar em qualquer coisa que alcançar para realmente compreendê-la. Apesar de não ser intrinsecamente mau, a ingenuidade cativante de Kog'Maw é perigosa, pois é precedida, em geral, de um frenesi alimentício, não para alimentá-lo, mas para satisfazer sua curiosidade sem fim."
+},
+{
+"release-date":"2018-03-02T00:00:00.000Z",
+"name":"Kai'Sa",
+"title":"a Filha do Vazio",
+"section-title":"Kai'Sa",
+"slug":"kaisa",
+"image":"https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Kaisa.png",
+"background":"https://cmsassets.rgpub.io/sanity/images/dsfx7636/universe/33ac4d0acbbdb7f6d3b36520c0a78873052d271a-1920x1133.jpg?accountingTag=LoL",
+"url":"/pt_br/champion/kaisa",
+"role":[
+{
+"name":"Atirador",
+"slug":"marksman"
+}
+],
+"nationality":"void",
+"lore":"Capturada pelo Vazio quando era apenas uma criança, Kai'Sa conseguiu sobreviver por pura persistência e força de vontade. Suas experiências fizeram dela uma caçadora mortal e, para alguns, o prenúncio de um futuro que seria melhor não viver para ver. Inserida em uma desconfortável simbiose com uma carapaça viva do Vazio, é chegada a hora de decidir se ela perdoará os mortais que a chamam de monstro e derrotará a ameaçadora escuridão… ou se ela simplesmente os esquecerá, deixando o Vazio consumir o mundo que um dia também a deixou para trás."
+},
+{
+"release-date":"2022-05-20T17:00:00.000Z",
+"name":"Bel’Veth",
+"title":"a Imperatriz do Vazio",
+"section-title":"Bel’Veth",
+"slug":"belveth",
+"image":"https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Belveth.png",
+"background":"https://cmsassets.rgpub.io/sanity/images/dsfx7636/universe/c9a52ab3970010a032421150e5e011192aa7cfb9-1920x1080.jpg?accountingTag=LoL",
+"url":"/pt_br/champion/belveth",
+"role":[
+{
+"name":"Lutador",
+"slug":"fighter"
+}
+],
+"nationality":"void",
+"lore":"Bel'Veth, uma imperatriz tenebrosa nascida da essência de uma cidade devorada, é o fim da própria Runeterra... E o início de uma realidade monstruosa criada à sua imagem. Guiada por eras de história, conhecimento e lembranças adaptadas do mundo superior, ela se alimenta vorazmente de uma necessidade cada vez maior de novas experiências e emoções, consumindo tudo que cruza o seu caminho. Mas seus desejos jamais serão saciados por apenas um mundo, e é por isso que ela volta seus olhos famintos para os antigos mestres do Vazio..."
+},
+{
+"release-date":"2012-09-27T00:00:00.000Z",
+"name":"Kha'Zix",
+"title":"o Ceifador do Vazio",
+"section-title":"Kha'Zix",
+"slug":"khazix",
+"image":"https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Khazix.png",
+"background":"https://cmsassets.rgpub.io/sanity/images/dsfx7636/universe_live/2d0ccab8e48ffc2daf3cfc0a9482c52601616ca7-1215x717.jpg?accountingTag=LoL",
+"url":"/pt_br/champion/khazix",
+"role":[
+{
+"name":"Assassino",
+"slug":"assassin"
+},
+{
+"name":"Lutador",
+"slug":"fighter"
+}
+],
+"nationality":"void",
+"lore":"O Vazio cresce e o Vazio se adapta, e nenhuma de suas outras criaturas incorpora isso tão bem quanto Kha'Zix. A evolução é o que impulsiona a essência desse horror mutável, nascido para sobreviver e destruir os mais fortes. Qualquer momento de dificuldades em fazê-lo só o faz criar modos novos e mais efetivos de neutralizar e matar sua presa. Inicialmente uma fera irracional, a inteligência de Kha'Zix se desenvolveu tanto quanto sua forma. Agora, a criatura planeja suas caças e até faz uso do horror visceral que causa em suas vítimas."
+},
+{
+"release-date":"2014-12-11T00:00:00.000Z",
+"name":"Rek'Sai",
+"title":"a Escavadora do Vazio",
+"section-title":"Rek'Sai",
+"slug":"reksai",
+"image":"https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/RekSai.png",
+"background":"https://cmsassets.rgpub.io/sanity/images/dsfx7636/universe/298275b2e868fb0bd93d04484e8ae523484e63ec-1215x717.jpg?accountingTag=LoL",
+"url":"/pt_br/champion/reksai",
+"role":[
+{
+"name":"Lutador",
+"slug":"fighter"
+}
+],
+"nationality":"void",
+"lore":"A predadora perfeita, Rek'Sai é uma criatura do Vazio sem piedade que anda por túneis no subsolo para emboscar e devorar vítimas desavisadas. Sua fome insaciável já destruiu regiões inteiras do outrora gigantesco império de Shurima. Mercadores, vendedores, até mesmo caravanas blindadas, preferem fazer longos desvios para evitarem a ela e seus filhotes no seu território de caça. Todos sabem que, se Rek'Sai for avistada no horizonte, a morte certamente virá do subsolo."
+},
+{
+"release-date":"2009-08-07T00:00:00.000Z",
+"name":"Kassadin",
+"title":"o Andarilho do Vazio",
+"section-title":"Kassadin",
+"slug":"kassadin",
+"image":"https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Kassadin.png",
+"background":"https://cmsassets.rgpub.io/sanity/images/dsfx7636/universe/9ddaf7680feaafa16f01dbc34743a5fc3e969e1d-1920x1080.jpg?accountingTag=LoL",
+"url":"/pt_br/champion/kassadin",
+"role":[
+{
+"name":"Assassino",
+"slug":"assassin"
+},
+{
+"name":"Mago",
+"slug":"mage"
+}
+],
+"nationality":"void",
+"lore":"Cortando uma trilha de fogo pelos lugares mais sombrios do mundo, Kassadin sabe que seus dias estão contados. Outrora um aventureiro e guia shurimane, ele escolheu criar uma família perto das tribos pacíficas do sul, até o dia em que sua vila foi consumida pelo Vazio. Ele jurou vingança, combinando inúmeros artefatos arcanos e tecnologias proibidas para a luta que estava por vir. Finalmente, Kassadin partiu para as terras abandonadas de Icathia, pronto para enfrentar qualquer criatura monstruosa do Vazio em busca do seu autoproclamado profeta, Malzahar."
+}
+],
+"ixtal":[
+{
+"release-date":"2019-06-07T00:00:00.000Z",
+"name":"Qiyana",
+"title":"a Imperatriz dos Elementos",
+"section-title":"Qiyana",
+"slug":"qiyana",
+"image":"https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Qiyana.png",
+"background":"https://cmsassets.rgpub.io/sanity/images/dsfx7636/universe/701238dd7451fe3f836ded843c6d869c43f24261-4000x2348.jpg?accountingTag=LoL",
+"url":"/pt_br/champion/qiyana",
+"role":[
+{
+"name":"Assassino",
+"slug":"assassin"
+}
+],
+"nationality":"ixtal",
+"lore":"Na cidade-selva de Ixaocan, Qiyana planeja seu próprio e implacável caminho até o trono de Yun Tal. Última na fila para suceder seus pais, ela enfrenta qualquer um no seu caminho com uma confiança impetuosa e domínio sem precedentes sobre a magia elemental. Com a própria terra obedecendo a todos os seus comandos, Qiyana se vê como a maior elementalista na história de Ixaocan. Por esse motivo, julga-se merecedora não apenas de uma cidade, mas de todo um império."
+},
+{
+"release-date":"2012-08-21T00:00:00.000Z",
+"name":"Rengar",
+"title":"o Acossador da Alcateia",
+"section-title":"Rengar",
+"slug":"rengar",
+"image":"https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Rengar.png",
+"background":"https://cmsassets.rgpub.io/sanity/images/dsfx7636/universe/9eca7c212374e6363e336ac7323862c6e5427943-1215x717.jpg?accountingTag=LoL",
+"url":"/pt_br/champion/rengar",
+"role":[
+{
+"name":"Assassino",
+"slug":"assassin"
+},
+{
+"name":"Lutador",
+"slug":"fighter"
+}
+],
+"nationality":"ixtal",
+"lore":"Rengar é um feroz caçador de troféus vastaya que gosta da emoção proporcionada pela caça e pelo abate de criaturas perigosas. Ele vasculha o mundo em busca das feras mais perigosas que pode encontrar, procurando principalmente por Kha'Zix, a criatura do vazio que arrancou seu olho. Rengar não persegue suas presas por fome nem por glória, mas pela simples beleza da caçada."
+},
+{
+"release-date":"2011-08-09T18:00:00.000Z",
+"name":"Skarner",
+"title":"o Soberano Primordial",
+"section-title":"Skarner",
+"slug":"skarner",
+"image":"https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Skarner.png",
+"background":"https://cmsassets.rgpub.io/sanity/images/dsfx7636/universe/2aac05bb1f597369b121684cc09103dc3e408653-1215x717.jpg?accountingTag=LoL",
+"url":"/pt_br/champion/skarner",
+"role":[
+{
+"name":"Tanque",
+"slug":"tank"
+}
+],
+"nationality":"ixtal",
+"lore":"Skarner, um Brackern ancião e colossal, é reverenciado em Ixtal como um dos membros-fundadores de Yun Tal, a casta dominante. Dedicado a manter sua nação a salvo do resto do mundo, Skarner vive em sua câmara no subsolo de Ixaocan, onde pode ouvir as vibrações da terra e detectar possíveis ameaças. Quanto mais membros de Yun Tal começam a questionar o autoisolamento de Ixtal, mais Skarner fica paranoico e determinado a manter Ixtal e seu povo seguros. Custe o que custar."
+},
+{
+"release-date":"2023-03-04T18:00:00.000Z",
+"name":"Milio",
+"title":"A Chama Gentil",
+"section-title":"Milio",
+"slug":"milio",
+"image":"https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Milio.png",
+"background":"https://cmsassets.rgpub.io/sanity/images/dsfx7636/universe/dd4af82c030747102e172282ad11f694c4a52562-1920x1080.jpg?accountingTag=LoL",
+"url":"/pt_br/champion/milio",
+"role":[
+{
+"name":"Suporte",
+"slug":"support"
+}
+],
+"nationality":"ixtal",
+"lore":"Milio é um menino de Ixtal com um coração enorme e caloroso. Apesar da pouca idade, dominou o axioma do fogo e descobriu algo novo: o fogo tranquilizante. Com esse novo poder, Milio quer ajudar sua família a escapar do exílio unindo-se aos Yun Tal, a exemplo do que sua avó fez um dia. Tendo viajado pelas selvas de Ixtal até a capital de Ixaocan, Milio agora se prepara para enfrentar o Vidálio e se juntar aos Yun Tal, sem saber das provações — e perigos — que lhe aguardam."
+},
+{
+"release-date":"2012-07-24T00:00:00.000Z",
+"name":"Zyra",
+"title":"a Ascensão dos Espinhos",
+"section-title":"Zyra",
+"slug":"zyra",
+"image":"https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Zyra.png",
+"background":"https://cmsassets.rgpub.io/sanity/images/dsfx7636/universe/35938ca5eed918f72a683ee4ce8fce265cdf2a53-1215x717.jpg?accountingTag=LoL",
+"url":"/pt_br/champion/zyra",
+"role":[
+{
+"name":"Mago",
+"slug":"mage"
+},
+{
+"name":"Suporte",
+"slug":"support"
+}
+],
+"nationality":"ixtal",
+"lore":"Nascida em uma antiga catástrofe mágica, Zyra é a fúria da natureza em forma física e uma sedutora criatura híbrida entre planta e humana, que faz surgir a vida a cada passo que dá. Ela vê os muitos mortais de Valoran como nada além de presas para suas crias semeadas e não sente nada ao destroçá-los em um turbilhão de farpas mortais. Apesar de seu real propósito ainda não ter sido descoberto, Zyra vaga pelo mundo, satisfazendo seus desejos primais de colonizar e estrangular toda e qualquer outra vida estranha que encontra."
+},
+{
+"release-date":"2009-09-02T00:00:00.000Z",
+"name":"Malphite",
+"title":"o Fragmento do Monolito",
+"section-title":"Malphite",
+"slug":"malphite",
+"image":"https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Malphite.png",
+"background":"https://cmsassets.rgpub.io/sanity/images/dsfx7636/universe/70ed76c744fd83c25375002f986940511c166d72-1215x717.jpg?accountingTag=LoL",
+"url":"/pt_br/champion/malphite",
+"role":[
+{
+"name":"Tanque",
+"slug":"tank"
+},
+{
+"name":"Lutador",
+"slug":"fighter"
+}
+],
+"nationality":"ixtal",
+"lore":"Uma criatura gigantesca de pedra viva, Malphite pena para impor ordem abençoada em um mundo caótico. Nascido como um fragmento servil de um obelisco de outro mundo conhecido como Monolito, ele usou sua tremenda força elemental para manter e proteger seu progenitor, mas, no fim, falhou. O único sobrevivente da destruição que se seguiu, Malphite agora suporta o povo macio de Runeterra com seus temperamentos inconstantes enquanto luta para encontrar um novo papel digno do último de sua espécie."
+},
+{
+"release-date":"2018-11-19T08:00:26.000Z",
+"name":"Neeko",
+"title":"a Camaleoa Curiosa",
+"section-title":"Neeko",
+"slug":"neeko",
+"image":"https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Neeko.png",
+"background":"https://cmsassets.rgpub.io/sanity/images/dsfx7636/universe/30f1dc432e9e268ceccfae9259d7675fe7ed5740-1920x1133.jpg?accountingTag=LoL",
+"url":"/pt_br/champion/neeko",
+"role":[
+{
+"name":"Mago",
+"slug":"mage"
+}
+],
+"nationality":"ixtal",
+"lore":"Nativa de uma tribo vastaya há muito esquecida, Neeko consegue se misturar em qualquer multidão, assumindo a aparência dos outros e até mesmo absorvendo parte de seu estado emocional para identificar de imediato quem é amigo ou inimigo. Nunca se sabe onde Neeko pode estar, nem mesmo quem pode ser, mas aqueles com a intenção de machucá-la logo verão suas verdadeiras cores e toda a força e magia de seu espírito primitivo agindo contra eles."
+},
+{
+"release-date":"2009-12-17T00:00:00.000Z",
+"name":"Nidalee",
+"title":"a Caçadora Bestial",
+"section-title":"Nidalee",
+"slug":"nidalee",
+"image":"https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Nidalee.png",
+"background":"https://cmsassets.rgpub.io/sanity/images/dsfx7636/universe/ce81792e63289284421213175eaff353fc6c456d-1215x717.jpg?accountingTag=LoL",
+"url":"/pt_br/champion/nidalee",
+"role":[
+{
+"name":"Assassino",
+"slug":"assassin"
+},
+{
+"name":"Lutador",
+"slug":"fighter"
+}
+],
+"nationality":"ixtal",
+"lore":"Criada na mais profunda das selvas, Nidalee é uma rastreadora especialista que pode se transformar em um puma à sua vontade. Nem animal nem mulher, ela defende com ferocidade seu território de todo e qualquer invasor, com armadilhas cuidadosamente colocadas e lanças arremessadas. Ela fere sua presa antes de pular nela em sua forma felina, e dizem os sortudos que sobrevivem que ela é uma mulher selvagem com instintos aguçados e garras ainda mais afiadas..."
+}
+],
+"piltover":[
+{
+"release-date":"2016-11-28T00:00:00.000Z",
+"name":"Camille",
+"title":"a Sombra de Ferro",
+"section-title":"Camille",
+"slug":"camille",
+"image":"https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Camille.png",
+"background":"https://cmsassets.rgpub.io/sanity/images/dsfx7636/universe/c5706cb3e60e90c8a80edc4630f66fb9967a7b2c-1024x616.jpg?accountingTag=LoL",
+"url":"/pt_br/champion/camille",
+"role":[
+{
+"name":"Lutador",
+"slug":"fighter"
+}
+],
+"nationality":"piltover",
+"lore":"Munida para agir além dos limites da lei, Camille é a chefe de inteligência do Clã Ferros e uma elegante agente de elite, responsável pelo bom funcionamento da máquina de Piltover e de Zaun, seu submundo. Adaptável e precisa, ela vê técnicas medíocres como uma vergonha que precisa ser consertada. Com uma mente tão afiada quanto suas lâminas, a busca de Camille por superioridade através de aprimoramentos hextec para seu corpo fez com que muitos se perguntassem se ela é agora mais máquina do que mulher."
+},
+{
+"release-date":"2012-12-19T00:00:00.000Z",
+"name":"Vi",
+"title":"a Defensora de Piltover",
+"section-title":"Vi",
+"slug":"vi",
+"image":"https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Vi.png",
+"background":"https://cmsassets.rgpub.io/sanity/images/dsfx7636/universe/4134b6611e0aab2e9d647d67c8cc75a4639cbda9-1215x717.jpg?accountingTag=LoL",
+"url":"/pt_br/champion/vi",
+"role":[
+{
+"name":"Lutador",
+"slug":"fighter"
+},
+{
+"name":"Assassino",
+"slug":"assassin"
+}
+],
+"nationality":"piltover",
+"lore":"Criada nas ruas impiedosas de Zaun, Vi é uma mulher temível, impulsiva e explosiva sem respeito algum pelas autoridades. Ela sempre foi uma sobrevivente astuta, tanto das confusões que causava no Ladoalto na juventude quanto de uma pena injustamente longa na Prisão de Aguamansa. Agora, trabalhando lado a lado com os Defensores de Piltover para manter a paz em vez de acabar com ela, Vi porta poderosas manoplas hextec capazes de esmagar paredes e criminosos com extrema facilidade."
+},
+{
+"release-date":"2009-10-10T00:00:00.000Z",
+"name":"Heimerdinger",
+"title":"o Inventor Idolatrado",
+"section-title":"Heimerdinger",
+"slug":"heimerdinger",
+"image":"https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Heimerdinger.png",
+"background":"https://cmsassets.rgpub.io/sanity/images/dsfx7636/universe/a97cdd0274bc58ccb6e4260a9b782f9c635e5b1c-1215x717.jpg?accountingTag=LoL",
+"url":"/pt_br/champion/heimerdinger",
+"role":[
+{
+"name":"Mago",
+"slug":"mage"
+},
+{
+"name":"Suporte",
+"slug":"support"
+}
+],
+"nationality":"piltover",
+"lore":"O excêntrico Professor Cecil B. Heimerdinger é um dos inventores mais inovadores e estimados que o mundo já viu. Como o membro mais antigo do Conselho de Piltover, ele já viu o melhor e o pior do desejo insaciável da cidade pelo progresso. Entretanto, esse brilhante cientista e professor sempre se dedicará a utilizar seus dispositivos não convencionais para melhorar a vida dos outros."
+},
+{
+"release-date":"2012-07-07T00:00:00.000Z",
+"name":"Jayce",
+"title":"o Defensor do Amanhã",
+"section-title":"Jayce",
+"slug":"jayce",
+"image":"https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Jayce.png",
+"background":"https://cmsassets.rgpub.io/sanity/images/dsfx7636/universe/0dc3d5cacb41b3dfb73bcc8255bb22e9984f5a68-1215x717.jpg?accountingTag=LoL",
+"url":"/pt_br/champion/jayce",
+"role":[
+{
+"name":"Lutador",
+"slug":"fighter"
+},
+{
+"name":"Atirador",
+"slug":"marksman"
+}
+],
+"nationality":"piltover",
+"lore":"Jayce Talis é um inventor brilhante que, ao lado do amigo Viktor, fez as primeiras grandes descobertas no campo da tecnologia hextec. Glorificado em Piltover, ele tenta fazer jus à reputação de ''Homem do Progresso'', mas costuma sofrer com as expectativas depositadas nele. Por isso, Jayce começou a enxergar como sua inovação aprofundou a divisão entre Piltover e Zaun e, armado com seu martelo hextec, está pronto para defender o amanhã."
+},
+{
+"release-date":"2011-01-04T00:00:00.000Z",
+"name":"Caitlyn",
+"title":"a Xerife de Piltover",
+"section-title":"Caitlyn",
+"slug":"caitlyn",
+"image":"https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Caitlyn.png",
+"background":"https://cmsassets.rgpub.io/sanity/images/dsfx7636/universe/09b3e27b82ad338c0fe2dd7699bc3883c7281c33-1920x1133.jpg?accountingTag=LoL",
+"url":"/pt_br/champion/caitlyn",
+"role":[
+{
+"name":"Atirador",
+"slug":"marksman"
+}
+],
+"nationality":"piltover",
+"lore":"Conhecida como sua melhor pacificadora, Caitlyn Kiramman também é a melhor escolha de Piltover para livrar a cidade de seus elementos criminosos elusivos. É comum que ela faça dupla com Vi, agindo como um contraponto de calmaria para a natureza impetuosa de sua parceira. Mesmo carregando um rifle hextec único, a arma mais poderosa de Caitlyn é seu intelecto superior, que permite que ela prepare elaboradas armadilhas para qualquer fora da lei tolo o suficiente para operar na Cidade do Progresso."
+},
+{
+"release-date":"2011-06-01T00:00:00.000Z",
+"name":"Orianna",
+"title":"a Donzela Mecânica",
+"section-title":"Orianna",
+"slug":"orianna",
+"image":"https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Orianna.png",
+"background":"https://cmsassets.rgpub.io/sanity/images/dsfx7636/universe/579d1d523bc2feb2057400ffe05b4282d022671d-1215x717.jpg?accountingTag=LoL",
+"url":"/pt_br/champion/orianna",
+"role":[
+{
+"name":"Mago",
+"slug":"mage"
+},
+{
+"name":"Suporte",
+"slug":"support"
+}
+],
+"nationality":"piltover",
+"lore":"Orianna já foi uma menina curiosa de carne e osso, mas agora é uma maravilha tecnológica composta inteiramente de engrenagens. Ela ficou terrivelmente doente depois de um acidente em um dos distritos inferiores de Zaun e seu corpo enfraquecido teve que ser substituído por mecanismos requintados, peça por peça. Acompanhada por uma esfera de cobre extraordinária que ela construiu para companhia e proteção, Orianna agora é livre para explorar as maravilhas de Piltover e além."
+},
+{
+"release-date":"2010-03-16T00:00:00.000Z",
+"name":"Ezreal",
+"title":"o Explorador Pródigo",
+"section-title":"Ezreal",
+"slug":"ezreal",
+"image":"https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Ezreal.png",
+"background":"https://cmsassets.rgpub.io/sanity/images/dsfx7636/universe/6d2749153a330bca0d30d7cb2cef9e4d7bc6c475-1920x1094.jpg?accountingTag=LoL",
+"url":"/pt_br/champion/ezreal",
+"role":[
+{
+"name":"Atirador",
+"slug":"marksman"
+},
+{
+"name":"Mago",
+"slug":"mage"
+}
+],
+"nationality":"piltover",
+"lore":"Um aventureiro arrojado, com um talento nato nas artes mágicas, Ezreal desbrava catacumbas soterradas, envolve-se com antigas maldições e supera com facilidade as situações mais improváveis. Sua coragem e ousadia não têm limites e ele prefere resolver as coisas no improviso, confiando parcialmente no seu talento, mas principalmente em sua mística luva shurimane, que ele usa para causar explosões arcanas devastadoras. Uma coisa é certa: quando Ezreal está por perto, lá vem problema. Ou lá vai. Ou já veio."
+},
+{
+"release-date":"2020-10-12T00:00:00.000Z",
+"name":"Seraphine",
+"title":"a Cantora Sonhadora",
+"section-title":"Seraphine",
+"slug":"seraphine",
+"image":"https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Seraphine.png",
+"background":"https://cmsassets.rgpub.io/sanity/images/dsfx7636/universe/049ea1265dcc9822deda1915f4d0654f0c667e2b-1920x1080.jpg?accountingTag=LoL",
+"url":"/pt_br/champion/seraphine",
+"role":[
+{
+"name":"Mago",
+"slug":"mage"
+}
+],
+"nationality":"piltover",
+"lore":"Nascida em Piltover e filha de zaunitas, Seraphine é capaz de ouvir a alma das pessoas. O mundo canta para ela, e ela canta em resposta. Esses sons a perturbavam quando era mais jovem, mas hoje ela os usa como inspiração, transformando o caos em uma sinfonia. A cantora se apresenta nas cidades irmãs para lembrar a seus cidadãos que eles não estão sozinhos, que são mais fortes juntos e que, aos olhos dela, o potencial deles é ilimitado."
+}
+],
+"shadow-isles":[
+{
+"release-date":"2021-01-05T00:00:00.000Z",
+"name":"Viego",
+"title":"o Rei Destruído",
+"section-title":"Viego",
+"slug":"viego",
+"image":"https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Viego.png",
+"background":"https://cmsassets.rgpub.io/sanity/images/dsfx7636/universe/3766d90650c9eddd2e1405489365c1ec7ef9f2be-1900x1127.jpg?accountingTag=LoL",
+"url":"/pt_br/champion/viego",
+"role":[
+{
+"name":"Assassino",
+"slug":"assassin"
+}
+],
+"nationality":"shadow-isles",
+"lore":"Outrora regente de um reino perdido, Viego morreu há mais de um milênio, quando uma tentativa de trazer sua esposa de volta à vida culminou em uma catástrofe mágica conhecida como ''a Ruína''. Transformado em um poderoso espectro morto-vivo, sempre torturado pela paixão obsessiva que sente por sua rainha morta há séculos, Viego agora é conhecido como o Rei Destruído. Hoje, ele controla os Tormentos enquanto assola Runeterra em busca de qualquer coisa que possa trazê-la de volta, destruindo tudo pelo caminho conforme a Névoa Negra verte de seu cruel coração partido."
+},
+{
+"release-date":"2014-11-20T00:00:00.000Z",
+"name":"Kalista",
+"title":"a Lança da Vingança",
+"section-title":"Kalista",
+"slug":"kalista",
+"image":"https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Kalista.png",
+"background":"https://cmsassets.rgpub.io/sanity/images/dsfx7636/universe/7c9c407e5fefbe90cf2cca88aef5410cac72f164-1215x717.jpg?accountingTag=LoL",
+"url":"/pt_br/champion/kalista",
+"role":[
+{
+"name":"Atirador",
+"slug":"marksman"
+}
+],
+"nationality":"shadow-isles",
+"lore":"Um espectro de ira e retaliação, Kalista é o espírito imortal da vingança, um pesadelo blindado invocado da Ilhas das Sombras para caçar desertores e traidores. Os traídos podem clamar em sangue para serem vingados, mas Kalista apenas responde àqueles cuja causa ela julga serem dignos de suas habilidades. Aqueles que se tornam o foco da fúria de Kalista devem fazer as pazes com seu destino, pois qualquer pacto selado com a caçadora sombria só pode terminar com o fogo frio e penetrante de suas lanças de alma."
+},
+{
+"release-date":"2012-10-26T00:00:00.000Z",
+"name":"Elise",
+"title":"a Aranha Rainha",
+"section-title":"Elise",
+"slug":"elise",
+"image":"https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Elise.png",
+"background":"https://cmsassets.rgpub.io/sanity/images/dsfx7636/universe/7b72ce48ede875d47c4877de71f8aa53da8b8bbb-1215x717.jpg?accountingTag=LoL",
+"url":"/pt_br/champion/elise",
+"role":[
+{
+"name":"Mago",
+"slug":"mage"
+},
+{
+"name":"Lutador",
+"slug":"fighter"
+}
+],
+"nationality":"shadow-isles",
+"lore":"Elise é uma predadora mortal que vive em um palácio escuro e reservado nas profundezas da cidade mais antiga de Noxus. Ela já foi mortal um dia, dama de uma família antes poderosa, mas a mordida de uma aranha peçonhenta a transformou em algo belo, imortal e completamente desumano, uma criatura aracnídea que atrai vítimas ingênuas para sua teia. Para manter sua eterna juventude, Elise agora prefere se alimentar dos inocentes e descrentes, e são poucos os que conseguem resistir aos seus encantos."
+},
+{
+"release-date":"2009-06-12T00:00:00.000Z",
+"name":"Karthus",
+"title":"a Voz Mortal",
+"section-title":"Karthus",
+"slug":"karthus",
+"image":"https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Karthus.png",
+"background":"https://cmsassets.rgpub.io/sanity/images/dsfx7636/universe/e0895a900b25fa6a017496fc3cbeee49262edc11-1215x717.jpg?accountingTag=LoL",
+"url":"/pt_br/champion/karthus",
+"role":[
+{
+"name":"Mago",
+"slug":"mage"
+}
+],
+"nationality":"shadow-isles",
+"lore":"Sendo o presságio do fim, Karthus é um espírito imortal cujas canções assombradoras são um prelúdio para o terror de sua aparição horripilante. Os vivos temem a eternidade dos mortos-vivos, mas Karthus vê apenas beleza e pureza em seu abraço, uma união perfeita de vida e morte. Quando Karthus emerge das Ilhas das Sombras, ele traz a alegria da morte aos mortais, como um apóstolo dos mortos-vivos."
+},
+{
+"release-date":"2021-03-30T00:00:00.000Z",
+"name":"Gwen",
+"title":"a Costureira Encantada",
+"section-title":"Gwen",
+"slug":"gwen",
+"image":"https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Gwen.png",
+"background":"https://cmsassets.rgpub.io/sanity/images/dsfx7636/universe/d50fc331a7e80a6609df4220310ab08124d62131-1920x1133.jpg?accountingTag=LoL",
+"url":"/pt_br/champion/gwen",
+"role":[
+{
+"name":"Lutador",
+"slug":"fighter"
+}
+],
+"nationality":"shadow-isles",
+"lore":"Uma boneca que ganhou vida por magia, Gwen empunha as mesmas ferramentas que um dia a criaram. Valorizando todo instante, ela carrega a força do amor de sua criadora a cada passo e comanda a Névoa Sagrada, uma magia protetora ancestral que abençoou a tesoura, as agulhas e a linha de costura que ela usa. Tudo é novidade para Gwen, mas ela continua alegre e determinada a lutar pelo bem que ainda resta nesse mundo abatido."
+},
+{
+"release-date":"2011-02-16T00:00:00.000Z",
+"name":"Maokai",
+"title":"o Ente Sinistro",
+"section-title":"Maokai",
+"slug":"maokai",
+"image":"https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Maokai.png",
+"background":"https://cmsassets.rgpub.io/sanity/images/dsfx7636/universe/84c4c1903f629fad7cd061476ec81c1b6d913140-1215x717.jpg?accountingTag=LoL",
+"url":"/pt_br/champion/maokai",
+"role":[
+{
+"name":"Tanque",
+"slug":"tank"
+},
+{
+"name":"Mago",
+"slug":"mage"
+}
+],
+"nationality":"shadow-isles",
+"lore":"Maokai é um grande ente enfurecido que luta contra os terrores sobrenaturais da Ilhas das Sombras. Ele se transformou em uma força vingativa depois que um cataclisma mágico destruiu seu lar, sobrevivendo apenas através das Águas da Vida que estão infusas em seu cerne. Outrora um espírito pacífico da natureza, Maokai agora batalha furiosamente para banir os flagelos da não-vida das Ilhas das Sombras e restaurar a antiga beleza do seu lar."
+},
+{
+"release-date":"2013-01-23T00:00:00.000Z",
+"name":"Thresh",
+"title":"o Guardião das Correntes",
+"section-title":"Thresh",
+"slug":"thresh",
+"image":"https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Thresh.png",
+"background":"https://cmsassets.rgpub.io/sanity/images/dsfx7636/universe_live/81ee3c3a300d102ecd650a0fb8e57738b12ead78-1215x717.jpg?accountingTag=LoL",
+"url":"/pt_br/champion/thresh",
+"role":[
+{
+"name":"Suporte",
+"slug":"support"
+},
+{
+"name":"Lutador",
+"slug":"fighter"
+}
+],
+"nationality":"shadow-isles",
+"lore":"Sádico e astuto, Thresh é um espectro ambicioso e incansável das Ilhas das Sombras. Ele já foi guardião de incontáveis segredos arcanos, mas acabou sucumbindo a poderes maiores do que a vida e a morte. Agora, Thresh vive atormentando e acorrentando vítimas de forma lenta e dolorosamente criativa. O sofrimento se estende muito além dos corpos mortais, pois os alvos de Thresh são as almas, que acabam aprisionadas em sua lanterna maldita e são torturadas por toda a eternidade."
+},
+{
+"release-date":"2011-06-22T00:00:00.000Z",
+"name":"Yorick",
+"title":"o Pastor de Almas",
+"section-title":"Yorick",
+"slug":"yorick",
+"image":"https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Yorick.png",
+"background":"https://cmsassets.rgpub.io/sanity/images/dsfx7636/universe/5d642e95630ab270c062f516f06104119e4230ec-1215x717.jpg?accountingTag=LoL",
+"url":"/pt_br/champion/yorick",
+"role":[
+{
+"name":"Lutador",
+"slug":"fighter"
+},
+{
+"name":"Mago",
+"slug":"mage"
+}
+],
+"nationality":"shadow-isles",
+"lore":"Último sobrevivente de uma ordem religiosa há muito esquecida, Yorick é abençoado e amaldiçoado pelo poder que exerce sobre os mortos. Preso nas Ilhas das Sombras, suas únicas companhias são os defuntos e espectros atormentados que ele atrai. As ações monstruosas de Yorick mascaram seu nobre propósito: libertar sua terra da maldição da Ruína."
+},
+{
+"release-date":"2012-04-18T00:00:00.000Z",
+"name":"Hecarim",
+"title":"a Sombra da Guerra",
+"section-title":"Hecarim",
+"slug":"hecarim",
+"image":"https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Hecarim.png",
+"background":"https://cmsassets.rgpub.io/sanity/images/dsfx7636/universe/ae7f0f18a2032a08eeb1983cde9422ad25d8e981-1215x717.jpg?accountingTag=LoL",
+"url":"/pt_br/champion/hecarim",
+"role":[
+{
+"name":"Lutador",
+"slug":"fighter"
+},
+{
+"name":"Tanque",
+"slug":"tank"
+}
+],
+"nationality":"shadow-isles",
+"lore":"Hecarim é a fusão espectral de homem e animal, amaldiçoado a cavalgar entre as almas dos vivos por toda a eternidade. Quando as Ilhas das Bênçãos caíram nas sombras, esse cavaleiro orgulhoso foi obliterado pelas energias destrutivas da Ruína, junto com toda sua cavalaria e suas montarias. Agora, assim que a Névoa Negra se espalha por Runeterra, ele lidera seu ataque devastador, deleitando-se com a matança e destruindo seus inimigos sob seus cascos de armadura."
+},
+{
+"release-date":"2021-09-08T19:43:26.000Z",
+"name":"Vex",
+"title":"a Melancolista",
+"section-title":"Vex",
+"slug":"vex",
+"image":"https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Vex.png",
+"background":"https://cmsassets.rgpub.io/sanity/images/dsfx7636/universe/5bbb4cc7211394f0f8d93e65f6919710894315b7-1920x1064.jpg?accountingTag=LoL",
+"url":"/pt_br/champion/vex",
+"role":[
+{
+"name":"Mago",
+"slug":"mage"
+}
+],
+"nationality":"shadow-isles",
+"lore":"Em meio à escuridão das Ilhas das Sombras, uma solitária yordle se move com pesar, abrindo caminho pela névoa espectral, satisfeita em viver nas trevas. Com uma poderosa sombra no seu encalço e uma fonte inesgotável de mazelas nas costas, Vex vive num mundinho de agonia que ela mesma criou, longe da alegria repulsiva do mundo dos \"normais\". Apesar de não ser a mais ambiciosa das yordles, perto dela a cor e a felicidade não têm vez. Com sua indisposição mágica, ela afasta qualquer possível intrometido."
+}
+],
+"bandle-city":[
+{
+"release-date":"2009-02-21T00:00:00.000Z",
+"name":"Tristana",
+"title":"a Artilheira Yordle",
+"section-title":"Tristana",
+"slug":"tristana",
+"image":"https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Tristana.png",
+"background":"https://cmsassets.rgpub.io/sanity/images/dsfx7636/universe/1c1cbd9b934a2c5ff23e5340ca774f62712d28f4-1215x717.jpg?accountingTag=LoL",
+"url":"/pt_br/champion/tristana",
+"role":[
+{
+"name":"Atirador",
+"slug":"marksman"
+},
+{
+"name":"Assassino",
+"slug":"assassin"
+}
+],
+"nationality":"bandle-city",
+"lore":"Apesar de muitos outros yordles focarem sua energia em descobertas, invenções ou simplesmente travessuras, Tristana sempre se inspirou nas aventuras de grandes guerreiros. Ela ouviu muito sobre Runeterra, suas facções e suas guerras, e acreditava que sua raça também poderia se tornar digna de lendas. Pisando no mundo pela primeira vez, ela pegou seu canhão de confiança, Boomer, e agora salta para a batalha com coragem e otimismo inabaláveis."
+},
+{
+"release-date":"2011-04-26T00:00:00.000Z",
+"name":"Rumble",
+"title":"a Ameaça Mecânica",
+"section-title":"Rumble",
+"slug":"rumble",
+"image":"https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Rumble.png",
+"background":"https://cmsassets.rgpub.io/sanity/images/dsfx7636/universe/96575d035661d8c3238a1a8f098aebefb5641862-1215x717.jpg?accountingTag=LoL",
+"url":"/pt_br/champion/rumble",
+"role":[
+{
+"name":"Lutador",
+"slug":"fighter"
+},
+{
+"name":"Mago",
+"slug":"mage"
+}
+],
+"nationality":"bandle-city",
+"lore":"Rumble é um jovem inventor irritadiço. Usando nada além de suas próprias mãos e uma pilha de sucata, o yordle briguento construiu um mecha colossal montado com um arsenal de arpões eletrificados e foguetes incendiários. Apesar de outros rirem de suas criações de ferro-velho, Rumble não se importa. Afinal, é ele que tem um cospe-fogo."
+},
+{
+"release-date":"2009-09-19T00:00:00.000Z",
+"name":"Corki",
+"title":"o Bombardeiro Ousado",
+"section-title":"Corki",
+"slug":"corki",
+"image":"https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Corki.png",
+"background":"https://cmsassets.rgpub.io/sanity/images/dsfx7636/universe/5bf51137ae5bdf98b83e2e791f6c288d6121470d-1215x717.jpg?accountingTag=LoL",
+"url":"/pt_br/champion/corki",
+"role":[
+{
+"name":"Atirador",
+"slug":"marksman"
+}
+],
+"nationality":"bandle-city",
+"lore":"Corki, o piloto yordle, ama duas coisas acima de qualquer outra: voar e seu glamoroso bigode... não necessariamente nessa ordem. Depois de deixar Bandópolis, ele se estabeleceu em Piltover e se apaixonou pelas máquinas maravilhosas que encontrou por lá. Ele se dedicou ao desenvolvimento de engenhocas voadoras, liderando uma força de defesa aérea de veteranos experientes conhecidos como os Serpentes Gritantes. Calmo sob fogo, Corki patrulha os céus ao redor de seu novo lar e nunca encontrou um problema que uma boa barragem de mísseis não pudesse resolver."
+},
+{
+"release-date":"2019-04-25T00:00:00.000Z",
+"name":"Yuumi",
+"title":"a Gata Mágica",
+"section-title":"Yuumi",
+"slug":"yuumi",
+"image":"https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Yuumi.png",
+"background":"https://cmsassets.rgpub.io/sanity/images/dsfx7636/universe/a6229d0ef91811bbe60b4bae20956ac581633fa8-1920x1204.jpg?accountingTag=LoL",
+"url":"/pt_br/champion/yuumi",
+"role":[
+{
+"name":"Suporte",
+"slug":"support"
+},
+{
+"name":"Mago",
+"slug":"mage"
+}
+],
+"nationality":"bandle-city",
+"lore":"Uma gata mágica de Bandópolis, Yuumi já foi a mascote de uma feiticeira yordle chamada Norra. Mas quando sua mestra desapareceu misteriosamente, Yuumi se tornou a Guardiã do Livro dos Portais de Norra, viajando à procura dela através dos portais nas páginas. Sentindo falta do carinho de sua mestra, Yuumi busca diversas companhias em sua jornada, protegendo a todos com escudos luminosos e determinação ferrenha. Enquanto Livro se esforça para mantê-la focada na tarefa, Yuumi costuma se distrair com regalias mundanas, como cochilos e peixe para o jantar. Porém, no fim das contas, ela sempre retoma a missão: encontrar sua querida amiga."
+},
+{
+"release-date":"2009-07-24T00:00:00.000Z",
+"name":"Veigar",
+"title":"o Pequeno Mestre do Mal",
+"section-title":"Veigar",
+"slug":"veigar",
+"image":"https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Veigar.png",
+"background":"https://cmsassets.rgpub.io/sanity/images/dsfx7636/universe/34b61751da58c5ccdb657faf8b606007070c41b0-1215x717.jpg?accountingTag=LoL",
+"url":"/pt_br/champion/veigar",
+"role":[
+{
+"name":"Mago",
+"slug":"mage"
+}
+],
+"nationality":"bandle-city",
+"lore":"Veigar, um mestre entusiasta da feitiçaria das trevas, aderiu a poderes dos quais poucos mortais se aproximam. Um habitante inconformado de Bandópolis, ele desejava ultrapassar as limitações da magia yordle, se voltando, então, para os textos arcanos que permaneceram escondidos por milhares de anos. Agora uma criatura teimosa com uma fascinação sem fim pelos mistérios do universo, Veigar é constantemente subestimado por outros. E mesmo que ele acredite ser verdadeiramente mau, ele possui um senso de ética interior que leva alguns a se perguntarem sobre suas verdadeiras motivações."
+},
+{
+"release-date":"2012-03-20T00:00:00.000Z",
+"name":"Lulu",
+"title":"a Fada Feiticeira",
+"section-title":"Lulu",
+"slug":"lulu",
+"image":"https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Lulu.png",
+"background":"https://cmsassets.rgpub.io/sanity/images/dsfx7636/universe/8cadd76b5624b8dab1cafbdfe04ee285197dd594-1215x717.jpg?accountingTag=LoL",
+"url":"/pt_br/champion/lulu",
+"role":[
+{
+"name":"Suporte",
+"slug":"support"
+},
+{
+"name":"Mago",
+"slug":"mage"
+}
+],
+"nationality":"bandle-city",
+"lore":"A maga yordle Lulu é conhecida por conjurar ilusões de sonhos e criaturas fantasiosas enquanto vaga por Runeterra com seu silfo companheiro, Pix. Lulu transforma a realidade por capricho, distorcendo o que ela vê como restrições desse banal reino físico. Apesar de alguns considerarem sua magia no mínimo anormal, e no máximo perigosa, ela acredita que todos merecem um toque de encanto."
+},
+{
+"release-date":"2009-02-21T00:00:00.000Z",
+"name":"Teemo",
+"title":"o Explorador Veloz",
+"section-title":"Teemo",
+"slug":"teemo",
+"image":"https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Teemo.png",
+"background":"https://cmsassets.rgpub.io/sanity/images/dsfx7636/universe/cbec5c5ced03b21b745997294e4a391d77cf6720-1920x1080.jpg?accountingTag=LoL",
+"url":"/pt_br/champion/teemo",
+"role":[
+{
+"name":"Atirador",
+"slug":"marksman"
+}
+],
+"nationality":"bandle-city",
+"lore":"Indiferente até aos obstáculos mais perigosos e ameaçadores, Teemo vasculha o mundo com infinito entusiasmo e animação. Um yordle com uma inabalável moral que se orgulha de seguir o Código dos Escoteiros de Bandópolis, às vezes com tanta dedicação que não se toca das possíveis consequências de suas ações. Embora alguns duvidem da existência dos escoteiros, uma coisa é certa: nunca se deve duvidar das convicções de Teemo."
+}
+],
+"shurima":[
+{
+"release-date":"2023-06-23T18:00:00.000Z",
+"name":"Naafiri",
+"title":"a Fera das Cem Mordidas",
+"section-title":"Naafiri",
+"slug":"naafiri",
+"image":"https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Naafiri.png",
+"background":"https://cmsassets.rgpub.io/sanity/images/dsfx7636/universe/b366641d047f674c3f13569f830acccf65b081e3-1920x1080.jpg?accountingTag=LoL",
+"url":"/pt_br/champion/naafiri",
+"role":[
+{
+"name":"Assassino",
+"slug":"assassin"
+}
+],
+"nationality":"shurima",
+"lore":"Pelas areias de Shurima, um coro de uivos ressoa. É o chamado dos cães das dunas, predadores vorazes que formam matilhas e disputam o direito de caçar nessas terras áridas. Entre eles, uma matilha se destaca, pois é movida não apenas por instintos caninos, mas pelo poder ancestral dos Darkin."
+},
+{
+"release-date":"2011-01-18T00:00:00.000Z",
+"name":"Renekton",
+"title":"o Carniceiro das Areias",
+"section-title":"Renekton",
+"slug":"renekton",
+"image":"https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Renekton.png",
+"background":"https://cmsassets.rgpub.io/sanity/images/dsfx7636/universe/631c08061ddf52c0b6986407c28011b4e93e5397-1215x717.jpg?accountingTag=LoL",
+"url":"/pt_br/champion/renekton",
+"role":[
+{
+"name":"Lutador",
+"slug":"fighter"
+},
+{
+"name":"Tanque",
+"slug":"tank"
+}
+],
+"nationality":"shurima",
+"lore":"Renekton é um aterrorizante e furioso ser Ascendente dos desertos escaldantes de Shurima. Ele já foi o guerreiro mais estimado de todo o seu império, levando os exércitos da nação a inúmeras vitórias. No entanto, após a queda do império, Renekton foi enterrado nas areias e, lentamente, enquanto o mundo girava e mudava, ele sucumbia à loucura. Novamente liberto, ele é consumido pelo desejo de encontrar e matar seu irmão Nasus, a quem culpa pelos séculos que passou na escuridão graças à própria loucura."
+},
+{
+"release-date":"2022-10-18T15:00:00.000Z",
+"name":"K'Sante",
+"title":"o Orgulho de Nazumah",
+"section-title":"K'Sante",
+"slug":"ksante",
+"image":"https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/KSante.png",
+"background":"https://cmsassets.rgpub.io/sanity/images/dsfx7636/universe/2f7e81a667a238ce3649d8bd47152df60e7a5c55-1920x1080.jpg?accountingTag=LoL",
+"url":"/pt_br/champion/ksante",
+"role":[
+{
+"name":"Tanque",
+"slug":"tank"
+}
+],
+"nationality":"shurima",
+"lore":"Corajoso e desafiador, K'Sante enfrenta feras colossais e Ascendentes cruéis para proteger seu lar, Nazumah — um cobiçado oásis no meio das areias de Shurima. Entretanto, após uma desavença com seu antigo parceiro, K'Sante entendeu que, para se tornar um guerreiro digno de liderar a cidade, primeiro ele deve aplacar seu desejo obstinado de sucesso. Somente depois disso ele poderá evitar as armadilhas do próprio orgulho e encontrar a sabedoria necessária para derrotar os monstros ferozes que ameaçam seu povo."
+},
+{
+"release-date":"2016-05-18T00:00:00.000Z",
+"name":"Taliyah",
+"title":"a Tecelã de Pedras",
+"section-title":"Taliyah",
+"slug":"taliyah",
+"image":"https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Taliyah.png",
+"background":"https://cmsassets.rgpub.io/sanity/images/dsfx7636/universe/0c12d269b7ef51c4b52eee81713e372e4405650f-1215x717.jpg?accountingTag=LoL",
+"url":"/pt_br/champion/taliyah",
+"role":[
+{
+"name":"Mago",
+"slug":"mage"
+},
+{
+"name":"Suporte",
+"slug":"support"
+}
+],
+"nationality":"shurima",
+"lore":"Taliyah é uma maga nômade de Shurima, dividida entre sua empolgação juvenil e suas grandes responsabilidades. Ela cruzou quase toda Valoran em uma jornada para conhecer a verdadeira natureza de seus próprios poderes, apesar de ter retornado recentemente para proteger sua tribo. Há aqueles que já interpretaram sua compaixão como fraqueza e pagaram o preço por isso, pois, debaixo do comportamento juvenil de Taliyah, existe uma determinação forte o suficiente para mover montanhas e um espírito feroz o suficiente para fazer a terra tremer."
+},
+{
+"release-date":"2011-10-05T00:00:00.000Z",
+"name":"Xerath",
+"title":"o Mago Ascendente",
+"section-title":"Xerath",
+"slug":"xerath",
+"image":"https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Xerath.png",
+"background":"https://cmsassets.rgpub.io/sanity/images/dsfx7636/universe/ecd9c2d112f827ac51c797d3bd0acd4b77632704-1215x717.jpg?accountingTag=LoL",
+"url":"/pt_br/champion/xerath",
+"role":[
+{
+"name":"Mago",
+"slug":"mage"
+},
+{
+"name":"Assassino",
+"slug":"assassin"
+}
+],
+"nationality":"shurima",
+"lore":"Xerath é um mago Ascendente da antiga Shurima, um ser de energia arcana que existe em meio a estilhaços de um sarcófago mágico. Por milênios, ele ficou enclausurado debaixo das areias do deserto, mas o ressurgimento de Shurima o libertou de sua antiga prisão. Enlouquecido pelo próprio poder, ele agora busca tomar o que crê ser seu por direito e substituir as civilizações existentes do mundo com uma criada em sua própria imagem."
+},
+{
+"release-date":"2014-09-16T00:00:00.000Z",
+"name":"Azir",
+"title":"o Imperador das Areias",
+"section-title":"Azir",
+"slug":"azir",
+"image":"https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Azir.png",
+"background":"https://cmsassets.rgpub.io/sanity/images/dsfx7636/universe/869c235b670785d9b5910217f20383812c05e822-1215x717.jpg?accountingTag=LoL",
+"url":"/pt_br/champion/azir",
+"role":[
+{
+"name":"Mago",
+"slug":"mage"
+},
+{
+"name":"Atirador",
+"slug":"marksman"
+}
+],
+"nationality":"shurima",
+"lore":"Azir foi um imperador mortal de Shurima em uma era muito antiga e um homem orgulhoso que esteve a um passo da imortalidade. Sua insolência fez com que fosse traído e assassinado no momento de seu maior triunfo, mas agora, milênios depois, ele renasceu como um Ascendente de poder imenso. Com sua cidade antes soterrada agora erguida, Azir busca devolver Shurima à sua antiga glória."
+},
+{
+"release-date":"2009-07-10T00:00:00.000Z",
+"name":"Rammus",
+"title":"o Tatu Blindado",
+"section-title":"Rammus",
+"slug":"rammus",
+"image":"https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Rammus.png",
+"background":"https://cmsassets.rgpub.io/sanity/images/dsfx7636/universe/60bbb4069192b33c83dafa45c6c3fa97e03f9903-1215x717.jpg?accountingTag=LoL",
+"url":"/pt_br/champion/rammus",
+"role":[
+{
+"name":"Tanque",
+"slug":"tank"
+},
+{
+"name":"Lutador",
+"slug":"fighter"
+}
+],
+"nationality":"shurima",
+"lore":"Idolatrado por muitos, dispensado por alguns e misterioso para todos, Rammus é um ser curioso e enigmático. Protegido por um casco espetado, ele inspira teorias cada vez mais divergentes sobre sua origem por onde quer que passe — de semideus, a oráculo sagrado, a uma fera qualquer que foi transformada por magia. Qualquer que seja a verdade, Rammus mantém seus pareceres e não interrompe seu caminho por ninguém enquanto vaga sem rumo pelo deserto shurimane."
+},
+{
+"release-date":"2021-07-08T19:43:26.000Z",
+"name":"Akshan",
+"title":"o Sentinela Rebelde",
+"section-title":"Akshan",
+"slug":"akshan",
+"image":"https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Akshan.png",
+"background":"https://cmsassets.rgpub.io/sanity/images/dsfx7636/universe/07c43e3534cea074a4dbcf273dfcf3220cfc40b7-1920x1080.jpg?accountingTag=LoL",
+"url":"/pt_br/champion/akshan",
+"role":[
+{
+"name":"Atirador",
+"slug":"marksman"
+},
+{
+"name":"Assassino",
+"slug":"assassin"
+}
+],
+"nationality":"shurima",
+"lore":"Akshan ri da cara do perigo, lutando contra o mal com carisma, determinação e desejo de vingança, mas, estranhamente, sem vestir uma camisa sequer. É extremamente habilidoso na arte do combate furtivo, capaz de sumir da vista dos inimigos e reaparecer quando menos se espera. Com um firme senso de justiça e uma arma lendária que pode reverter a morte, ele corrige os delitos dos canalhas de Runeterra e vive de acordo com um código de conduta particular: \"Não seja babaca\"."
+},
+{
+"release-date":"2009-02-21T00:00:00.000Z",
+"name":"Sivir",
+"title":"a Mestra da Batalha",
+"section-title":"Sivir",
+"slug":"sivir",
+"image":"https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Sivir.png",
+"background":"https://cmsassets.rgpub.io/sanity/images/dsfx7636/universe/0c05de7cba9f8cfbfab361a10d8719e36ee69fb1-1215x717.jpg?accountingTag=LoL",
+"url":"/pt_br/champion/sivir",
+"role":[
+{
+"name":"Atirador",
+"slug":"marksman"
+}
+],
+"nationality":"shurima",
+"lore":"Sivir é uma renomada caçadora de recompensas e capitã mercenária que manipula o comércio nos desertos de Shurima. Armada com sua lendária lâmina em cruz adornada, ela lutou e venceu incontáveis batalhas por aqueles que podem pagar seu preço exorbitante. Conhecida por sua resolução audaz e ambição sem fim, ela se orgulha de recuperar tesouros secretos das perigosas tumbas de Shurima — por um bom preço. Com forças anciãs remexendo os ossos da própria Shurima, Sivir encontra-se dividida entre destinos conflitantes."
+},
+{
+"release-date":"2009-06-26T00:00:00.000Z",
+"name":"Amumu",
+"title":"a Múmia Triste",
+"section-title":"Amumu",
+"slug":"amumu",
+"image":"https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Amumu.png",
+"background":"https://cmsassets.rgpub.io/sanity/images/dsfx7636/universe/bd6e23113bfc701f4b5e05ed94811a44f62ae723-1215x717.jpg?accountingTag=LoL",
+"url":"/pt_br/champion/amumu",
+"role":[
+{
+"name":"Tanque",
+"slug":"tank"
+},
+{
+"name":"Mago",
+"slug":"mage"
+}
+],
+"nationality":"shurima",
+"lore":"Reza a lenda que Amumu é uma alma solitária e melancólica da antiga Shurima que vaga sem rumo pelo mundo em busca de um amigo. Amaldiçoado por um feitiço ancestral para permanecer só pela eternidade, seu toque traz a morte e sua afeição, a ruína. Aqueles que afirmam já tê-lo visto o descrevem como um morto-vivo franzino e coberto por faixas asquerosas. Amumu já inspirou tantos mitos, folclore e lendas contadas por muitas gerações, que já é impossível separar a verdade da ficção."
+},
+{
+"release-date":"2009-10-01T00:00:00.000Z",
+"name":"Nasus",
+"title":"o Curador das Areias",
+"section-title":"Nasus",
+"slug":"nasus",
+"image":"https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Nasus.png",
+"background":"https://cmsassets.rgpub.io/sanity/images/dsfx7636/universe/bff6b7362b42e604dca1fcaac70b557ce5e92f97-1215x717.jpg?accountingTag=LoL",
+"url":"/pt_br/champion/nasus",
+"role":[
+{
+"name":"Lutador",
+"slug":"fighter"
+},
+{
+"name":"Tanque",
+"slug":"tank"
+}
+],
+"nationality":"shurima",
+"lore":"Nasus é um majestoso Ascendente com cabeça de chacal da antiga Shurima; uma figura heroica considerada semideus pelo povo do deserto. Ferozmente inteligente, ele foi um guardião do conhecimento e estrategista sem igual cuja sabedoria guiou o antigo império de Shurima em direção à grandeza por muitos séculos. Após a queda do império, ele colocou a si mesmo em exílio, tornando-se mais que uma lenda. Agora que a antiga cidade de Shurima ressurgiu, ele retornou, determinado a assegurar que ela nunca mais caia."
+}
+],
+"mount-targon":[
+{
+"release-date":"2017-11-09T00:00:00.000Z",
+"name":"Zoe",
+"title":"o Aspecto do Crepúsculo",
+"section-title":"Zoe",
+"slug":"zoe",
+"image":"https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Zoe.png",
+"background":"https://cmsassets.rgpub.io/sanity/images/dsfx7636/universe/6e574007f48ff528ad0f58e0bdd7c7e465c6be2e-1920x1135.jpg?accountingTag=LoL",
+"url":"/pt_br/champion/zoe",
+"role":[
+{
+"name":"Mago",
+"slug":"mage"
+}
+],
+"nationality":"mount-targon",
+"lore":"Como a personificação da travessura, imaginação e mudança, Zoe atua como a mensageira cósmica de Targon, anunciando a chegada de grandes eventos que redefinem mundos. Sua mera presença altera a matemática arcana que governa as realidades, às vezes causando cataclismas não intencionais. Talvez isso explique a forma despretensiosa e jovial com a qual Zoe encara seu dever e que permite que ela tenha tempo de sobra para pregar peças nos mortais, fazer brincadeirinhas ou dar um jeitinho de se divertir de alguma forma. Um encontro com Zoe pode ser agradável e revigorante, mas é sempre mais do que parece e geralmente extremamente perigoso."
+},
+{
+"release-date":"2009-08-19T00:00:00.000Z",
+"name":"Taric",
+"title":"o Escudo de Valoran",
+"section-title":"Taric",
+"slug":"taric",
+"image":"https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Taric.png",
+"background":"https://cmsassets.rgpub.io/sanity/images/dsfx7636/universe/08e9f794f7bb45bf947e2196cca27b1abb5959f8-1215x717.jpg?accountingTag=LoL",
+"url":"/pt_br/champion/taric",
+"role":[
+{
+"name":"Suporte",
+"slug":"support"
+},
+{
+"name":"Lutador",
+"slug":"fighter"
+}
+],
+"nationality":"mount-targon",
+"lore":"Taric é o Aspecto do Protetor, portando um incrível poder como o guardião da vida, do amor e da beleza de Runeterra. Punido por faltar ao cumprimento de seu dever e exilado de Demacia, sua terra natal, Taric subiu o Monte Targon em busca de redenção, mas acabou por descobrir um chamado maior dentre as estrelas. Imbuído do poder ancestral de Targon, o Escudo de Valoran agora mantém vigilância contra a pérfida corrupção do Vazio."
+},
+{
+"release-date":"2012-08-07T00:00:00.000Z",
+"name":"Diana",
+"title":"o Escárnio da Lua",
+"section-title":"Diana",
+"slug":"diana",
+"image":"https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Diana.png",
+"background":"https://cmsassets.rgpub.io/sanity/images/dsfx7636/universe/c3c3198b3ffb3d419b0963c5a5a631a4aa9a831b-1215x717.jpg?accountingTag=LoL",
+"url":"/pt_br/champion/diana",
+"role":[
+{
+"name":"Lutador",
+"slug":"fighter"
+},
+{
+"name":"Mago",
+"slug":"mage"
+}
+],
+"nationality":"mount-targon",
+"lore":"Empunhando sua espada lunar crescente, Diana luta como uma guerreira dos Lunari, um credo quase extinto nas terras ao redor do Monte Targon. Vestida com uma armadura brilhante da cor da neve de inverno noturna, ela é a personificação do poder da lua prateada. Dotada com a essência de um Aspecto de além do cume de Targon, Diana já não é mais totalmente humana e tem dificuldades para dominar seu poder e propósito neste mundo."
+},
+{
+"release-date":"2011-07-13T00:00:00.000Z",
+"name":"Leona",
+"title":"a Alvorada Radiante",
+"section-title":"Leona",
+"slug":"leona",
+"image":"https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Leona.png",
+"background":"https://cmsassets.rgpub.io/sanity/images/dsfx7636/universe/bd31d8599bfa6d1a64e1a6ecde13548356ea525c-1215x717.jpg?accountingTag=LoL",
+"url":"/pt_br/champion/leona",
+"role":[
+{
+"name":"Tanque",
+"slug":"tank"
+},
+{
+"name":"Suporte",
+"slug":"support"
+}
+],
+"nationality":"mount-targon",
+"lore":"Impregnada pelas chamas do sol, Leona é uma guerreira sagrada de Solari que defende o Monte Targon com sua Lâmina Zênite e a Proteção da Aurora. Sua pele brilha com fogo solar enquanto seus olhos queimam com o poder do Aspecto celestial que nela existe. Protegida em uma armadura dourada e carregando o terrível fardo de um conhecimento ancestral, Leona traz luz a alguns e morte a outros."
+},
+{
+"release-date":"2009-02-21T00:00:00.000Z",
+"name":"Soraka",
+"title":"a Filha das Estrelas",
+"section-title":"Soraka",
+"slug":"soraka",
+"image":"https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Soraka.png",
+"background":"https://cmsassets.rgpub.io/sanity/images/dsfx7636/universe/b2796a7c60fc816f1bfc91f39495d3387cc43bbb-1215x717.jpg?accountingTag=LoL",
+"url":"/pt_br/champion/soraka",
+"role":[
+{
+"name":"Suporte",
+"slug":"support"
+},
+{
+"name":"Mago",
+"slug":"mage"
+}
+],
+"nationality":"mount-targon",
+"lore":"Uma andarilha vinda de dimensões celestiais além do Monte Targon, Soraka desistiu de sua imortalidade para proteger as raças mortais de seus instintos mais violentos. Ela pretende espalhar as virtudes da compaixão e da misericórdia a todos que encontra, curando até mesmo aqueles que desejam seu mal. E apesar de ter visto todas as dificuldades deste mundo, Soraka ainda acredita que o povo de Runeterra não alcançou todo seu potencial."
+},
+{
+"release-date":"2019-11-19T19:43:26.000Z",
+"name":"Aphelios",
+"title":"a Arma dos Devotos",
+"section-title":"Aphelios",
+"slug":"aphelios",
+"image":"https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Aphelios.png",
+"background":"https://cmsassets.rgpub.io/sanity/images/dsfx7636/universe/13d6778903fe6ab73298998e20405e15130fca5f-1900x1122.jpg?accountingTag=LoL",
+"url":"/pt_br/champion/aphelios",
+"role":[
+{
+"name":"Atirador",
+"slug":"marksman"
+},
+{
+"name":"Tanque",
+"slug":"tank"
+}
+],
+"nationality":"mount-targon",
+"lore":"Emergindo da sombra do luar com suas armas em mãos, Aphelios abate os inimigos de sua fé em absoluto silêncio, comunicando-se apenas pela destreza de sua mira e pelo disparo de cada arma. Embora viva sob o efeito de um veneno que o emudeceu, ele é guiado por sua irmã Alune, que habita um santuário distante de onde invoca um arsenal de armas de pedra da lua para ajudá-lo. Enquanto a lua brilhar no céu, Aphelios nunca estará sozinho."
+},
+{
+"release-date":"2010-02-02T00:00:00.000Z",
+"name":"Pantheon",
+"title":"a Lança Indestrutível",
+"section-title":"Pantheon",
+"slug":"pantheon",
+"image":"https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Pantheon.png",
+"background":"https://cmsassets.rgpub.io/sanity/images/dsfx7636/universe/3e0453881b8d408fbb02fabb4a02e09a34c69310-1080x637.jpg?accountingTag=LoL",
+"url":"/pt_br/champion/pantheon",
+"role":[
+{
+"name":"Lutador",
+"slug":"fighter"
+},
+{
+"name":"Assassino",
+"slug":"assassin"
+}
+],
+"nationality":"mount-targon",
+"lore":"Antes um relutante portador do Aspecto da Guerra, Atreus conseguiu sobreviver quando o poder celestial dentro dele foi morto, recusando-se a sucumbir a um golpe que arrancou estrelas do céu. Com o tempo, ele aprendeu a usar o poder de sua própria mortalidade e da persistente resiliência que veio com ela. Hoje, Atreus se opõe a tudo o que é divino com o renascimento de um novo Pantheon, e sua inabalável determinação é o que alimenta as armas do antigo Aspecto no campo de batalha."
+}
+],
+"demacia":[
+{
+"release-date":"2026-06-23T17:00:00.000Z",
+"name":"Locke",
+"title":"O Exorcista das Cinzas",
+"section-title":"Locke",
+"slug":"locke",
+"image":"https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Locke.png",
+"background":"https://cmsassets.rgpub.io/sanity/images/dsfx7636/universe_live/f145da842088913c4c9bd44a715a5c912a096707-1920x1080.jpg?accountingTag=LoL",
+"url":"/pt_br/champion/locke",
+"role":[
+{
+"name":"Assassino",
+"slug":"assassin"
+}
+],
+"nationality":"demacia",
+"lore":"Corvin Locke, um exorcista versado em ritos proibidos e na arte de atirar pregos, é a prole dos ocultistas demacianos. Nascido num antro de mentiras e de hipocrisia, ele aprendeu desde cedo que demônios não são a causa dos males da humanidade, e sim a consequência. Agora, determinado a tornar o mundo um lugar mais honesto, Locke dilacera almas e expõe a obscuridade delas... um exorcismo de cada vez."
+},
+{
+"release-date":"2010-04-27T00:00:00.000Z",
+"name":"Garen",
+"title":"o Poder de Demacia",
+"section-title":"Garen",
+"slug":"garen",
+"image":"https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Garen.png",
+"background":"https://cmsassets.rgpub.io/sanity/images/dsfx7636/universe/1bdf6576f5940b47f7eecc73545d8c80050cbd80-1215x717.jpg?accountingTag=LoL",
+"url":"/pt_br/champion/garen",
+"role":[
+{
+"name":"Lutador",
+"slug":"fighter"
+},
+{
+"name":"Tanque",
+"slug":"tank"
+}
+],
+"nationality":"demacia",
+"lore":"Um guerreiro nobre e orgulhoso, Garen faz parte da Vanguarda Destemida. Popular entre seus companheiros e respeitado o suficiente por seus inimigos, sua reputação é nada mais do que o esperado de um herdeiro da prestigiosa família Stemmaguarda, encarregada de defender Demacia e seus ideais. Vestido com uma armadura resistente à magia e empunhando uma poderosa espada, Garen está sempre pronto para confrontar magos e feiticeiros no campo de batalha, em um verdadeiro furacão de aço virtuoso."
+},
+{
+"release-date":"2010-10-19T00:00:00.000Z",
+"name":"Lux",
+"title":"a Dama da Luz",
+"section-title":"Lux",
+"slug":"lux",
+"image":"https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Lux.png",
+"background":"https://cmsassets.rgpub.io/sanity/images/dsfx7636/universe/7dae022eb3726b7b351cf90ad8351731907229a1-1215x717.jpg?accountingTag=LoL",
+"url":"/pt_br/champion/lux",
+"role":[
+{
+"name":"Mago",
+"slug":"mage"
+},
+{
+"name":"Suporte",
+"slug":"support"
+}
+],
+"nationality":"demacia",
+"lore":"Luxanna Stemmaguarda nasceu em Demacia, um reino insular onde habilidades mágicas são vistas com medo e desconfiança. Capaz de dobrar a luz à sua vontade, ela cresceu temendo ser descoberta e exilada, e foi forçada a manter seus poderes em segredo a fim de preservar o status de nobreza de sua família. Apesar de tudo, o otimismo e resiliência de Lux a levaram a aceitar seus talentos únicos e agora ela os utiliza em segredo a serviço de sua terra natal."
+},
+{
+"release-date":"2011-05-10T00:00:00.000Z",
+"name":"Vayne",
+"title":"a Caçadora Noturna",
+"section-title":"Vayne",
+"slug":"vayne",
+"image":"https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Vayne.png",
+"background":"https://cmsassets.rgpub.io/sanity/images/dsfx7636/universe/beb13350daed0456c1f0feb6b0e8175c23443ebe-1215x717.jpg?accountingTag=LoL",
+"url":"/pt_br/champion/vayne",
+"role":[
+{
+"name":"Atirador",
+"slug":"marksman"
+},
+{
+"name":"Assassino",
+"slug":"assassin"
+}
+],
+"nationality":"demacia",
+"lore":"Shauna Vayne é uma caçadora de monstros demaciana mortal e implacável que dedicou sua vida a encontrar e destruir o monstro que assassinou sua família. Armada com uma balestra em seu pulso e com um coração cheio de vingança, ela só é realmente feliz quando está matando praticantes ou criações das artes obscuras, atacando das sombras com um turbilhão de dardos de prata."
+},
+{
+"release-date":"2010-07-13T00:00:00.000Z",
+"name":"Xin Zhao",
+"title":"o Senescal de Demacia",
+"section-title":"Xin Zhao",
+"slug":"xinzhao",
+"image":"https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/XinZhao.png",
+"background":"https://cmsassets.rgpub.io/sanity/images/dsfx7636/universe_live/b761ff9491287fda90704457e6ae795b1eb1d0f4-1920x1080.jpg?accountingTag=LoL",
+"url":"/pt_br/champion/xinzhao",
+"role":[
+{
+"name":"Lutador",
+"slug":"fighter"
+},
+{
+"name":"Assassino",
+"slug":"assassin"
+}
+],
+"nationality":"demacia",
+"lore":"Xin Zhao é um guerreiro determinado, leal à dinastia Lumescudo. No passado, ele foi condenado a lutar como gladiador em Noxus, e sobreviveu à incontáveis lutas, mas depois de ser libertado por forças demacianas, ele prometeu sua vida e lealdade aos seus corajosos salvadores. Armado com sua lança de três pontas favorita, Xin Zhao agora luta pelo reino que adotou, desafiando com audácia qualquer inimigo, não importando as chances de vitória."
+},
+{
+"release-date":"2011-11-01T00:00:00.000Z",
+"name":"Shyvana",
+"title":"a Meio-Dragão",
+"section-title":"Shyvana",
+"slug":"shyvana",
+"image":"https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Shyvana.png",
+"background":"https://cmsassets.rgpub.io/sanity/images/dsfx7636/universe_live/08b9f96ca366a0b095ce2c1860184587710d459d-1920x1080.jpg?accountingTag=LoL",
+"url":"/pt_br/champion/shyvana",
+"role":[
+{
+"name":"Lutador",
+"slug":"fighter"
+},
+{
+"name":"Tanque",
+"slug":"tank"
+}
+],
+"nationality":"demacia",
+"lore":"Shyvana é uma temível guerreira meio-dragão. Embora muitas vezes pareça humanoide, ela também domina os céus como um dragão, incinerando seus inimigos com um sopro de fogo. Após salvar a vida do príncipe herdeiro Jarvan IV, Shyvana passou a integrar sua guarda real e se esforça continuamente para ser aceita pelo receoso povo de Demacia."
+},
+{
+"release-date":"2012-02-29T00:00:00.000Z",
+"name":"Fiora",
+"title":"a Grande Duelista",
+"section-title":"Fiora",
+"slug":"fiora",
+"image":"https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Fiora.png",
+"background":"https://cmsassets.rgpub.io/sanity/images/dsfx7636/universe/2243b24de875e9db0e20903e111a569ba00f91b7-1215x717.jpg?accountingTag=LoL",
+"url":"/pt_br/champion/fiora",
+"role":[
+{
+"name":"Lutador",
+"slug":"fighter"
+},
+{
+"name":"Assassino",
+"slug":"assassin"
+}
+],
+"nationality":"demacia",
+"lore":"A duelista mais temida de toda Valoran, Fiora é renomada tanto por suas maneiras bruscas e perspicácia quanto pela velocidade de sua rapieira de aço. Nascida na Casa Laurent no reino de Demacia, Fiora tomou o controle da família de seu pai no rastro de um escândalo que quase os destruiu. A reputação da Casa Laurent foi manchada, mas Fiora não mede esforços para restaurar a honra de sua família e devolvê-los a seu lugar de direito entre os melhores de Demacia."
+},
+{
+"release-date":"2010-01-13T00:00:00.000Z",
+"name":"Poppy",
+"title":"a Guardiã do Martelo",
+"section-title":"Poppy",
+"slug":"poppy",
+"image":"https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Poppy.png",
+"background":"https://cmsassets.rgpub.io/sanity/images/dsfx7636/universe/0fb0e7692c05c9b0ab8b4d3e53fafcdf4bbdf985-1215x717.jpg?accountingTag=LoL",
+"url":"/pt_br/champion/poppy",
+"role":[
+{
+"name":"Tanque",
+"slug":"tank"
+},
+{
+"name":"Lutador",
+"slug":"fighter"
+}
+],
+"nationality":"demacia",
+"lore":"Runeterra não está em falta de campeões valentes, mas poucos são tão tenazes quanto Poppy. Carregando o lendário martelo de Orlon, uma arma que tem o dobro de seu tamanho, essa yordle determinada tem passado muitos anos procurando em segredo pelo lendário “Herói de Demacia”, dono legítimo do martelo. Até lá, ela cumpre seu dever entrando em batalhas e forçando os inimigos do reino a recuarem com cada giro de seu martelo."
+},
+{
+"release-date":"2013-03-01T00:00:00.000Z",
+"name":"Quinn",
+"title":"as Asas de Demacia",
+"section-title":"Quinn",
+"slug":"quinn",
+"image":"https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Quinn.png",
+"background":"https://cmsassets.rgpub.io/sanity/images/dsfx7636/universe/c184e107070eb49041d26b2d681424d120abe1b6-1215x717.jpg?accountingTag=LoL",
+"url":"/pt_br/champion/quinn",
+"role":[
+{
+"name":"Atirador",
+"slug":"marksman"
+},
+{
+"name":"Lutador",
+"slug":"fighter"
+}
+],
+"nationality":"demacia",
+"lore":"Quinn é uma cavaleira patrulheira de elite de Demacia que cumpre missões perigosas no coração do território inimigo. Ela e sua águia lendária, Valor, possuem um vínculo inquebrável e seus inimigos muitas vezes são mortos antes de notarem que não estão lutando contra um, mas dois dos maiores heróis do reino. Ágil e acrobática quando necessário, Quinn mira com sua balestra, enquanto Valor, do alto, marca seus alvos esquivos, fazendo deles uma dupla letal no campo de batalha."
+},
+{
+"release-date":"2010-09-21T00:00:00.000Z",
+"name":"Sona",
+"title":"a Mestra das Cordas",
+"section-title":"Sona",
+"slug":"sona",
+"image":"https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Sona.png",
+"background":"https://cmsassets.rgpub.io/sanity/images/dsfx7636/universe/5244dd28bd065e6247105381854a18df3900ec73-1215x717.jpg?accountingTag=LoL",
+"url":"/pt_br/champion/sona",
+"role":[
+{
+"name":"Suporte",
+"slug":"support"
+},
+{
+"name":"Mago",
+"slug":"mage"
+}
+],
+"nationality":"demacia",
+"lore":"Sona é um dos maiores prodígios em etwahl de cordas em Demacia, falando somente através de seus acordes graciosos e de suas árias vibrantes. Seu comportamento refinado cativou os nobres, apesar de muitos suspeitarem que suas melodias fascinantes realmente emanem magia, um tabu em Demacia. Silenciosa com desconhecidos, mas compreendida de alguma forma por companheiros próximos, Sona dedilha suas harmonias não somente para aliviar a dor de seus aliados, mas também para derrubar inimigos desavisados."
+},
+{
+"release-date":"2009-02-21T00:00:00.000Z",
+"name":"Kayle",
+"title":"a Justa",
+"section-title":"Kayle",
+"slug":"kayle",
+"image":"https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Kayle.png",
+"background":"https://cmsassets.rgpub.io/sanity/images/dsfx7636/universe/e542dbab1925ff2d1fdddaf60a8412b6095ee316-1920x1149.jpg?accountingTag=LoL",
+"url":"/pt_br/champion/kayle",
+"role":[
+{
+"name":"Lutador",
+"slug":"fighter"
+},
+{
+"name":"Suporte",
+"slug":"support"
+}
+],
+"nationality":"demacia",
+"lore":"Nascida de um Aspecto targonense no auge das Guerras Rúnicas, Kayle honrava o legado de sua mãe lutando por justiça com asas de chamas divinas. Ela e sua irmã gêmea, Morgana, foram as protetoras de Demacia por muitos anos, até Kayle se desiludir com as repetidas falhas dos mortais e abandonar de vez o plano mortal. Mesmo assim, reza a lenda que ela continua punindo malfeitores com suas espadas de fogo, e muitos esperam que um dia ela retorne…"
+},
+{
+"release-date":"2011-03-01T00:00:00.000Z",
+"name":"Jarvan IV",
+"title":"o Exemplo de Demacia",
+"section-title":"Jarvan IV",
+"slug":"jarvaniv",
+"image":"https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/JarvanIV.png",
+"background":"https://cmsassets.rgpub.io/sanity/images/dsfx7636/universe/a078dc1670a0b2565aaaf9d50d3e10ec2d583498-1215x717.jpg?accountingTag=LoL",
+"url":"/pt_br/champion/jarvaniv",
+"role":[
+{
+"name":"Tanque",
+"slug":"tank"
+},
+{
+"name":"Lutador",
+"slug":"fighter"
+}
+],
+"nationality":"demacia",
+"lore":"O Príncipe Jarvan, descendente da Dinastia Lumescudo, é o atual herdeiro do trono de Demacia. Criado para ser um exemplo das grandes virtudes de sua nação, ele é forçado a equilibrar as grandes expectativas colocadas sobre ele com seu próprio desejo de lutar nas linhas de frente. Jarvan inspira suas tropas com sua coragem temível e determinação altruísta, levantando a bandeira com as cores da família e revelando sua verdadeira força como futuro líder de seu povo."
+},
+{
+"release-date":"2009-02-21T00:00:00.000Z",
+"name":"Morgana",
+"title":"a Caída",
+"section-title":"Morgana",
+"slug":"morgana",
+"image":"https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Morgana.png",
+"background":"https://cmsassets.rgpub.io/sanity/images/dsfx7636/universe/dc1bbb10a4d5ed7946d6a7eb12de7324309be314-1920x1149.jpg?accountingTag=LoL",
+"url":"/pt_br/champion/morgana",
+"role":[
+{
+"name":"Mago",
+"slug":"mage"
+},
+{
+"name":"Suporte",
+"slug":"support"
+}
+],
+"nationality":"demacia",
+"lore":"Dividida entre sua natureza mortal e celestial, Morgana prendeu as asas para preservar sua humanidade e inflige sua dor e amargura nos desonestos e corruptos. Ela rejeita as leis e tradições que considera injustas e luta pela verdade nas sombras de Demacia com escudos e correntes de fogo sombrio, ainda que alguns tentem reprimi-la. Acima de tudo, Morgana acredita que até os banidos e exilados podem, um dia, se erguer."
+},
+{
+"release-date":"2018-01-08T00:00:00.000Z",
+"name":"Sylas",
+"title":"o Abjugado",
+"section-title":"Sylas",
+"slug":"sylas",
+"image":"https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Sylas.png",
+"background":"https://cmsassets.rgpub.io/sanity/images/dsfx7636/universe/e653368823aa1fbaf7955ce92bca15a81abc8440-1920x1190.jpg?accountingTag=LoL",
+"url":"/pt_br/champion/sylas",
+"role":[
+{
+"name":"Mago",
+"slug":"mage"
+},
+{
+"name":"Suporte",
+"slug":"support"
+}
+],
+"nationality":"demacia",
+"lore":"Criado em um dos bairros mais pobres de Demacia, Sylas de Dregbourne se tornou o símbolo do lado mais sombrio da Grande Cidade. Quando criança, sua habilidade de identificar magia chamou a atenção de importantes caçadores de magos, que depois o aprisionaram por ter se virado contra eles. Finalmente livre, agora Sylas vive como um rígido revolucionário, usando a magia das pessoas ao seu redor para destruir o reino ao qual servia… e o grupo de magos exilados que o segue só faz crescer."
+},
+{
+"release-date":"2010-08-10T00:00:00.000Z",
+"name":"Galio",
+"title":"o Colosso",
+"section-title":"Galio",
+"slug":"galio",
+"image":"https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Galio.png",
+"background":"https://cmsassets.rgpub.io/sanity/images/dsfx7636/universe/453347eabd10e239e18bdaf2431f3471d1011dbd-1215x717.jpg?accountingTag=LoL",
+"url":"/pt_br/champion/galio",
+"role":[
+{
+"name":"Tanque",
+"slug":"tank"
+},
+{
+"name":"Mago",
+"slug":"mage"
+}
+],
+"nationality":"demacia",
+"lore":"Do lado de fora da reluzente cidade de Demacia, Galio, o colosso de pedra, vigia com zelo. Construído como bastião contra magos inimigos, ele geralmente permanece imóvel por décadas até que a presença de uma magia poderosa o desperte. Uma vez ativado, Galio aproveita bem o tempo, deleitando-se com a emoção de uma luta e da rara honra de defender seus compatriotas. Contudo, os triunfos dele são tanto doces quanto amargos, pois a magia que ele destrói é a mesma que o movimenta, e cada vitória o devolve à inércia."
+}
+],
+"bilgewater":[
+{
+"release-date":"2018-05-31T00:00:00.000Z",
+"name":"Pyke",
+"title":"o Estripador das Águas Sangrentas",
+"section-title":"Pyke",
+"slug":"pyke",
+"image":"https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Pyke.png",
+"background":"https://cmsassets.rgpub.io/sanity/images/dsfx7636/universe/f1abbdb3239280e314a8d5d5834a0303b25d2495-4000x2250.jpg?accountingTag=LoL",
+"url":"/pt_br/champion/pyke",
+"role":[
+{
+"name":"Suporte",
+"slug":"support"
+}
+],
+"nationality":"bilgewater",
+"lore":"Um arpoador renomado vindo das Docas da Matança nas Águas de Sentina, Pyke deveria ter encontrado sua morte na barriga de um gigante Peixe-Jaula... mas, ainda assim, ele retornou. Agora, vagando pelos becos úmidos de sua cidade natal, ele usa seus novos dons sobrenaturais para trazer um rápido e grotesco fim para aqueles que fazem fortuna explorando os outros. Hoje, os mesmos habitantes da cidade que se orgulham de caçar monstros estão sendo caçados por um."
+},
+{
+"release-date":"2011-10-19T00:00:00.000Z",
+"name":"Graves",
+"title":"o Foragido",
+"section-title":"Graves",
+"slug":"graves",
+"image":"https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Graves.png",
+"background":"https://cmsassets.rgpub.io/sanity/images/dsfx7636/universe/e98c383d56b9f60ae73cf0a24653dba19a6556a1-1215x717.jpg?accountingTag=LoL",
+"url":"/pt_br/champion/graves",
+"role":[
+{
+"name":"Atirador",
+"slug":"marksman"
+}
+],
+"nationality":"bilgewater",
+"lore":"Malcolm Graves, mercenário, apostador e bandido de renome, é um homem procurado em cada uma das cidades e impérios que visitou. Apesar do seu temperamento explosivo, ele é dono de uma noção rigorosa de honra entre criminosos, normalmente aplicada com o fogo da sua espingarda, Destino. Nos últimos anos, ele reconciliou uma parceria problemática com Twisted Fate e, juntos, eles prosperaram mais uma vez no tumulto do submundo criminoso de Águas de Sentina."
+},
+{
+"release-date":"2009-08-19T00:00:00.000Z",
+"name":"Gangplank",
+"title":"o Terror dos Doze Mares",
+"section-title":"Gangplank",
+"slug":"gangplank",
+"image":"https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Gangplank.png",
+"background":"https://cmsassets.rgpub.io/sanity/images/dsfx7636/universe/56398a8fa872cb9b195e5b78b611b3952bf1108a-1215x717.jpg?accountingTag=LoL",
+"url":"/pt_br/champion/gangplank",
+"role":[
+{
+"name":"Lutador",
+"slug":"fighter"
+}
+],
+"nationality":"bilgewater",
+"lore":"Tão inesperado quanto brutal, o autointitulado Rei dos Ladrões conhecido como Gangplank é temido por todos os mares. Ele já reinou na cidade portuária de Águas de Sentina e, apesar de seu reinado ter terminado, existem aqueles que acreditam que isso só o tornou mais perigoso. Gangplank preferiria ver Águas de Sentina banhadas de sangue mais uma vez do que deixar que outro a controlasse. E agora, armado com pistola, sabre e barris de pólvora, ele está determinado a retomar o que perdeu."
+},
+{
+"release-date":"2009-02-21T00:00:00.000Z",
+"name":"Twisted Fate",
+"title":"o Mestre das Cartas",
+"section-title":"Twisted Fate",
+"slug":"twistedfate",
+"image":"https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/TwistedFate.png",
+"background":"https://cmsassets.rgpub.io/sanity/images/dsfx7636/universe/ccfc7af0638ea63366f9ecb156b38919f0e1e515-1215x717.jpg?accountingTag=LoL",
+"url":"/pt_br/champion/twistedfate",
+"role":[
+{
+"name":"Mago",
+"slug":"mage"
+}
+],
+"nationality":"bilgewater",
+"lore":"Twisted Fate é um infame trapaceiro que apostou e encantou tudo em seu caminho por boa parte do mundo, conquistando a inimizade e admiração tanto de ricos quanto tolos. Ele raramente leva coisas a sério, saudando cada dia com um sorriso zombeteiro e elegância negligente. Twisted Fate sempre tem um ás na manga, não importa como."
+},
+{
+"release-date":"2012-02-14T00:00:00.000Z",
+"name":"Nautilus",
+"title":"o Titã das Profundezas",
+"section-title":"Nautilus",
+"slug":"nautilus",
+"image":"https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Nautilus.png",
+"background":"https://cmsassets.rgpub.io/sanity/images/dsfx7636/universe/0381e43e608994c7c4cd30b4bea8b2af00b44401-1215x717.jpg?accountingTag=LoL",
+"url":"/pt_br/champion/nautilus",
+"role":[
+{
+"name":"Tanque",
+"slug":"tank"
+},
+{
+"name":"Lutador",
+"slug":"fighter"
+}
+],
+"nationality":"bilgewater",
+"lore":"O golias armadurado conhecido como Nautilus, uma lenda solitária, tão velha quantos as primeiras docas que afundaram em Águas de Sentina, vaga pelas águas escuras da costa das Ilhas da Chama Azul. Levado por uma traição esquecida, ele ataca sem aviso, balançando sua enorme âncora para salvar os náufragos e arrastar os gananciosos para sua perdição. Dizem que ele surge para aqueles que se esquecem de pagar o “dízimo de Águas de Sentina”, puxando-os para baixo das ondas junto com ele: um lembrete envolto em ferro de que ninguém pode escapar das profundezas."
+},
+{
+"release-date":"2010-09-08T00:00:00.000Z",
+"name":"Miss Fortune",
+"title":"a Caçadora de Recompensas",
+"section-title":"Miss Fortune",
+"slug":"missfortune",
+"image":"https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/MissFortune.png",
+"background":"https://cmsassets.rgpub.io/sanity/images/dsfx7636/universe/7a7dfab84bcd6b60f46152918923ef939b9ddb6a-1215x717.jpg?accountingTag=LoL",
+"url":"/pt_br/champion/missfortune",
+"role":[
+{
+"name":"Atirador",
+"slug":"marksman"
+}
+],
+"nationality":"bilgewater",
+"lore":"Uma capitã de Águas de Sentina famosa por sua aparência e impiedade, Sarah Fortune chama atenção entre os criminosos calejados da cidade portuária. Ainda criança, ela viu o Rei dos Ladrões, Gangplank, assassinar sua família, um crime do qual ela se vingou com violência anos depois, explodindo seu navio com ele ainda a bordo. Aqueles que a subestimarem enfrentarão uma oponente sedutora e imprevisível... E, possivelmente, uma bala ou duas nas entranhas."
+},
+{
+"release-date":"2022-06-22T17:00:00.000Z",
+"name":"Nilah",
+"title":"a Alegria Irrestrita",
+"section-title":"Nilah",
+"slug":"nilah",
+"image":"https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Nilah.png",
+"background":"https://cmsassets.rgpub.io/sanity/images/dsfx7636/universe/0b63dba67e71846815d071f4cc0b55188bc7651e-1920x1080.jpg?accountingTag=LoL",
+"url":"/pt_br/champion/nilah",
+"role":[
+{
+"name":"Atirador",
+"slug":"marksman"
+}
+],
+"nationality":"bilgewater",
+"lore":"Nilah, uma guerreira asceta de uma terra distante, busca os oponentes mais gigantescos e mortais do mundo para poder desafiá-los e destruí-los. Tendo conquistado seu poder após enfrentar o demônio da alegria, que estava aprisionado há muito tempo, ela não sente outra emoção senão um júbilo incessante — um preço pequeno a ser pago pela força vasta que possui agora. Canalizando a forma líquida do demônio numa lâmina de poder inigualável, a combatente desafia antigas ameaças esquecidas no tempo."
+},
+{
+"release-date":"2015-11-24T00:00:00.000Z",
+"name":"Illaoi",
+"title":"a Sacerdotisa Cráquem",
+"section-title":"Illaoi",
+"slug":"illaoi",
+"image":"https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Illaoi.png",
+"background":"https://cmsassets.rgpub.io/sanity/images/dsfx7636/universe/9f60e89d1d62bd7458132f72d021be21abd54890-1215x717.jpg?accountingTag=LoL",
+"url":"/pt_br/champion/illaoi",
+"role":[
+{
+"name":"Lutador",
+"slug":"fighter"
+},
+{
+"name":"Tanque",
+"slug":"tank"
+}
+],
+"nationality":"bilgewater",
+"lore":"O poderoso porte físico de Illaoi só perde para sua fé indomável. Como profetisa do Grande Cráquem, ela usa um gigantesco totem dourado para arrancar o espírito de seus inimigos de seus corpos e estilhaçar a sua percepção da realidade. Todos os que desafiam a ''Portadora da Verdade de Nagacáburos'' logo descobrem que Illaoi nunca vai à luta sozinha — o deus da Ilha das Serpentes luta a seu lado."
+}
+],
+"noxus":[
+{
+"release-date":"2024-10-28T18:00:00.000Z",
+"name":"Ambessa",
+"title":"a Matriarca da Guerra",
+"section-title":"Ambessa",
+"slug":"ambessa",
+"image":"https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Ambessa.png",
+"background":"https://cmsassets.rgpub.io/sanity/images/dsfx7636/universe/fe4125e7d5135486c5bb6941641e53316fb90c59-1920x1080.jpg?accountingTag=LoL",
+"url":"/pt_br/champion/ambessa",
+"role":[
+{
+"name":"Lutador",
+"slug":"fighter"
+}
+],
+"nationality":"noxus",
+"lore":"Todos que conhecem o nome Medarda respeitam e temem a líder da família, Ambessa. Como general noxiana, ela incorpora uma combinação mortal de força implacável e determinação destemida em batalha. Seu papel como matriarca não é diferente, exigindo grande astúcia para fortalecer os Medardas sem deixar espaço para fracasso ou compaixão. Adotando os meios implacáveis do lobo, Ambessa fará qualquer coisa para proteger o legado de sua família, mesmo que isso custe o amor de seus próprios filhos."
+},
+{
+"release-date":"2020-11-23T00:00:00.000Z",
+"name":"Rell",
+"title":"a Dama de Ferro",
+"section-title":"Rell",
+"slug":"rell",
+"image":"https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Rell.png",
+"background":"https://cmsassets.rgpub.io/sanity/images/dsfx7636/universe/b7f15606fa7d091ba540cadd2b8f2c168ea740b9-1919x1038.jpg?accountingTag=LoL",
+"url":"/pt_br/champion/rell",
+"role":[
+{
+"name":"Suporte",
+"slug":"support"
+}
+],
+"nationality":"noxus",
+"lore":"Produto de um experimento brutal nas mãos da Rosa Negra, Rell é uma arma humana rebelde que está determinada a destruir Noxus. Sua infância foi repleta de sofrimento e horror; a jovem teve que suportar procedimentos indescritíveis para aperfeiçoar e fortalecer seu controle mágico do metal – até que, um dia, empreendeu uma fuga violenta, matando muitos de seus captores no processo. Agora, Rell é tida como criminosa e ataca qualquer soldado noxiano que apareça diante dela. Ao mesmo tempo, procura sobreviventes de sua antiga \"academia\", defendendo os fracos enquanto despacha violentamente seus antigos supervisores para a morte."
+},
+{
+"release-date":"2011-08-24T00:00:00.000Z",
+"name":"Talon",
+"title":"a Sombra da Lâmina",
+"section-title":"Talon",
+"slug":"talon",
+"image":"https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Talon.png",
+"background":"https://cmsassets.rgpub.io/sanity/images/dsfx7636/universe/c32976e06ac05ca62ee2516d6f572a367c57da2c-1215x717.jpg?accountingTag=LoL",
+"url":"/pt_br/champion/talon",
+"role":[
+{
+"name":"Assassino",
+"slug":"assassin"
+},
+{
+"name":"Lutador",
+"slug":"fighter"
+}
+],
+"nationality":"noxus",
+"lore":"Talon é a adaga na escuridão, um assassino impiedoso capaz de atacar sem aviso e escapar antes que qualquer alarme soe. Ele construiu uma reputação perigosa nas ruas brutais de Noxus, onde foi forçado a lutar, matar e roubar para sobreviver. Adotado pela notória família Du Couteau, ele agora usa suas habilidades mortais seguindo os comandos do império, assassinando líderes inimigos, capitães e heróis… além de qualquer noxiano tolo o suficiente para ganhar o desprezo de seus mestres."
+},
+{
+"release-date":"2020-09-21T00:00:00.000Z",
+"name":"Samira",
+"title":"a Rosa do Deserto",
+"section-title":"Samira",
+"slug":"samira",
+"image":"https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Samira.png",
+"background":"https://cmsassets.rgpub.io/sanity/images/dsfx7636/universe/4f2e41d8c16101ea4859ca228c0b5ca79cba9988-1898x1120.jpg?accountingTag=LoL",
+"url":"/pt_br/champion/samira",
+"role":[
+{
+"name":"Atirador",
+"slug":"marksman"
+}
+],
+"nationality":"noxus",
+"lore":"Samira encara a morte nos olhos com confiança inabalável, procurando diversão e adrenalina aonde quer que vá. Depois que seu lar em Shurima foi destruído quando ainda era criança, ela encontrou sua verdadeira vocação em Noxus, onde conquistou fama como a guerreira valente e estilosa que aceitava missões arriscadas do mais alto calibre. Empunhando pistolas de pólvora negra e uma espada personalizada, Samira prospera em circunstâncias de vida ou morte, eliminando – com estilo e rapidez – qualquer um que cruze seu caminho."
+},
+{
+"release-date":"2010-12-14T00:00:00.000Z",
+"name":"Cassiopeia",
+"title":"o Abraço da Serpente",
+"section-title":"Cassiopeia",
+"slug":"cassiopeia",
+"image":"https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Cassiopeia.png",
+"background":"https://cmsassets.rgpub.io/sanity/images/dsfx7636/universe/f1991d2eb2a3f9543897c95278c31f6e56670588-1215x717.jpg?accountingTag=LoL",
+"url":"/pt_br/champion/cassiopeia",
+"role":[
+{
+"name":"Mago",
+"slug":"mage"
+}
+],
+"nationality":"noxus",
+"lore":"Cassiopeia é uma criatura mortal dedicada a manipular os outros para fazer suas vontades sinistras. A mais bela e mais nova filha da nobre família Du Couteau de Noxus aventurou-se pelas criptas profundas sob Shurima em busca de poderes ancestrais. Lá, ela foi mordida por um terrível guardião de uma tumba, cujo veneno a transformou em uma víbora predadora. Astuciosa e ágil, Cassiopeia agora desliza sob o véu da noite, petrificando seus inimigos com seu olhar nefasto."
+},
+{
+"release-date":"2010-10-05T00:00:00.000Z",
+"name":"Swain",
+"title":"o Grande General Noxiano",
+"section-title":"Swain",
+"slug":"swain",
+"image":"https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Swain.png",
+"background":"https://cmsassets.rgpub.io/sanity/images/dsfx7636/universe/881860c2fe466f1f5b2f1775e352faa08d51de48-1920x1133.jpg?accountingTag=LoL",
+"url":"/pt_br/champion/swain",
+"role":[
+{
+"name":"Mago",
+"slug":"mage"
+},
+{
+"name":"Lutador",
+"slug":"fighter"
+}
+],
+"nationality":"noxus",
+"lore":"Jericho Swain é o líder visionário de Noxus, uma nação expansionista que venera apenas a força. Apesar de ter sido abatido e mutilado nas guerras ionianas, onde perdeu o braço esquerdo, ele tomou o controle do império com uma determinação implacável... e uma nova mão demoníaca. Agora, Swain comanda os esquadrões da linha de frente, marchando contra uma escuridão que se aproxima e que somente ele pode ver – em vislumbres capturados por corvos sombrios dos cadáveres à sua volta. Em um turbilhão de sacrifícios e segredos, o maior segredo de todos é que o verdadeiro inimigo vem de dentro."
+},
+{
+"release-date":"2009-02-21T00:00:00.000Z",
+"name":"Sion",
+"title":"o Colosso Morto-Vivo",
+"section-title":"Sion",
+"slug":"sion",
+"image":"https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Sion.png",
+"background":"https://cmsassets.rgpub.io/sanity/images/dsfx7636/universe_live/718640b1b39f711e775596ec5d09a31fdd95820e-1215x717.jpg?accountingTag=LoL",
+"url":"/pt_br/champion/sion",
+"role":[
+{
+"name":"Tanque",
+"slug":"tank"
+},
+{
+"name":"Lutador",
+"slug":"fighter"
+}
+],
+"nationality":"noxus",
+"lore":"Um herói de guerra de uma era passada, Sion era reverenciado em Noxus por ter estrangulado a vida de um rei demaciano com suas próprias mãos. Mas o esquecimento lhe foi negado quando foi ressuscitado para servir seu império, mesmo na sua morte. Seu massacre indiscriminado levou qualquer um que estivesse em seu caminho, sem importar sua lealdade, provando que ele não possui mais nada de sua antiga humanidade. Mesmo assim, com armadura bruta pregada em carne apodrecida, Sion continua a investir na batalha em total abandono, lutando para se lembrar do seu verdadeiro ser entre cada ataque de seu machado."
+},
+{
+"release-date":"2010-02-24T00:00:00.000Z",
+"name":"Mordekaiser",
+"title":"o Revenã de Ferro",
+"section-title":"Mordekaiser",
+"slug":"mordekaiser",
+"image":"https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Mordekaiser.png",
+"background":"https://cmsassets.rgpub.io/sanity/images/dsfx7636/universe/501b0517a4a07fc650d6b9e1d8e5a330d85249da-1920x1038.jpg?accountingTag=LoL",
+"url":"/pt_br/champion/mordekaiser",
+"role":[
+{
+"name":"Lutador",
+"slug":"fighter"
+}
+],
+"nationality":"noxus",
+"lore":"Morto e renascido duas vezes, Mordekaiser é um cruel comandante de uma época perdida. Ele usa a arte da necromancia para aprisionar almas e torná-las submissas pela eternidade. Hoje em dia, poucos se lembram das primeiras conquistas ou conhecem a real dimensão do poder de Mordekaiser. Porém, algumas almas ancestrais ainda se lembram, e temem que um dia ele volte para reivindicar seu domínio... tanto sobre os mortos quanto sobre os vivos."
+},
+{
+"release-date":"2012-06-06T00:00:00.000Z",
+"name":"Draven",
+"title":"o Carrasco de Noxus",
+"section-title":"Draven",
+"slug":"draven",
+"image":"https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Draven.png",
+"background":"https://cmsassets.rgpub.io/sanity/images/dsfx7636/universe/1b9079d79643c08bc25c143418b96c5883d48b52-1215x717.jpg?accountingTag=LoL",
+"url":"/pt_br/champion/draven",
+"role":[
+{
+"name":"Atirador",
+"slug":"marksman"
+}
+],
+"nationality":"noxus",
+"lore":"Em Noxus, guerreiros conhecidos como Desafiadores lutam um contra o outro em uma arena onde sangue é derramado e a força é testada, mas nenhum foi tão celebrado como Draven. Antes um soldado, ele descobriu que as multidões apreciavam seu instinto pelo drama e sua habilidade suprema com seus machados giratórios. Viciado no espetáculo de sua própria perfeição impetuosa, Draven jurou derrotar qualquer que seja seu oponente para garantir que seu nome será cantado pelo império para todo o sempre."
+},
+{
+"release-date":"2009-09-19T00:00:00.000Z",
+"name":"Katarina",
+"title":"a Lâmina Sinistra",
+"section-title":"Katarina",
+"slug":"katarina",
+"image":"https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Katarina.png",
+"background":"https://cmsassets.rgpub.io/sanity/images/dsfx7636/universe/0b61440f72501d55b2a1b02752b74c28680ee09d-1215x717.jpg?accountingTag=LoL",
+"url":"/pt_br/champion/katarina",
+"role":[
+{
+"name":"Assassino",
+"slug":"assassin"
+},
+{
+"name":"Mago",
+"slug":"mage"
+}
+],
+"nationality":"noxus",
+"lore":"Decisiva em seus julgamentos e letal em combate, Katarina é a assassina de maior calibre de Noxus. Filha mais velha do lendário General Du Couteau, Katarina é reconhecida por seus assassinatos eficientes contra inimigos desavisados. Sua ambição ardente a levou a buscar alvos extremamente protegidos, mesmo correndo o risco de colocar seus aliados em perigo; mas não importa a missão, Katarina não hesita ao executar seu dever no meio de um furacão de adagas serrilhadas."
+},
+{
+"release-date":"2012-05-23T00:00:00.000Z",
+"name":"Darius",
+"title":"a Mão de Noxus",
+"section-title":"Darius",
+"slug":"darius",
+"image":"https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Darius.png",
+"background":"https://cmsassets.rgpub.io/sanity/images/dsfx7636/universe/bd6bd9efb4295687e683fd97d67a509d3ed6c26f-1215x717.jpg?accountingTag=LoL",
+"url":"/pt_br/champion/darius",
+"role":[
+{
+"name":"Lutador",
+"slug":"fighter"
+},
+{
+"name":"Tanque",
+"slug":"tank"
+}
+],
+"nationality":"noxus",
+"lore":"Não há símbolo maior do poder de Noxus do que Darius, o mais temido e experiente comandante da nação. Vindo de origens humildes para se tornar a Mão de Noxus, ele corta seu caminho através dos inimigos do império; muitos dos quais são, inclusive, noxianos. Sabendo que ele nunca duvida da integridade de sua causa e que nunca hesita assim que seu machado é levantado, aqueles que desafiam o comandante da Legião Trifariana não esperam por misericórdia."
+},
+{
+"release-date":"2016-08-10T00:00:00.000Z",
+"name":"Kled",
+"title":"o Cavaleiro Intratável",
+"section-title":"Kled",
+"slug":"kled",
+"image":"https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Kled.png",
+"background":"https://cmsassets.rgpub.io/sanity/images/dsfx7636/universe/cf210d9c39fbc4728ca6c75233d8a9e7682db74d-1215x717.jpg?accountingTag=LoL",
+"url":"/pt_br/champion/kled",
+"role":[
+{
+"name":"Lutador",
+"slug":"fighter"
+},
+{
+"name":"Tanque",
+"slug":"tank"
+}
+],
+"nationality":"noxus",
+"lore":"Um guerreiro tão destemido quanto irascível, o yordle Kled representa a bravata furiosa de Noxus. Ele é um ícone amado pelos soldados do império, rejeitado por seus oficiais e abominado pela nobreza. Muitos dizem que Kled lutou em cada batalha que as legiões travaram, que ''adquiriu'' cada título militar e que nunca recuou de uma luta. Embora a veracidade dos detalhes seja normalmente questionável, uma parte de sua lenda é inegável: avançando em combate com Skaarl, sua montaria (des)confiável, Kled luta para proteger o que é dele... e para tornar seu o que conseguir."
+},
+{
+"release-date":"2011-09-14T00:00:00.000Z",
+"name":"Riven",
+"title":"a Exilada",
+"section-title":"Riven",
+"slug":"riven",
+"image":"https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Riven.png",
+"background":"https://cmsassets.rgpub.io/sanity/images/dsfx7636/universe/26bb1d87fa015cef986d05249f533426383e7198-1215x717.jpg?accountingTag=LoL",
+"url":"/pt_br/champion/riven",
+"role":[
+{
+"name":"Lutador",
+"slug":"fighter"
+},
+{
+"name":"Assassino",
+"slug":"assassin"
+}
+],
+"nationality":"noxus",
+"lore":"Outrora mestra das espadas nos esquadrões de Noxus, agora Riven é uma expatriada em uma terra que um dia já tentou conquistar. Depois de alcançar os altos escalões do exército usando a força de sua convicção e sua brutal eficiência, ela foi recompensada com uma lâmina rúnica lendária e sua própria milícia. No entanto, no fronte ioniano, a fé de Riven em sua terra natal foi testada e, no fim, quebrada. Tendo cortado todos os laços com o império, agora ela busca seu lugar em um mundo devastado, mesmo diante de rumores de que a própria Noxus passou por uma transformação..."
+},
+{
+"release-date":"2010-07-27T00:00:00.000Z",
+"name":"Vladimir",
+"title":"o Sanguinário Escarlate",
+"section-title":"Vladimir",
+"slug":"vladimir",
+"image":"https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Vladimir.png",
+"background":"https://cmsassets.rgpub.io/sanity/images/dsfx7636/universe/b16ed6e512c850aac0a258909c3b025de42396bd-1215x717.jpg?accountingTag=LoL",
+"url":"/pt_br/champion/vladimir",
+"role":[
+{
+"name":"Mago",
+"slug":"mage"
+},
+{
+"name":"Tanque",
+"slug":"tank"
+}
+],
+"nationality":"noxus",
+"lore":"Um demônio sedento pelo sangue dos mortais, Vladimir tem influenciado os acontecimentos de Noxus desde os primórdios do império. Além de ter estendido sua vida por meios não naturais, sua maestria em hemomancia o permite controlar as mentes e corpos de outros como se fossem os seus. Nos exuberantes salões da aristocracia noxiana, isso possibilitou que construísse um culto fanático de personalidades ao seu redor, tudo isso para que ele possa sangrar seus inimigos nos becos escuros."
+},
+{
+"release-date":"2010-11-02T00:00:00.000Z",
+"name":"LeBlanc",
+"title":"a Farsante",
+"section-title":"LeBlanc",
+"slug":"leblanc",
+"image":"https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Leblanc.png",
+"background":"https://cmsassets.rgpub.io/sanity/images/dsfx7636/universe/77ad3202bc6d32f9c03eba63a7ad14e4383bb5b7-1215x717.jpg?accountingTag=LoL",
+"url":"/pt_br/champion/leblanc",
+"role":[
+{
+"name":"Assassino",
+"slug":"assassin"
+},
+{
+"name":"Mago",
+"slug":"mage"
+}
+],
+"nationality":"noxus",
+"lore":"Misteriosa mesmo para os outros membros da Rosa Negra, LeBlanc é somente um dos muitos nomes de uma mulher pálida que tem manipulado pessoas e eventos desde os primeiros dias de Noxus. Usando sua magia para espelhar a si mesma, a feiticeira pode aparecer para qualquer um, em qualquer lugar e mesmo em vários lugares ao mesmo tempo. Sempre planejando às escondidas, as verdadeiras motivações de LeBlanc são tão inescrutáveis quanto sua identidade inconstante."
+},
+{
+"release-date":"2023-08-28T17:00:00.000Z",
+"name":"Briar",
+"title":"a Fome Contida",
+"section-title":"Briar",
+"slug":"briar",
+"image":"https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Briar.png",
+"background":"https://cmsassets.rgpub.io/sanity/images/dsfx7636/universe/731da6d8643ac159faee6cb308706bbf25230083-1920x1080.jpg?accountingTag=LoL",
+"url":"/pt_br/champion/briar",
+"role":[
+{
+"name":"Lutador",
+"slug":"fighter"
+}
+],
+"nationality":"noxus",
+"lore":"A incontrolável sede de sangue de Briar, um experimento fracassado da Rosa Negra, exigia uma estrutura especial para controlar sua mente frenética. Após anos de confinamento, essa arma viva se libertou de todas as restrições e ficou livre no mundo. Agora ela não é controlada por ninguém, seguindo apenas sua própria fome de conhecimento e sangue... e aproveitando as oportunidades para se soltar, mesmo que controlar o frenesi não seja fácil."
+},
+{
+"release-date":"2025-01-23T20:00:00.000Z",
+"name":"Mel",
+"title":"o Reflexo da Alma",
+"section-title":"Mel",
+"slug":"mel",
+"image":"https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Mel.png",
+"background":"https://cmsassets.rgpub.io/sanity/images/dsfx7636/universe/4de677b45fdaaa7874a030c6c8865e9ffdb6a0ba-1920x1080.jpg?accountingTag=LoL",
+"url":"/pt_br/champion/mel",
+"role":[
+{
+"name":"Mago",
+"slug":"mage"
+}
+],
+"nationality":"noxus",
+"lore":"Mel Medarda é a suposta herdeira da família Medarda, que já foi uma das mais poderosas em Noxus. Sob a aparência de uma aristocrata elegante, ela esconde uma política talentosa que faz questão de saber cada detalhe a respeito de todas as pessoas que conhece. Depois de um encontro com a misteriosa Rosa Negra, Mel descobriu a extensão da farsa de sua mãe e, pela primeira vez, enfrentou uma situação potencialmente fora de seu controle. Com poderes mágicos recém-despertados, ela zarpou para casa em busca de respostas. Por mais que muitos ainda tentem apagar a luz dentro dela, a alma de Mel permanece indomável."
+}
+],
+"freljord":[
+{
+"release-date":"2009-02-21T00:00:00.000Z",
+"name":"Nunu e Willump",
+"title":"o Garoto e seu Yeti",
+"section-title":"Nunu e Willump",
+"slug":"nunu",
+"image":"https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Nunu.png",
+"background":"https://cmsassets.rgpub.io/sanity/images/dsfx7636/universe/c76c72ca933a0d685bd928dd45db8ee8cab5b2ff-1920x1150.jpg?accountingTag=LoL",
+"url":"/pt_br/champion/nunu",
+"role":[
+{
+"name":"Tanque",
+"slug":"tank"
+},
+{
+"name":"Lutador",
+"slug":"fighter"
+}
+],
+"nationality":"freljord",
+"lore":"Era uma vez um garoto que queria provar a todos que poderia ser um herói indo matar um terrível monstro... mas que no fim descobriu que esse monstro era um solitário yeti mágico que só queria um amigo. Unidos por um antigo poder e compartilhando um amor por bolas de neve, Nunu e Willump agora vagavam ferozmente através de toda Freljord, soprando vida em aventuras imaginárias. Eles tinham esperança de que em algum lugar encontrariam a mãe de Nunu. Se pudessem salvá-la, talvez eles realmente fossem heróis afinal..."
+},
+{
+"release-date":"2022-08-09T00:00:00.000Z",
+"name":"Udyr",
+"title":"o Andarilho Espiritual",
+"section-title":"Udyr",
+"slug":"udyr",
+"image":"https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Udyr.png",
+"background":"https://cmsassets.rgpub.io/sanity/images/dsfx7636/universe/b0994c859b52c86c12a5bb57a7b22e1c3b9b70c0-1974x1087.jpg?accountingTag=LoL",
+"url":"/pt_br/champion/udyr",
+"role":[
+{
+"name":"Lutador",
+"slug":"fighter"
+}
+],
+"nationality":"freljord",
+"lore":"Udyr, o mais poderoso andarilho espiritual vivo, comunga com todos os espíritos de Freljord, seja compreendendo empaticamente suas necessidades, ou canalizando e transformando a energia etérea deles em seu próprio estilo de luta primevo. Ele busca o equilíbrio interior, para que sua mente não se perca entre as de outrem, mas também o equilíbrio exterior. A terra mística de Freljord só poderá prosperar com o amadurecimento que advém do conflito e da luta, e Udyr sabe que sacrifícios devem ser feitos para afastar o sossego e a estagnação."
+},
+{
+"release-date":"2012-01-17T00:00:00.000Z",
+"name":"Sejuani",
+"title":"a Ira do Inverno",
+"section-title":"Sejuani",
+"slug":"sejuani",
+"image":"https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Sejuani.png",
+"background":"https://cmsassets.rgpub.io/sanity/images/dsfx7636/universe_live/64b4bcfccb7b88cad98a2345e15aa9427ba20c73-1215x717.jpg?accountingTag=LoL",
+"url":"/pt_br/champion/sejuani",
+"role":[
+{
+"name":"Tanque",
+"slug":"tank"
+},
+{
+"name":"Lutador",
+"slug":"fighter"
+}
+],
+"nationality":"freljord",
+"lore":"Sejuani é a mãe de guerra Glacinata brutal e implacável da Garra do Inverno, uma das tribos mais temidas de Freljord. A sobrevivência de seu povo é uma batalha constante e desesperada contra os elementos, forçando-os a pilhar noxianos, demacianos e avarosianos para sobreviver aos invernos severos. A própria Sejuani lidera os ataques mais perigosos, montada no seu javali drüvask, Bristle, usando seu mangual de Gelo Verdadeiro para congelar e despedaçar seus inimigos."
+},
+{
+"release-date":"2010-02-02T00:00:00.000Z",
+"name":"Gragas",
+"title":"o Badernista",
+"section-title":"Gragas",
+"slug":"gragas",
+"image":"https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Gragas.png",
+"background":"https://cmsassets.rgpub.io/sanity/images/dsfx7636/universe/b26aba4beee0dbf6c0fddde83f405e2e9a8239fd-1215x717.jpg?accountingTag=LoL",
+"url":"/pt_br/champion/gragas",
+"role":[
+{
+"name":"Lutador",
+"slug":"fighter"
+},
+{
+"name":"Mago",
+"slug":"mage"
+}
+],
+"nationality":"freljord",
+"lore":"Alegre e imponente em igual medida, Gragas é um mestre cervejeiro colossal e barulhento que está sempre em busca de novos modos de animar todo mundo. Oriundo de regiões desconhecidas, ele procura, nas terras imaculadas do Freljord, ingredientes que o ajudem a aperfeiçoar sua mais nova bebida. Ele é impulsivo, obstinado e conhecido pelas confusões que arruma, que frequentemente terminam em festanças que duram a noite toda e acabam em inúmeras propriedades danificadas. Sempre que Gragas aparece, a alegria e a destruição vêm logo em seguida. Nessa ordem."
+},
+{
+"release-date":"2009-07-10T00:00:00.000Z",
+"name":"Anivia",
+"title":"a Criofênix",
+"section-title":"Anivia",
+"slug":"anivia",
+"image":"https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Anivia.png",
+"background":"https://cmsassets.rgpub.io/sanity/images/dsfx7636/universe/9c05e1b1637da1f1a26dfb122aa049875c49598c-1215x717.jpg?accountingTag=LoL",
+"url":"/pt_br/champion/anivia",
+"role":[
+{
+"name":"Mago",
+"slug":"mage"
+},
+{
+"name":"Suporte",
+"slug":"support"
+}
+],
+"nationality":"freljord",
+"lore":"Anivia é um espírito alado e benevolente que suporta infinitos ciclos de vida, morte e renascimento para proteger Freljord. Uma semideusa nascida de ventos impiedosos e frios brutais, ela carrega esses poderes elementais para perseguir qualquer um que ousar perturbar sua terra natal. Anivia guia e protege as tribos do norte hostil, que a reverenciam como um símbolo de esperança e como uma portadora de grandes mudanças. Ela luta com todas as fibras do seu ser, sabendo que por meio do sacrifício, sua memória irá perdurar e ela renascerá em um novo amanhã."
+},
+{
+"release-date":"2010-06-09T00:00:00.000Z",
+"name":"Olaf",
+"title":"o Berserker",
+"section-title":"Olaf",
+"slug":"olaf",
+"image":"https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Olaf.png",
+"background":"https://cmsassets.rgpub.io/sanity/images/dsfx7636/universe/06a08b09079b9ec0a51149bb42fc2377fa5ce9d8-1215x717.jpg?accountingTag=LoL",
+"url":"/pt_br/champion/olaf",
+"role":[
+{
+"name":"Lutador",
+"slug":"fighter"
+},
+{
+"name":"Tanque",
+"slug":"tank"
+}
+],
+"nationality":"freljord",
+"lore":"Uma força desenfreada de destruição, Olaf e seus machados não querem nada além de morrer em um combate glorioso. Vindo da brutal península de Freljord, Lokfar, ele recebeu uma profecia que dizia que ele teria uma morte pacífica: o destino de um covarde e um grande insulto entre seu povo. Procurando pela morte e movido por sua fúria, ele destruiu tudo em seu caminho, massacrando dezenas de guerreiros e bestas lendárias em busca de um oponente que pudesse pará-lo. Agora, um executor brutal da Garra do Inverno, ele busca seu fim nas grandes guerras que estão por vir."
+},
+{
+"release-date":"2014-08-14T00:00:00.000Z",
+"name":"Gnar",
+"title":"o Yordle Pré-Histórico",
+"section-title":"Gnar",
+"slug":"gnar",
+"image":"https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Gnar.png",
+"background":"https://cmsassets.rgpub.io/sanity/images/dsfx7636/universe/9905f7f1e16accc24dcb062abddd3ccf9ea09528-1215x717.jpg?accountingTag=LoL",
+"url":"/pt_br/champion/gnar",
+"role":[
+{
+"name":"Lutador",
+"slug":"fighter"
+},
+{
+"name":"Tanque",
+"slug":"tank"
+}
+],
+"nationality":"freljord",
+"lore":"Gnar é um yordle primitivo cujas artimanhas brincalhonas podem irromper em uma raiva infantil em um instante, transformando-o em uma besta gigantesca determinada a destruir. Congelada em Gelo Verdadeiro por milênios, essa criatura curiosa se libertou e agora saltita por um mundo mudado, que ela vê como exótico e maravilhoso. Encantado pelo perigo, Gnar atira tudo que puder nos seus inimigos, seja seu bumerangue ou um prédio próximo."
+},
+{
+"release-date":"2009-02-21T00:00:00.000Z",
+"name":"Ashe",
+"title":"a Arqueira do Gelo",
+"section-title":"Ashe",
+"slug":"ashe",
+"image":"https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Ashe.png",
+"background":"https://cmsassets.rgpub.io/sanity/images/dsfx7636/universe/ea9b9dbb6d0ee8234f67ff97872729a16333acb2-1920x974.jpg?accountingTag=LoL",
+"url":"/pt_br/champion/ashe",
+"role":[
+{
+"name":"Atirador",
+"slug":"marksman"
+},
+{
+"name":"Suporte",
+"slug":"support"
+}
+],
+"nationality":"freljord",
+"lore":"A mãe de guerra Glacinata da tribo de Avarosa, Ashe comanda a horda mais populosa do norte. Estoica, inteligente e idealista, mesmo que desconfortável com seu papel de liderança, ela canaliza as magias ancestrais de sua linhagem para empunhar um arco de Gelo Verdadeiro. Com a crença de seu povo de que Ashe seria a heroína mítica, Avarosa, reencarnada, ela espera unificar Freljord mais uma vez, retomando suas antigas terras tribais."
+},
+{
+"release-date":"2009-05-01T00:00:00.000Z",
+"name":"Tryndamere",
+"title":"o Rei Bárbaro",
+"section-title":"Tryndamere",
+"slug":"tryndamere",
+"image":"https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Tryndamere.png",
+"background":"https://cmsassets.rgpub.io/sanity/images/dsfx7636/universe/8970e87a25dae74a9f48448fe2fa984f20c49a46-1215x717.jpg?accountingTag=LoL",
+"url":"/pt_br/champion/tryndamere",
+"role":[
+{
+"name":"Lutador",
+"slug":"fighter"
+},
+{
+"name":"Assassino",
+"slug":"assassin"
+}
+],
+"nationality":"freljord",
+"lore":"Carregado por fúria e raiva desenfreadas, Tryndamere galgou seu caminho através de Freljord, desafiando abertamente os maiores guerreiros do norte em preparo para os dias sombrios que virão. O bárbaro furioso já procurou por vingança pela aniquilação de seu clã, mas recentemente ele encontrou uma companhia em Ashe, a mãe de guerra de Avarosa, além de um lar entre seu povo. Sua força quase desumana e resistência são lendárias, e elas permitiram que ele e seus aliados conquistassem muitas vitórias contra as maiores adversidades."
+},
+{
+"release-date":"2010-12-01T00:00:00.000Z",
+"name":"Trundle",
+"title":"o Rei dos Trolls",
+"section-title":"Trundle",
+"slug":"trundle",
+"image":"https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Trundle.png",
+"background":"https://cmsassets.rgpub.io/sanity/images/dsfx7636/universe/b4171832dc2ac886f2240e723ab9d07e5335f538-1215x717.jpg?accountingTag=LoL",
+"url":"/pt_br/champion/trundle",
+"role":[
+{
+"name":"Lutador",
+"slug":"fighter"
+},
+{
+"name":"Tanque",
+"slug":"tank"
+}
+],
+"nationality":"freljord",
+"lore":"Trundle é um troll gigantesco e traiçoeiro com uma tendência particularmente perversa, e não há nada que ele não possa submeter a cacetadas, nem mesmo a própria Freljord. Violentamente territorial, ele persegue qualquer um tolo o suficiente de entrar em seu domínio. Então, com seu enorme porrete de Gelo Verdadeiro, ele gela seus inimigos até os ossos e os empala com pilares dentados congelados, rindo enquanto eles sangram na tundra."
+},
+{
+"release-date":"2024-06-19T17:00:00.000Z",
+"name":"Aurora",
+"title":"a Bruxa Entre Mundos",
+"section-title":"Aurora",
+"slug":"aurora",
+"image":"https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Aurora.png",
+"background":"https://cmsassets.rgpub.io/sanity/images/dsfx7636/universe/40ab29f8f4bc653f3c7bd6e904e85fb51225f52d-1920x1080.jpg?accountingTag=LoL",
+"url":"/pt_br/champion/aurora",
+"role":[
+{
+"name":"Mago",
+"slug":"mage"
+}
+],
+"nationality":"freljord",
+"lore":"Desde que nasceu, Aurora vive com uma habilidade inigualável de viajar entre os reinos dos mortais e dos espíritos. Determinada a aprender mais sobre os habitantes do reino espiritual, ela deixou seu lar para trás com o objetivo de conduzir mais pesquisas e acabou encontrando um semideus corrompido, perdido e deformado. Testemunhando tamanho desespero, Aurora decidiu encontrar uma maneira de ajudar seu amigo selvagem a resgatar sua identidade perdida, uma jornada que a levaria até os cantos mais inóspitos de Freljord."
+},
+{
+"release-date":"2017-08-22T00:00:00.000Z",
+"name":"Ornn",
+"title":"o Fogo sob a Montanha",
+"section-title":"Ornn",
+"slug":"ornn",
+"image":"https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Ornn.png",
+"background":"https://cmsassets.rgpub.io/sanity/images/dsfx7636/universe/ad854e752c3a8ae0a5c7245b97211d751a5a29d4-1920x1080.jpg?accountingTag=LoL",
+"url":"/pt_br/champion/ornn",
+"role":[
+{
+"name":"Tanque",
+"slug":"tank"
+},
+{
+"name":"Lutador",
+"slug":"fighter"
+}
+],
+"nationality":"freljord",
+"lore":"Ornn é o espírito Freljordano da forja e da artesania. Ele trabalha na solidão de uma enorme fornalha, construída a marteladas por entre as cavernas de lava do vulcão Pedra-Lar. Lá, ele aquece caldeirões de pedra fundida para purificar metais e forjar itens de qualidade insuperável. Quando outras divindades — principalmente Volibear — descem à Terra para intervir nos assuntos dos mortais, Ornn aparece para colocar esses seres impetuosos em seu devido lugar, seja com seu fiel martelo ou com o poder ardente das próprias montanhas."
+},
+{
+"release-date":"2013-04-30T00:00:00.000Z",
+"name":"Lissandra",
+"title":"a Bruxa Gélida",
+"section-title":"Lissandra",
+"slug":"lissandra",
+"image":"https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Lissandra.png",
+"background":"https://cmsassets.rgpub.io/sanity/images/dsfx7636/universe/7f1fa446e45698fa9b6b69c3005871d049293197-1215x717.jpg?accountingTag=LoL",
+"url":"/pt_br/champion/lissandra",
+"role":[
+{
+"name":"Mago",
+"slug":"mage"
+}
+],
+"nationality":"freljord",
+"lore":"A magia de Lissandra transforma o poder bruto do gelo em algo sombrio e terrível. Com a força do seu gelo sombrio, ela faz mais do que congelar — ela perfura e destrói todos que se opões a ela. Entre os aterrorizados habitantes do norte, ela é conhecida como a ''Bruxa Gélida''. Mas a verdade é muito mais sinistra: Lissandra é uma corruptora da natureza que conspira para instalar uma era do gelo no mundo."
+},
+{
+"release-date":"2011-11-29T00:00:00.000Z",
+"name":"Volibear",
+"title":"a Tempestade Implacável",
+"section-title":"Volibear",
+"slug":"volibear",
+"image":"https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Volibear.png",
+"background":"https://cmsassets.rgpub.io/sanity/images/dsfx7636/universe/5d4a8a9ddc929ac0f301ac5ecb3eae4baed8ba08-1922x1131.jpg?accountingTag=LoL",
+"url":"/pt_br/champion/volibear",
+"role":[
+{
+"name":"Lutador",
+"slug":"fighter"
+},
+{
+"name":"Tanque",
+"slug":"tank"
+}
+],
+"nationality":"freljord",
+"lore":"Para aqueles que ainda o veneram, Volibear é a forma manifestada da tempestade. Destrutivo, selvagem e implacavelmente obstinado, ele já existia antes mesmo que os mortais andassem sobre a tundra de Freljord, protegendo as terras que ele e seus irmãos semideuses criaram. Com um ódio profundo pela civilização e pela fraqueza inerente a ela, Volibear luta para recuperar os velhos costumes de quando a terra era selvagem e o sangue jorrava livremente. Ele enfrenta todos aqueles que ousam entrar em seu caminho com dentes, garras e dominação estrondosa."
+},
+{
+"release-date":"2014-05-12T00:00:00.000Z",
+"name":"Braum",
+"title":"o Coração de Freljord",
+"section-title":"Braum",
+"slug":"braum",
+"image":"https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Braum.png",
+"background":"https://cmsassets.rgpub.io/sanity/images/dsfx7636/universe/f7efbb8b5e1d43ac6de01ed939464e845ddbd6f2-1215x717.jpg?accountingTag=LoL",
+"url":"/pt_br/champion/braum",
+"role":[
+{
+"name":"Suporte",
+"slug":"support"
+},
+{
+"name":"Tanque",
+"slug":"tank"
+}
+],
+"nationality":"freljord",
+"lore":"Abençoado com bíceps gigantescos e um coração maior ainda, Braum é um amado herói de Freljord. Cada salão de hidromel ao norte de Guardageada brinda sua força lendária que teria derrubado uma floresta de carvalhos em uma única noite e demolido uma montanha inteira com um soco. Carregando uma porta de cofre encantada como seu escudo, Braum vaga pelo norte congelado com seu sorriso abigodado tão grande quanto seus músculos, um verdadeiro amigo para os necessitados."
+}
+],
+"ionia":[
+{
+"release-date":"2025-07-16T18:00:00.000Z",
+"name":"Yunara",
+"title":"A Fé Inabalável",
+"section-title":"Yunara",
+"slug":"yunara",
+"image":"https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Yunara.png",
+"background":"https://cmsassets.rgpub.io/sanity/images/dsfx7636/universe_live/7438b87454595bc3d3582056d4d1a45dcb9e97c9-1920x1080.jpg?accountingTag=LoL",
+"url":"/pt_br/champion/yunara",
+"role":[
+{
+"name":"Atirador",
+"slug":"marksman"
+}
+],
+"nationality":"ionia",
+"lore":"Com uma fé inabalável em Ionia, Yunara passou séculos isolada no Reino Espiritual treinando com Aion Er'na, uma lendária relíquia Kinkou. Apesar dos sacrifícios, o juramento de Yunara de varrer o desequilíbrio e os conflitos das terras ionianas permanece intacto, assim como sua fé. Mas o mundo que agora a aguarda — e a sombra de uma antiga ameaça que se ergue uma vez mais — testará cada partícula de sua determinação."
+},
+{
+"release-date":"2016-02-01T00:00:00.000Z",
+"name":"Jhin",
+"title":"o Virtuoso",
+"section-title":"Jhin",
+"slug":"jhin",
+"image":"https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Jhin.png",
+"background":"https://cmsassets.rgpub.io/sanity/images/dsfx7636/universe/087251eea63def0d4a457624b3cd5c36b8cb52d0-1215x717.jpg?accountingTag=LoL",
+"url":"/pt_br/champion/jhin",
+"role":[
+{
+"name":"Atirador",
+"slug":"marksman"
+},
+{
+"name":"Assassino",
+"slug":"assassin"
+}
+],
+"nationality":"ionia",
+"lore":"Jhin é um meticuloso psicopata criminoso que acredita que o assassinato é uma arte. Outrora um prisioneiro ioniano, mas libertado por membros obscuros do conselho regimental de Ionia, o assassino serial agora trabalha como assassino de seu conluio. Usando a própria arma como pincel, Jhin cria obras artisticamente brutais, horrorizando vítimas e espectadores. Ele sente um cruel prazer ao fazer suas encenações nefastas, tornando-o a escolha ideal para transmitir a mais poderosa das mensagens: o terror."
+},
+{
+"release-date":"2019-12-18T00:00:00.000Z",
+"name":"Sett",
+"title":"o Chefe",
+"section-title":"Sett",
+"slug":"sett",
+"image":"https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Sett.png",
+"background":"https://cmsassets.rgpub.io/sanity/images/dsfx7636/universe/ed30a9687c5c05d36d5bd73588c8e79b58e8f864-1900x1092.jpg?accountingTag=LoL",
+"url":"/pt_br/champion/sett",
+"role":[
+{
+"name":"Lutador",
+"slug":"fighter"
+}
+],
+"nationality":"ionia",
+"lore":"Líder de parte do próspero submundo do crime em Ionia, Sett deve todo o seu sucesso à guerra contra Noxus. Mesmo estreando como um simples desafiante nas arenas de combate em Navori, ele logo conquistou notoriedade com sua força bruta e capacidade de suportar dor contínua e extrema. Agora, após superar todos os combatentes locais, Sett chegou até o topo e reina sobre as arenas onde um dia lutara."
+},
+{
+"release-date":"2011-12-14T00:00:00.000Z",
+"name":"Ahri",
+"title":"a Raposa de Nove Caudas",
+"section-title":"Ahri",
+"slug":"ahri",
+"image":"https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Ahri.png",
+"background":"https://cmsassets.rgpub.io/sanity/images/dsfx7636/universe_live/9e99dedf6a6e2c1e74bdfb81bd5a0a23b3ff4200-1920x1080.jpg?accountingTag=LoL",
+"url":"/pt_br/champion/ahri",
+"role":[
+{
+"name":"Mago",
+"slug":"mage"
+},
+{
+"name":"Assassino",
+"slug":"assassin"
+}
+],
+"nationality":"ionia",
+"lore":"A ligação de Ahri com a magia do mundo espiritual é inata. Ela é uma vastaya com traços de raposa, capaz de manipular as emoções de sua presa e consumir sua essência, devorando também as memórias e as percepções de cada alma absorvida. Outrora uma predadora poderosa, porém rebelde, Ahri agora viaja pelo mundo em busca de vestígios dos seus antepassados enquanto tenta substituir as memórias roubadas por novas de sua própria autoria."
+},
+{
+"release-date":"2010-03-24T00:00:00.000Z",
+"name":"Shen",
+"title":"o Olho do Crepúsculo",
+"section-title":"Shen",
+"slug":"shen",
+"image":"https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Shen.png",
+"background":"https://cmsassets.rgpub.io/sanity/images/dsfx7636/universe/6cb82fdaf892111de0b767513f45cf82be59909d-1215x717.jpg?accountingTag=LoL",
+"url":"/pt_br/champion/shen",
+"role":[
+{
+"name":"Tanque",
+"slug":"tank"
+},
+{
+"name":"Corpo a corpo",
+"slug":"melee"
+}
+],
+"nationality":"ionia",
+"lore":"Para os guerreiros ionianos sigilosos conhecidos como Kinkou, Shen, o Olho do Crepúsculo, é um líder. Ele busca permanecer livre da confusão das emoções, preconceito ou ego, caminhando pelo caminho nunca visto do julgamento imparcial entre o reino dos espíritos e o mundo físico. Incumbido de impor harmonia entre os dois, Shen empunha lâminas de aço e energia arcana contra qualquer um que ameaçar o equilíbrio."
+},
+{
+"release-date":"2020-07-24T00:00:00.000Z",
+"name":"Yone",
+"title":"o Inesquecido",
+"section-title":"Yone",
+"slug":"yone",
+"image":"https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Yone.png",
+"background":"https://cmsassets.rgpub.io/sanity/images/dsfx7636/universe/0e7b421f83e58b69bc071fd2658019effc9c464b-1920x1100.jpg?accountingTag=LoL",
+"url":"/pt_br/champion/yone",
+"role":[
+{
+"name":"Assassino",
+"slug":"assassin"
+}
+],
+"nationality":"ionia",
+"lore":"Em vida, ele foi Yone; meio-irmão de Yasuo e um respeitado aluno da escola de espadachins de seu vilarejo. Mas, ao morrer pelas mãos do irmão, ele se viu perseguido por uma entidade maligna do reino espiritual e foi forçado a exterminá-la com sua própria espada. Agora, condenado a usar uma máscara demoníaca com o rosto da entidade, Yone busca incansavelmente essas criaturas para tentar entender o que ele mesmo se tornou."
+},
+{
+"release-date":"2020-07-07T00:00:00.000Z",
+"name":"Lillia",
+"title":"o Florir Receoso",
+"section-title":"Lillia",
+"slug":"lillia",
+"image":"https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Lillia.png",
+"background":"https://cmsassets.rgpub.io/sanity/images/dsfx7636/universe/582b71a9d168d66687558c98d0140a571fe6332c-1920x1133.jpg?accountingTag=LoL",
+"url":"/pt_br/champion/lillia",
+"role":[
+{
+"name":"Lutador",
+"slug":"fighter"
+}
+],
+"nationality":"ionia",
+"lore":"Extremamente tímida, Lillia, a faunesa feérica, percorre saltitante as florestas de Ionia. Sempre escondida a pouca distância dos humanos — cuja misteriosa natureza lhe causa fascínio e, ao mesmo tempo, receio — Lillia espera descobrir por que os sonhos deles não chegam mais à Árvore dos Sonhos. Agora, ela percorre Ionia com um cajado mágico nas mãos em busca dos sonhos não realizados das pessoas. Somente assim, a própria Lillia poderá florescer e ajudar os humanos a resolverem seus medos e encontrarem seu brilho interior. Iiip!"
+},
+{
+"release-date":"2017-04-11T19:43:26.000Z",
+"name":"Rakan",
+"title":"o Encantador",
+"section-title":"Rakan",
+"slug":"rakan",
+"image":"https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Rakan.png",
+"background":"https://cmsassets.rgpub.io/sanity/images/dsfx7636/universe/f5202263b1685fbaaa6aab44868ac08b53bb786b-2181x844.jpg?accountingTag=LoL",
+"url":"/pt_br/champion/rakan",
+"role":[
+{
+"name":"Suporte",
+"slug":"support"
+},
+{
+"name":"Tanque",
+"slug":"tank"
+}
+],
+"nationality":"ionia",
+"lore":"Inconsistente e charmoso, Rakan é um conhecido encrenqueiro vastaya e o melhor dançarino de batalha da história da tribo Lhotlan. Para os humanos das montanhas de Ionia, seu nome sempre foi sinônimo de festivais mirabolantes, festas agitadas e música subversiva. Poucos suspeitariam que este artista itinerante e energético é parceiro da rebelde Xayah e totalmente dedicado à causa dela."
+},
+{
+"release-date":"2012-09-13T00:00:00.000Z",
+"name":"Syndra",
+"title":"a Soberana Sombria",
+"section-title":"Syndra",
+"slug":"syndra",
+"image":"https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Syndra.png",
+"background":"https://cmsassets.rgpub.io/sanity/images/dsfx7636/universe/f292e53a2a59925e3c10bc4ee9917f92d35aec03-1920x1080.jpg?accountingTag=LoL",
+"url":"/pt_br/champion/syndra",
+"role":[
+{
+"name":"Mago",
+"slug":"mage"
+},
+{
+"name":"Suporte",
+"slug":"support"
+}
+],
+"nationality":"ionia",
+"lore":"Syndra é uma temida maga ioniana com um poder incrível ao seu dispor. Quando criança, ela causava pavor nos anciões da aldeia com sua magia imprudente e indomada. Mandada embora para aprender a controlar seus poderes, ela terminou descobrindo que seu suposto mentor estava reprimindo suas habilidades. Transformando seus sentimentos de traição e mágoa em obscuras esferas de energia, Syndra jurou destruir todos que tentarem controlá-la."
+},
+{
+"release-date":"2011-04-01T00:00:00.000Z",
+"name":"Lee Sin",
+"title":"o Monge Cego",
+"section-title":"Lee Sin",
+"slug":"leesin",
+"image":"https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/LeeSin.png",
+"background":"https://cmsassets.rgpub.io/sanity/images/dsfx7636/universe/dd13baac33f9d14817a84fc280974caeb64a5dce-1215x717.jpg?accountingTag=LoL",
+"url":"/pt_br/champion/leesin",
+"role":[
+{
+"name":"Lutador",
+"slug":"fighter"
+},
+{
+"name":"Assassino",
+"slug":"assassin"
+}
+],
+"nationality":"ionia",
+"lore":"Um mestre das artes marciais ancestrais de Ionia, Lee Sin é um lutador de princípios fortes que canaliza a essência do espírito do dragão para enfrentar qualquer desafio. Apesar de ter perdido a visão há muitos anos, o monge guerreiro dedicou sua vida a proteger sua terra natal contra quem ousasse interferir em seu sagrado equilíbrio. Os inimigos que subestimam seu comportamento meditativo são confrontados por seus punhos ardentes e chutes mirabolantes."
+},
+{
+"release-date":"2009-02-21T00:00:00.000Z",
+"name":"Master Yi",
+"title":"o Espadachim Wuju",
+"section-title":"Master Yi",
+"slug":"masteryi",
+"image":"https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/MasterYi.png",
+"background":"https://cmsassets.rgpub.io/sanity/images/dsfx7636/universe/80e5b987ed8bf072e8987afc3e5f75f02f5c2c84-1215x717.jpg?accountingTag=LoL",
+"url":"/pt_br/champion/masteryi",
+"role":[
+{
+"name":"Assassino",
+"slug":"assassin"
+},
+{
+"name":"Lutador",
+"slug":"fighter"
+}
+],
+"nationality":"ionia",
+"lore":"Master Yi treinou seu corpo e afiou sua mente para que pensamento e ação se tornassem quase um só. Embora ele prefira recorrer à violência como último recurso, a leveza e a velocidade de sua espada garantem uma resolução sempre veloz. Como um dos últimos praticantes da arte ioniana do Wuju, Yi dedicou sua vida a preservar o legado de seu povo, avaliando potenciais discípulos com as Sete Lentes da Perspicácia para identificar qual deles era o mais digno."
+},
+{
+"release-date":"2013-12-13T00:00:00.000Z",
+"name":"Yasuo",
+"title":"o Imperdoável",
+"section-title":"Yasuo",
+"slug":"yasuo",
+"image":"https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Yasuo.png",
+"background":"https://cmsassets.rgpub.io/sanity/images/dsfx7636/universe/0b19bbfa3272f9625762f9b5974429bedc345008-1215x717.jpg?accountingTag=LoL",
+"url":"/pt_br/champion/yasuo",
+"role":[
+{
+"name":"Lutador",
+"slug":"fighter"
+},
+{
+"name":"Assassino",
+"slug":"assassin"
+}
+],
+"nationality":"ionia",
+"lore":"Yasuo, um ioniano extremamente determinado, é também um ágil espadachim que usa o próprio ar como arma para enfrentar seus inimigos. Quando jovem, ele teve seu orgulho ferido ao ser acusado injustamente do assassinato de seu mestre — sem conseguir provar sua inocência, ele foi forçado a matar o próprio irmão para se defender. Até hoje, mesmo depois do verdadeiro assassino do seu mestre ter sido revelado, Yasuo ainda não consegue se perdoar e vaga por sua terra natal com apenas o vento para guiar sua espada."
+},
+{
+"release-date":"2016-10-05T00:00:00.000Z",
+"name":"Ivern",
+"title":"o Pai do Verde",
+"section-title":"Ivern",
+"slug":"ivern",
+"image":"https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Ivern.png",
+"background":"https://cmsassets.rgpub.io/sanity/images/dsfx7636/universe/0eefbfee5b5d494c950d5566f2cb093fa50e877a-1215x717.jpg?accountingTag=LoL",
+"url":"/pt_br/champion/ivern",
+"role":[
+{
+"name":"Suporte",
+"slug":"support"
+},
+{
+"name":"Mago",
+"slug":"mage"
+}
+],
+"nationality":"ionia",
+"lore":"Ivern Bramblefoot, conhecido por muitos como o Protetor Verde, é um peculiar meio-homem, meio-árvore que vagueia pelas florestas de Runeterra, cultivando vida por onde ele passa. Ele conhece os segredos do mundo natural, e cultiva amizades profundas com tudo que cresce, voa e rasteja. Ivern caminha pela natureza, transmitindo sua estranha sabedoria a todos que ele encontra, enriquecendo as florestas e, ocasionalmente, confiando seus segredos a borboletas de língua solta."
+},
+{
+"release-date":"2011-02-01T00:00:00.000Z",
+"name":"Karma",
+"title":"a Iluminada",
+"section-title":"Karma",
+"slug":"karma",
+"image":"https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Karma.png",
+"background":"https://cmsassets.rgpub.io/sanity/images/dsfx7636/universe/d55c76e8c8a67dd290192f51eaa0576d90dd0261-1215x717.jpg?accountingTag=LoL",
+"url":"/pt_br/champion/karma",
+"role":[
+{
+"name":"Mago",
+"slug":"mage"
+},
+{
+"name":"Suporte",
+"slug":"support"
+}
+],
+"nationality":"ionia",
+"lore":"Nenhum mortal representa melhor as tradições espirituais de Ionia do que Karma. Ela é a incorporação de uma alma reencarnada inúmeras vezes, que leva todas as memórias acumuladas para cada nova vida e que foi agraciada com um poder que poucos compreendem. Nos períodos recentes de crise, ela fez tudo o que estava ao seu alcance pelo seu povo, mas sabe que a paz e a harmonia talvez só sejam possíveis a um custo considerável — tanto para ela quanto para sua amada terra."
+},
+{
+"release-date":"2010-04-08T00:00:00.000Z",
+"name":"Kennen",
+"title":"o Coração da Tempestade",
+"section-title":"Kennen",
+"slug":"kennen",
+"image":"https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Kennen.png",
+"background":"https://cmsassets.rgpub.io/sanity/images/dsfx7636/universe/84f760ba5344b243d0cb24a8ecd69eabb31e773f-1215x717.jpg?accountingTag=LoL",
+"url":"/pt_br/champion/kennen",
+"role":[
+{
+"name":"Mago",
+"slug":"mage"
+},
+{
+"name":"Atirador",
+"slug":"marksman"
+}
+],
+"nationality":"ionia",
+"lore":"Mais do que um protetor rápido como um raio do equilíbrio ioniano, Kennen é o único yordle membro da Kinkou. Apesar da sua estatura pequena e peluda, ele anseia por ir contra qualquer ameaça com uma tempestade desenfreada de shurikens e entusiasmo sem limites. Ao lado de seu mestre, Shen, Kennen patrulha o reino dos espíritos, utilizando energia elétrica devastadora para abater seus inimigos."
+},
+{
+"release-date":"2010-05-11T00:00:00.000Z",
+"name":"Akali",
+"title":"a Assassina Renegada",
+"section-title":"Akali",
+"slug":"akali",
+"image":"https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Akali.png",
+"background":"https://cmsassets.rgpub.io/sanity/images/dsfx7636/universe/40f31a2bd25a32f90183e28bf304ea2bf764d38c-1920x1080.jpg?accountingTag=LoL",
+"url":"/pt_br/champion/akali",
+"role":[
+{
+"name":"Assassino",
+"slug":"assassin"
+}
+],
+"nationality":"ionia",
+"lore":"Abandonando a Ordem Kinkou e seu título de Punho das Sombras, Akali agora ataca sozinha, pronta para ser a arma mortal que seu povo precisa. Embora ela mantenha tudo o que aprendeu com seu mestre Shen, ela se comprometeu a defender Ionia de seus inimigos, um assassinato de cada vez. Akali pode atacar em silêncio, mas sua mensagem será ouvida em voz alta e clara: “Temam a assassina sem mestre”."
+},
+{
+"release-date":"2017-07-10T00:00:00.000Z",
+"name":"Kayn",
+"title":"o Ceifador das Sombras",
+"section-title":"Kayn",
+"slug":"kayn",
+"image":"https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Kayn.png",
+"background":"https://cmsassets.rgpub.io/sanity/images/dsfx7636/universe/6513f8a9eb12f5a3c06601b0d75b8b05542b2296-1920x1134.jpg?accountingTag=LoL",
+"url":"/pt_br/champion/kayn",
+"role":[
+{
+"name":"Assassino",
+"slug":"assassin"
+}
+],
+"nationality":"ionia",
+"lore":"Inigualável praticante da letal magia sombria, Shieda Kayn luta para alcançar seu verdadeiro destino: um dia comandar a Ordem das Sombras rumo a uma nova era de supremacia ioniana. Indiferente à maquiavélica degradação que ela causa em seu corpo e mente, ele empunha uma senciente arma darkin chamada Rhaast. Só duas coisas podem acontecer: ou Kayn faz a arma obedecê-lo... ou a foice maligna o consumirá completamente, preparando o terreno para a destruição de toda Runeterra."
+},
+{
+"release-date":"2017-04-11T19:43:26.000Z",
+"name":"Xayah",
+"title":"a Rebelde",
+"section-title":"Xayah",
+"slug":"xayah",
+"image":"https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Xayah.png",
+"background":"https://cmsassets.rgpub.io/sanity/images/dsfx7636/universe/7dc493395d5c991557d7b0657253bb201f85143b-2181x844.jpg?accountingTag=LoL",
+"url":"/pt_br/champion/xayah",
+"role":[
+{
+"name":"Atirador",
+"slug":"marksman"
+},
+{
+"name":"Tanque",
+"slug":"tank"
+}
+],
+"nationality":"ionia",
+"lore":"Mortal e precisa, Xayah é uma vastaya revolucionária que trava sua própria batalha para salvar seu povo. Ela usa sua agilidade, malícia e plumas afiadas para retalhar qualquer um que atrapalhe seu caminho. Xayah luta ao lado de seu parceiro e amante, Rakan, para proteger sua tribo em extinção e restaurar a antiga glória de sua raça."
+},
+{
+"release-date":"2023-11-22T18:00:00.000Z",
+"name":"Hwei",
+"title":"o Visionário",
+"section-title":"Hwei",
+"slug":"hwei",
+"image":"https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Hwei.png",
+"background":"https://cmsassets.rgpub.io/sanity/images/dsfx7636/universe/097c165ef2a832f04f6f7302203f4b7b40a82cb0-1920x1080.jpg?accountingTag=LoL",
+"url":"/pt_br/champion/hwei",
+"role":[
+{
+"name":"Mago",
+"slug":"mage"
+}
+],
+"nationality":"ionia",
+"lore":"Hwei é um pintor melancólico que cria obras de arte geniais para combater os criminosos de Ionia e trazer conforto às vítimas deles. Por trás de sua melancolia, esconde-se uma mente emocionalmente dilacerada, assombrada pelas visões vibrantes de sua imaginação e pelas memórias horríveis do massacre em seu templo. Hwei busca entender a dualidade entre a luz e as trevas, e isso o leva inevitavelmente em direção ao artista que o desvendou. Com um pincel e uma paleta em mãos, Hwei molda possibilidades infinitas, à medida que se aproxima cada vez mais da plenitude ou do total desespero."
+},
+{
+"release-date":"2012-11-13T00:00:00.000Z",
+"name":"Zed",
+"title":"o Mestre das Sombras",
+"section-title":"Zed",
+"slug":"zed",
+"image":"https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Zed.png",
+"background":"https://cmsassets.rgpub.io/sanity/images/dsfx7636/universe/db24370ba8674557039c865f6ce0d92128881326-1215x717.jpg?accountingTag=LoL",
+"url":"/pt_br/champion/zed",
+"role":[
+{
+"name":"Assassino",
+"slug":"assassin"
+},
+{
+"name":"Lutador",
+"slug":"fighter"
+}
+],
+"nationality":"ionia",
+"lore":"Absolutamente impiedoso e implacável, Zed é o líder da Ordem das Sombras; uma organização criada com a intenção de militarizar as tradições marciais e mágicas de Ionia para expulsar os invasores noxianos. Durante a guerra, o desespero o levou a libertar a forma secreta das sombras, uma magia espiritual malévola tão perigosa e manipuladora quanto poderosa. Zed dominou todas essas técnicas proibidas para destruir qualquer coisa que considerasse uma ameaça a sua nação, ou a sua nova ordem."
+},
+{
+"release-date":"2011-07-26T00:00:00.000Z",
+"name":"Wukong",
+"title":"o Macaco Rei",
+"section-title":"Wukong",
+"slug":"monkeyking",
+"image":"https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/MonkeyKing.png",
+"background":"https://cmsassets.rgpub.io/sanity/images/dsfx7636/universe/55a17baa4556728c30e3997f1a5d4624835cfd1d-1215x717.jpg?accountingTag=LoL",
+"url":"/pt_br/champion/monkeyking",
+"role":[
+{
+"name":"Lutador",
+"slug":"fighter"
+},
+{
+"name":"Tanque",
+"slug":"tank"
+}
+],
+"nationality":"ionia",
+"lore":"Wukong é um trapaceiro vastaya que usa sua força, agilidade e inteligência para confundir os oponentes e deixar a situação a seu favor. Depois de encontrar uma eterna amizade no guerreiro conhecido como Master Yi, Wukong se tornou o último aprendiz da ancestral arte marcial conhecida como Wu Ju. Armado com um cajado encantado, Wukong tenta evitar que Ionia caia em ruína."
+},
+{
+"release-date":"2010-11-16T00:00:00.000Z",
+"name":"Irelia",
+"title":"a Dançarina das Lâminas",
+"section-title":"Irelia",
+"slug":"irelia",
+"image":"https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Irelia.png",
+"background":"https://cmsassets.rgpub.io/sanity/images/dsfx7636/universe/3530078042f4933c89949ad02fbd1dd281812d95-1920x1071.jpg?accountingTag=LoL",
+"url":"/pt_br/champion/irelia",
+"role":[
+{
+"name":"Lutador",
+"slug":"fighter"
+},
+{
+"name":"Assassino",
+"slug":"assassin"
+}
+],
+"nationality":"ionia",
+"lore":"A ocupação noxiana de Ionia produziu muitos heróis, mas nenhum era mais improvável do que a jovem Irelia de Navori. Treinada nas antigas danças de Ionia, ela adaptou sua arte à guerra, usando movimentos graciosos e cuidadosamente executados para levitar uma série de lâminas fatais. Após provar seu valor como guerreira, ela foi nomeada líder e representante da resistência e até hoje se dedica à preservação de sua terra natal."
+},
+{
+"release-date":"2012-05-08T00:00:00.000Z",
+"name":"Varus",
+"title":"a Flecha da Vingança",
+"section-title":"Varus",
+"slug":"varus",
+"image":"https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Varus.png",
+"background":"https://cmsassets.rgpub.io/sanity/images/dsfx7636/universe/c4f1197764d67a050281377f366587334f5fc61a-1920x1133.jpg?accountingTag=LoL",
+"url":"/pt_br/champion/varus",
+"role":[
+{
+"name":"Atirador",
+"slug":"marksman"
+},
+{
+"name":"Mago",
+"slug":"mage"
+}
+],
+"nationality":"ionia",
+"lore":"Um dos antigos darkin, Varus era um assassino mortal que amava atormentar seus inimigos, levando-os quase à insanidade antes de disparar a flecha mortal. Ele foi aprisionado no final da Grande Guerra dos Darkin, mas fugiu, séculos depois, na carne recomposta de dois caçadores ionianos que o libertaram involuntariamente, condenando-o a carregar o arco que contém suas essências. Agora Varus caça aqueles que o aprisionaram para decretar sua vingança brutal, mas as almas mortais dentro dele ainda resistem a cada passo do caminho."
+}
+]
+}
+}

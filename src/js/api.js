@@ -21,16 +21,60 @@ let nationalitiesCache = null;
 // (sem round-trip ao backend), importante no plano gratuito do Render.
 const championsByRegionCache = new Map();
 
-export async function getNationalities() {
-    if (!nationalitiesCache) {
-        nationalitiesCache = await fetchJSON(`${BASE_URL}/nationality/`);
+// Snapshot estático: um retrato das rotas de dados (nacionalidades + campeões
+// por região) gerado no re-seed e servido junto do frontend em
+// `src/data/snapshot.json`. A tela de exploração lê dele primeiro, então abre
+// instantânea mesmo com o backend no plano gratuito do Render ainda acordando.
+// O backend continua sendo a fonte de verdade: qualquer falha ao carregar o
+// snapshot (ausente, inválido) cai de volta para a chamada ao backend.
+const SNAPSHOT_URL = "/src/data/snapshot.json";
+let snapshotPromise = null;
+
+function loadSnapshot() {
+    // Carrega uma única vez; a promise é reusada (e, em caso de falha, zerada
+    // para não prender o fallback num estado de erro permanente).
+    if (!snapshotPromise) {
+        snapshotPromise = fetchJSON(SNAPSHOT_URL).catch((err) => {
+            snapshotPromise = null;
+            throw err;
+        });
     }
+    return snapshotPromise;
+}
+
+export async function getNationalities() {
+    if (nationalitiesCache) {
+        return nationalitiesCache;
+    }
+    try {
+        const snapshot = await loadSnapshot();
+        if (snapshot && Array.isArray(snapshot.nationalities)) {
+            nationalitiesCache = snapshot.nationalities;
+            return nationalitiesCache;
+        }
+    } catch (_) {
+        /* snapshot indisponível: segue para o backend */
+    }
+    nationalitiesCache = await fetchJSON(`${BASE_URL}/nationality/`);
     return nationalitiesCache;
 }
 
 export async function getChampionsByRegion(regionSlug) {
     if (championsByRegionCache.has(regionSlug)) {
         return championsByRegionCache.get(regionSlug);
+    }
+    try {
+        const snapshot = await loadSnapshot();
+        const fromSnapshot =
+            snapshot &&
+            snapshot.championsByRegion &&
+            snapshot.championsByRegion[regionSlug];
+        if (Array.isArray(fromSnapshot)) {
+            championsByRegionCache.set(regionSlug, fromSnapshot);
+            return fromSnapshot;
+        }
+    } catch (_) {
+        /* snapshot indisponível: segue para o backend */
     }
     const champions = await fetchJSON(
         `${BASE_URL}/nationality/champions/${regionSlug}`
