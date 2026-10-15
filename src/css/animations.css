@@ -88,4 +88,11 @@
     .content--enter .description {
         animation: none;
     }
+
+    /* Sem zoom no hover dos emblemas para quem prefere menos movimento
+       (o anel/glow de hover continua, pois não é movimento). */
+    .button:hover,
+    .button:focus-visible {
+        transform: translateZ(0);
+    }
 }
