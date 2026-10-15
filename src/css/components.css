@@ -18,7 +18,15 @@
     height: 60px;
     overflow: hidden;
     flex-shrink: 0;
-    transition: box-shadow 0.18s ease;
+    /* Anima o zoom no BOTÃO inteiro (não na img recortada): o navegador
+       escala uma textura já rasterizada em vez de reinterpolar os pixels da
+       arte dentro do clip circular, o que elimina o serrilhado/tremor no
+       hover. translateZ(0) + backface-visibility promovem o botão a uma
+       camada de composição própria (rasterização estável na GPU). */
+    transform: translateZ(0);
+    backface-visibility: hidden;
+    will-change: transform;
+    transition: box-shadow 0.18s ease, transform 0.18s ease;
 }
 
 /* Anel/brilho no hover e seleção ficam no BOTÃO (não na img), pois o
@@ -44,7 +52,6 @@
     object-fit: cover;
     object-position: center;
     display: block;
-    transition: transform 0.18s ease;
 }
 
 /* Apenas CAMPEÕES: a imagem é MAIOR que o botão (60px) e centralizada; o
@@ -55,11 +62,13 @@
     height: 72px;
 }
 
-/* Hover / foco: leve zoom na imagem (continua recortada pelo botão, então
-   a arte cresce por dentro sem inflar o botão). */
-.button:hover img,
-.button:focus-visible img {
-    transform: translate(-50%, -50%) scale(1.1);
+/* Hover / foco: leve zoom no BOTÃO inteiro (imagem + recorte juntos). Fator
+   reduzido (1.06) e aplicado sobre o translateZ(0) já existente, para o
+   crescimento ser compositado na GPU — sem reamostrar a arte dentro do clip
+   circular, que era a origem dos "pixels estranhos". */
+.button:hover,
+.button:focus-visible {
+    transform: translateZ(0) scale(1.06);
 }
 
 /* Tooltip com o nome da região/campeão. É um elemento único posicionado via
