@@ -18,11 +18,12 @@ lol_front/
 ├── vercel.json           # fallback SPA (Vercel)
 ├── src/
 │   ├── css/              # reset, estilos, responsivo e estados de carga (skeleton/wake)
+│   ├── data/             # snapshot.json (retrato estático das rotas de dados)
 │   ├── imagens/          # logo.png
 │   └── js/
 │       ├── config.js     # configuração de runtime (BASE_URL) + wake do backend
 │       ├── main.js       # ponto de entrada: orquestra os módulos
-│       ├── api.js        # camada de dados (fetch ao backend, com cache)
+│       ├── api.js        # camada de dados (snapshot + fetch ao backend, com cache)
 │       ├── router.js     # roteamento por History API (URLs limpas)
 │       ├── keyboard.js   # navegação por teclado (setas)
 │       └── ui/           # componentes de interface
@@ -33,6 +34,7 @@ lol_front/
 │           └── loader.js      # indicador de carregamento
 └── data_retrival/
     ├── setup_database.py     # popula o MongoDB com dados da Riot/DDragon
+    ├── generate_snapshot.py  # gera o src/data/snapshot.json a partir do backend
     ├── requirements.txt
     ├── requirements-dev.txt  # dependências de teste (pytest)
     ├── .env.example
@@ -41,9 +43,11 @@ lol_front/
 
 > Como usa ESM (`<script type="module">`), o app precisa ser servido via HTTP (não abre por `file://`).
 
-O `api.js` cacheia em memória tanto as nacionalidades quanto os campeões por região (um valor por região): voltar a uma região já visitada não refaz a chamada ao backend.
+A tela de exploração (nacionalidades e campeões por região) abre a partir de um **snapshot estático** servido junto do frontend em `src/data/snapshot.json`. Como esses dados só mudam quando o banco é re-semeado, o `api.js` lê do snapshot primeiro — a tela pinta na hora, mesmo com o backend no plano gratuito do Render ainda acordando. O backend continua sendo a fonte de verdade: se o snapshot faltar ou estiver inválido, o `api.js` cai de volta para a chamada ao backend. O detalhe de um campeão individual (`/champion/:slug`) sempre vem do backend.
 
-Como o backend roda no plano gratuito do Render (cold start de ~30s), a carga inicial trata a espera de duas formas: o `config.js` dispara um fetch *fire-and-forget* ao `/status` assim que carrega, para o Render começar a acordar antes de os dados serem pedidos; e o `main.js` busca nacionalidades e campeões em paralelo (`Promise.all`), mostra *skeletons* nas colunas e, se a carga passar de ~1,2s, exibe um aviso discreto de "acordando o servidor".
+O `api.js` também cacheia em memória tanto as nacionalidades quanto os campeões por região (um valor por região): voltar a uma região já visitada não refaz a leitura.
+
+Mesmo com o snapshot, a carga inicial preserva o tratamento do cold start do backend: o `config.js` dispara um fetch *fire-and-forget* ao `/status` assim que carrega, para o Render começar a acordar antes de qualquer chamada que precise dele; e o `main.js` busca os dados em paralelo (`Promise.all`), mostra *skeletons* nas colunas e, se a carga passar de ~1,2s, exibe um aviso discreto de "acordando o servidor".
 
 ## Rodando o frontend
 
@@ -105,6 +109,17 @@ python setup_database.py
 > A `MONGO_URL` é lida de variável de ambiente (via `.env`). Nunca faça commit do `.env` — ele está no `.gitignore`.
 
 ⚠️ O script executa `drop_database("lol")` antes de inserir, ou seja, recria a base do zero a cada execução.
+
+### Regenerando o snapshot estático
+
+A tela de exploração lê de `src/data/snapshot.json` (ver seção Estrutura). Depois de re-semear o banco, atualize o snapshot para refletir os novos dados:
+
+```bash
+# o backend precisa estar no ar e apontando para o banco já populado
+python data_retrival/generate_snapshot.py
+```
+
+O script lê as rotas de dados do backend (default: a URL de produção; passe outra como argumento, ex.: `python data_retrival/generate_snapshot.py http://localhost:5000`) e grava o `snapshot.json`. Ele lê das rotas em vez do Mongo direto para o shape do arquivo bater exatamente com o que o backend serve — sem duplicar a serialização. Faça commit do `snapshot.json` atualizado junto com o deploy.
 
 ## Testes
 
