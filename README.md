@@ -17,10 +17,10 @@ lol_front/
 ├── _redirects            # fallback SPA (Netlify)
 ├── vercel.json           # fallback SPA (Vercel)
 ├── src/
-│   ├── css/              # reset, estilos e regras responsivas
-│   ├── imagens/          # logo e mapas de região
+│   ├── css/              # reset, estilos, responsivo e estados de carga (skeleton/wake)
+│   ├── imagens/          # logo.png
 │   └── js/
-│       ├── config.js     # configuração de runtime (BASE_URL do backend)
+│       ├── config.js     # configuração de runtime (BASE_URL) + wake do backend
 │       ├── main.js       # ponto de entrada: orquestra os módulos
 │       ├── api.js        # camada de dados (fetch ao backend, com cache)
 │       ├── router.js     # roteamento por History API (URLs limpas)
@@ -40,6 +40,10 @@ lol_front/
 ```
 
 > Como usa ESM (`<script type="module">`), o app precisa ser servido via HTTP (não abre por `file://`).
+
+O `api.js` cacheia em memória tanto as nacionalidades quanto os campeões por região (um valor por região): voltar a uma região já visitada não refaz a chamada ao backend.
+
+Como o backend roda no plano gratuito do Render (cold start de ~30s), a carga inicial trata a espera de duas formas: o `config.js` dispara um fetch *fire-and-forget* ao `/status` assim que carrega, para o Render começar a acordar antes de os dados serem pedidos; e o `main.js` busca nacionalidades e campeões em paralelo (`Promise.all`), mostra *skeletons* nas colunas e, se a carga passar de ~1,2s, exibe um aviso discreto de "acordando o servidor".
 
 ## Rodando o frontend
 
@@ -86,8 +90,6 @@ const LOCAL_BACKEND_URL = "http://localhost:5000";
 ```
 
 Para apontar para outra instância do `lol_back`, ajuste `PROD_BACKEND_URL`.
-
-> Guia completo de deploy (Atlas + Render + Vercel) na raiz do monorepo: [`DEPLOY.md`](../DEPLOY.md).
 
 ## Populando o banco (data_retrival)
 
