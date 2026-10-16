@@ -33,10 +33,8 @@ def strip_id(doc):
     return doc
 
 
-def main():
-    base = (sys.argv[1] if len(sys.argv) > 1 else DEFAULT_BASE).rstrip("/")
-    print(f"Lendo do backend: {base}")
-
+def build_snapshot(base):
+    """Le o backend e RETORNA o dict do snapshot (sem gravar em disco)."""
     nationalities = [strip_id(n) for n in fetch(f"{base}/nationality/")]
     print(f"  nacionalidades: {len(nationalities)}")
 
@@ -47,10 +45,26 @@ def main():
         champions_by_region[slug] = champs
         print(f"  {slug}: {len(champs)} campeoes")
 
-    snapshot = {
+    return {
         "nationalities": nationalities,
         "championsByRegion": champions_by_region,
     }
+
+
+def main():
+    base = (sys.argv[1] if len(sys.argv) > 1 else DEFAULT_BASE).rstrip("/")
+    print(f"Lendo do backend: {base}")
+
+    snapshot = build_snapshot(base)
+
+    # Guarda-chuva: NUNCA sobrescrever o snapshot com dados vazios. O snapshot e
+    # o que abre a home instantaneamente; gravar vazio (banco vazio / backend
+    # fora do ar) quebraria o site. Melhor abortar e manter o snapshot atual.
+    if not snapshot["nationalities"]:
+        raise SystemExit(
+            "Erro: o backend devolveu nenhuma nacionalidade; "
+            "snapshot NAO foi sobrescrito (o banco pode estar vazio)."
+        )
 
     out = os.path.normpath(OUT_PATH)
     os.makedirs(os.path.dirname(out), exist_ok=True)
