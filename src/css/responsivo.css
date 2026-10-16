@@ -32,11 +32,31 @@
         overscroll-behavior: none; /* mata o "bounce"/scroll-chaining */
     }
 
-    /* O slide e a camada de escurecimento cobrem a tela toda via
-       position:fixed + inset:0 (independe de vh, então imune à barra de
-       endereço). */
-    main .element {
+    /* A altura das duas linhas de emblemas (regiões + campeões) que
+       reservamos na base da tela, e o tamanho do emblema nas faixas. */
+    :root,
+    body {
+        --mobile-rail-height: 208px;
+        --rail-height: 96px;
+        --emblem-size: 56px;
+    }
+
+    /* main fixo cobrindo a tela (independe de vh, então imune à barra de
+       endereço); overflow hidden contém o zoom do Ken Burns (scale 1.12)
+       para não gerar scroll. */
+    main {
         position: fixed;
+        inset: 0;
+        overflow: hidden;
+    }
+
+    /* O slide cobre o main com position:ABSOLUTE (não fixed). Um elemento
+       fixed cria um contexto de empilhamento próprio e prendia o texto
+       dentro dele: a camada escura do main::after acabava pintada POR CIMA
+       do título e da descrição (texto acinzentado). Absolute sem z-index não
+       cria esse contexto, então a ordem volta a ser imagem < camada < texto. */
+    main .element {
+        position: absolute;
         inset: 0;
         height: 100%;
     }
@@ -50,27 +70,11 @@
         /* Escurece a base da tela, onde ficam o texto e as barras. */
         background: linear-gradient(
             0deg,
-            rgba(0, 0, 0, 0.92) 0%,
-            rgba(0, 0, 0, 0.75) 30%,
-            rgba(0, 0, 0, 0.15) 70%,
-            rgba(0, 0, 0, 0) 100%
+            rgba(1, 10, 19, 0.94) 0%,
+            rgba(1, 10, 19, 0.78) 30%,
+            rgba(1, 10, 19, 0.18) 70%,
+            rgba(1, 10, 19, 0) 100%
         );
-    }
-
-    /* A altura das duas linhas de emblemas (regiões + campeões) que
-       reservamos na base da tela. Usada para não deixar o texto
-       ficar atrás das barras. */
-    :root,
-    body {
-        --mobile-rail-height: 208px;
-    }
-
-    /* main também fixo cobrindo a tela; overflow hidden contém o zoom
-       do Ken Burns (scale 1.12) para não gerar scroll. */
-    main {
-        position: fixed;
-        inset: 0;
-        overflow: hidden;
     }
 
     main .element .image {
@@ -79,9 +83,10 @@
     }
 
     /* Texto (logo + título + descrição) ancorado na parte de baixo,
-       acima do painel de barras. Sem os hacks de top negativo. */
+       acima do painel de barras. */
     .content {
         left: 0;
+        right: 0;
         top: auto;
         bottom: var(--mobile-rail-height);
         height: auto;
@@ -89,30 +94,37 @@
         max-width: 100%;
         justify-content: flex-end;
         padding: 24px 20px;
-        gap: 4px;
     }
 
     .content .logo {
         width: 220px;
-        height: 82px;
+        margin-bottom: 14px;
+    }
+
+    .content .element-heading {
         margin-bottom: 12px;
     }
 
     .content .element-name {
-        font-size: 32px;
-        margin-bottom: 10px;
+        font-size: 2rem;
+    }
+
+    .content .element-epithet {
+        margin-top: 4px;
+        font-size: 0.8rem;
+        letter-spacing: 0.12em;
     }
 
     .content .description {
         max-width: 100%;
         /* Sem max-height em vh: a .content já é limitada por
            max-height:calc(100% - rail) e a descrição tem flex:1 +
-           overflow-y:auto (estilos.css), então ela rola dentro do
-           espaço disponível sem depender da viewport dinâmica. */
+           overflow-y:auto (content.css), então ela rola dentro do espaço
+           disponível sem depender da viewport dinâmica. */
     }
 
     /* Os rótulos fixos do desktop (posicionados à direita) não servem
-       no mobile; recriamos rótulos próprios para cada linha abaixo. */
+       no mobile. */
     .column-label {
         display: none;
     }
@@ -120,8 +132,7 @@
     /* ---- Painel de barras no rodapé -------------------------------- */
     /* As duas listas deixam de ser colunas verticais e viram linhas
        horizontais empilhadas. Cada uma é fixa, ocupa a largura toda e
-       tem seu PRÓPRIO scroll horizontal (o bug antigo era as duas se
-       sobreporem no mesmo espaço). */
+       tem seu PRÓPRIO scroll horizontal. */
     .nationalities,
     .champions {
         flex-direction: row;
@@ -130,7 +141,7 @@
         width: 100%;
         min-height: 0;
         max-height: none;
-        height: 96px;
+        height: var(--rail-height);
         left: 0;
         right: auto;
         top: auto;
@@ -141,101 +152,102 @@
         overflow-y: hidden;
         -webkit-overflow-scrolling: touch;
         border-left: none;
+        scrollbar-width: thin;
+        scrollbar-color: var(--gold-soft) transparent;
     }
 
     /* Regiões: penúltima faixa. Campeões: última (colada na base). */
     .nationalities {
-        bottom: 96px;
-        background-color: rgba(0, 0, 0, 0.55);
-        border-top: 1px solid rgba(200, 170, 110, 0.18);
+        bottom: var(--rail-height);
+        background-color: rgba(1, 10, 19, 0.55);
+        border-top: 1px solid var(--gold-faint);
     }
 
     .champions {
         bottom: 0;
-        background-color: rgba(0, 0, 0, 0.7);
-        border-top: 1px solid rgba(200, 170, 110, 0.18);
+        background-color: rgba(1, 10, 19, 0.72);
+        border-top: 1px solid var(--gold-faint);
     }
 
-    /* Barrinha de scroll horizontal discreta (quando aparece). */
-    .nationalities::-webkit-scrollbar,
-    .champions::-webkit-scrollbar {
-        height: 3px;
-    }
-    .nationalities::-webkit-scrollbar-thumb,
-    .champions::-webkit-scrollbar-thumb {
-        background: rgba(200, 170, 110, 0.4);
-        border-radius: 2px;
+    /* O aviso de carregamento sobe para ficar acima das faixas. */
+    .wake-message {
+        bottom: calc(var(--mobile-rail-height) + 12px);
     }
 
-    /* IMPORTANTE: NÃO mexer em .button img aqui.
-       No desktop a imagem é posicionada com position:absolute +
-       translate(-50%,-50%) e recortada pelo overflow do botão. Definir
-       max-width/height no img (como era antes) quebrava essa centragem
-       e desalinhava os ícones. Mantemos position/translate e apenas
-       reescalamos width+height juntos, preservando a centragem. */
-    .button {
-        width: 56px;
-        height: 56px;
-    }
-
-    /* Regiões: imagem encaixada no botão (sem moldura a recortar). */
-    .button img {
-        width: 56px;
-        height: 56px;
-    }
-
-    /* Campeões: imagem ~20% maior que o botão para recortar a moldura
-       escura do DDragon (mesma proporção 60->72 do desktop). */
-    .champions .button img {
-        width: 68px;
-        height: 68px;
-    }
+    /* Os emblemas se ajustam pelo token --emblem-size (definido acima): o
+       botão, a imagem das regiões e a imagem ~20% maior dos campeões
+       (components.css) acompanham juntos, sem quebrar a centragem. */
 }
 
 /* ============================================================
    Telas bem estreitas (<= 425px): só ajustes finos de escala.
    ============================================================ */
 @media (max-width: 425px) {
+    :root,
     body {
         --mobile-rail-height: 188px;
+        --rail-height: 84px;
+        --emblem-size: 50px;
     }
 
     .content .logo {
         width: 170px;
-        height: 64px;
         margin-bottom: 10px;
     }
 
     .content .element-name {
-        font-size: 26px;
+        font-size: 1.65rem;
     }
 
     .content .description {
-        line-height: 22px;
+        line-height: 1.5;
     }
 
     .nationalities,
     .champions {
-        height: 84px;
         padding: 6px 10px;
     }
+}
 
-    .nationalities {
-        bottom: 84px;
+/* ============================================================
+   Telas BAIXAS no layout de colunas (ex.: celular deitado,
+   844x390): o logo e o título de 400px/56px não deixavam espaço
+   nenhum para a descrição. Compacta o topo para o texto caber.
+   ============================================================ */
+@media (min-width: 601px) and (max-height: 500px) {
+    :root,
+    body {
+        --emblem-size: 50px;
     }
 
-    .button {
-        width: 50px;
-        height: 50px;
+    .content {
+        padding: 16px 0;
     }
 
-    .button img {
-        width: 50px;
-        height: 50px;
+    .content .logo {
+        width: 150px;
+        margin-bottom: 10px;
     }
 
-    .champions .button img {
-        width: 60px;
-        height: 60px;
+    .content .breadcrumb {
+        margin-bottom: 4px;
+    }
+
+    .content .element-heading {
+        margin-bottom: 10px;
+    }
+
+    .content .element-name {
+        font-size: 1.75rem;
+    }
+
+    .content .element-epithet {
+        margin-top: 2px;
+        font-size: 0.75rem;
+    }
+
+    .nationalities,
+    .champions {
+        gap: 8px;
     }
 }
