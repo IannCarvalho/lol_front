@@ -4,10 +4,43 @@
 const BASE_URL =
     (window.APP_CONFIG && window.APP_CONFIG.BASE_URL) || "http://localhost:5000";
 
-async function fetchJSON(url) {
-    const response = await fetch(url);
+// Timeouts nomeados (via AbortController). O backend no plano gratuito do
+// Render pode levar ~30-50s para sair do cold start; por isso as chamadas sem
+// alternativa esperam acima de um cold start tipico. O snapshot e um arquivo
+// estatico servido junto do frontend, entao espera pouco antes de cair para o
+// backend. Quando o detalhe do campeao JA existe no snapshot, a chamada ao
+// backend usa um timeout curto (o snapshot cobre o erro/espera).
+const BACKEND_TIMEOUT_MS = 60000; // chamada ao backend sem alternativa
+const SNAPSHOT_TIMEOUT_MS = 10000; // snapshot estatico (cai para o backend)
+const CHAMPION_SOFT_TIMEOUT_MS = 5000; // detalhe com fallback no snapshot
+
+// Erro de HTTP com status: distingue um 404 (recurso inexistente, resposta
+// definitiva) de um erro de rede/servidor. O 404 nao e "erro de rede" e nao
+// deve cair em nenhum fallback.
+export class HttpError extends Error {
+    constructor(status, message) {
+        super(message || `Erro HTTP ${status}`);
+        this.name = "HttpError";
+        this.status = status;
+    }
+}
+
+// fetch com timeout via AbortController. Lanca HttpError(status) para respostas
+// nao-ok (ex.: 404, 500) e um Error de rede para falha de conexao/timeout.
+async function fetchJSON(url, timeoutMs = BACKEND_TIMEOUT_MS) {
+    const controller = new AbortController();
+    const timer = setTimeout(() => controller.abort(), timeoutMs);
+    let response;
+    try {
+        response = await fetch(url, { signal: controller.signal });
+    } catch (err) {
+        // AbortError (timeout) ou falha de rede: ambos sao "erro de rede".
+        throw new Error(`Erro de rede: ${err && err.name === "AbortError" ? "timeout" : err}`);
+    } finally {
+        clearTimeout(timer);
+    }
     if (!response.ok) {
-        throw new Error(`Erro de rede: ${response.status}`);
+        throw new HttpError(response.status, `Erro HTTP ${response.status}`);
     }
     return response.json();
 }
@@ -20,6 +53,10 @@ let nationalitiesCache = null;
 // nationalitiesCache. Voltar a uma região já visitada passa a ser instantâneo
 // (sem round-trip ao backend), importante no plano gratuito do Render.
 const championsByRegionCache = new Map();
+
+// Cache do detalhe de campeões (uma promise por slug; ver getChampion): evita
+// refetch ao revisitar um campeão (como no championsByRegionCache).
+const championCache = new Map();
 
 // Snapshot estático: um retrato das rotas de dados (nacionalidades + campeões
 // por região) gerado no re-seed e servido junto do frontend em
@@ -34,12 +71,31 @@ function loadSnapshot() {
     // Carrega uma única vez; a promise é reusada (e, em caso de falha, zerada
     // para não prender o fallback num estado de erro permanente).
     if (!snapshotPromise) {
-        snapshotPromise = fetchJSON(SNAPSHOT_URL).catch((err) => {
+        snapshotPromise = fetchJSON(SNAPSHOT_URL, SNAPSHOT_TIMEOUT_MS).catch((err) => {
             snapshotPromise = null;
             throw err;
         });
     }
     return snapshotPromise;
+}
+
+// Procura o campeão `slug` dentro do snapshot (varrendo as regiões). Retorna o
+// objeto completo do campeão, ou null se o snapshot falhar ou não o tiver.
+async function championFromSnapshot(slug) {
+    try {
+        const snapshot = await loadSnapshot();
+        const byRegion = snapshot && snapshot.championsByRegion;
+        if (!byRegion) return null;
+        for (const slugKey of Object.keys(byRegion)) {
+            const list = byRegion[slugKey];
+            if (!Array.isArray(list)) continue;
+            const found = list.find((c) => c && c.slug === slug);
+            if (found) return found;
+        }
+        return null;
+    } catch (_) {
+        return null;
+    }
 }
 
 export async function getNationalities() {
@@ -77,12 +133,47 @@ export async function getChampionsByRegion(regionSlug) {
         /* snapshot indisponível: segue para o backend */
     }
     const champions = await fetchJSON(
-        `${BASE_URL}/nationality/champions/${regionSlug}`
+        `${BASE_URL}/nationality/champions/${encodeURIComponent(regionSlug)}`
     );
     championsByRegionCache.set(regionSlug, champions);
     return champions;
 }
 
-export async function getChampion(slug) {
-    return fetchJSON(`${BASE_URL}/champion/${slug}`);
+// O cache guarda a PROMISE: chamadas repetidas para o mesmo campeão (inclusive
+// enquanto a primeira ainda está em voo, ex.: duplo clique com o backend lento)
+// reaproveitam a mesma busca. Uma falha sai do cache para permitir nova tentativa.
+export function getChampion(slug) {
+    if (!championCache.has(slug)) {
+        const pending = loadChampion(slug).catch((err) => {
+            championCache.delete(slug);
+            throw err;
+        });
+        championCache.set(slug, pending);
+    }
+    return championCache.get(slug);
+}
+
+async function loadChampion(slug) {
+    const url = `${BASE_URL}/champion/${encodeURIComponent(slug)}`;
+    const snapshotChampion = await championFromSnapshot(slug);
+
+    if (snapshotChampion) {
+        // O campeão existe no snapshot: o backend continua sendo a fonte
+        // primária (dados sempre atuais), mas com timeout curto. Em erro de
+        // rede, timeout ou 5xx, devolvemos o snapshot — isso elimina a espera
+        // do cold start no clique e também cobre o caso em que o CORS do
+        // backend bloqueia (ex.: previews da Vercel). Um 404 do backend é
+        // resposta DEFINITIVA e NÃO cai no snapshot.
+        try {
+            return await fetchJSON(url, CHAMPION_SOFT_TIMEOUT_MS);
+        } catch (err) {
+            if (err instanceof HttpError && err.status === 404) {
+                throw err;
+            }
+            return snapshotChampion; // erro de rede / timeout / 5xx
+        }
+    }
+
+    // Não existe no snapshot: backend é a única fonte, com o timeout longo.
+    return fetchJSON(url, BACKEND_TIMEOUT_MS);
 }
