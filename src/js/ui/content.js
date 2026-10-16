@@ -1,22 +1,49 @@
-// Conteúdo central: título, descrição (com fade condicional), breadcrumb,
-// título da aba, animação de entrada e estado de erro.
+// Conteúdo central: título (nome + epíteto), descrição (com fade condicional),
+// breadcrumb, título da aba, animação de entrada e estado de erro.
 
 import { setBackgroundImage } from "./background.js";
+
+// Liga/desliga o fade do rodapé conforme o texto transborda ou não.
+function updateDescriptionFade(description) {
+    const overflowing = description.scrollHeight > description.clientHeight + 1;
+    description.classList.toggle("description--scrollable", overflowing);
+}
+
+// Reavalia o fade quando o espaço disponível muda (girar o celular,
+// redimensionar a janela), e não só quando o texto troca.
+let descriptionObserver = null;
+function watchDescription(description) {
+    if (descriptionObserver || typeof ResizeObserver === "undefined") return;
+    descriptionObserver = new ResizeObserver(() => updateDescriptionFade(description));
+    descriptionObserver.observe(description);
+}
 
 // Define o texto da descrição e aplica o fade no rodapé APENAS quando o
 // conteúdo transborda (precisa rolar). Se cabe todo, sem fade.
 export function setDescription(text) {
     const description = document.getElementById("description");
     description.textContent = text || "";
+    watchDescription(description);
     requestAnimationFrame(() => {
-        const overflowing = description.scrollHeight > description.clientHeight + 1;
-        description.classList.toggle("description--scrollable", overflowing);
+        updateDescriptionFade(description);
         description.scrollTop = 0;
     });
 }
 
+// Título do elemento: o nome no <h1> e, para campeões, o epíteto logo abaixo
+// (ex.: "Jinx" + "o Gatilho Desenfreado"). Sem epíteto, a linha some.
+export function setHeading(name, epithet) {
+    document.getElementById("title").textContent = name;
+    const epithetEl = document.getElementById("epithet");
+    if (epithetEl) {
+        epithetEl.textContent = epithet || "";
+        epithetEl.hidden = !epithet;
+    }
+}
+
+// Título sem epíteto (regiões, tela de erro).
 export function setTitle(text) {
-    document.getElementById("title").textContent = text;
+    setHeading(text, null);
 }
 
 // Breadcrumb da região de origem (quando se vê um campeão). Recebe
