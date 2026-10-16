@@ -78,28 +78,51 @@ function startWakeMessage(token) {
     };
 }
 
-// Garante que a coluna Campeões mostra a lista de `regionSlug` (vem do
-// snapshot/cache, instantâneo). Só re-renderiza se a lista exibida for de outra
-// região. Retorna true se a navegação `token` continua válida ao final.
-async function ensureChampionsColumn(regionSlug, token) {
-    if (renderedChampionsRegion === regionSlug) return token === navToken;
-    const champions = await getChampionsByRegion(regionSlug);
-    if (token !== navToken) return false;
+// Lista da coluna Campeões para a região de contexto de um campeão (deep link
+// para um campeão de outra região). Devolve null quando a lista exibida já é a
+// certa ou quando não dá para obtê-la: a lista é secundária e uma falha aqui
+// não deve impedir de mostrar o campeão.
+async function championsListForContext(regionSlug) {
+    if (!regionSlug || regionSlug === renderedChampionsRegion) return null;
+    try {
+        return await getChampionsByRegion(regionSlug);
+    } catch (error) {
+        console.warn("Não foi possível carregar a lista da região:", error);
+        return null;
+    }
+}
+
+// Troca a coluna Campeões para a lista de `regionSlug` (dados já carregados).
+function showChampionsOf(regionSlug, champions) {
+    if (!champions) return;
     renderChampionsList(champions, onSelect);
     renderedChampionsRegion = regionSlug;
-    return true;
+}
+
+// Registra o que está NA TELA e marca as duas colunas. É chamado no momento em
+// que o conteúdo é desenhado (e não depois do fade do fundo): assim um clique
+// durante o fade é comparado com o que o usuário realmente vê.
+function setDisplayed(slug, regionSlug, championSlug) {
+    currentSlug = slug;
+    currentRegionSlug = regionSlug;
+    currentChampionSlug = championSlug;
+    markColumnSelection(regionSlug, championSlug);
 }
 
 // Carrega e renderiza um elemento (região ou campeão) a partir do slug.
-// Controle de concorrência: "a última navegação vence".
+// Controle de concorrência: "a última navegação vence". Os dados são buscados
+// primeiro; depois de conferir que a navegação ainda é a atual, o conteúdo é
+// desenhado de uma vez e só então o fundo faz o crossfade.
 async function loadElement(slug) {
     const token = ++navToken;
+    const isCurrent = () => token === navToken;
 
-    // Early-return para o slug atual TAMBÉM invalida uma navegação em voo
-    // (cenário: mostrando A, clica B, volta a clicar A antes de B chegar =>
-    // tem que ficar A). O token já foi incrementado acima, então qualquer
-    // await de B em voo vai sair calado.
+    // Slug já exibido: só remarca as colunas. O token incrementado acima já
+    // invalida qualquer navegação em voo (mostrando A, clica B, volta a clicar
+    // A antes de B chegar => fica A); por isso ESTA navegação assume o loader,
+    // que senão ficaria preso na tela.
     if (slug === currentSlug) {
+        showLoader(false);
         markColumnSelection(currentRegionSlug, currentChampionSlug);
         return;
     }
@@ -108,27 +131,29 @@ async function loadElement(slug) {
     const stopWakeMessage = startWakeMessage(token);
     try {
         const nationalities = await getNationalities();
-        if (token !== navToken) return;
+        if (!isCurrent()) return;
         const region = nationalities.find((n) => n.slug === slug);
 
         if (region) {
-            const stillCurrent = await ensureChampionsColumn(region.slug, token);
-            if (!stillCurrent) return;
+            const champions =
+                region.slug === renderedChampionsRegion
+                    ? null
+                    : await getChampionsByRegion(region.slug);
+            if (!isCurrent()) return;
+            showChampionsOf(region.slug, champions);
             setTitle(region.name);
             setDescription(region.overview);
             setPageTitle(region.name);
             setBreadcrumb(null);
+            setDisplayed(slug, region.slug, null);
             playContentEnter();
             await setBackgroundImage(region.background);
-            if (token !== navToken) return;
-
-            currentSlug = slug;
-            currentRegionSlug = region.slug;
-            currentChampionSlug = null;
-            markColumnSelection(region.slug, null);
         } else {
             const champion = await getChampion(slug);
-            if (token !== navToken) return;
+            if (!isCurrent()) return;
+            const contextChampions = await championsListForContext(champion.nationality);
+            if (!isCurrent()) return;
+            showChampionsOf(champion.nationality, contextChampions);
             setTitle(`${champion.name}: ${champion.title}`);
             setDescription(champion.lore);
             setPageTitle(champion.name);
@@ -137,28 +162,17 @@ async function loadElement(slug) {
                 origin ? { slug: origin.slug, name: origin.name } : null,
                 (regionSlug) => navigateTo(regionSlug, "region")
             );
-            // Coluna Campeões: a região do campeão (deep link para um campeão de
-            // outra região re-renderiza a lista correta, instantânea do cache).
-            if (champion.nationality) {
-                const stillCurrent = await ensureChampionsColumn(
-                    champion.nationality,
-                    token
-                );
-                if (!stillCurrent) return;
-            }
+            // Regiões marca a região de contexto; Campeões marca o campeão.
+            setDisplayed(slug, origin ? origin.slug : null, champion.slug);
             playContentEnter();
             await setBackgroundImage(champion.background);
-            if (token !== navToken) return;
-
-            currentSlug = slug;
-            currentRegionSlug = champion.nationality || null;
-            currentChampionSlug = champion.slug;
-            // Regiões marca a região de contexto; Campeões marca o campeão.
-            markColumnSelection(champion.nationality || null, champion.slug);
         }
     } catch (error) {
-        if (token !== navToken) return;
+        if (!isCurrent()) return;
         console.error("Erro na requisição:", error);
+        // Nada válido na tela: esquece o slug exibido (clicar de novo no último
+        // item volta a carregá-lo) e limpa a seleção das colunas.
+        setDisplayed(null, null, null);
         if (error instanceof HttpError && error.status === 404) {
             showError(
                 "Não encontramos esse campeão ou região em Runeterra. Escolha um emblema nas colunas ao lado."
@@ -217,9 +231,7 @@ async function init() {
     if (initial !== "runeterra") {
         loadElement(initial);
     } else {
-        currentRegionSlug = "runeterra";
-        currentChampionSlug = null;
-        markColumnSelection("runeterra", null);
+        setDisplayed("runeterra", "runeterra", null);
     }
 }
 

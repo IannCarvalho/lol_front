@@ -233,3 +233,38 @@ test("HttpError e exportado e carrega status", async () => {
     assert.equal(e.status, 500);
     assert.ok(e instanceof Error);
 });
+
+
+test("getChampion: chamadas simultaneas reaproveitam a mesma busca em voo", async () => {
+    let hits = 0;
+    const { mod } = await loadApi({
+        snapshot: SNAPSHOT,
+        backend: (p) => {
+            if (p.startsWith("/champion/")) {
+                hits += 1;
+                return respond(200, { slug: "jinx", name: "Jinx", title: "do backend" });
+            }
+            return respond(404, {});
+        },
+    });
+    const [a, b] = await Promise.all([mod.getChampion("jinx"), mod.getChampion("jinx")]);
+    assert.equal(hits, 1, "uma unica request para dois pedidos simultaneos");
+    assert.equal(a, b);
+});
+
+test("getChampion: depois de um 404 a proxima chamada tenta o backend de novo", async () => {
+    let hits = 0;
+    const { mod } = await loadApi({
+        snapshot: SNAPSHOT,
+        backend: (p) => {
+            if (p.startsWith("/champion/")) {
+                hits += 1;
+                return respond(404, { message: "not found" });
+            }
+            return respond(404, {});
+        },
+    });
+    await assert.rejects(() => mod.getChampion("nao-existe"));
+    await assert.rejects(() => mod.getChampion("nao-existe"));
+    assert.equal(hits, 2, "a falha nao fica presa no cache");
+});

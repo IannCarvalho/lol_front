@@ -54,8 +54,8 @@ let nationalitiesCache = null;
 // (sem round-trip ao backend), importante no plano gratuito do Render.
 const championsByRegionCache = new Map();
 
-// Cache do detalhe de campeões já carregados (um valor por slug): evita refetch
-// ao revisitar um campeão (como no championsByRegionCache).
+// Cache do detalhe de campeões (uma promise por slug; ver getChampion): evita
+// refetch ao revisitar um campeão (como no championsByRegionCache).
 const championCache = new Map();
 
 // Snapshot estático: um retrato das rotas de dados (nacionalidades + campeões
@@ -139,11 +139,21 @@ export async function getChampionsByRegion(regionSlug) {
     return champions;
 }
 
-export async function getChampion(slug) {
-    if (championCache.has(slug)) {
-        return championCache.get(slug);
+// O cache guarda a PROMISE: chamadas repetidas para o mesmo campeão (inclusive
+// enquanto a primeira ainda está em voo, ex.: duplo clique com o backend lento)
+// reaproveitam a mesma busca. Uma falha sai do cache para permitir nova tentativa.
+export function getChampion(slug) {
+    if (!championCache.has(slug)) {
+        const pending = loadChampion(slug).catch((err) => {
+            championCache.delete(slug);
+            throw err;
+        });
+        championCache.set(slug, pending);
     }
+    return championCache.get(slug);
+}
 
+async function loadChampion(slug) {
     const url = `${BASE_URL}/champion/${encodeURIComponent(slug)}`;
     const snapshotChampion = await championFromSnapshot(slug);
 
@@ -155,21 +165,15 @@ export async function getChampion(slug) {
         // backend bloqueia (ex.: previews da Vercel). Um 404 do backend é
         // resposta DEFINITIVA e NÃO cai no snapshot.
         try {
-            const champion = await fetchJSON(url, CHAMPION_SOFT_TIMEOUT_MS);
-            championCache.set(slug, champion);
-            return champion;
+            return await fetchJSON(url, CHAMPION_SOFT_TIMEOUT_MS);
         } catch (err) {
             if (err instanceof HttpError && err.status === 404) {
                 throw err;
             }
-            // erro de rede / timeout / 5xx: usa o snapshot
-            championCache.set(slug, snapshotChampion);
-            return snapshotChampion;
+            return snapshotChampion; // erro de rede / timeout / 5xx
         }
     }
 
     // Não existe no snapshot: backend é a única fonte, com o timeout longo.
-    const champion = await fetchJSON(url, BACKEND_TIMEOUT_MS);
-    championCache.set(slug, champion);
-    return champion;
+    return fetchJSON(url, BACKEND_TIMEOUT_MS);
 }
