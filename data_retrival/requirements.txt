@@ -1,4 +1,4 @@
-pymongo
-requests
-unidecode
-python-dotenv
+requests~=2.34
+pymongo~=4.19
+unidecode~=1.4
+python-dotenv~=1.2

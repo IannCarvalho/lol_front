@@ -5,9 +5,7 @@ These tests never touch the network or MongoDB. All external effects
 """
 
 import requests
-
 import setup_database as sdb
-
 
 # ---------------------------------------------------------------------------
 # Import safety: importing the module must NOT run main().
@@ -47,6 +45,18 @@ def test_html_to_text_attributes_and_self_closing():
     assert sdb.html_to_text('<a href="x">link</a><br/>end') == "linkend"
 
 
+def test_html_to_text_unescapes_named_entity():
+    assert sdb.html_to_text("<p>Noxus&nbsp;rises</p>") == "Noxus\xa0rises"
+
+
+def test_html_to_text_unescapes_numeric_entity():
+    assert sdb.html_to_text("don&#39;t fear") == "don't fear"
+
+
+def test_html_to_text_unescapes_amp_and_lt_gt():
+    assert sdb.html_to_text("a &amp; b &lt;c&gt;") == "a & b <c>"
+
+
 # ---------------------------------------------------------------------------
 # delete_keys
 # ---------------------------------------------------------------------------
@@ -77,6 +87,25 @@ def test_delete_keys_returns_same_object():
 
 
 # ---------------------------------------------------------------------------
+# build_ddragon_index
+# ---------------------------------------------------------------------------
+
+def test_build_ddragon_index_maps_decoded_name_to_id():
+    dd_champions = {
+        "Ahri": {"id": "Ahri", "name": "Ahri"},
+        "Kaisa": {"id": "Kaisa", "name": "Kai'Sa"},
+    }
+    index = sdb.build_ddragon_index(dd_champions)
+    assert index["Ahri"] == "Ahri"
+    # Accent/apostrophe folded by unidecode so the key matches the Universe name.
+    assert index[sdb.unidecode("Kai'Sa")] == "Kaisa"
+
+
+def test_build_ddragon_index_empty():
+    assert sdb.build_ddragon_index({}) == {}
+
+
+# ---------------------------------------------------------------------------
 # make_request
 # ---------------------------------------------------------------------------
 
@@ -93,20 +122,24 @@ class _FakeResponse:
         return self._json_payload
 
 
-def test_make_request_success(monkeypatch):
+def test_make_request_success_uses_timeout(monkeypatch):
     payload = {"ok": True, "value": 42}
+    captured = {}
 
-    def fake_get(url):
-        assert url == "http://example.com/data.json"
+    def fake_get(url, timeout=None):
+        captured["url"] = url
+        captured["timeout"] = timeout
         return _FakeResponse(payload)
 
     monkeypatch.setattr(sdb.requests, "get", fake_get)
     result = sdb.make_request("http://example.com/data.json")
     assert result == payload
+    assert captured["url"] == "http://example.com/data.json"
+    assert captured["timeout"] == sdb.REQUEST_TIMEOUT
 
 
 def test_make_request_failure_returns_none(monkeypatch):
-    def fake_get(url):
+    def fake_get(url, timeout=None):
         return _FakeResponse(None, raise_exc=requests.exceptions.RequestException("boom"))
 
     monkeypatch.setattr(sdb.requests, "get", fake_get)
@@ -115,33 +148,52 @@ def test_make_request_failure_returns_none(monkeypatch):
 
 
 def test_make_request_connection_error_returns_none(monkeypatch):
-    def fake_get(url):
+    def fake_get(url, timeout=None):
         raise requests.exceptions.ConnectionError("no network")
 
     monkeypatch.setattr(sdb.requests, "get", fake_get)
     assert sdb.make_request("http://example.com/x.json") is None
 
 
+def test_make_request_timeout_returns_none(monkeypatch):
+    def fake_get(url, timeout=None):
+        raise requests.exceptions.Timeout("too slow")
+
+    monkeypatch.setattr(sdb.requests, "get", fake_get)
+    assert sdb.make_request("http://example.com/slow.json") is None
+
+
+def test_make_request_uses_session_when_given():
+    captured = {}
+
+    class _FakeSession:
+        def get(self, url, timeout=None):
+            captured["url"] = url
+            captured["timeout"] = timeout
+            return _FakeResponse({"from": "session"})
+
+    result = sdb.make_request("http://example.com/s.json", session=_FakeSession())
+    assert result == {"from": "session"}
+    assert captured["url"] == "http://example.com/s.json"
+    assert captured["timeout"] == sdb.REQUEST_TIMEOUT
+
+
 # ---------------------------------------------------------------------------
 # fetch_champion_data
 # ---------------------------------------------------------------------------
 
-UNIVERSE = "https://universe.example"
 DDRAGON = "https://ddragon.example"
 
 
-def _dd_champions_fixture():
-    """DDragon champion index keyed by champion key, as main() uses it."""
-    return {
-        "Ahri": {"id": "Ahri", "name": "Ahri"},
-        "Garen": {"id": "Garen", "name": "Garen"},
-    }
+def _dd_index_fixture():
+    """DDragon index decoded-name -> id, as build_ddragon_index produces."""
+    return {"Ahri": "Ahri", "Garen": "Garen"}
 
 
 def _make_request_stub(responses):
-    """Return a fake make_request that maps a URL -> payload."""
+    """Return a fake make_request that maps a URL -> payload (ignores session)."""
 
-    def _stub(url):
+    def _stub(url, session=None):
         return responses.get(url)
 
     return _stub
@@ -149,9 +201,9 @@ def _make_request_stub(responses):
 
 def test_fetch_champion_data_maps_fields(monkeypatch):
     champion = {"slug": "ahri", "name": "Ahri"}
-    dd_champions = _dd_champions_fixture()
+    dd_index = _dd_index_fixture()
 
-    universe_url = f"{UNIVERSE}/champions/ahri/index.json"
+    universe_url = f"{sdb.UNIVERSE_API_BASE}/champions/ahri/index.json"
     ddragon_url = f"{DDRAGON}/data/pt_BR/champion/Ahri.json"
 
     universe_payload = {
@@ -178,7 +230,7 @@ def test_fetch_champion_data_maps_fields(monkeypatch):
         _make_request_stub({universe_url: universe_payload, ddragon_url: ddragon_payload}),
     )
 
-    result = sdb.fetch_champion_data(champion, dd_champions, UNIVERSE, DDRAGON)
+    result = sdb.fetch_champion_data(champion, dd_index, DDRAGON)
 
     assert result["name"] == "Ahri"
     assert result["nationality"] == "ionia"
@@ -203,9 +255,9 @@ def test_fetch_champion_data_maps_fields(monkeypatch):
 
 def test_fetch_champion_data_unaffiliated_becomes_runeterra(monkeypatch):
     champion = {"slug": "garen", "name": "Garen"}
-    dd_champions = _dd_champions_fixture()
+    dd_index = _dd_index_fixture()
 
-    universe_url = f"{UNIVERSE}/champions/garen/index.json"
+    universe_url = f"{sdb.UNIVERSE_API_BASE}/champions/garen/index.json"
     ddragon_url = f"{DDRAGON}/data/pt_BR/champion/Garen.json"
 
     universe_payload = {
@@ -223,16 +275,42 @@ def test_fetch_champion_data_unaffiliated_becomes_runeterra(monkeypatch):
         _make_request_stub({universe_url: universe_payload, ddragon_url: ddragon_payload}),
     )
 
-    result = sdb.fetch_champion_data(champion, dd_champions, UNIVERSE, DDRAGON)
+    result = sdb.fetch_champion_data(champion, dd_index, DDRAGON)
+    assert result["nationality"] == "runeterra"
+
+
+def test_fetch_champion_data_missing_faction_slug_defaults_runeterra(monkeypatch):
+    """No ``associated-faction-slug`` key must not KeyError; defaults to runeterra."""
+    champion = {"slug": "garen", "name": "Garen"}
+    dd_index = _dd_index_fixture()
+
+    universe_url = f"{sdb.UNIVERSE_API_BASE}/champions/garen/index.json"
+    ddragon_url = f"{DDRAGON}/data/pt_BR/champion/Garen.json"
+
+    universe_payload = {
+        "champion": {
+            "name": "Garen",
+            "background": {"uri": "http://bg/garen.jpg"},
+        }
+    }
+    ddragon_payload = {"data": {"Garen": {"lore": "Garen lore"}}}
+
+    monkeypatch.setattr(
+        sdb,
+        "make_request",
+        _make_request_stub({universe_url: universe_payload, ddragon_url: ddragon_payload}),
+    )
+
+    result = sdb.fetch_champion_data(champion, dd_index, DDRAGON)
     assert result["nationality"] == "runeterra"
 
 
 def test_fetch_champion_data_accent_insensitive_match(monkeypatch):
-    """Universe name with accents should still match DDragon via unidecode."""
+    """Universe name with accents should still match DDragon via the index."""
     champion = {"slug": "kaisa", "name": "Kai'Sa"}
-    dd_champions = {"Kaisa": {"id": "Kaisa", "name": "Kai'Sa"}}
+    dd_index = {sdb.unidecode("Kai'Sa"): "Kaisa"}
 
-    universe_url = f"{UNIVERSE}/champions/kaisa/index.json"
+    universe_url = f"{sdb.UNIVERSE_API_BASE}/champions/kaisa/index.json"
     ddragon_url = f"{DDRAGON}/data/pt_BR/champion/Kaisa.json"
 
     universe_payload = {
@@ -250,32 +328,32 @@ def test_fetch_champion_data_accent_insensitive_match(monkeypatch):
         _make_request_stub({universe_url: universe_payload, ddragon_url: ddragon_payload}),
     )
 
-    result = sdb.fetch_champion_data(champion, dd_champions, UNIVERSE, DDRAGON)
+    result = sdb.fetch_champion_data(champion, dd_index, DDRAGON)
     assert result["nationality"] == "void"
     assert result["image"] == f"{DDRAGON}/img/champion/Kaisa.png"
 
 
 def test_fetch_champion_data_no_ddragon_match_returns_none(monkeypatch):
-    """The recent fix: a Universe champion with no DDragon counterpart returns
-    None and does NOT raise (and never issues a request)."""
+    """A Universe champion with no DDragon counterpart returns None and does
+    NOT raise (and never issues a request)."""
     champion = {"slug": "ghostchamp", "name": "Nonexistent Champion"}
-    dd_champions = _dd_champions_fixture()
+    dd_index = _dd_index_fixture()
 
-    def _should_not_be_called(url):  # pragma: no cover - must not run
+    def _should_not_be_called(url, session=None):  # pragma: no cover - must not run
         raise AssertionError("make_request must not be called when no match found")
 
     monkeypatch.setattr(sdb, "make_request", _should_not_be_called)
 
-    result = sdb.fetch_champion_data(champion, dd_champions, UNIVERSE, DDRAGON)
+    result = sdb.fetch_champion_data(champion, dd_index, DDRAGON)
     assert result is None
 
 
 def test_fetch_champion_data_universe_returns_none(monkeypatch):
     """If the Universe request fails (returns None), the function returns None."""
     champion = {"slug": "ahri", "name": "Ahri"}
-    dd_champions = _dd_champions_fixture()
+    dd_index = _dd_index_fixture()
 
-    universe_url = f"{UNIVERSE}/champions/ahri/index.json"
+    universe_url = f"{sdb.UNIVERSE_API_BASE}/champions/ahri/index.json"
     ddragon_url = f"{DDRAGON}/data/pt_BR/champion/Ahri.json"
 
     monkeypatch.setattr(
@@ -284,7 +362,61 @@ def test_fetch_champion_data_universe_returns_none(monkeypatch):
         _make_request_stub({universe_url: None, ddragon_url: {"data": {"Ahri": {"lore": "x"}}}}),
     )
 
-    result = sdb.fetch_champion_data(champion, dd_champions, UNIVERSE, DDRAGON)
+    result = sdb.fetch_champion_data(champion, dd_index, DDRAGON)
+    assert result is None
+
+
+def test_fetch_champion_data_ddragon_returns_none(monkeypatch):
+    """If the DDragon request fails (returns None), skip without raising."""
+    champion = {"slug": "ahri", "name": "Ahri"}
+    dd_index = _dd_index_fixture()
+
+    universe_url = f"{sdb.UNIVERSE_API_BASE}/champions/ahri/index.json"
+    ddragon_url = f"{DDRAGON}/data/pt_BR/champion/Ahri.json"
+
+    universe_payload = {
+        "champion": {
+            "name": "Ahri",
+            "associated-faction-slug": "ionia",
+            "background": {"uri": "http://bg/ahri.jpg"},
+        }
+    }
+
+    monkeypatch.setattr(
+        sdb,
+        "make_request",
+        _make_request_stub({universe_url: universe_payload, ddragon_url: None}),
+    )
+
+    result = sdb.fetch_champion_data(champion, dd_index, DDRAGON)
+    assert result is None
+
+
+def test_fetch_champion_data_unexpected_ddragon_payload_returns_none(monkeypatch):
+    """Missing lore in the DDragon payload must be skipped, not raise."""
+    champion = {"slug": "ahri", "name": "Ahri"}
+    dd_index = _dd_index_fixture()
+
+    universe_url = f"{sdb.UNIVERSE_API_BASE}/champions/ahri/index.json"
+    ddragon_url = f"{DDRAGON}/data/pt_BR/champion/Ahri.json"
+
+    universe_payload = {
+        "champion": {
+            "name": "Ahri",
+            "associated-faction-slug": "ionia",
+            "background": {"uri": "http://bg/ahri.jpg"},
+        }
+    }
+    # 'data' present but no entry for this id -> KeyError inside, must be caught.
+    ddragon_payload = {"data": {}}
+
+    monkeypatch.setattr(
+        sdb,
+        "make_request",
+        _make_request_stub({universe_url: universe_payload, ddragon_url: ddragon_payload}),
+    )
+
+    result = sdb.fetch_champion_data(champion, dd_index, DDRAGON)
     assert result is None
 
 
@@ -294,9 +426,8 @@ def test_fetch_champion_data_universe_returns_none(monkeypatch):
 
 def test_fetch_faction_data_maps_fields(monkeypatch):
     faction = {"slug": "noxus"}
-    factions_imgs = {"noxus": "http://img/noxus.png"}
 
-    url = f"{UNIVERSE}/factions/noxus/index.json"
+    url = f"{sdb.UNIVERSE_API_BASE}/factions/noxus/index.json"
     payload = {
         "faction": {
             "name": "Noxus",
@@ -310,21 +441,20 @@ def test_fetch_faction_data_maps_fields(monkeypatch):
 
     monkeypatch.setattr(sdb, "make_request", _make_request_stub({url: payload}))
 
-    result = sdb.fetch_faction_data(faction, UNIVERSE, factions_imgs)
+    result = sdb.fetch_faction_data(faction)
 
     assert result["name"] == "Noxus"
     assert result["background"] == "http://bg/noxus.jpg"
-    assert result["image"] == "http://img/noxus.png"
+    assert result["image"] == sdb.FACTIONS_IMGS["noxus"]
     assert result["overview"] == "A brutal empire"
     assert "video" not in result
     assert "headerImage" not in result
 
 
-def test_fetch_faction_data_missing_image_defaults_empty(monkeypatch):
+def test_fetch_faction_data_unknown_slug_defaults_empty_image(monkeypatch):
     faction = {"slug": "unknown-faction"}
-    factions_imgs = {"noxus": "http://img/noxus.png"}
 
-    url = f"{UNIVERSE}/factions/unknown-faction/index.json"
+    url = f"{sdb.UNIVERSE_API_BASE}/factions/unknown-faction/index.json"
     payload = {
         "faction": {
             "name": "Unknown",
@@ -335,16 +465,211 @@ def test_fetch_faction_data_missing_image_defaults_empty(monkeypatch):
 
     monkeypatch.setattr(sdb, "make_request", _make_request_stub({url: payload}))
 
-    result = sdb.fetch_faction_data(faction, UNIVERSE, factions_imgs)
+    result = sdb.fetch_faction_data(faction)
     assert result["image"] == ""
     assert result["overview"] == "plain text"
 
 
 def test_fetch_faction_data_request_none_returns_none(monkeypatch):
     faction = {"slug": "noxus"}
-    url = f"{UNIVERSE}/factions/noxus/index.json"
+    url = f"{sdb.UNIVERSE_API_BASE}/factions/noxus/index.json"
 
     monkeypatch.setattr(sdb, "make_request", _make_request_stub({url: None}))
 
-    result = sdb.fetch_faction_data(faction, UNIVERSE, {})
+    result = sdb.fetch_faction_data(faction)
     assert result is None
+
+
+# ---------------------------------------------------------------------------
+# collect_champions / collect_factions
+# ---------------------------------------------------------------------------
+
+def test_collect_champions_skips_none_and_returns_list(monkeypatch):
+    champions = [
+        {"slug": "ahri", "name": "Ahri"},
+        {"slug": "ghost", "name": "Ghost"},  # no DDragon match -> skipped
+    ]
+    dd_index = {"Ahri": "Ahri"}
+
+    universe_url = f"{sdb.UNIVERSE_API_BASE}/champions/ahri/index.json"
+    ddragon_url = f"{DDRAGON}/data/pt_BR/champion/Ahri.json"
+    universe_payload = {
+        "champion": {
+            "name": "Ahri",
+            "associated-faction-slug": "ionia",
+            "background": {"uri": "http://bg/ahri.jpg"},
+        }
+    }
+    ddragon_payload = {"data": {"Ahri": {"lore": "lore"}}}
+
+    monkeypatch.setattr(
+        sdb,
+        "make_request",
+        _make_request_stub({universe_url: universe_payload, ddragon_url: ddragon_payload}),
+    )
+
+    result = sdb.collect_champions(champions, dd_index, DDRAGON)
+    assert len(result) == 1
+    assert result[0]["name"] == "Ahri"
+
+
+def test_collect_factions_always_starts_with_runeterra(monkeypatch):
+    factions = [{"slug": "noxus"}]
+    url = f"{sdb.UNIVERSE_API_BASE}/factions/noxus/index.json"
+    payload = {
+        "faction": {
+            "name": "Noxus",
+            "slug": "noxus",
+            "image": {"uri": "http://bg/noxus.jpg"},
+            "overview": {"short": "text"},
+        }
+    }
+    monkeypatch.setattr(sdb, "make_request", _make_request_stub({url: payload}))
+
+    result = sdb.collect_factions(factions)
+    assert result[0]["slug"] == "runeterra"
+    assert result[0]["name"] == "Runeterra"
+    assert result[1]["name"] == "Noxus"
+    # The module constant must not be mutated by collect_factions.
+    assert sdb.RUNETERRA_FACTION["slug"] == "runeterra"
+
+
+def test_collect_factions_empty_still_has_runeterra():
+    result = sdb.collect_factions([])
+    assert len(result) == 1
+    assert result[0]["slug"] == "runeterra"
+
+
+# ---------------------------------------------------------------------------
+# main: o banco so e apagado/reescrito com os dados completos em maos
+# ---------------------------------------------------------------------------
+
+DD_VERSION = "99.1.1"
+DDRAGON_VERSIONED = f"{sdb.DDRAGON_CDN_BASE}/{DD_VERSION}"
+
+
+class _FakeCollection:
+    def __init__(self):
+        self.inserted = None
+
+    def insert_many(self, docs):
+        self.inserted = list(docs)
+
+
+class _FakeDatabase(dict):
+    def __missing__(self, name):
+        self[name] = _FakeCollection()
+        return self[name]
+
+
+_CREATED_CLIENTS = []
+
+
+class _FakeMongoClient:
+    """Registra drop/insert em vez de falar com um MongoDB de verdade."""
+
+    def __init__(self, url):
+        self.url = url
+        self.dropped = []
+        self.database = _FakeDatabase()
+        _CREATED_CLIENTS.append(self)
+
+    def drop_database(self, name):
+        self.dropped.append(name)
+
+    def __getitem__(self, name):
+        assert name == "lol"
+        return self.database
+
+
+def _seed_responses(champion_payload="ok", faction_payload="ok"):
+    """Respostas fake de todas as URLs que o main() consulta."""
+    if champion_payload == "ok":
+        champion_payload = {
+            "champion": {
+                "slug": "ahri",
+                "name": "Ahri",
+                "associated-faction-slug": "ionia",
+                "background": {"uri": "http://bg/ahri.jpg"},
+            }
+        }
+    if faction_payload == "ok":
+        faction_payload = {
+            "faction": {
+                "name": "Ionia",
+                "slug": "ionia",
+                "image": {"uri": "http://bg/ionia.jpg"},
+                "overview": {"short": "<p>Terra natal</p>"},
+            }
+        }
+    return {
+        sdb.DD_VERSIONS_URL: [DD_VERSION],
+        f"{sdb.UNIVERSE_API_BASE}/search/index.json": {
+            "champions": [{"slug": "ahri", "name": "Ahri"}],
+            "factions": [{"slug": "ionia"}],
+        },
+        f"{DDRAGON_VERSIONED}/data/pt_BR/champion.json": {
+            "data": {"Ahri": {"id": "Ahri", "name": "Ahri"}}
+        },
+        f"{sdb.UNIVERSE_API_BASE}/champions/ahri/index.json": champion_payload,
+        f"{DDRAGON_VERSIONED}/data/pt_BR/champion/Ahri.json": {
+            "data": {"Ahri": {"lore": "Ahri lore"}}
+        },
+        f"{sdb.UNIVERSE_API_BASE}/factions/ionia/index.json": faction_payload,
+    }
+
+
+def _run_main(monkeypatch, responses, mongo_url="mongodb://fake"):
+    _CREATED_CLIENTS.clear()
+    if mongo_url is None:
+        monkeypatch.delenv("MONGO_URL", raising=False)
+    else:
+        monkeypatch.setenv("MONGO_URL", mongo_url)
+    monkeypatch.setattr(sdb, "make_request", _make_request_stub(responses))
+    monkeypatch.setattr(sdb.pymongo, "MongoClient", _FakeMongoClient)
+    sdb.main()
+    return _CREATED_CLIENTS
+
+
+def test_main_without_mongo_url_does_nothing(monkeypatch):
+    def _no_network(url, session=None):  # pragma: no cover - must not run
+        raise AssertionError("no request may run without MONGO_URL")
+
+    _CREATED_CLIENTS.clear()
+    monkeypatch.delenv("MONGO_URL", raising=False)
+    monkeypatch.setattr(sdb, "make_request", _no_network)
+    monkeypatch.setattr(sdb.pymongo, "MongoClient", _FakeMongoClient)
+    sdb.main()
+    assert _CREATED_CLIENTS == []
+
+
+def test_main_happy_path_replaces_both_collections(monkeypatch):
+    clients = _run_main(monkeypatch, _seed_responses())
+
+    assert len(clients) == 1
+    client = clients[0]
+    assert client.dropped == ["lol"]
+    champions = client.database["champions"].inserted
+    factions = client.database["nationalities"].inserted
+    assert [c["slug"] for c in champions] == ["ahri"]
+    assert champions[0]["nationality"] == "ionia"
+    assert [f["slug"] for f in factions] == ["runeterra", "ionia"]
+    assert factions[1]["overview"] == "Terra natal"
+
+
+def test_main_versions_failure_never_touches_db(monkeypatch):
+    responses = _seed_responses()
+    responses[sdb.DD_VERSIONS_URL] = None
+    assert _run_main(monkeypatch, responses) == []
+
+
+def test_main_no_champions_never_touches_db(monkeypatch):
+    clients = _run_main(monkeypatch, _seed_responses(champion_payload=None))
+    assert clients == []
+
+
+def test_main_only_default_runeterra_faction_never_touches_db(monkeypatch):
+    """Todas as faccoes do Universe falharam: a lista so tem o Runeterra
+    padrao. Nao pode apagar a producao para gravar uma unica regiao."""
+    clients = _run_main(monkeypatch, _seed_responses(faction_payload=None))
+    assert clients == []
