@@ -206,10 +206,13 @@ def main():
 
     # So mexe no banco se AMBAS as listas vierem preenchidas. Caso contrario
     # mantem a producao intacta (melhor manter dados antigos do que apagar).
-    if not champions or not factions:
+    # A lista de faccoes SEMPRE comeca com o documento padrao de Runeterra,
+    # entao "so Runeterra" significa que todas as faccoes do Universe falharam.
+    fetched_factions = len(factions) - 1
+    if not champions or fetched_factions < 1:
         print(
             "Error: incomplete data "
-            f"(champions={len(champions)}, factions={len(factions)}); "
+            f"(champions={len(champions)}, factions={fetched_factions}); "
             "aborting without touching the DB."
         )
         return

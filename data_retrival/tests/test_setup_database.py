@@ -538,3 +538,138 @@ def test_collect_factions_empty_still_has_runeterra():
     result = sdb.collect_factions([])
     assert len(result) == 1
     assert result[0]["slug"] == "runeterra"
+
+
+# ---------------------------------------------------------------------------
+# main: o banco so e apagado/reescrito com os dados completos em maos
+# ---------------------------------------------------------------------------
+
+DD_VERSION = "99.1.1"
+DDRAGON_VERSIONED = f"{sdb.DDRAGON_CDN_BASE}/{DD_VERSION}"
+
+
+class _FakeCollection:
+    def __init__(self):
+        self.inserted = None
+
+    def insert_many(self, docs):
+        self.inserted = list(docs)
+
+
+class _FakeDatabase(dict):
+    def __missing__(self, name):
+        self[name] = _FakeCollection()
+        return self[name]
+
+
+_CREATED_CLIENTS = []
+
+
+class _FakeMongoClient:
+    """Registra drop/insert em vez de falar com um MongoDB de verdade."""
+
+    def __init__(self, url):
+        self.url = url
+        self.dropped = []
+        self.database = _FakeDatabase()
+        _CREATED_CLIENTS.append(self)
+
+    def drop_database(self, name):
+        self.dropped.append(name)
+
+    def __getitem__(self, name):
+        assert name == "lol"
+        return self.database
+
+
+def _seed_responses(champion_payload="ok", faction_payload="ok"):
+    """Respostas fake de todas as URLs que o main() consulta."""
+    if champion_payload == "ok":
+        champion_payload = {
+            "champion": {
+                "slug": "ahri",
+                "name": "Ahri",
+                "associated-faction-slug": "ionia",
+                "background": {"uri": "http://bg/ahri.jpg"},
+            }
+        }
+    if faction_payload == "ok":
+        faction_payload = {
+            "faction": {
+                "name": "Ionia",
+                "slug": "ionia",
+                "image": {"uri": "http://bg/ionia.jpg"},
+                "overview": {"short": "<p>Terra natal</p>"},
+            }
+        }
+    return {
+        sdb.DD_VERSIONS_URL: [DD_VERSION],
+        f"{sdb.UNIVERSE_API_BASE}/search/index.json": {
+            "champions": [{"slug": "ahri", "name": "Ahri"}],
+            "factions": [{"slug": "ionia"}],
+        },
+        f"{DDRAGON_VERSIONED}/data/pt_BR/champion.json": {
+            "data": {"Ahri": {"id": "Ahri", "name": "Ahri"}}
+        },
+        f"{sdb.UNIVERSE_API_BASE}/champions/ahri/index.json": champion_payload,
+        f"{DDRAGON_VERSIONED}/data/pt_BR/champion/Ahri.json": {
+            "data": {"Ahri": {"lore": "Ahri lore"}}
+        },
+        f"{sdb.UNIVERSE_API_BASE}/factions/ionia/index.json": faction_payload,
+    }
+
+
+def _run_main(monkeypatch, responses, mongo_url="mongodb://fake"):
+    _CREATED_CLIENTS.clear()
+    if mongo_url is None:
+        monkeypatch.delenv("MONGO_URL", raising=False)
+    else:
+        monkeypatch.setenv("MONGO_URL", mongo_url)
+    monkeypatch.setattr(sdb, "make_request", _make_request_stub(responses))
+    monkeypatch.setattr(sdb.pymongo, "MongoClient", _FakeMongoClient)
+    sdb.main()
+    return _CREATED_CLIENTS
+
+
+def test_main_without_mongo_url_does_nothing(monkeypatch):
+    def _no_network(url, session=None):  # pragma: no cover - must not run
+        raise AssertionError("no request may run without MONGO_URL")
+
+    _CREATED_CLIENTS.clear()
+    monkeypatch.delenv("MONGO_URL", raising=False)
+    monkeypatch.setattr(sdb, "make_request", _no_network)
+    monkeypatch.setattr(sdb.pymongo, "MongoClient", _FakeMongoClient)
+    sdb.main()
+    assert _CREATED_CLIENTS == []
+
+
+def test_main_happy_path_replaces_both_collections(monkeypatch):
+    clients = _run_main(monkeypatch, _seed_responses())
+
+    assert len(clients) == 1
+    client = clients[0]
+    assert client.dropped == ["lol"]
+    champions = client.database["champions"].inserted
+    factions = client.database["nationalities"].inserted
+    assert [c["slug"] for c in champions] == ["ahri"]
+    assert champions[0]["nationality"] == "ionia"
+    assert [f["slug"] for f in factions] == ["runeterra", "ionia"]
+    assert factions[1]["overview"] == "Terra natal"
+
+
+def test_main_versions_failure_never_touches_db(monkeypatch):
+    responses = _seed_responses()
+    responses[sdb.DD_VERSIONS_URL] = None
+    assert _run_main(monkeypatch, responses) == []
+
+
+def test_main_no_champions_never_touches_db(monkeypatch):
+    clients = _run_main(monkeypatch, _seed_responses(champion_payload=None))
+    assert clients == []
+
+
+def test_main_only_default_runeterra_faction_never_touches_db(monkeypatch):
+    """Todas as faccoes do Universe falharam: a lista so tem o Runeterra
+    padrao. Nao pode apagar a producao para gravar uma unica regiao."""
+    clients = _run_main(monkeypatch, _seed_responses(faction_payload=None))
+    assert clients == []
