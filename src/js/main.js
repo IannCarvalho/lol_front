@@ -5,6 +5,7 @@ import { getNationalities, getChampion, getChampionsByRegion, HttpError } from "
 import { setBackgroundImage } from "./ui/background.js";
 import {
     setTitle,
+    setHeading,
     setDescription,
     setBreadcrumb,
     setPageTitle,
@@ -154,7 +155,7 @@ async function loadElement(slug) {
             const contextChampions = await championsListForContext(champion.nationality);
             if (!isCurrent()) return;
             showChampionsOf(champion.nationality, contextChampions);
-            setTitle(`${champion.name}: ${champion.title}`);
+            setHeading(champion.name, champion.title);
             setDescription(champion.lore);
             setPageTitle(champion.name);
             const origin = nationalities.find((n) => n.slug === champion.nationality);

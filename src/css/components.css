@@ -1,6 +1,7 @@
 /* ============================================================
    Componentes reutilizáveis: botão de emblema (com a imagem
-   recortada), tooltip e o loader (spinner).
+   recortada), tooltip, loader (spinner), skeletons e o aviso de
+   carregamento.
    ============================================================ */
 
 /* Botão de emblema: círculo de tamanho FIXO. A imagem por dentro pode ser
@@ -14,8 +15,8 @@
     border-radius: 50%;
     outline: none;
     position: relative;
-    width: 60px;
-    height: 60px;
+    width: var(--emblem-size);
+    height: var(--emblem-size);
     overflow: hidden;
     flex-shrink: 0;
     /* Anima o zoom no BOTÃO inteiro (não na img recortada): o navegador
@@ -31,35 +32,41 @@
 
 /* Anel/brilho no hover e seleção ficam no BOTÃO (não na img), pois o
    overflow:hidden recortaria o box-shadow se estivesse na imagem. */
-.button:hover,
-.button:focus-visible {
-    box-shadow: 0 0 0 2px var(--lol-gold), 0 0 12px rgba(200, 170, 110, 0.75);
+.button:hover {
+    box-shadow: 0 0 0 2px var(--lol-gold), 0 0 12px var(--gold-glow);
 }
 
 .button.selected {
-    box-shadow: 0 0 0 2px var(--lol-gold-light), 0 0 14px rgba(240, 230, 210, 0.9);
+    box-shadow: 0 0 0 2px var(--lol-gold-light), 0 0 14px var(--gold-light-glow);
 }
 
-/* Imagem base (REGIÕES): encaixada no círculo de 60px, sem estouro — os
-   emblemas de região não têm a moldura escura dos campeões. */
+/* Foco de TECLADO com cor própria (azul-petróleo Hextech), distinta do
+   dourado do hover/seleção: quem navega pelas setas sempre sabe onde está,
+   inclusive sobre o emblema já selecionado. */
+.button:focus-visible {
+    box-shadow: 0 0 0 3px var(--color-focus), 0 0 14px rgba(10, 200, 185, 0.6);
+}
+
+/* Imagem base (REGIÕES): encaixada no círculo, sem estouro — os emblemas
+   de região não têm a moldura escura dos campeões. */
 .button img {
     position: absolute;
     top: 50%;
     left: 50%;
-    width: 60px;
-    height: 60px;
+    width: var(--emblem-size);
+    height: var(--emblem-size);
     transform: translate(-50%, -50%);
     object-fit: cover;
     object-position: center;
     display: block;
 }
 
-/* Apenas CAMPEÕES: a imagem é MAIOR que o botão (60px) e centralizada; o
+/* Apenas CAMPEÕES: a imagem é ~20% MAIOR que o botão e centralizada; o
    excedente (moldura escura do DDragon) é recortado pelo overflow do botão.
    Isso "come" a borda preta SEM aumentar o tamanho do botão. */
 .champions .button img {
-    width: 72px;   /* ~20% maior que os 60px do botão */
-    height: 72px;
+    width: calc(var(--emblem-size) * 1.2);
+    height: calc(var(--emblem-size) * 1.2);
 }
 
 /* Hover / foco: leve zoom no BOTÃO inteiro (imagem + recorte juntos). Fator
@@ -72,22 +79,28 @@
 }
 
 /* Tooltip com o nome da região/campeão. É um elemento único posicionado via
-   JS (fixed no body) para não ser recortado pelo overflow das colunas. */
+   JS (fixed no body) para não ser recortado pelo overflow das colunas: à
+   esquerda do emblema nas colunas do desktop e acima dele nas faixas do
+   mobile (variante --above). */
 .tooltip {
     position: fixed;
     white-space: nowrap;
     padding: 4px 10px;
-    background: rgba(10, 20, 40, 0.92);
+    background: var(--surface-strong);
     color: var(--lol-gold-light);
-    font-family: "Rubik", sans-serif;
+    font-family: var(--font-body);
     font-size: 12px;
-    border: 1px solid var(--lol-gold-soft);
+    border: 1px solid var(--gold-soft);
     border-radius: 4px;
     opacity: 0;
     transition: opacity 0.15s ease;
     pointer-events: none;
     z-index: 10;
     transform: translateY(-50%);
+}
+
+.tooltip.tooltip--above {
+    transform: translate(-50%, -100%);
 }
 
 .tooltip.tooltip--visible {
@@ -116,12 +129,12 @@
 }
 
 /* ---- Skeletons das colunas (carga inicial) ----
-   Emblemas-fantasma do mesmo tamanho do botão real (círculo de 60px),
-   exibidos nas colunas Regiões/Campeões enquanto o backend acorda. Têm um
-   leve "shimmer"; quem prefere menos movimento vê só o círculo estático. */
+   Emblemas-fantasma do mesmo tamanho do botão real, exibidos nas colunas
+   Regiões/Campeões enquanto os dados não chegam. Têm um leve "shimmer";
+   quem prefere menos movimento vê só o círculo estático. */
 .skeleton-emblem {
-    width: 60px;
-    height: 60px;
+    width: var(--emblem-size);
+    height: var(--emblem-size);
     border-radius: 50%;
     flex-shrink: 0;
     background: linear-gradient(
@@ -134,8 +147,9 @@
     animation: skeleton-shimmer 1.3s ease-in-out infinite;
 }
 
-/* ---- Mensagem discreta de "acordando o servidor" (carga inicial) ----
-   Aparece centralizada no rodapé só se a primeira carga demorar. */
+/* ---- Aviso discreto de carregamento ----
+   Aparece centralizado no rodapé só se a carga demorar (no mobile, acima das
+   faixas de emblemas; ver responsivo.css). */
 .wake-message {
     position: fixed;
     left: 50%;
@@ -145,10 +159,10 @@
     max-width: 90vw;
     padding: 8px 16px;
     border-radius: 999px;
-    background: rgba(5, 10, 20, 0.82);
-    border: 1px solid var(--lol-gold-soft);
+    background: var(--surface-strong);
+    border: 1px solid var(--gold-soft);
     color: var(--lol-gold-light);
-    font-family: "Rubik", sans-serif;
+    font-family: var(--font-body);
     font-size: 13px;
     text-align: center;
     pointer-events: none;

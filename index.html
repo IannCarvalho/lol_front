@@ -10,9 +10,16 @@
 
 		<link rel="icon" type="image/x-icon" href="./favicon.ico" />
 
+		<!-- Cor da barra do navegador no mobile e esquema escuro nativo
+		     (barras de rolagem, controles) alinhados ao tema. -->
+		<meta name="theme-color" content="#010a13" />
+		<meta name="color-scheme" content="dark" />
+
+		<!-- Cinzel (títulos, na linha da Beaufort usada pela Riot) + Rubik
+		     (texto). Só os pesos usados, com display=swap. -->
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-		<link href="https://fonts.googleapis.com/css2?family=Rubik&family=Secular+One&display=swap" rel="stylesheet" />
+		<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Rubik:wght@400;500&display=swap" rel="stylesheet" />
 
 		<!-- Ordem importa: reset -> tokens (variáveis) -> base -> conteúdo ->
 		     colunas -> componentes -> animações -> responsivo (sobrescreve
@@ -65,22 +72,26 @@
 			<div class="element selected">
 				<img class="image" src="https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Ryze_0.jpg" id="image" alt="Runeterra" onerror="this.classList.add('image--failed')"/>
 				<div class="content">
-					<i class="logo"></i>
+					<img class="logo" src="./src/imagens/logo.png" alt="League of Legends" width="1000" height="424" decoding="async" />
 					<button class="breadcrumb" id="breadcrumb" hidden></button>
-					<h2 class="element-name" id="title">Runeterra</h2>
+					<hgroup class="element-heading">
+						<h1 class="element-name" id="title">Runeterra</h1>
+						<p class="element-epithet" id="epithet" hidden></p>
+					</hgroup>
 					<p class="description" id="description">Runeterra é um mundo de fantasia onde heróis e vilões de diferentes lugares e culturas lutam pelo poder e pela sobrevivência. Com suas próprias facções e magias, eles enfrentam desafios épicos em um cenário diversificado, enquanto um mal antigo ameaça o mundo. É um lugar de aventuras e segredos, onde destinos se cruzam em batalhas emocionantes.</p>
+					<noscript><p class="noscript">Ative o JavaScript para explorar as regiões e os campeões.</p></noscript>
 				</div>
 			</div>
 		</main>
 
 		<div class="loader" id="loader" hidden></div>
 
-		<span class="column-label column-label--nationalities">Regiões</span>
-		<ul class="nationalities">
+		<span class="column-label column-label--nationalities" id="label-nationalities">Regiões</span>
+		<ul class="nationalities" aria-labelledby="label-nationalities">
 		</ul>
 
-		<span class="column-label column-label--champions">Campeões</span>
-		<ul class="champions" id="champions">
+		<span class="column-label column-label--champions" id="label-champions">Campeões</span>
+		<ul class="champions" id="champions" aria-labelledby="label-champions">
 		</ul>
 
 		<!-- config.js roda antes (define window.APP_CONFIG); main.js é ESM -->

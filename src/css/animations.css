@@ -69,6 +69,10 @@
     animation: content-enter 0.45s ease both;
 }
 
+.content--enter .element-epithet {
+    animation: content-enter 0.45s ease 0.04s both; /* acompanha o nome */
+}
+
 .content--enter .description {
     animation: content-enter 0.45s ease 0.08s both; /* leve atraso após o título */
 }
@@ -85,6 +89,7 @@
     }
 
     .content--enter .element-name,
+    .content--enter .element-epithet,
     .content--enter .description {
         animation: none;
     }
