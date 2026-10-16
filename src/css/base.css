@@ -6,6 +6,8 @@
 
 body {
     background-color: var(--lol-navy-deep); /* fallback atrás da imagem */
+    color: var(--color-text);
+    font-family: var(--font-body);
     /* No desktop o layout ocupa a tela inteira e é fixo, então escondemos
        o scroll. Em telas menores isso é liberado no responsivo.css. */
     overflow: hidden;
@@ -13,7 +15,8 @@ body {
 
 /* Camada de legibilidade sobre a imagem de fundo.
    Gradiente escuro da esquerda (onde ficam título e descrição) para a
-   direita, garantindo contraste do texto branco sobre qualquer imagem. */
+   direita, garantindo contraste do texto sobre qualquer imagem. Fica ENTRE a
+   imagem e o texto: o .content tem z-index 1. */
 main::after {
     content: "";
     position: fixed;
@@ -25,10 +28,10 @@ main::after {
 
     background: linear-gradient(
         90deg,
-        rgba(0, 0, 0, 0.85) 0%,
-        rgba(0, 0, 0, 0.6) 30%,
-        rgba(0, 0, 0, 0.15) 55%,
-        rgba(0, 0, 0, 0) 75%
+        rgba(1, 10, 19, 0.88) 0%,
+        rgba(1, 10, 19, 0.62) 30%,
+        rgba(1, 10, 19, 0.15) 55%,
+        rgba(1, 10, 19, 0) 75%
     );
 }
 
@@ -38,7 +41,12 @@ main::after {
 main .element {
     display: none;
     height: 100vh;
-    background: radial-gradient(circle at 30% 40%, #1e2b4a 0%, #0a1428 60%, var(--lol-navy-deep) 100%);
+    background: radial-gradient(
+        circle at 30% 40%,
+        var(--lol-navy-mid) 0%,
+        var(--lol-navy) 60%,
+        var(--lol-navy-deep) 100%
+    );
 }
 
 main .element.selected {
@@ -47,6 +55,7 @@ main .element.selected {
 
 /* Imagem de fundo do element. */
 main .element .image {
+    display: block; /* sem a folga de linha de base de um <img> inline */
     width: 100%;
     height: 100%;
     object-fit: cover; /* preenche o contêiner, cortando o excedente */

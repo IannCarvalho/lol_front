@@ -12,12 +12,13 @@
     z-index: 2;
     text-align: center;
     padding: 10px 4px;
-    font-family: "Secular One", sans-serif;
+    font-family: var(--font-display);
+    font-weight: 700;
     font-size: 11px;
-    letter-spacing: 1px;
+    letter-spacing: 0.14em;
     text-transform: uppercase;
     color: var(--lol-gold-light);
-    background: linear-gradient(180deg, rgba(0, 0, 0, 0.75) 0%, rgba(0, 0, 0, 0) 100%);
+    background: linear-gradient(180deg, rgba(1, 10, 19, 0.8) 0%, rgba(1, 10, 19, 0) 100%);
     pointer-events: none; /* apenas rótulo, não intercepta cliques */
 }
 
@@ -40,26 +41,28 @@
     min-height: 100vh;
     width: var(--column-width);
     padding-top: 34px; /* espaço para o rótulo fixo não cobrir o 1º ícone */
+    padding-bottom: 16px;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
     gap: 12px;
     overflow-y: scroll;
+    scrollbar-width: none; /* o scroll continua ativo, só a barra some */
 }
 
 /* Regiões: coluna do meio (deslocada uma largura para a esquerda). */
 .nationalities {
     right: var(--column-width);
-    background-color: rgba(0, 0, 0, 0.2);
+    background-color: var(--scrim-weak);
 }
 
 /* Campeões: coluna colada na borda direita. Fundo um pouco mais escuro +
    divisória sutil à esquerda, separando visualmente das regiões. */
 .champions {
     right: 0;
-    background-color: rgba(0, 0, 0, 0.35);
-    border-left: 1px solid rgba(200, 170, 110, 0.18);
+    background-color: var(--scrim-medium);
+    border-left: 1px solid var(--gold-faint);
 }
 
 /* Esconde a barra de rolagem nativa das colunas (o scroll continua ativo). */

@@ -1,15 +1,42 @@
 /* ============================================================
-   Tokens do tema (paleta "League of Legends").
-   Centralizam as cores douradas, o fundo escuro e medidas
-   reutilizadas, evitando valores soltos repetidos pelos demais
-   arquivos. Deve ser importado logo após o reset e antes de
-   qualquer arquivo que use estas variáveis.
+   Tokens do tema. Paleta inspirada no cliente do League of
+   Legends (dourados "Hextech", azul-petróleo de destaque e fundo
+   azul-noite) + tipografia e medidas reutilizadas. Os demais
+   arquivos usam SÓ estas variáveis, sem cores soltas. Deve ser
+   importado logo após o reset e antes de qualquer outro CSS.
    ============================================================ */
 
 :root {
-    --lol-gold: #c8aa6e;          /* dourado principal (hover, spinner) */
-    --lol-gold-light: #f0e6d2;    /* dourado claro (seleção, rótulos) */
-    --lol-gold-soft: rgba(200, 170, 110, 0.4); /* dourado translúcido */
-    --lol-navy-deep: #050a14;     /* fundo escuro azulado (fallback) */
+    /* ---- Paleta base ---- */
+    --lol-gold: #c8aa6e;          /* dourado principal (acentos, hover, spinner) */
+    --lol-gold-light: #f0e6d2;    /* dourado claro (texto principal, seleção) */
+    --lol-gold-dark: #785a28;     /* dourado escuro (bordas discretas) */
+    --lol-teal: #0ac8b9;          /* azul-petróleo Hextech (foco de teclado) */
+    --lol-navy: #0a1428;          /* azul-noite (gradiente de fundo) */
+    --lol-navy-mid: #1e2b4a;      /* azul-noite claro (centro do gradiente) */
+    --lol-navy-deep: #050a14;     /* fundo mais escuro (fallback atrás da imagem) */
+    --lol-black: #010a13;         /* preto azulado (superfícies sobre o fundo) */
+
+    /* ---- Cores semânticas ---- */
+    --color-text: var(--lol-gold-light);
+    --color-accent: var(--lol-gold);
+    --color-focus: var(--lol-teal);
+    --gold-soft: rgba(200, 170, 110, 0.4);   /* barras de rolagem, bordas */
+    --gold-faint: rgba(200, 170, 110, 0.18); /* divisórias */
+    --gold-glow: rgba(200, 170, 110, 0.75);  /* brilho do hover */
+    --gold-light-glow: rgba(240, 230, 210, 0.9); /* brilho da seleção */
+    --surface-strong: rgba(1, 10, 19, 0.88); /* tooltip, aviso */
+    --scrim-weak: rgba(0, 0, 0, 0.2);        /* coluna Regiões */
+    --scrim-medium: rgba(0, 0, 0, 0.35);     /* coluna Campeões */
+
+    /* ---- Tipografia ---- */
+    /* Display: serifa clássica em caixa-alta, na linha da "Beaufort" que a
+       Riot usa nos títulos. Texto: sans legível para a lore. */
+    --font-display: "Cinzel", "Times New Roman", serif;
+    --font-body: "Rubik", system-ui, -apple-system, "Segoe UI", sans-serif;
+
+    /* ---- Medidas ---- */
     --column-width: 120px;        /* largura das colunas laterais */
+    --content-gutter: 32px;       /* respiro entre o texto e as colunas */
+    --emblem-size: 60px;          /* diâmetro do emblema */
 }
