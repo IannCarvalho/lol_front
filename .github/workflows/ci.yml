@@ -1,0 +1,58 @@
+name: CI
+
+on:
+  push:
+    branches: ["main"]
+  pull_request:
+    branches: ["main"]
+
+jobs:
+  seed:
+    name: "seed (pytest data_retrival)"
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install deps
+        run: pip install -r data_retrival/requirements-dev.txt
+      - name: Run pytest
+        run: pytest data_retrival -q
+
+  frontend:
+    name: "frontend (syntax, snapshot, tests)"
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "24"
+      - name: "Syntax check of all src/js ESM modules"
+        run: |
+          set -e
+          found=0
+          while IFS= read -r f; do
+            found=1
+            echo "node --check $f"
+            node --check "$f"
+          done < <(find src/js -name '*.js' -type f)
+          if [ "$found" -eq 0 ]; then
+            echo "no src/js/*.js files found" >&2
+            exit 1
+          fi
+      - name: "Validate src/data/snapshot.json shape"
+        run: |
+          node -e '
+            const fs = require("fs");
+            const s = JSON.parse(fs.readFileSync("src/data/snapshot.json", "utf8"));
+            if (!Array.isArray(s.nationalities) || s.nationalities.length === 0) {
+              throw new Error("snapshot.nationalities must be a non-empty array");
+            }
+            if (typeof s.championsByRegion !== "object" || s.championsByRegion === null || Array.isArray(s.championsByRegion)) {
+              throw new Error("snapshot.championsByRegion must be an object");
+            }
+            console.log("snapshot OK: " + s.nationalities.length + " nationalities, " + Object.keys(s.championsByRegion).length + " regions");
+          '
+      - name: "Run JS tests (node:test)"
+        run: node --test "tests/js/**/*.test.mjs"
